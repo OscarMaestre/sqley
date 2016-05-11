@@ -1,9 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 #coding=utf-8
+
 from utilidades.ficheros.ProcesadorPDF import ProcesadorPDF
 from utilidades.ficheros.GestorFicheros import GestorFicheros
-import platform, glob
-
+import platform, glob, 
 procesador=ProcesadorPDF()
 gf=GestorFicheros()
 
