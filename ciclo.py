@@ -12,6 +12,11 @@ def extraer_ra(texto_ra):
     texto_resultado=texto_ra[pos_punto+1:].strip()
     return (numero, texto_resultado)
 
+def extraer_datos_criterio ( texto_crit ):
+    pos_letra=texto_crit.find(")")
+    letra=texto_crit[0:pos_letra]
+    texto_resultado=texto_crit[pos_letra+1:].strip()
+    return (letra, texto_resultado)
 
 archivo_ciclo=open ( sys.argv[1], encoding="utf-8" )
 
@@ -34,18 +39,34 @@ for m in y["ciclo"]["modulos"]:
                    ciclo=ciclo_aux )
     modulo.save()
     modulo_aux=modulo
+    print (nombre_modulo)
+    print("###########################")
     resultados_aprendizaje=m["modulo"]["resultados"]
+    indice=0
     for r in resultados_aprendizaje:
         texto_ra=list(r.keys())[0]
         
         (numero_resultado, texto_resultado)=extraer_ra(texto_ra)
-        #print (numero_resultado,"-", texto_resultado)
+        print ("\t",numero_resultado,"-", texto_resultado)
+        print("xxxxxxxxxxxxxxxxxxxxxxxxxxx")
         ra=ResultadoDeAprendizaje (
             texto=texto_resultado,
             numero=int(numero_resultado),
             modulo=modulo_aux
         )
         ra.save()
+        for crit in m["modulo"]["resultados"][indice][texto_ra]:
+            (letra_crit, texto_crit)=extraer_datos_criterio ( crit )
+            criterio=CriterioDeEvaluacion (
+                texto=texto_crit,
+                letra=letra_crit,
+                resultado_de_aprendizaje=ra
+            )
+            criterio.save()
+            print ("\t\t",letra_crit, "-", texto_crit)
+            print("-------------------------")
+        indice=indice+1
+        
     print("********************")
 #print (y["ciclo"]["modulos"][1]["modulo"]["resultados"][1])
 
