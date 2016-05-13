@@ -42,7 +42,8 @@ class Contenido ( models.Model ):
         
 class PuntoDeContenido ( models.Model ):
     texto       =   models.CharField ( max_length=250 )
+    num_orden   =   models.IntegerField()
     contenido   =   models.ForeignKey ( Contenido )
-    
+
     class Meta:
         db_table="puntos_de_contenidos"
