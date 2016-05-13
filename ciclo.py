@@ -8,7 +8,8 @@ from gestionbd.models import *
 
 #Poner a True para no hacer el guardado en la BD
 #y así ir mas deprisa
-DEBUG=False
+DEBUG=True
+#DEBUG=False
 
 def extraer_ra(texto_ra):
     pos_punto=texto_ra.find(".")
@@ -17,6 +18,7 @@ def extraer_ra(texto_ra):
     return (numero, texto_resultado)
 
 def extraer_datos_criterio ( texto_crit ):
+    print (">>>>>",texto_crit)
     pos_letra=texto_crit.find(")")
     letra=texto_crit[0:pos_letra]
     texto_resultado=texto_crit[pos_letra+1:].strip()
