@@ -19,5 +19,7 @@ for f in ficheros_pdf:
 
 if platform.system()=="Windows":
     gf.ejecutar_comando ( "ciclo.py", "daw.yaml", "DAW")
+    gf.ejecutar_comando ( "ciclo.py", "dam.yaml", "DAM")
 else:
     gf.ejecutar_comando ( "./ciclo.py", "daw.yaml", "DAW")
+    gf.ejecutar_comando ( "./ciclo.py", "dam.yaml", "DAM")

@@ -8,8 +8,8 @@ from gestionbd.models import *
 
 #Poner a True para no hacer el guardado en la BD
 #y así ir mas deprisa
-DEBUG=True
-#DEBUG=False
+#DEBUG=True
+DEBUG=False
 
 def extraer_ra(texto_ra):
     pos_punto=texto_ra.find(".")
