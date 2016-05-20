@@ -19,6 +19,8 @@ class Modulo( models.Model ):
     horas_anuales   =   models.IntegerField()
     horas_semanales =   models.IntegerField()
     ciclo           =   models.ForeignKey ( Ciclo )
+    curso           =   models.IntegerField()
+    especialidad    =   models.CharField(max_length=10)
     def __str__(self ):
         return self.nombre + "("+str (self.ciclo) + ")"
     class Meta:
