@@ -8,8 +8,8 @@ from gestionbd.models import *
 
 #Poner a True para no hacer el guardado en la BD
 #y así ir mas deprisa
-DEBUG=True
-#DEBUG=False
+#DEBUG=True
+DEBUG=False
 
 def extraer_ra(texto_ra):
     pos_punto=texto_ra.find(".")
@@ -38,11 +38,14 @@ for m in y["ciclo"]["modulos"]:
     codigo=m["modulo"]["codigo"]
     horas_anio=m["modulo"]["duracion"]
     horas_semana=m["modulo"]["horas_semanales"]
+    curso_de_imparticion=m["modulo"]["curso"]
+    espe=m["modulo"]["especialidad"]
     modulo=Modulo ( nombre=nombre_modulo,
                    codigo_junta=codigo,
                    horas_anuales=horas_anio,
                    horas_semanales=horas_semana,
-                   ciclo=ciclo_aux )
+                   ciclo=ciclo_aux, curso = curso_de_imparticion,
+                   especialidad=espe)
     modulo.save()
     modulo_aux=modulo
     print (nombre_modulo)
