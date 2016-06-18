@@ -3,10 +3,12 @@
 
 from utilidades.ficheros.ProcesadorPDF import ProcesadorPDF
 from utilidades.ficheros.GestorFicheros import GestorFicheros
-import platform, glob
+import platform, glob, sys
 procesador=ProcesadorPDF()
 gf=GestorFicheros()
 
+gf.ejecutar_comando(" echo ", "\".dump\"", "| sqlite3 ciclos.db ", " > bd.sql")
+sys.exit(-1)
 lineas_borrado=gf.get_lineas_fichero ( "borrar.sql" )
 for l in lineas_borrado:
     gf.enviar_texto_a_comando ( l, "sqlite3 ciclos.db")
@@ -21,7 +23,10 @@ if platform.system()=="Windows":
     gf.ejecutar_comando ( "ciclo.py", "daw.yaml", "DAW")
     gf.ejecutar_comando ( "ciclo.py", "dam.yaml", "DAM")
     gf.ejecutar_comando ( "ciclo.py", "smir.yaml", "SMIR")
+    gf.ejecutar_comando ( "ciclo.py", "fpb.yaml", "FPB")
 else:
-    gf.ejecutar_comando ( "./ciclo.py", "daw.yaml", "DAW")
-    gf.ejecutar_comando ( "./ciclo.py", "dam.yaml", "DAM")
-    gf.ejecutar_comando ( "./ciclo.py", "smir.yaml", "SMIR")
+    #gf.ejecutar_comando ( "./ciclo.py", "daw.yaml", "DAW")
+    #gf.ejecutar_comando ( "./ciclo.py", "dam.yaml", "DAM")
+    #gf.ejecutar_comando ( "./ciclo.py", "smir.yaml", "SMIR")
+    #gf.ejecutar_comando ( "./ciclo.py", "fpb.yaml", "FPB")
+    gf.ejecutar_comando(" echo ", "\".dump\"", "| sqlite3 ciclos.db ", " > bd.sql")
