@@ -17,6 +17,8 @@ class Curso( models.Model ):
     num_curso    = models.IntegerField()
     nombre_curso = models.CharField ( max_length = 20 )
     ciclo        = models.ForeignKey ( Ciclo )
+    def __str__(self):
+        return self.nombre_curso
     class Meta:
         db_table="cursos"
         
@@ -33,6 +35,11 @@ class Reparto ( models.Model ):
         
 class Profesor ( models.Model ):
     nombre = models.CharField( max_length = 20 )
+    horas_minimas = models.IntegerField()
+    def to_java(self):
+        inicializacion_java="""
+        Profesor m{0} = new Profesor({0}, {1}, {2},\"{3}\", \"{4}\")""".format(self.id, self.nombre, self.horas_minimas)
+        return inicializacion_java
     class Meta:
         db_table="profesores"
         
@@ -44,7 +51,14 @@ class Modulo( models.Model ):
     curso           =   models.ForeignKey(Curso)
     especialidad    =   models.CharField(max_length=10)
     def __str__(self ):
-        return self.nombre + "("+str (self.ciclo) + ")"
+        return self.nombre + "("+ str(self.curso) + ")"
+    
+    def to_java(self, nombre_vector,indice):
+        inicializacion_java="""
+        Modulo m{0} = new Modulo({0}, {1}, {2},\"{3}\", \"{4}\");""".format(self.id, self.codigo_junta, self.horas_semanales, self.nombre,str(self.curso))
+        inicializacion_java+="\n\t\t{0}[{1}]=m{2}".format(nombre_vector, indice, self.id)
+        return inicializacion_java.strip()
+        
     class Meta:
         db_table="modulos"
         
