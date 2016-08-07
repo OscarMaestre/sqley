@@ -13,13 +13,35 @@ class Ciclo( models.Model ):
     class Meta:
         db_table="ciclos"
 
+class Curso( models.Model ):
+    num_curso    = models.IntegerField()
+    nombre_curso = models.CharField ( max_length = 20 )
+    ciclo        = models.ForeignKey ( Ciclo )
+    class Meta:
+        db_table="cursos"
+        
+class Grupo ( models.Model ):
+    nombre_grupo    =   models.CharField(max_length=15)
+    curso           =   models.ForeignKey ( Curso )
+    class Meta:
+        db_table="grupos"
+        
+class Reparto ( models.Model ):
+    nombre_reparto = models.CharField( max_length= 20 )
+    class Meta:
+        db_table="repartos"
+        
+class Profesor ( models.Model ):
+    nombre = models.CharField( max_length = 20 )
+    class Meta:
+        db_table="profesores"
+        
 class Modulo( models.Model ):
     nombre          =   models.CharField ( max_length=140 )
     codigo_junta    =   models.IntegerField()
     horas_anuales   =   models.IntegerField()
     horas_semanales =   models.IntegerField()
-    ciclo           =   models.ForeignKey ( Ciclo )
-    curso           =   models.IntegerField()
+    curso           =   models.ForeignKey(Curso)
     especialidad    =   models.CharField(max_length=10)
     def __str__(self ):
         return self.nombre + "("+str (self.ciclo) + ")"

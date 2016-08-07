@@ -32,6 +32,47 @@ def procesar_archivo():
     nombre_ciclo= y["ciclo"]["nombre"] 
     ciclo=Ciclo (nombre=nombre_ciclo, abreviatura=sys.argv[2])
     ciclo.save()
+    el_ciclo=ciclo
+    curso_1=Curso( num_curso=1, nombre_curso=sys.argv[2]+"_1", ciclo=el_ciclo)
+    curso_2=Curso( num_curso=2, nombre_curso=sys.argv[2]+"_2", ciclo=el_ciclo)
+    curso_1.save()
+    curso_2.save()
+    
+    if sys.argv[2]=="DAM":
+        grupo_dam1_matinal=Grupo(nombre_grupo="DAM1-Matinal", curso=curso_1)
+        grupo_dam2_matinal=Grupo(nombre_grupo="DAM2-Matinal", curso=curso_2)
+        grupo_dam1_matinal.save()
+        grupo_dam2_matinal.save()
+    if sys.argv[2]=="FPB":
+        grupo_1_matinal=Grupo(nombre_grupo="FPB1-Matinal", curso=curso_1)
+        grupo_2_matinal=Grupo(nombre_grupo="FPB2-Matinal", curso=curso_2)
+        grupo_1_matinal.save()
+        grupo_2_matinal.save()
+    if sys.argv[2]=="ASIR":
+        grupo_1_matinal=Grupo(nombre_grupo="ASIR1-Matinal", curso=curso_1)
+        grupo_2_matinal=Grupo(nombre_grupo="ASIR2-Matinal", curso=curso_2)
+        grupo_1_matinal.save()
+        grupo_2_matinal.save()
+    if sys.argv[2]=="SMIR":
+        grupo_1_matinal=Grupo(nombre_grupo="MIF1-Matinal", curso=curso_1)
+        grupo_2_matinal=Grupo(nombre_grupo="MIF2-Matinal", curso=curso_2)
+        grupo_1_matinal.save()
+        grupo_2_matinal.save()
+        grupo_1_matinal=Grupo(nombre_grupo="MIF1-tarde", curso=curso_1)
+        grupo_2_matinal=Grupo(nombre_grupo="MIF2-tarde", curso=curso_2)
+        grupo_1_matinal.save()
+        grupo_2_matinal.save()
+    if sys.argv[2]=="DAW":
+        grupo_daw1_tarde=Grupo(nombre_grupo="DAW1-tarde", curso=curso_1)
+        grupo_daw2_tarde=Grupo(nombre_grupo="DAW2-tarde", curso=curso_2)
+        grupo_daw1_tarde.save()
+        grupo_daw2_tarde.save()
+        grupo_daw1_elearning=Grupo(nombre_grupo="DAW1-elearning", curso=curso_1)
+        grupo_daw2_elearning=Grupo(nombre_grupo="DAW2-elearning", curso=curso_2)
+        grupo_daw1_elearning.save()
+        grupo_daw2_elearning.save()
+    
+    
     
     for m in y["ciclo"]["modulos"]:
         nombre_modulo = m["modulo"]["nombre"]
@@ -40,12 +81,16 @@ def procesar_archivo():
         horas_anio=m["modulo"]["duracion"]
         horas_semana=m["modulo"]["horas_semanales"]
         curso_de_imparticion=m["modulo"]["curso"]
+        if curso_de_imparticion=="1":
+            curso_asociado=curso_1
+        else:curso_asociado=curso_2
+            
         espe=m["modulo"]["especialidad"]
         modulo=Modulo ( nombre=nombre_modulo,
                        codigo_junta=codigo,
                        horas_anuales=horas_anio,
                        horas_semanales=horas_semana,
-                       ciclo=ciclo_aux, curso = curso_de_imparticion,
+                       curso = curso_asociado,
                        especialidad=espe)
         modulo.save()
         modulo_aux=modulo
