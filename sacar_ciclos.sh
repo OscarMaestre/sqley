@@ -1,0 +1,2 @@
+#!/bin/bash
+echo 'SELECT m.nombre, m.horas_semanales, g.nombre_grupo, cu.num_curso FROM ciclos as ci, cursos as cu, grupos as g, modulos as m where cu.ciclo_id=ci.id and g.curso_id=cu.id and m.curso_id=cu.id and m.especialidad<>"PT";' | sqlite3 ciclos.db

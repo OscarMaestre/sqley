@@ -81,8 +81,10 @@ def procesar_archivo():
         horas_anio=m["modulo"]["duracion"]
         horas_semana=m["modulo"]["horas_semanales"]
         curso_de_imparticion=m["modulo"]["curso"]
-        if curso_de_imparticion=="1":
+        print (nombre_modulo, curso_de_imparticion)
+        if curso_de_imparticion==1:
             curso_asociado=curso_1
+            print ("Asociando con 1")
         else:curso_asociado=curso_2
             
         espe=m["modulo"]["especialidad"]
@@ -137,7 +139,7 @@ def procesar_archivo():
             )
             if DEBUG==False:
                 contenido_a_salvar.save()
-            print ("\t", numero_cont, "-", texto_contenido)
+            #print ("\t", numero_cont, "-", texto_contenido)
             textos_contenidos=m["modulo"]["contenidos"][indice]
             clave = list(textos_contenidos.keys())[0]
             #print (clave)
@@ -152,7 +154,7 @@ def procesar_archivo():
                 )
                 if DEBUG==False:
                     punto_contenido.save()
-                print("\t\t", num_punto, "-", punto_cont)
+                #print("\t\t", num_punto, "-", punto_cont)
                 num_punto=num_punto+1
             indice=indice+1
         
