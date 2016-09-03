@@ -67,6 +67,7 @@ def procesar_archivo():
         grupo_daw2_tarde=Grupo(nombre_grupo="DAW2-tarde", curso=curso_2)
         grupo_daw1_tarde.save()
         grupo_daw2_tarde.save()
+    if sys.argv[2]=="DAWE":
         grupo_daw1_elearning=Grupo(nombre_grupo="DAW1-elearning", curso=curso_1)
         grupo_daw2_elearning=Grupo(nombre_grupo="DAW2-elearning", curso=curso_2)
         grupo_daw1_elearning.save()
