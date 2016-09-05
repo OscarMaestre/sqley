@@ -9,3 +9,5 @@ admin.site.register ( ResultadoDeAprendizaje )
 admin.site.register ( CriterioDeEvaluacion )
 admin.site.register ( Contenido )
 admin.site.register ( PuntoDeContenido )
+
+

@@ -5,8 +5,9 @@ from django.db import models
 # Create your models here.
 
 class Ciclo( models.Model ):
-    nombre      =   models.CharField ( max_length=140 )
-    abreviatura =   models.CharField ( max_length=10 )
+    nombre              =   models.CharField ( max_length=140 )
+    abreviatura         =   models.CharField ( max_length=10 )
+    nivel_profesional   =   models.IntegerField()
     def __str__(self ):
         return self.abreviatura
     
@@ -14,9 +15,9 @@ class Ciclo( models.Model ):
         db_table="ciclos"
 
 class Curso( models.Model ):
-    num_curso    = models.IntegerField()
-    nombre_curso = models.CharField ( max_length = 20 )
-    ciclo        = models.ForeignKey ( Ciclo )
+    num_curso           = models.IntegerField()
+    nombre_curso        = models.CharField ( max_length = 20 )
+    ciclo               = models.ForeignKey ( Ciclo )
     def __str__(self):
         return self.nombre_curso
     class Meta:

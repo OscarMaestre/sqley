@@ -11,6 +11,7 @@ from django.db import transaction
 #DEBUG=True
 DEBUG=False
 
+
 def extraer_ra(texto_ra):
     pos_punto=texto_ra.find(".")
     numero=texto_ra[0:pos_punto]
@@ -24,13 +25,21 @@ def extraer_datos_criterio ( texto_crit ):
     texto_resultado=texto_crit[pos_letra+1:].strip()
     return (letra, texto_resultado)
 
+
 def procesar_archivo():
     archivo_ciclo=open ( sys.argv[1], encoding="utf-8" )
     
     y=yaml.safe_load(archivo_ciclo)
     
-    nombre_ciclo= y["ciclo"]["nombre"] 
-    ciclo=Ciclo (nombre=nombre_ciclo, abreviatura=sys.argv[2])
+    nombre_ciclo= y["ciclo"]["nombre"]
+    nombre_pasado=sys.argv[2]
+    if nombre_pasado=="DAM" or nombre_pasado=="DAW" or nombre_pasado=="ASIR" or nombre_pasado=="DAWE":
+        nivel=3
+    if nombre_pasado=="SMIR" or nombre_pasado=="SMIRE":
+        nivel=2
+    if nombre_pasado=="FPB":
+        nivel=1
+    ciclo=Ciclo (nombre=nombre_ciclo, abreviatura=sys.argv[2],nivel_profesional=nivel)
     ciclo.save()
     el_ciclo=ciclo
     curso_1=Curso( num_curso=1, nombre_curso=sys.argv[2]+"_1", ciclo=el_ciclo)
@@ -58,18 +67,23 @@ def procesar_archivo():
         grupo_2_matinal=Grupo(nombre_grupo="MIF2-Matinal", curso=curso_2)
         grupo_1_matinal.save()
         grupo_2_matinal.save()
-        grupo_1_matinal=Grupo(nombre_grupo="MIF1-tarde", curso=curso_1)
-        grupo_2_matinal=Grupo(nombre_grupo="MIF2-tarde", curso=curso_2)
+        grupo_1_matinal=Grupo(nombre_grupo="MIF1-Tarde", curso=curso_1)
+        grupo_2_matinal=Grupo(nombre_grupo="MIF2-Tarde", curso=curso_2)
         grupo_1_matinal.save()
         grupo_2_matinal.save()
+    if sys.argv[2]=="SMIRE":
+        grupo_1_elearning=Grupo(nombre_grupo="MIF1-Elearning", curso=curso_1)
+        grupo_2_elearning=Grupo(nombre_grupo="MIF2-Elearning", curso=curso_2)
+        grupo_1_elearning.save()
+        grupo_2_elearning.save()
     if sys.argv[2]=="DAW":
-        grupo_daw1_tarde=Grupo(nombre_grupo="DAW1-tarde", curso=curso_1)
-        grupo_daw2_tarde=Grupo(nombre_grupo="DAW2-tarde", curso=curso_2)
+        grupo_daw1_tarde=Grupo(nombre_grupo="DAW1-Tarde", curso=curso_1)
+        grupo_daw2_tarde=Grupo(nombre_grupo="DAW2-Tarde", curso=curso_2)
         grupo_daw1_tarde.save()
         grupo_daw2_tarde.save()
     if sys.argv[2]=="DAWE":
-        grupo_daw1_elearning=Grupo(nombre_grupo="DAW1-elearning", curso=curso_1)
-        grupo_daw2_elearning=Grupo(nombre_grupo="DAW2-elearning", curso=curso_2)
+        grupo_daw1_elearning=Grupo(nombre_grupo="DAW1-Elearning", curso=curso_1)
+        grupo_daw2_elearning=Grupo(nombre_grupo="DAW2-Elearning", curso=curso_2)
         grupo_daw1_elearning.save()
         grupo_daw2_elearning.save()
     
