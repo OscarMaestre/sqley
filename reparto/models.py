@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.forms import ModelForm
 from gestionbd.models import Modulo
 # Create your models here.
 
@@ -8,6 +8,10 @@ from gestionbd.models import Modulo
 class Reparto ( models.Model ):
     nombre=models.TextField(max_length=40)
     
+class RepartoForm ( ModelForm ):
+    class Meta:
+        model=Reparto
+        fields=["nombre"]
     
 class Profesor ( models.Model ):
     nombre = models.TextField(max_length=40)

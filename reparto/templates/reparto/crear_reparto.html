@@ -2,6 +2,13 @@
 
 {%block contenido%}
 
-Crear reparto
+<h1>Crear reparto</h1>
+
+<form action="{% url 'reparto:index' %}" method="post">
+    {% csrf_token %}
+    {{ formulario }}
+    <input type="submit" value="Submit" />
+</form>
+
 Ver repartos
 {%endblock%}
