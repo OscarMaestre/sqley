@@ -6,7 +6,7 @@ from gestionbd.models import Modulo
 
 
 class Reparto ( models.Model ):
-    nombre=models.TextField(max_length=40)
+    nombre=models.CharField(max_length=30)
     
 class RepartoForm ( ModelForm ):
     class Meta:
@@ -14,7 +14,8 @@ class RepartoForm ( ModelForm ):
         fields=["nombre"]
     
 class Profesor ( models.Model ):
-    nombre = models.TextField(max_length=40)
+    nombre = models.CharField( max_length=20 )
+    posicion = models.IntegerField()
     
     
 class ModuloParaRepartir ( models.Model ):

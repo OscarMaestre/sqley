@@ -17,7 +17,7 @@ for f in ficheros_pdf:
     procesador.convertir_a_txt(f)
 
 EXTRACCION_MODULOS="""
-SELECT mod.nombre, mod.horas_semanales, g.nombre_grupo, ciclos.nivel_profesional
+SELECT mod.id, mod.nombre, mod.horas_semanales, g.nombre_grupo, ciclos.nivel_profesional
     from ciclos, modulos as mod, grupos as g, cursos as cur
         where
             mod.curso_id=cur.id
