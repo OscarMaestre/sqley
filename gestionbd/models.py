@@ -29,14 +29,12 @@ class Grupo ( models.Model ):
     class Meta:
         db_table="grupos"
         
-class Reparto ( models.Model ):
-    nombre_reparto = models.CharField( max_length= 20 )
-    class Meta:
-        db_table="repartos"
+
         
 class Profesor ( models.Model ):
     nombre = models.CharField( max_length = 20 )
     horas_minimas = models.IntegerField()
+    num_posicion=models.IntegerField()
     def to_java(self):
         inicializacion_java="""
         Profesor m{0} = new Profesor({0}, {1}, {2},\"{3}\", \"{4}\")""".format(self.id, self.nombre, self.horas_minimas)

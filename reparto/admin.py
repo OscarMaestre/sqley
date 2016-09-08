@@ -4,5 +4,5 @@ from .models import *
 
 admin.site.register ( Reparto )
 admin.site.register ( Profesor )
-admin.site.register ( ModuloParaRepartir )
-admin.site.register ( Asignacion )
+admin.site.register ( ModuloPorAsignar )
+admin.site.register ( ModuloAsignado )

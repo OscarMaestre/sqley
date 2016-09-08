@@ -1,11 +1,12 @@
-from django.shortcuts import render
-from .models import RepartoForm
+from django.shortcuts import render, get_object_or_404
+from .models import RepartoForm, ModuloEnReparto, ModuloPorAsignar, ModuloAsignado, Reparto
 from django.http import HttpResponseRedirect
-from django.db import connection
+from django.db import connection, transaction
 from django.core.urlresolvers import reverse
 
 EXTRACCION_MODULOS="""
-SELECT mod.id, mod.nombre, mod.horas_semanales, g.nombre_grupo, ciclos.nivel_profesional
+SELECT mod.id, mod.nombre, mod.horas_semanales,
+        g.nombre_grupo, ciclos.nivel_profesional, mod.especialidad
     from ciclos, modulos as mod, grupos as g, cursos as cur
         where
             mod.curso_id=cur.id
@@ -27,10 +28,25 @@ def index(peticion):
 def repartir(peticion, num_reparto, codigo_profesor, codigo_asignatura):
     return None
 
-
-
 def crear_asignaturas_reparto ( id_reparto ):
-    print ("Creando para "+ str(id_reparto))
+    #print ("Creando para "+ str(id_reparto))
+    reparto_asociado=get_object_or_404(Reparto, pk=id_reparto)
+    with connection.cursor() as cursor:
+        cursor.execute(EXTRACCION_MODULOS)
+        filas=cursor.fetchall()
+        with transaction.atomic():
+            for f in filas:
+                modulo_en_reparto=ModuloEnReparto(
+                    nombre = f[1],
+                    grupo = f[3],
+                    horas_semanales=f[2],
+                    especialidad=f[5],
+                )
+                modulo_en_reparto.save()
+                modulo_por_asignar=ModuloPorAsignar(
+                    modulo=modulo_en_reparto,reparto=reparto_asociado)
+                modulo_por_asignar.save()
+                #print (f[0])
     
 def crear(peticion):
     if peticion.method=="POST":
@@ -40,7 +56,10 @@ def crear(peticion):
             id_reparto=formulario_pasado.instance.id
             ##print ( dir(formulario_pasado.instance))
             crear_asignaturas_reparto ( formulario_pasado.instance.id )
-            return HttpResponseRedirect ( reverse("reparto:elegir {0}".format(id_reparto)) )
+            return HttpResponseRedirect ( reverse("reparto:elegir",
+                                                  args=(id_reparto,)
+                                            )
+                                        )
         else:
             print ("Meec")
     else:
