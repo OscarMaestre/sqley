@@ -87,7 +87,10 @@ def procesar_archivo():
         grupo_daw1_elearning.save()
         grupo_daw2_elearning.save()
     
-    
+    for c in y["ciclo"]["competencias"]:
+        print (c)
+        
+    sys.exit(0)
     
     for m in y["ciclo"]["modulos"]:
         nombre_modulo = m["modulo"]["nombre"]
