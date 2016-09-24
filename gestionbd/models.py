@@ -66,6 +66,7 @@ class Modulo( models.Model ):
 class Competencia ( models.Model):
     identificador   = models.CharField(max_length=2)
     texto           = models.CharField (max_length=240)
+    
     ciclo           = models.ForeignKey ( Ciclo )
     class Meta:
         db_table="competencias"
@@ -75,8 +76,9 @@ class Competencia ( models.Model):
 class CualificacionProfesional ( models.Model ):
     identificador   =   models.CharField(max_length=2)
     texto           =   models.CharField (max_length=240 )
-    completa        =   models.BooleanField
+    completa        =   models.BooleanField()
     ciclo           =   models.ManyToManyField ( Ciclo )
+    real_decreto    =   models.CharField (max_length=240)
     class Meta:
         db_table="cualificaciones_profesionales"
         verbose_name_plural = "Cualificaciones profesionales"

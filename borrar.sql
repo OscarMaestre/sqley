@@ -3,3 +3,7 @@ delete from cursos;
 delete from grupos;
 delete from modulos;
 delete from resultados_de_aprendizaje;
+delete from cualificaciones_profesionales;
+delete from cualificaciones_profesionales_ciclo;
+delete from unidades_de_competencia;
+delete from unidades_de_competencia_cualificacion;

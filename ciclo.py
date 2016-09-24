@@ -132,7 +132,33 @@ def procesar_archivo():
         competencia=Competencia(identificador=id, texto=texto_competencia, ciclo=ciclo_asociado)
         competencia.save()
         
-    
+    for cual in y["ciclo"]["cualificaciones_completas"]:
+        
+        codigo=cual["cualificacion"]["codigo"]
+        rd = cual["cualificacion"]["real_decreto"]
+        texto_cual = cual["cualificacion"]["texto"]
+        print (codigo, rd, texto)
+        cualificacion = CualificacionProfesional(
+            completa=True,
+            identificador=codigo,
+            texto=texto_cual,
+            real_decreto=rd
+        )
+        cualificacion.save()
+        cualificacion.ciclo.add(ciclo_asociado)
+        cualificacion.save()
+        for u in cual["cualificacion"]["unidades_de_competencia"]:
+            #print(u)
+            cualificacion_asociada=cualificacion
+            codigo = u["unidad"]["codigo"].strip()
+            texto_competencia = u["unidad"]["texto"].strip()
+            uc=UnidadDeCompetencia(
+                identificador=codigo,
+                texto=texto_competencia,
+            )
+            uc.save()
+            uc.cualificacion.add(cualificacion_asociada)
+            print(">>",codigo, texto_competencia)
     
     for m in y["ciclo"]["modulos"]:
         nombre_modulo = m["modulo"]["nombre"]
