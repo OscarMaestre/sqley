@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # coding=utf-8
-import yaml, sys
+import yaml, sys, re
 from utilidades.basedatos.Configurador import Configurador
 configurador=Configurador ("ciclos")
 configurador.activar_configuracion ("ciclos.settings")
@@ -10,7 +10,12 @@ from django.db import transaction
 #y así ir mas deprisa
 #DEBUG=True
 DEBUG=False
+PATRON_NO_ENCONTRADO="xXxXxXxX"
 
+re_letra_con_parentesis="[a-zñ]\)"
+expr_regular_letra_con_parentesis=re.compile ( re_letra_con_parentesis )
+re_num_con_punto="[0-9]{1,2}\."
+expr_regular_num_con_punto = re.compile ( re_num_con_punto )
 
 def extraer_ra(texto_ra):
     pos_punto=texto_ra.find(".")
@@ -25,6 +30,37 @@ def extraer_datos_criterio ( texto_crit ):
     texto_resultado=texto_crit[pos_letra+1:].strip()
     return (letra, texto_resultado)
 
+
+def linea_contiene_patron(expr_regular, linea):
+        """
+        Dice si una linea contiene un patron
+        
+        Argumentos:
+        
+            expr_regular -- Expresión regular ya compilada
+            
+            linea -- línea en la que buscar el texto
+            
+        Devuelve:
+        
+            (inicio, fin, texto) -- Tupla con la posicion de inicio, la de final y el texto
+            encontrado. Si no aparece nada se devuelve la constante ProcesadorPDF.PATRON_NO_ENCONTRADO
+        
+        """
+        #print ("Buscando {0} en {1}".format( str(expr_regular), linea))
+        concordancia=expr_regular.search(linea)
+        if concordancia:
+            inicio=concordancia.start()
+            final=concordancia.end()
+            patron=concordancia.string[inicio:final]
+            #print ("-->Encontrado {0} en {1}".format( str(expr_regular), linea))
+            return (inicio, final, patron)
+        return (PATRON_NO_ENCONTRADO, PATRON_NO_ENCONTRADO, PATRON_NO_ENCONTRADO)
+def extraer_identificador ( linea ):
+    (ini, fin, texto)=linea_contiene_patron ( expr_regular_num_con_punto, linea)
+    if texto==PATRON_NO_ENCONTRADO:
+        return linea_contiene_patron ( expr_regular_letra_con_parentesis, linea)
+    return (ini, fin, texto)
 
 def procesar_archivo():
     archivo_ciclo=open ( sys.argv[1], encoding="utf-8" )
@@ -88,9 +124,15 @@ def procesar_archivo():
         grupo_daw2_elearning.save()
     
     for c in y["ciclo"]["competencias"]:
-        print (c)
+        (ini_id, fin_id, id)=extraer_identificador(c)
+        id=str(id)
+        texto=c[fin_id+1:]
+        texto_competencia=texto.strip()
+        ciclo_asociado=ciclo
+        competencia=Competencia(identificador=id, texto=texto_competencia, ciclo=ciclo_asociado)
+        competencia.save()
         
-    sys.exit(0)
+    
     
     for m in y["ciclo"]["modulos"]:
         nombre_modulo = m["modulo"]["nombre"]

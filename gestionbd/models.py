@@ -60,7 +60,35 @@ class Modulo( models.Model ):
         
     class Meta:
         db_table="modulos"
-        
+        verbose_name_plural = "Modulos"
+
+
+class Competencia ( models.Model):
+    identificador   = models.CharField(max_length=2)
+    texto           = models.CharField (max_length=240)
+    ciclo           = models.ForeignKey ( Ciclo )
+    class Meta:
+        db_table="competencias"
+        verbose_name_plural = "Competencias"
+    
+    
+class CualificacionProfesional ( models.Model ):
+    identificador   =   models.CharField(max_length=2)
+    texto           =   models.CharField (max_length=240 )
+    completa        =   models.BooleanField
+    ciclo           =   models.ManyToManyField ( Ciclo )
+    class Meta:
+        db_table="cualificaciones_profesionales"
+        verbose_name_plural = "Cualificaciones profesionales"
+
+class UnidadDeCompetencia ( models.Model ):
+    identificador   =   models.CharField(max_length=2)
+    texto           =   models.CharField (max_length=240 )
+    cualificacion   =   models.ManyToManyField ( CualificacionProfesional )
+    class Meta:
+        db_table="unidades_de_competencia"
+        verbose_name_plural = "Unidades de competencia"
+    
 class ResultadoDeAprendizaje ( models.Model ):
     texto       =   models.CharField ( max_length=250 )
     numero      =   models.IntegerField()
@@ -69,6 +97,7 @@ class ResultadoDeAprendizaje ( models.Model ):
         return self.texto + "("+str (self.modulo) + ")"
     class Meta:
         db_table="resultados_de_aprendizaje"
+        verbose_name_plural = "Resultados de aprendizaje"
         
 class CriterioDeEvaluacion ( models.Model ):
     texto                       =   models.CharField ( max_length=250 )
@@ -78,6 +107,7 @@ class CriterioDeEvaluacion ( models.Model ):
         return self.texto
     class Meta:
         db_table="criterios_de_evaluacion"
+        verbose_name_plural = "Criterios de evaluacion"
         
 class Contenido ( models.Model ):
     texto       =   models.CharField ( max_length=250 )
@@ -96,3 +126,4 @@ class PuntoDeContenido ( models.Model ):
         return self.texto
     class Meta:
         db_table="puntos_de_contenidos"
+        verbose_name_plural = "Puntos de contenido"
