@@ -78,6 +78,8 @@ class CualificacionProfesional ( models.Model ):
     texto           =   models.CharField (max_length=240 )
     ciclo           =   models.ManyToManyField ( Ciclo, through="CicloTieneCualificacion" )
     real_decreto    =   models.CharField (max_length=240)
+    def __str__(self):
+        return self.texto
     class Meta:
         db_table="cualificaciones_profesionales"
         verbose_name_plural = "Cualificaciones profesionales"
@@ -89,11 +91,14 @@ class CicloTieneCualificacion ( models.Model ):
     class Meta:
         db_table="ciclo_tiene_cualificacion"
         verbose_name_plural = "Ciclo y cualificaciones"
+        
 
 class UnidadDeCompetencia ( models.Model ):
     identificador   =   models.CharField(max_length=2)
     texto           =   models.CharField (max_length=240 )
     cualificacion   =   models.ManyToManyField ( CualificacionProfesional )
+    def __str__(self):
+        return self.texto
     class Meta:
         db_table="unidades_de_competencia"
         verbose_name_plural = "Unidades de competencia"
