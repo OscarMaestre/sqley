@@ -19,6 +19,8 @@ class Evaluacion(models.Model):
     numero          =   models.IntegerField()
     fecha_inicio    =   models.DateField()
     fecha_fin       =   models.DateField()
+    def __str__(self):
+        return "Evaluacion " + str(self.numero)
     class Meta:
         db_table="evaluaciones"
         verbose_name_plural = "Evaluaciones"
@@ -72,8 +74,9 @@ class Interviene(models.Model):
     ponderacion = models.IntegerField()
         
 class Programacion(models.Model):
-    modulo = models.ManyToManyField ( Modulo )
-    unidades = models.ManyToManyField ( UnidadDeTrabajo)
+    nombre      =   models.CharField(max_length=240)
+    modulo      =   models.ManyToManyField ( Modulo )
+    unidades    =   models.ManyToManyField ( UnidadDeTrabajo )
     class Meta:
         db_table="programaciones"
         verbose_name_plural = "Programaciones"
