@@ -62,6 +62,34 @@ def extraer_identificador ( linea ):
         return linea_contiene_patron ( expr_regular_letra_con_parentesis, linea)
     return (ini, fin, texto)
 
+
+def crear_cualificacion(ciclo_asociado, cual, es_completa):
+    codigo=cual["cualificacion"]["codigo"]
+    rd = cual["cualificacion"]["real_decreto"]
+    texto_cual = cual["cualificacion"]["texto"]
+    print (codigo, rd, texto_cual)
+    cualificacion = CualificacionProfesional(
+        completa=es_completa,
+        identificador=codigo,
+        texto=texto_cual,
+        real_decreto=rd
+    )
+    cualificacion.save()
+    cualificacion.ciclo.add(ciclo_asociado)
+    cualificacion.save()
+    for u in cual["cualificacion"]["unidades_de_competencia"]:
+        #print(u)
+        cualificacion_asociada=cualificacion
+        codigo = u["unidad"]["codigo"].strip()
+        texto_competencia = u["unidad"]["texto"].strip()
+        uc=UnidadDeCompetencia(
+            identificador=codigo,
+            texto=texto_competencia,
+        )
+        uc.save()
+        uc.cualificacion.add(cualificacion_asociada)
+        print(">>",codigo, texto_competencia)
+        
 def procesar_archivo():
     archivo_ciclo=open ( sys.argv[1], encoding="utf-8" )
     
@@ -133,32 +161,15 @@ def procesar_archivo():
         competencia.save()
         
     for cual in y["ciclo"]["cualificaciones_completas"]:
+        crear_cualificacion(ciclo_asociado, cual, True)
+    
+    try:
+        for cual in y["ciclo"]["cualificaciones_incompletas"]:
+            crear_cualificacion(ciclo_asociado, cual, False)
+    except:
+        #Algunos ciclos no tiene cualificaciones incompletas
+        pass
         
-        codigo=cual["cualificacion"]["codigo"]
-        rd = cual["cualificacion"]["real_decreto"]
-        texto_cual = cual["cualificacion"]["texto"]
-        print (codigo, rd, texto)
-        cualificacion = CualificacionProfesional(
-            completa=True,
-            identificador=codigo,
-            texto=texto_cual,
-            real_decreto=rd
-        )
-        cualificacion.save()
-        cualificacion.ciclo.add(ciclo_asociado)
-        cualificacion.save()
-        for u in cual["cualificacion"]["unidades_de_competencia"]:
-            #print(u)
-            cualificacion_asociada=cualificacion
-            codigo = u["unidad"]["codigo"].strip()
-            texto_competencia = u["unidad"]["texto"].strip()
-            uc=UnidadDeCompetencia(
-                identificador=codigo,
-                texto=texto_competencia,
-            )
-            uc.save()
-            uc.cualificacion.add(cualificacion_asociada)
-            print(">>",codigo, texto_competencia)
     
     for m in y["ciclo"]["modulos"]:
         nombre_modulo = m["modulo"]["nombre"]
