@@ -76,7 +76,6 @@ class Competencia ( models.Model):
 class CualificacionProfesional ( models.Model ):
     identificador   =   models.CharField(max_length=2)
     texto           =   models.CharField (max_length=240 )
-    completa        =   models.BooleanField()
     ciclo           =   models.ManyToManyField ( Ciclo, through="CicloTieneCualificacion" )
     real_decreto    =   models.CharField (max_length=240)
     class Meta:

@@ -63,20 +63,24 @@ def extraer_identificador ( linea ):
     return (ini, fin, texto)
 
 
-def crear_cualificacion(ciclo_asociado, cual, es_completa):
+def crear_cualificacion(ciclo_asociado, cual, completa):
     codigo=cual["cualificacion"]["codigo"]
     rd = cual["cualificacion"]["real_decreto"]
     texto_cual = cual["cualificacion"]["texto"]
     print (codigo, rd, texto_cual)
     cualificacion = CualificacionProfesional(
-        completa=es_completa,
         identificador=codigo,
         texto=texto_cual,
         real_decreto=rd
     )
     cualificacion.save()
-    cualificacion.ciclo.add(ciclo_asociado)
-    cualificacion.save()
+    cualificacion_asociada=cualificacion
+    ciclo_tiene_cualificacion=CicloTieneCualificacion.objects.create(
+        ciclo=ciclo_asociado, cualificacion_profesional=cualificacion,
+        es_completa=completa
+    )
+    ciclo_tiene_cualificacion.save()
+    
     for u in cual["cualificacion"]["unidades_de_competencia"]:
         #print(u)
         cualificacion_asociada=cualificacion
