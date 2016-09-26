@@ -77,11 +77,19 @@ class CualificacionProfesional ( models.Model ):
     identificador   =   models.CharField(max_length=2)
     texto           =   models.CharField (max_length=240 )
     completa        =   models.BooleanField()
-    ciclo           =   models.ManyToManyField ( Ciclo )
+    ciclo           =   models.ManyToManyField ( Ciclo, through="CicloTieneCualificacion" )
     real_decreto    =   models.CharField (max_length=240)
     class Meta:
         db_table="cualificaciones_profesionales"
         verbose_name_plural = "Cualificaciones profesionales"
+        
+class CicloTieneCualificacion ( models.Model ):
+    ciclo = models.ForeignKey(Ciclo)
+    cualificacion_profesional = models.ForeignKey ( CualificacionProfesional )
+    es_completa = models.BooleanField()
+    class Meta:
+        db_table="ciclo_tiene_cualificacion"
+        verbose_name_plural = "Ciclo y cualificaciones"
 
 class UnidadDeCompetencia ( models.Model ):
     identificador   =   models.CharField(max_length=2)
