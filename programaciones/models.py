@@ -28,13 +28,19 @@ class Evaluacion(models.Model):
 class RecursoDidactico(models.Model):
     nombre      =   models.CharField(max_length=250)
 
+    def __str__(self):
+        return self.nombre
+    
     class Meta:
         db_table="recursos_didacticos"
         verbose_name_plural = "Recursos didacticos"
         
 class MecanismoEvaluacion(models.Model):
     nombre      =   models.CharField(max_length=250)
-
+    
+    def __str__(self):
+        return self.nombre
+    
     class Meta:
         db_table="mecanismosevaluacion"
         verbose_name_plural = "Mecanismos de evaluacion"
@@ -42,6 +48,9 @@ class MecanismoEvaluacion(models.Model):
 class ProcedimientoEvaluacion(models.Model):
     nombre      =   models.CharField(max_length=250)
 
+    def __str__(self):
+        return self.nombre
+    
     class Meta:
         db_table="procedimientosevaluacion"
         verbose_name_plural = "Procedimientos de evaluacion"
