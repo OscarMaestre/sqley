@@ -23,12 +23,16 @@ def extraer_ra(texto_ra):
     texto_resultado=texto_ra[pos_punto+1:].strip()
     return (numero, texto_resultado)
 
-def extraer_datos_criterio ( texto_crit ):
-    print (">>>>>",texto_crit)
-    pos_letra=texto_crit.find(")")
-    letra=texto_crit[0:pos_letra]
-    texto_resultado=texto_crit[pos_letra+1:].strip()
+def extraer_letra_y_parentesis(linea):
+    print (">>>>>",linea)
+    pos_letra=linea.find(")")
+    letra=linea[0:pos_letra]
+    texto_resultado=linea[pos_letra+1:].strip()
     return (letra, texto_resultado)
+
+def extraer_datos_criterio ( texto_crit ):
+    return extraer_letra_y_parentesis ( texto_crit )
+    
 
 
 def linea_contiene_patron(expr_regular, linea):
@@ -163,7 +167,13 @@ def procesar_archivo():
         ciclo_asociado=ciclo
         competencia=Competencia(identificador=id, texto=texto_competencia, ciclo=ciclo_asociado)
         competencia.save()
-        
+    
+    objetivos_generales = y["ciclo"]["objetivos_generales"]
+    for o in objetivos_generales:
+        (letra_obj, texto_obj) = extraer_letra_y_parentesis ( o )
+        objetivo=ObjetivoGeneral ( letra=letra_obj, texto=texto_obj, ciclo=ciclo_asociado)
+        objetivo.save()
+            
     for cual in y["ciclo"]["cualificaciones_completas"]:
         crear_cualificacion(ciclo_asociado, cual, True)
     
@@ -226,6 +236,8 @@ def procesar_archivo():
                 print ("\t\t",letra_crit, "-", texto_crit)
                 print("-------------------------")
             indice=indice+1
+          
+        
             
         print("********************")
         contenidos=m["modulo"]["contenidos"]

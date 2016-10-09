@@ -36,10 +36,6 @@ def cargar_metodologias():
         instru = InstrumentoEvaluacion ( nombre = instrumento )
         instru.save()
     
-    procedimientos_evaluacion = gf.get_lineas_fichero ( DIR_DATOS_INICIALES + "procedimientos_evaluacion.txt")
-    for p in procedimientos_evaluacion:
-        proc  = ProcedimientoEvaluacion ( nombre = p )
-        proc.save()
     
     calificadores = gf.get_lineas_fichero ( DIR_DATOS_INICIALES + "calificadores.txt")
     for c in calificadores:
@@ -64,7 +60,7 @@ def cargar_metodologias():
 
 with transaction.atomic():
     clases=[PuntoMetodologico, RecursoDidactico, InstrumentoEvaluacion,
-            ProcedimientoEvaluacion, EspecialidadProfesor, Profesor]
+            EspecialidadProfesor, Profesor]
     for c in clases:
         c.objects.all().delete()
     

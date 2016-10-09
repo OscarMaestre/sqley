@@ -1,5 +1,5 @@
 from django.db import models
-from gestionbd.models import Modulo, CriterioDeEvaluacion, Profesor
+from gestionbd.models import Modulo, CriterioDeEvaluacion, Profesor, ObjetivoGeneral
 # Create your models here.
 
 
@@ -45,15 +45,7 @@ class InstrumentoEvaluacion(models.Model):
         db_table="instrumentos_evaluacion"
         verbose_name_plural = "Instrumentos de evaluacion"
         
-class ProcedimientoEvaluacion(models.Model):
-    nombre      =   models.CharField(max_length=250)
 
-    def __str__(self):
-        return self.nombre
-    
-    class Meta:
-        db_table="procedimientosevaluacion"
-        verbose_name_plural = "Procedimientos de evaluacion"
         
 class UnidadDeTrabajo(models.Model):
     numero              = models.IntegerField()
@@ -63,8 +55,8 @@ class UnidadDeTrabajo(models.Model):
     evaluaciones        = models.ManyToManyField(Evaluacion)
     recursos            = models.ManyToManyField(RecursoDidactico)
     instrumentos        = models.ManyToManyField(InstrumentoEvaluacion)
-    procedimientos      = models.ManyToManyField(ProcedimientoEvaluacion)
     criterios           = models.ManyToManyField(CriterioDeEvaluacion, through="Interviene")
+    programacion        = models.ForeignKey ( "Programacion")
     class Meta:
         db_table="unidades_de_trabajo"
         verbose_name_plural = "Unidades de Trabajo"
@@ -94,8 +86,11 @@ class Interviene(models.Model):
 class Programacion(models.Model):
     nombre      =   models.CharField(max_length=240)
     modulo      =   models.ManyToManyField ( Modulo )
-    unidades    =   models.ManyToManyField ( UnidadDeTrabajo )
     profesor    =   models.ForeignKey ( Profesor )
+    objetivos   =   models.ManyToManyField (ObjetivoGeneral)
+    def __str__(self):
+        return self.nombre
+    
     class Meta:
         db_table="programaciones"
         verbose_name_plural = "Programaciones"

@@ -73,6 +73,7 @@ class Modulo( models.Model ):
     class Meta:
         db_table="modulos"
         verbose_name_plural = "Modulos"
+        ordering = ["nombre", "curso"]
 
 
 class Competencia ( models.Model):
@@ -143,6 +144,16 @@ class Contenido ( models.Model ):
         return self.texto + "("+str (self.modulo) + ")"
     class Meta:
         db_table="contenidos"
+        
+class ObjetivoGeneral ( models.Model ):
+    letra   =   models.CharField(max_length=2)
+    texto   =   models.CharField(max_length=2048)
+    ciclo   =   models.ForeignKey ( Ciclo )
+    def __str__(self):
+        return self.letra + ") " + self.texto
+    class Meta:
+        db_table="objetivosgenerales"
+        verbose_name_plural = "Objetivos Generales de Ciclo"
         
 class PuntoDeContenido ( models.Model ):
     texto       =   models.CharField ( max_length=250 )
