@@ -26,20 +26,25 @@ def cargar_metodologias():
         rec=RecursoDidactico ( nombre = r)
         rec.save()
     
-    mecanismos_evaluacion = gf.get_lineas_fichero (DIR_DATOS_INICIALES + "mecanismos_evaluacion.txt")
-    for m in mecanismos_evaluacion:
-        mec = MecanismoEvaluacion ( nombre = m )
-        mec.save()
+    instrumentos_evaluacion = gf.get_lineas_fichero (DIR_DATOS_INICIALES + "mecanismos_evaluacion.txt")
+    for instrumento in instrumentos_evaluacion:
+        instru = InstrumentoEvaluacion ( nombre = instrumento )
+        instru.save()
     
     procedimientos_evaluacion = gf.get_lineas_fichero ( DIR_DATOS_INICIALES + "procedimientos_evaluacion.txt")
     for p in procedimientos_evaluacion:
         proc  = ProcedimientoEvaluacion ( nombre = p )
         proc.save()
+    
+    calificadores = gf.get_lineas_fichero ( DIR_DATOS_INICIALES + "calificadores.txt")
+    for c in calificadores:
+        cali = Calificador ( texto = c)
+        cali.save()
 
 with transaction.atomic():
     PuntoMetodologico.objects.all().delete()
     RecursoDidactico.objects.all().delete()
-    MecanismoEvaluacion.objects.all().delete()
+    InstrumentoEvaluacion.objects.all().delete()
     ProcedimientoEvaluacion.objects.all().delete()
     cargar_metodologias()
     Evaluacion.objects.all().delete()

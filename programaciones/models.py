@@ -35,15 +35,15 @@ class RecursoDidactico(models.Model):
         db_table="recursos_didacticos"
         verbose_name_plural = "Recursos didacticos"
         
-class MecanismoEvaluacion(models.Model):
+class InstrumentoEvaluacion(models.Model):
     nombre      =   models.CharField(max_length=250)
     
     def __str__(self):
         return self.nombre
     
     class Meta:
-        db_table="mecanismosevaluacion"
-        verbose_name_plural = "Mecanismos de evaluacion"
+        db_table="instrumentos_evaluacion"
+        verbose_name_plural = "Instrumentos de evaluacion"
         
 class ProcedimientoEvaluacion(models.Model):
     nombre      =   models.CharField(max_length=250)
@@ -62,7 +62,7 @@ class UnidadDeTrabajo(models.Model):
     puntos_metodologia  = models.ManyToManyField(PuntoMetodologico)
     evaluaciones        = models.ManyToManyField(Evaluacion)
     recursos            = models.ManyToManyField(RecursoDidactico)
-    mecanismos          = models.ManyToManyField(MecanismoEvaluacion)
+    instrumentos        = models.ManyToManyField(InstrumentoEvaluacion)
     procedimientos      = models.ManyToManyField(ProcedimientoEvaluacion)
     criterios           = models.ManyToManyField(CriterioDeEvaluacion, through="Interviene")
     class Meta:
@@ -71,7 +71,12 @@ class UnidadDeTrabajo(models.Model):
         
     def __str__(self):
         return self.nombre
-    
+
+class Calificador(models.Model):
+    texto              = models.CharField(max_length=180)
+    class Meta:
+        db_table="calificadores"
+        verbose_name_plural = "Calificadores"
 
 #Usado para indicar que en una unidad de trabajo
 #intervienen uno o mas criterios de evaluacion
@@ -81,6 +86,10 @@ class Interviene(models.Model):
     unidad_de_trabajo = models.ForeignKey ( UnidadDeTrabajo, on_delete=models.CASCADE )
     es_criterio_minimo = models.BooleanField()
     ponderacion = models.IntegerField()
+    calificador = models.ForeignKey ( Calificador, on_delete = models.CASCADE )
+    class Meta:
+        db_table="criterios_unidades_trabajo"
+        verbose_name_plural = "Criterios en UT"
         
 class Programacion(models.Model):
     nombre      =   models.CharField(max_length=240)
