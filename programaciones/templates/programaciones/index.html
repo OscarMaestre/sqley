@@ -1,0 +1,11 @@
+{% extends "programaciones/base.html" %}
+{% block contenido %}
+<h1>Elige una opción</h1>
+
+<ul>
+    <li><a href="">Crear una programación nueva</a></li>
+    {%for p in programaciones%}
+    <li><a href="{% url 'programaciones:editar' p.id %}">Editar '{{p.nombre}}'</a></li>
+    {%endfor%}
+</ul>
+{% endblock %}

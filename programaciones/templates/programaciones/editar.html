@@ -1,0 +1,28 @@
+{% extends "programaciones/base.html" %}
+{% block contenido %}
+<h1>Editando '{{nombre_programacion}}'</h1>
+
+<div class="mensaje_error"></div>
+<form action="{% url 'programaciones:editar' id_programacion %}" method="post">
+    {% csrf_token %}
+<table>
+{{formulario}}
+
+</table>
+<input type="submit" value="Guardar cambios">
+</form>
+
+<br/>
+También puedes:
+
+<ul>
+    {% for m in modulos%}
+    <li>
+        <a href="{% url 'programaciones:editar_objetivos_generales' id_programacion m.id %}">
+            Editar los objetivos generales de esta programación con {{m.curso.ciclo}}
+        </a>
+    </li>
+    {%endfor%}
+</ul>
+
+{% endblock %}

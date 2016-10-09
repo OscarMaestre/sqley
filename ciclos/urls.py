@@ -17,7 +17,9 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from reparto import urls
+from programaciones import urls
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^reparto/', include('reparto.urls')),
+    url(r'^programaciones/', include ('programaciones.urls'))
 ]
