@@ -29,18 +29,30 @@ class Grupo ( models.Model ):
     class Meta:
         db_table="grupos"
         
-
+class EspecialidadProfesor ( models.Model ):
+    ESPECIALIDADES = [ ("PS", "Prof. Secundaria"),
+                        ("PT", "Prof. Tecnico") ]
+    especialidad = models.CharField ( max_length = 30, choices = ESPECIALIDADES )
+    def __str__(self):
+        return self.especialidad
+    class Meta:
+        db_table="especialidesprofesorado"
+        verbose_name_plural = "Especialidades"
         
 class Profesor ( models.Model ):
     nombre = models.CharField( max_length = 20 )
     horas_minimas = models.IntegerField()
     num_posicion=models.IntegerField()
+    especialidad = models.ForeignKey ( EspecialidadProfesor )
     def to_java(self):
         inicializacion_java="""
         Profesor m{0} = new Profesor({0}, {1}, {2},\"{3}\", \"{4}\")""".format(self.id, self.nombre, self.horas_minimas)
         return inicializacion_java
+    def __str__(self):
+        return self.nombre
     class Meta:
         db_table="profesores"
+        verbose_name_plural = "Profesores"
         
 class Modulo( models.Model ):
     nombre          =   models.CharField ( max_length=140 )

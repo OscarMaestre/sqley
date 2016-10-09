@@ -1,5 +1,5 @@
 from django.db import models
-from gestionbd.models import Modulo, CriterioDeEvaluacion
+from gestionbd.models import Modulo, CriterioDeEvaluacion, Profesor
 # Create your models here.
 
 
@@ -95,6 +95,7 @@ class Programacion(models.Model):
     nombre      =   models.CharField(max_length=240)
     modulo      =   models.ManyToManyField ( Modulo )
     unidades    =   models.ManyToManyField ( UnidadDeTrabajo )
+    profesor    =   models.ForeignKey ( Profesor )
     class Meta:
         db_table="programaciones"
         verbose_name_plural = "Programaciones"
