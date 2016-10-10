@@ -276,8 +276,7 @@ Informática</b></span></font></font></p>
 			FORMATIVO</b></span></font></font></p>
 		</td>
 		<td width="376" bgcolor="#ffffff" style="border: 1px solid #00000a; padding: 0cm 0.19cm">
-			<p><font face="Trebuchet MS, serif"><font size="2" style="font-size: 11pt"><span lang="es-ES">Desarrollo
-			de Aplicaciones Multiplataforma</span></font></font></p>
+			<p><font face="Trebuchet MS, serif"><font size="2" style="font-size: 11pt"><span lang="es-ES">{{nombre_ciclo_formativo}}</span></font></font></p>
 		</td>
 	</tr>
 	<tr valign="top">
@@ -285,8 +284,7 @@ Informática</b></span></font></font></p>
 			<p><font face="Trebuchet MS, serif"><font size="2" style="font-size: 11pt"><span lang="es-ES"><b>PROFESOR</b></span></font></font></p>
 		</td>
 		<td width="376" bgcolor="#ffffff" style="border: 1px solid #00000a; padding: 0cm 0.19cm">
-			<p><font face="Trebuchet MS, serif"><font size="2" style="font-size: 11pt"><span lang="es-ES">Isabel
-			Guerrero Amado</span></font></font></p>
+			<p><font face="Trebuchet MS, serif"><font size="2" style="font-size: 11pt"><span lang="es-ES">{{nombre_profesor}}</span></font></font></p>
 		</td>
 	</tr>
 	<tr valign="top">
@@ -295,7 +293,7 @@ Informática</b></span></font></font></p>
 			 HORAS TOTALES</b></span></font></font></p>
 		</td>
 		<td width="376" bgcolor="#ffffff" style="border: 1px solid #00000a; padding: 0cm 0.19cm">
-			<p><font face="Trebuchet MS, serif"><font size="2" style="font-size: 11pt"><span lang="es-ES">185</span></font></font></p>
+			<p><font face="Trebuchet MS, serif"><font size="2" style="font-size: 11pt"><span lang="es-ES">{{horas_anuales_modulo}}</span></font></font></p>
 		</td>
 	</tr>
 	<tr valign="top">
@@ -304,7 +302,7 @@ Informática</b></span></font></font></p>
 			HORAS SEMANALES</b></span></font></font></p>
 		</td>
 		<td width="376" bgcolor="#ffffff" style="border: 1px solid #00000a; padding: 0cm 0.19cm">
-			<p><font face="Trebuchet MS, serif"><font size="2" style="font-size: 11pt"><span lang="es-ES">6</span></font></font></p>
+			<p><font face="Trebuchet MS, serif"><font size="2" style="font-size: 11pt"><span lang="es-ES">{{horas_semanales_modulo}}</span></font></font></p>
 		</td>
 	</tr>
 	<tr valign="top">
@@ -313,7 +311,7 @@ Informática</b></span></font></font></p>
 			HORAS PÉRDIDA DERECHO EVAL. CONTINUA</b></span></font></font></p>
 		</td>
 		<td width="376" bgcolor="#ffffff" style="border: 1px solid #00000a; padding: 0cm 0.19cm">
-			<p><font face="Trebuchet MS, serif"><font size="2" style="font-size: 11pt"><span lang="es-ES">37</span></font></font></p>
+			<p><font face="Trebuchet MS, serif"><font size="2" style="font-size: 11pt"><span lang="es-ES">{{horas_perdida_evaluacion}}</span></font></font></p>
 		</td>
 	</tr>
 </table>
@@ -347,24 +345,13 @@ a Índice</span></font></font></a></u></span></font></p>
 Real Decreto 450/2010, de 16 de abril enumera los siguientes
 objetivos generales para este módulo:</span></font></font></p>
 <ol type="a">
+	{%for o in objetivos_generales_modulo%}
 	<li><p align="justify" style="margin-bottom: 0cm; line-height: 100%; widows: 0; orphans: 0">
-	<font face="Trebuchet MS, serif"><font size="2" style="font-size: 11pt"><span lang="es-ES">Interpretar
-	el diseño lógico de bases de datos, analizando y cumpliendo las
-	especificaciones relativas a su aplicación, para gestionar bases de
-	datos.</span></font></font></p>
-	<li><p align="justify" style="margin-bottom: 0cm; line-height: 100%; widows: 0; orphans: 0">
-	<font face="Trebuchet MS, serif"><font size="2" style="font-size: 11pt"><span lang="es-ES">Seleccionar
-	y emplear lenguajes, herramientas y librerías, interpretando las
-	especificaciones para desarrollar aplicaciones multiplataforma con
-	acceso a bases de datos.</span></font></font></p>
-	<li><p align="justify" style="margin-bottom: 0cm; line-height: 100%; widows: 0; orphans: 0">
-	<font face="Trebuchet MS, serif"><font size="2" style="font-size: 11pt"><span lang="es-ES">Gestionar
-	la información almacenada, planificando e implementando sistemas de
-	formularios e informes para desarrollar aplicaciones de gestión.</span></font></font></p>
-	<li><p align="justify" style="margin-bottom: 0cm; line-height: 100%">
-	<font face="Trebuchet MS, serif"><font size="2" style="font-size: 11pt"><span lang="es-ES">Realizar
-	consultas, analizando y evaluando su alcance, para gestionar la
-	información almacenada en sistemas ERP-CRM.</span></font></font></p>
+	<font face="Trebuchet MS, serif"><font size="2" style="font-size: 11pt"><span lang="es-ES">
+	{{ o.texto }} (Objetivo {{o.letra}})
+	</span></font></font></p>
+	{%endfor%}
+	
 </ol>
 <p lang="es-ES" class="western" style="margin-bottom: 0cm; line-height: 100%">
 <br>
@@ -415,12 +402,7 @@ competencia general de este título consiste en:</span></font></font></p>
 <br>
 </p>
 <p class="western" align="justify" style="margin-left: 1.25cm; margin-bottom: 0cm; line-height: 100%; widows: 0; orphans: 0">
-<font face="Trebuchet MS, serif"><font size="2" style="font-size: 11pt"><span lang="es-ES"><i>Desarrollar,
-implantar, documentar y mantener aplicaciones informáticas
-multiplataforma, utilizando tecnologías y entornos de desarrollo
-específicos, garantizando el acceso a los datos de forma segura y
-cumpliendo los criterios de «usabilidad» y calidad exigidas en los
-estándares establecidos</i></span></font></font><font face="Trebuchet MS, serif"><font size="2" style="font-size: 11pt"><span lang="es-ES">.</span></font></font></p>
+<font face="Trebuchet MS, serif"><font size="2" style="font-size: 11pt"><span lang="es-ES"><i>{{competencia_general_ciclo.texto}}</i></span></font></font><font face="Trebuchet MS, serif"><font size="2" style="font-size: 11pt"><span lang="es-ES">.</span></font></font></p>
 <p lang="es-ES" class="western" align="justify" style="margin-bottom: 0cm; line-height: 100%; widows: 0; orphans: 0">
 <br>
 </p>

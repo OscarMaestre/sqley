@@ -1,9 +1,9 @@
 {% extends "programaciones/base.html" %}
 {% block contenido %}
-<h1>Editando '{{nombre_programacion}}'</h1>
+<h1>Editando '{{nombre_programacion}}' para ciclo {{nombre_ciclo}}</h1>
 
 <div class="mensaje_error"></div>
-<form action="{% url 'programaciones:editar_objetivos_generales' id_programacion id_modulo%}" method="post">
+<form action="{% url 'programaciones:editar_objetivos_generales' id_programacion %}" method="post">
     {% csrf_token %}
 <table>
 {{formulario}}

@@ -79,12 +79,19 @@ class Modulo( models.Model ):
 class Competencia ( models.Model):
     identificador   = models.CharField(max_length=2)
     texto           = models.CharField (max_length=240)
-    
     ciclo           = models.ForeignKey ( Ciclo )
     class Meta:
         db_table="competencias"
         verbose_name_plural = "Competencias"
     
+class CompetenciaGeneral ( models.Model ):
+    texto           = models.CharField (max_length=512)
+    ciclo           = models.ForeignKey ( Ciclo )
+    def __str__(self):
+        return self.texto
+    class Meta:
+        db_table="competenciasgenerales"
+        verbose_name_plural = "Competencias Generales"
     
 class CualificacionProfesional ( models.Model ):
     identificador   =   models.CharField(max_length=2)
@@ -150,7 +157,7 @@ class ObjetivoGeneral ( models.Model ):
     texto   =   models.CharField(max_length=2048)
     ciclo   =   models.ForeignKey ( Ciclo )
     def __str__(self):
-        return self.letra + ") " + self.texto
+        return self.ciclo.abreviatura + " " + self.letra + ") " + self.texto
     class Meta:
         db_table="objetivosgenerales"
         verbose_name_plural = "Objetivos Generales de Ciclo"

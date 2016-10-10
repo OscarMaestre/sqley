@@ -5,5 +5,6 @@ delete from modulos;
 delete from resultados_de_aprendizaje;
 delete from cualificaciones_profesionales;
 delete from objetivosgenerales;
+delete from competenciasgenerales;
 delete from unidades_de_competencia;
 delete from unidades_de_competencia_cualificacion;

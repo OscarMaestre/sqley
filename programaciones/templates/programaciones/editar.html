@@ -16,13 +16,11 @@
 También puedes:
 
 <ul>
-    {% for m in modulos%}
     <li>
-        <a href="{% url 'programaciones:editar_objetivos_generales' id_programacion m.id %}">
-            Editar los objetivos generales de esta programación con {{m.curso.ciclo}}
+        <a href="{% url 'programaciones:editar_objetivos_generales' id_programacion %}">
+            Editar los objetivos generales de esta programación.
         </a>
     </li>
-    {%endfor%}
 </ul>
 
 {% endblock %}

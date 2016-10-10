@@ -104,6 +104,7 @@ def procesar_archivo():
     y=yaml.safe_load(archivo_ciclo)
     
     nombre_ciclo= y["ciclo"]["nombre"]
+    
     nombre_pasado=sys.argv[2]
     if nombre_pasado=="DAM" or nombre_pasado=="DAW" or nombre_pasado=="ASIR" or nombre_pasado=="DAWE":
         nivel=3
@@ -159,6 +160,9 @@ def procesar_archivo():
         grupo_daw1_elearning.save()
         grupo_daw2_elearning.save()
     
+    competencia_general = y["ciclo"]["competencia_general"]
+    comp_general = CompetenciaGeneral ( texto=competencia_general, ciclo=el_ciclo)
+    comp_general.save()
     for c in y["ciclo"]["competencias"]:
         (ini_id, fin_id, id)=extraer_identificador(c)
         id=str(id)

@@ -66,6 +66,8 @@ class UnidadDeTrabajo(models.Model):
 
 class Calificador(models.Model):
     texto              = models.CharField(max_length=180)
+    def __str__(self):
+        return self.texto
     class Meta:
         db_table="calificadores"
         verbose_name_plural = "Calificadores"
@@ -85,12 +87,22 @@ class Interviene(models.Model):
         
 class Programacion(models.Model):
     nombre      =   models.CharField(max_length=240)
-    modulo      =   models.ManyToManyField ( Modulo )
     profesor    =   models.ForeignKey ( Profesor )
-    objetivos   =   models.ManyToManyField (ObjetivoGeneral)
+    modulo      =   models.ManyToManyField ( Modulo )
     def __str__(self):
         return self.nombre
     
     class Meta:
         db_table="programaciones"
         verbose_name_plural = "Programaciones"
+       
+       
+class ObjetivosModulo(models.Model):
+    modulo          = models.ForeignKey ( Modulo )
+    objetivos       = models.ManyToManyField ( ObjetivoGeneral )
+    def __str__(self):
+        return "Objetivos:" + self.modulo.curso.ciclo.abreviatura + " " +self.modulo.nombre
+    class Meta:
+        db_table="objetivosmodulo"
+        verbose_name_plural = "Objetivos de modulo"
+    
