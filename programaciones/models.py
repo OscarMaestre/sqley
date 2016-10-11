@@ -1,5 +1,5 @@
 from django.db import models
-from gestionbd.models import Modulo, CriterioDeEvaluacion, Profesor, ObjetivoGeneral
+from gestionbd.models import Modulo, CriterioDeEvaluacion, Profesor, ObjetivoGeneral, Competencia
 # Create your models here.
 
 
@@ -105,4 +105,13 @@ class ObjetivosModulo(models.Model):
     class Meta:
         db_table="objetivosmodulo"
         verbose_name_plural = "Objetivos de modulo"
+    
+class CompetenciasModulo(models.Model):
+    modulo          = models.ForeignKey ( Modulo )
+    competencias    = models.ManyToManyField ( Competencia )
+    def __str__(self):
+        return "Competencias:" + self.modulo.curso.ciclo.abreviatura + " " +self.modulo.nombre
+    class Meta:
+        db_table="competenciasmodulo"
+        verbose_name_plural = "Competencias del modulo"
     

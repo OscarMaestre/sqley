@@ -17,6 +17,11 @@ def get_objetivos(modulo_pasado):
     objetivos=ObjetivosModulo.objects.filter(modulo=modulo_pasado)
     
     return (objetivos[0].objetivos.all())
+
+def get_competencias(modulo_pasado):
+    competencias=CompetenciasModulo.objects.filter(modulo=modulo_pasado)
+    
+    return (competencias[0].competencias.all())
     
     
 progs=Programacion.objects.all()
@@ -44,8 +49,8 @@ for p in progs:
         diccionario["objetivos_generales_modulo"] = get_objetivos ( modulo )
         print (diccionario["objetivos_generales_modulo"])
         c_general=modulo.curso.ciclo.competenciageneral_set.all()
-        print (c_general[0])
         diccionario["competencia_general_ciclo"]=c_general[0]
+        diccionario["competencias_modulo"]=get_competencias ( modulo )
         nombre_fichero_programacion = NOMBRE_FICHERO.format(nombre_grupo, nombre_modulo, autor)
         fichero=open(nombre_fichero_programacion, "w")
         resultado=render_to_string("programaciones/plantilla_programacion.html", diccionario)

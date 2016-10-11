@@ -402,7 +402,7 @@ competencia general de este título consiste en:</span></font></font></p>
 <br>
 </p>
 <p class="western" align="justify" style="margin-left: 1.25cm; margin-bottom: 0cm; line-height: 100%; widows: 0; orphans: 0">
-<font face="Trebuchet MS, serif"><font size="2" style="font-size: 11pt"><span lang="es-ES"><i>{{competencia_general_ciclo.texto}}</i></span></font></font><font face="Trebuchet MS, serif"><font size="2" style="font-size: 11pt"><span lang="es-ES">.</span></font></font></p>
+<font face="Trebuchet MS, serif"><font size="2" style="font-size: 11pt"><span lang="es-ES"><i>{{competencia_general_ciclo.texto}</i></span></font></font><font face="Trebuchet MS, serif"><font size="2" style="font-size: 11pt"><span lang="es-ES">.</span></font></font></p>
 <p lang="es-ES" class="western" align="justify" style="margin-bottom: 0cm; line-height: 100%; widows: 0; orphans: 0">
 <br>
 </p>
@@ -433,28 +433,13 @@ competencias profesionales, personales y sociales según Real Decreto
 450/2010, de 16 de abril de este título son las que se relacionan a
 continuación:</span></font></font></p>
 <ol type="a">
+	{% for c in competencias_modulo %}
 	<li><p align="justify" style="margin-bottom: 0cm; line-height: 100%; widows: 0; orphans: 0">
-	<font face="Trebuchet MS, serif"><font size="2" style="font-size: 11pt"><span lang="es-ES">Aplicar
-	técnicas y procedimientos relacionados con la seguridad en
-	sistemas, servicios y aplicaciones, cumpliendo el plan de seguridad.</span></font></font></p>
-	<li><p align="justify" style="margin-bottom: 0cm; line-height: 100%; widows: 0; orphans: 0">
-	<font face="Trebuchet MS, serif"><font size="2" style="font-size: 11pt"><span lang="es-ES">Gestionar
-	bases de datos, interpretando su diseño lógico y verificando
-	integridad, consistencia, seguridad y accesibilidad de los datos.</span></font></font></p>
-	<li><p align="justify" style="margin-bottom: 0cm; line-height: 100%; widows: 0; orphans: 0">
-	<font face="Trebuchet MS, serif"><font size="2" style="font-size: 11pt"><span lang="es-ES">Desarrollar
-	aplicaciones multiplataforma con acceso a bases de datos utilizando
-	lenguajes, librerías y herramientas adecuados a las
-	especificaciones.</span></font></font></p>
-	<li><p align="justify" style="margin-bottom: 0cm; line-height: 100%; widows: 0; orphans: 0">
-	<font face="Trebuchet MS, serif"><font size="2" style="font-size: 11pt"><span lang="es-ES">p)
-	Gestionar la información almacenada en sistemas ERP-CRM
-	garantizando su integridad.</span></font></font></p>
-	<li><p align="justify" style="margin-bottom: 0cm; line-height: 100%">
-	<font face="Trebuchet MS, serif"><font size="2" style="font-size: 11pt"><span lang="es-ES">t)
-	Establecer vías eficaces de relación profesional y comunicación
-	con sus superiores, compañeros y subordinados, respetando la
-	autonomía y competencias de las distintas personas.</span></font></font></p>
+	<font face="Trebuchet MS, serif"><font size="2" style="font-size: 11pt"><span lang="es-ES">
+	{{c.texto}}
+	</span></font></font></p>
+	{% endfor %}
+	
 </ol>
 <p lang="es-ES" class="western" align="justify" style="margin-bottom: 0cm; line-height: 100%">
 <br>

@@ -80,6 +80,8 @@ class Competencia ( models.Model):
     identificador   = models.CharField(max_length=2)
     texto           = models.CharField (max_length=240)
     ciclo           = models.ForeignKey ( Ciclo )
+    def __str__(self):
+        return self.ciclo.abreviatura + " " + self.texto
     class Meta:
         db_table="competencias"
         verbose_name_plural = "Competencias"
