@@ -402,7 +402,7 @@ competencia general de este título consiste en:</span></font></font></p>
 <br>
 </p>
 <p class="western" align="justify" style="margin-left: 1.25cm; margin-bottom: 0cm; line-height: 100%; widows: 0; orphans: 0">
-<font face="Trebuchet MS, serif"><font size="2" style="font-size: 11pt"><span lang="es-ES"><i>{{competencia_general_ciclo.texto}</i></span></font></font><font face="Trebuchet MS, serif"><font size="2" style="font-size: 11pt"><span lang="es-ES">.</span></font></font></p>
+<font face="Trebuchet MS, serif"><font size="2" style="font-size: 11pt"><span lang="es-ES"><i>{{competencia_general_ciclo.texto}}</i></span></font></font><font face="Trebuchet MS, serif"><font size="2" style="font-size: 11pt"><span lang="es-ES">.</span></font></font></p>
 <p lang="es-ES" class="western" align="justify" style="margin-bottom: 0cm; line-height: 100%; widows: 0; orphans: 0">
 <br>
 </p>
@@ -458,56 +458,36 @@ CUALIFICACIONES PROFESIONALES DEL CICLO:</b></u></span></font></font></p>
 			PROFESIONALES COMPLETAS</b></span></font></font></p>
 		</td>
 	</tr>
+	{%for c in cualificaciones_completas%}
 	<tr>
 		<td width="595" valign="top" bgcolor="#ffffff" style="border: 1px solid #00000a; padding: 0cm 0.19cm">
-			<p class="western" style="widows: 0; orphans: 0"><font face="Trebuchet MS, serif"><font size="2" style="font-size: 9pt"><span lang="es-ES">a)
-			Programación en lenguajes estructurados de aplicaciones de
-			gestión IFC155_3 (R.D. 1087/2005, de 16 de septiembre),</span></font></font></p>
+			<p class="western" style="widows: 0; orphans: 0"><font face="Trebuchet MS, serif"><font size="2" style="font-size: 9pt"><span lang="es-ES">{{c.cualificacion_profesional.identificador}}) {{c.cualificacion_profesional.texto}}</span></font></font></p>
 		</td>
+		<tr>
+			<td width="595" valign="top" bgcolor="#f2dbdb" style="border: 1px solid #00000a; padding: 0cm 0.19cm">
+				<p class="western" style="widows: 0; orphans: 0"><font face="Trebuchet MS, serif"><font size="2" style="font-size: 9pt"><span lang="es-ES">Unidades
+				de Competencia para {{c.cualificacion_profesional.identificador}}</span></font></font></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="595" valign="top" bgcolor="#ffffff" style="border: 1px solid #00000a; padding: 0cm 0.19cm">
+				<ul>
+				{%for uc in c.cualificacion_profesional.unidaddecompetencia_set.all%}
+					<li><p style="margin-bottom: 0cm; widows: 0; orphans: 0"><font face="Trebuchet MS, serif"><font size="2" style="font-size: 9pt"><span lang="es-ES">{{uc.identificador}}:{{uc.texto}}</span></font></font></p>
+				{%endfor %}
+					
+				</ul>
+			</td>
+		</tr>
+			
 	</tr>
-	<tr>
-		<td width="595" valign="top" bgcolor="#f2dbdb" style="border: 1px solid #00000a; padding: 0cm 0.19cm">
-			<p class="western" style="widows: 0; orphans: 0"><font face="Trebuchet MS, serif"><font size="2" style="font-size: 9pt"><span lang="es-ES">Unidades
-			de Competencia</span></font></font></p>
-		</td>
-	</tr>
-	<tr>
-		<td width="595" valign="top" bgcolor="#ffffff" style="border: 1px solid #00000a; padding: 0cm 0.19cm">
-			<ul>
-				<li><p style="margin-bottom: 0cm; widows: 0; orphans: 0"><font face="Trebuchet MS, serif"><font size="2" style="font-size: 9pt"><span lang="es-ES">UC0223_3:
-				Configurar y explotar sistemas informáticos.</span></font></font></p>
-				<li><p style="margin-bottom: 0cm; widows: 0; orphans: 0"><font face="Trebuchet MS, serif"><font size="2" style="font-size: 9pt"><span lang="es-ES">UC0226_3:
-				Programar bases de datos relacionales.</span></font></font></p>
-				<li><p style="widows: 0; orphans: 0"><font face="Trebuchet MS, serif"><font size="2" style="font-size: 9pt"><span lang="es-ES">UC0494_3:
-				Desarrollar componentes software en lenguajes de programación
-				estructurada</span></font></font></p>
-			</ul>
-		</td>
-	</tr>
-	<tr>
-		<td width="595" valign="top" bgcolor="#ffffff" style="border: 1px solid #00000a; padding: 0cm 0.19cm">
-			<p class="western" style="widows: 0; orphans: 0"><font face="Trebuchet MS, serif"><font size="2" style="font-size: 9pt"><span lang="es-ES">b)
-			Programación con lenguajes orientados a objetos y bases de datos
-			relacionales IFC080_3 (R.D. 295/2004, de 20 de febrero)</span></font></font></p>
-		</td>
-	</tr>
-	<tr>
-		<td width="595" valign="top" bgcolor="#ffffff" style="border: 1px solid #00000a; padding: 0cm 0.19cm">
-			<ul>
-				<li><p style="margin-bottom: 0cm; widows: 0; orphans: 0"><font face="Trebuchet MS, serif"><font size="2" style="font-size: 9pt"><span lang="es-ES">UC0223_3:
-				Configurar y explotar sistemas informáticos.</span></font></font></p>
-				<li><p style="margin-bottom: 0cm; widows: 0; orphans: 0"><font face="Trebuchet MS, serif"><font size="2" style="font-size: 9pt"><span lang="es-ES">UC0226_3:
-				Programar bases de datos relacionales.</span></font></font></p>
-				<li><p style="widows: 0; orphans: 0"><font face="Trebuchet MS, serif"><font size="2" style="font-size: 9pt"><span lang="es-ES">UC0227_3:
-				Desarrollar componentes software en lenguajes de programación
-				orientados a objetos.</span></font></font></p>
-			</ul>
-		</td>
-	</tr>
+	{%endfor%}
 </table>
 <p lang="es-ES" class="western" style="margin-left: 1.25cm; margin-bottom: 0cm; line-height: 100%; widows: 0; orphans: 0">
 <br>
 </p>
+
+
 <table width="611" cellpadding="7" cellspacing="0">
 	<col width="595">
 	<tr>
@@ -516,46 +496,33 @@ CUALIFICACIONES PROFESIONALES DEL CICLO:</b></u></span></font></font></p>
 			PROFESIONALES INCOMPLETAS</b></span></font></font></p>
 		</td>
 	</tr>
+	{%for ci in cualificaciones_incompletas%}
 	<tr>
 		<td width="595" valign="top" bgcolor="#ffffff" style="border: 1px solid #00000a; padding: 0cm 0.19cm">
-			<p class="western" style="widows: 0; orphans: 0"><font face="Trebuchet MS, serif"><font size="2" style="font-size: 9pt"><span lang="es-ES">a)
-			Administración y programación en sistemas de planificación de
-			recursos empresariales y de gestión de relaciones con clientes
-			IFC 363_3 (R.D. 1701/2007, de 14 de diciembre)</span></font></font></p>
+			<p class="western" style="widows: 0; orphans: 0"><font face="Trebuchet MS, serif"><font size="2" style="font-size: 9pt"><span lang="es-ES">{{ci.cualificacion_profesional.identificador}}) {{ci.cualificacion_profesional.texto}}</span></font></font></p>
 		</td>
+		<tr>
+			<td width="595" valign="top" bgcolor="#f2dbdb" style="border: 1px solid #00000a; padding: 0cm 0.19cm">
+				<p class="western" style="widows: 0; orphans: 0"><font face="Trebuchet MS, serif"><font size="2" style="font-size: 9pt"><span lang="es-ES">Unidades
+				de Competencia para {{ci.cualificacion_profesional.identificador}}</span></font></font></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="595" valign="top" bgcolor="#ffffff" style="border: 1px solid #00000a; padding: 0cm 0.19cm">
+				<ul>
+				
+				{%for uci in ci.cualificacion_profesional.unidaddecompetencia_set.all%}
+					<li><p style="margin-bottom: 0cm; widows: 0; orphans: 0"><font face="Trebuchet MS, serif"><font size="2" style="font-size: 9pt"><span lang="es-ES">{{uci.identificador}}:{{uci.texto}}</span></font></font></p>
+				{%endfor %}
+					
+				</ul>
+			</td>
+		</tr>
+			
 	</tr>
-	<tr>
-		<td width="595" valign="top" bgcolor="#f2dbdb" style="border: 1px solid #00000a; padding: 0cm 0.19cm">
-			<p class="western" style="widows: 0; orphans: 0"><font face="Trebuchet MS, serif"><font size="2" style="font-size: 9pt"><span lang="es-ES">Unidades
-			de Competencia</span></font></font></p>
-		</td>
-	</tr>
-	<tr>
-		<td width="595" valign="top" bgcolor="#ffffff" style="border: 1px solid #00000a; padding: 0cm 0.19cm">
-			<ul>
-				<li><p style="widows: 0; orphans: 0"><font face="Trebuchet MS, serif"><font size="2" style="font-size: 9pt"><span lang="es-ES">UC1213_3:
-				Instalar y configurar sistemas de planificación de recursos
-				empresariales y de gestión de relaciones con clientes.</span></font></font></p>
-			</ul>
-		</td>
-	</tr>
-	<tr>
-		<td width="595" valign="top" bgcolor="#ffffff" style="border: 1px solid #00000a; padding: 0cm 0.19cm">
-			<p class="western" style="widows: 0; orphans: 0"><font face="Trebuchet MS, serif"><font size="2" style="font-size: 9pt"><span lang="es-ES">B)
-			Programación de sistemas informáticos IFC303_3 (R.D. 1201/2007,
-			de 14 de septiembre)</span></font></font></p>
-		</td>
-	</tr>
-	<tr>
-		<td width="595" valign="top" bgcolor="#ffffff" style="border: 1px solid #00000a; padding: 0cm 0.19cm">
-			<ul>
-				<li><p style="widows: 0; orphans: 0"><font face="Trebuchet MS, serif"><font size="2" style="font-size: 9pt"><span lang="es-ES">UC0964_3:
-				Crear elementos software para la gestión del sistema y sus
-				recursos.</span></font></font></p>
-			</ul>
-		</td>
-	</tr>
+	{%endfor%}
 </table>
+
 <p class="western" align="right" style="margin-bottom: 0cm; line-height: 100%">
 <font color="#0000ff"><span lang="zxx"><u><a href="#INICIO"><font face="Trebuchet MS, serif"><font size="2" style="font-size: 11pt"><span lang="es-ES">Ir
 a Índice</span></font></font></a></u></span></font></p>

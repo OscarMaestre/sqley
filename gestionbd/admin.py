@@ -12,6 +12,7 @@ admin.site.register ( Contenido )
 admin.site.register ( PuntoDeContenido )
 admin.site.register ( UnidadDeCompetencia )
 admin.site.register ( CualificacionProfesional )
+admin.site.register ( CicloTieneCualificacion )
 admin.site.register ( ObjetivoGeneral )
 
 

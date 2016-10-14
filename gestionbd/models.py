@@ -110,6 +110,8 @@ class CicloTieneCualificacion ( models.Model ):
     ciclo = models.ForeignKey(Ciclo)
     cualificacion_profesional = models.ForeignKey ( CualificacionProfesional )
     es_completa = models.BooleanField()
+    def __str__(self):
+        return self.cualificacion_profesional.identificador + str(self.es_completa)
     class Meta:
         db_table="ciclo_tiene_cualificacion"
         verbose_name_plural = "Ciclo y cualificaciones"
