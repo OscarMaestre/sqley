@@ -142,7 +142,8 @@ class CriterioDeEvaluacion ( models.Model ):
     letra                       =   models.CharField ( max_length= 2)
     resultado_de_aprendizaje    =   models.ForeignKey ( ResultadoDeAprendizaje )
     def __str__(self ):
-        return self.texto
+        cod_curso=self.resultado_de_aprendizaje.modulo.curso.nombre_curso
+        return cod_curso+") " + self.texto
     class Meta:
         db_table="criterios_de_evaluacion"
         verbose_name_plural = "Criterios de evaluacion"

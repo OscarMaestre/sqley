@@ -11,7 +11,7 @@ class ProgramacionForm ( ModelForm ):
         model = Programacion
         fields = ["nombre",  "profesor"]
 
-        
+
 
 def index ( peticion ):
     progs=Programacion.objects.all()
