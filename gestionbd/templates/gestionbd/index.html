@@ -1,0 +1,12 @@
+{% extends "gestionbd/base.html"%}
+
+{%block contenido%}
+<h1>Módulos disponibles</h1>
+<ul>
+{%for m in modulos%}
+<li>
+    <a href='{% url "gestionbd:ver" m.id %}'>{{m.nombre}} ({{m.curso.ciclo}})</a>
+</li>
+{%endfor%}
+</ul>
+{%endblock%}
