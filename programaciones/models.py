@@ -1,5 +1,5 @@
 from django.db import models
-from gestionbd.models import Modulo, CriterioDeEvaluacion, Profesor, ObjetivoGeneral, Competencia
+from gestionbd.models import Modulo, CriterioDeEvaluacion, Profesor, ObjetivoGeneral, Competencia, ResultadoDeAprendizaje, PuntoDeContenido, Contenido
 # Create your models here.
 
 
@@ -57,6 +57,9 @@ class UnidadDeTrabajo(models.Model):
     instrumentos        = models.ManyToManyField(InstrumentoEvaluacion)
     criterios           = models.ManyToManyField(CriterioDeEvaluacion, through="Interviene")
     programacion        = models.ForeignKey ( "Programacion")
+    resultado_aprendizaje=models.ManyToManyField ( ResultadoDeAprendizaje )
+    contenidos          = models.ManyToManyField ( Contenido )
+    puntos_contenido    = models.ManyToManyField ( PuntoDeContenido )
     class Meta:
         db_table="unidades_de_trabajo"
         verbose_name_plural = "Unidades de Trabajo"

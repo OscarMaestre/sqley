@@ -7,7 +7,8 @@ from .models import *
 
 
 control="""
-<input type="text" value="{0}" size="135" onclick="this.select();document.execCommand('copy');">
+<input type="text" value="{0}" size="135"
+    onfocus="this.select();document.execCommand('copy');">
 """
 
 def get_objetivos_generales_html(ciclo_pasado):
@@ -20,7 +21,7 @@ def get_objetivos_generales_html(ciclo_pasado):
 
 
 def get_competencias_html(ciclo_pasado):
-    resultado="<h2>Competencias profesionales del ciclo</h2>"
+    resultado="<h2>Competencias profesionales, pers y sociales del ciclo</h2>"
     competencias=Competencia.objects.filter(ciclo=ciclo_pasado)
     for c in competencias:
         resultado+=control.format(c.texto)
@@ -35,6 +36,8 @@ def get_competencias_generales_html(ciclo_pasado):
     return resultado
 
 
+def get_unidades_competencia_asociadas(cualificacion):
+    pass
 
 def get_cualificaciones_profesionales_html(ciclo_pasado, completas):
     if completas:
@@ -82,22 +85,38 @@ def get_contenidos_modulo(modulo_pasado):
     resultado="<h3>Contenidos para {0}</h3>".format(modulo_pasado.nombre)
     contenidos=Contenido.objects.filter(modulo=modulo_pasado)
     for c in contenidos:
-        resultado+=control.format(str(c.numero) + ") " + c.texto)
+        resultado+="<hr/>Contenido general<br/>"
+        #resultado+=control.format(str(c.numero) + ") " + c.texto)
+        resultado+=control.format(c.texto)
+        resultado+=get_punto_contenido ( c )
     return resultado
 
+def get_punto_contenido(contenido_pasado):
+    resultado="<h4>Puntos de contenido para {0}) {1}</h4>".format(
+        str(contenido_pasado.numero), contenido_pasado.texto
+    )
+    puntos_contenido=PuntoDeContenido.objects.filter(
+        contenido=contenido_pasado).order_by("num_orden")
+    for p in puntos_contenido:
+        resultado+=control.format(
+            p.texto
+        )
+    return resultado
 
 def get_resultados_aprendizaje_modulo(modulo_pasado):
     resultado="<h3>Resultados de aprendizaje para {0}</h3>".format(modulo_pasado.nombre)
     resultados_aprendizaje=ResultadoDeAprendizaje.objects.filter(modulo=modulo_pasado)
     for ra in resultados_aprendizaje:
         resultado+="<hr/><h4>Resultado</h4>"
-        resultado+=control.format(str(ra.numero) + ") " + ra.texto)
+        #resultado+=control.format(str(ra.numero) + ") " + ra.texto)
+        resultado+=control.format(ra.texto)
         crit_evaluacion=CriterioDeEvaluacion.objects.filter(
             resultado_de_aprendizaje=ra
         )
         resultado+="<h4>Criterios para {0}) {1}</h4>".format(ra.numero, ra.texto)
         for ce in crit_evaluacion:
-            resultado+=control.format(ce.letra+") "+ce.texto)
+            #resultado+=control.format(ce.letra+") "+ce.texto)
+            resultado+=control.format(ce.texto)
         
         
     return resultado

@@ -1,0 +1,11 @@
+{% extends "programaciones/base.html" %}
+{% block contenido %}
+<h1>Creando UT para {{nombre_programacion}}</h1>
+<form>
+    {%csrf_token%}
+    <table>
+    {{formulario}}
+    </table>
+</form>
+
+{% endblock %}

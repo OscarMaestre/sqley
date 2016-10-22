@@ -12,6 +12,33 @@ class ProgramacionForm ( ModelForm ):
         fields = ["nombre",  "profesor"]
 
 
+class UTForm ( ModelForm ):
+    def __init__(self,programacion,*args,**kwargs):
+        super (UTForm,self ).__init__(*args,**kwargs) # populates the post
+        resultados_aprendizaje_asociados=ResultadoDeAprendizaje.objects.filter(
+            modulo=programacion.modulo.all()
+        )
+        criterios_asociados=CriterioDeEvaluacion.objects.filter(
+            resultado_de_aprendizaje=resultados_aprendizaje_asociados
+        )
+        contenidos_asociados = Contenido.objects.filter(
+            modulo=programacion.modulo.all()
+        )
+        puntos_contenido_asociados = PuntoDeContenido.objects.filter(
+            contenido=contenidos_asociados
+        )
+        programacion_asociada=Programacion.objects.filter(nombre=programacion.nombre)
+        self.fields["resultado_aprendizaje"].queryset=resultados_aprendizaje_asociados
+        self.fields["criterios"].queryset = criterios_asociados
+        self.fields["contenidos"].queryset = contenidos_asociados
+        self.fields["puntos_contenido"].queryset=puntos_contenido_asociados
+        self.fields["programacion"].queryset=programacion_asociada
+        
+    class Meta:
+        model=UnidadDeTrabajo
+        fields=["numero", "sesiones", "evaluaciones", "recursos", "instrumentos",
+                "resultado_aprendizaje", "criterios", "contenidos", "puntos_contenido",
+                "programacion"]
 
 def index ( peticion ):
     progs=Programacion.objects.all()
@@ -65,3 +92,22 @@ def editar_objetivos_generales ( peticion, id_programacion ):
         return render (peticion,
                        "programaciones/editar_objetivos_generales.html",
                        contexto )
+    
+    
+def crear_ut(peticion, id_programacion):
+    programacion_asociada=Programacion.objects.get(pk=id_programacion)
+    contexto={
+        "nombre_programacion":programacion_asociada.nombre
+    }
+    if peticion.method=="POST":
+        form = UTForm ( peticion.POST, instance= programacion_asociada )
+        if form.is_valid():
+            form.save()
+            return crear_ut(peticion, id_peticion)
+    else:
+        form_ut=UTForm(programacion=programacion_asociada)
+        contexto["formulario"]=form_ut.as_table()
+        return render(peticion, "programaciones/crear_ut.html", contexto)
+        
+    
+    
