@@ -1,11 +1,12 @@
 {% extends "programaciones/base.html" %}
 {% block contenido %}
-<h1>Creando UT para {{nombre_programacion}}</h1>
-<form>
+<h1>Creando UT para {{programacion_asociada.nombre}} id {{programacion_asociada.id}}</h1>
+<form action="{%url 'programaciones:crear_ut' programacion_asociada.id %}" method="post">
     {%csrf_token%}
     <table>
     {{formulario}}
     </table>
+    <input type="submit" value="Grabar">
 </form>
 
 {% endblock %}

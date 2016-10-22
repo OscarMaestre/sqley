@@ -1,0 +1,13 @@
+{% extends "programaciones/base.html" %}
+{% block contenido %}
+<h1>Asignando criterios UT para {{unidad_asociada.nombre}}</h1
+También puedes ir a la <a>edición de criterios de esta programación</a>
+<form action="{%url 'programaciones:asignar_criterios' unidad_asociada.id %}" method="post">
+    {%csrf_token%}
+    <table>
+    {{formulario}}
+    </table>
+    <input type="submit" value="Grabar">
+</form>
+
+{% endblock %}
