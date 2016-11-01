@@ -79,6 +79,7 @@ def get_datos_modulo(modulo):
     resultado+=get_elementos_html(c)
     resultado+=get_contenidos_modulo(modulo)
     resultado+=get_resultados_aprendizaje_modulo(modulo)
+    resultado+=get_resultados_aprendizaje_modulo_tabla(modulo)
     return resultado
 
 def get_contenidos_modulo(modulo_pasado):
@@ -106,6 +107,7 @@ def get_punto_contenido(contenido_pasado):
 def get_resultados_aprendizaje_modulo(modulo_pasado):
     resultado="<h3>Resultados de aprendizaje para {0}</h3>".format(modulo_pasado.nombre)
     resultados_aprendizaje=ResultadoDeAprendizaje.objects.filter(modulo=modulo_pasado)
+    
     for ra in resultados_aprendizaje:
         resultado+="<hr/><h4>Resultado</h4>"
         #resultado+=control.format(str(ra.numero) + ") " + ra.texto)
@@ -119,6 +121,21 @@ def get_resultados_aprendizaje_modulo(modulo_pasado):
             resultado+=control.format(ce.texto)
         
         
+    return resultado
+
+
+def get_resultados_aprendizaje_modulo_tabla(modulo_pasado):
+    resultado="<h3>Resultados de aprendizaje para {0}(tabla)</h3>".format(modulo_pasado.nombre)
+    resultados_aprendizaje=ResultadoDeAprendizaje.objects.filter(modulo=modulo_pasado)
+    contador=1
+    resultado+="<table border='1'>"
+    for r in resultados_aprendizaje:
+        resultado+="<tr>"
+        resultado+="<td>R.A. "+str(contador)+"</td>"
+        resultado+="<td>"+r.texto+"</td>"
+        resultado+="</tr>"
+        contador+=1
+    resultado+="</table>"
     return resultado
 
 def cortar_elementos ( peticion ):
