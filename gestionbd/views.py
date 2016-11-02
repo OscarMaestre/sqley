@@ -78,8 +78,10 @@ def get_datos_modulo(modulo):
     resultado+="<h1>"+modulo.nombre+"</h1>"
     resultado+=get_elementos_html(c)
     resultado+=get_contenidos_modulo(modulo)
+    resultado+=get_contenidos_modulo_tabla(modulo)
     resultado+=get_resultados_aprendizaje_modulo(modulo)
     resultado+=get_resultados_aprendizaje_modulo_tabla(modulo)
+    resultado+=get_resultados_aprendizaje_con_criterios_modulo_tabla(modulo)
     return resultado
 
 def get_contenidos_modulo(modulo_pasado):
@@ -102,6 +104,24 @@ def get_punto_contenido(contenido_pasado):
         resultado+=control.format(
             p.texto
         )
+    return resultado
+
+def get_contenidos_modulo_tabla(modulo_pasado):
+    resultado="<h3>Contenidos para {0} (tabla)</h3>".format(modulo_pasado.nombre)
+    
+    contenidos=Contenido.objects.filter(modulo=modulo_pasado)
+    contador=1
+    for c in contenidos:
+        resultado+="Unidad "+str(contador) + " " + c.texto
+        contador=contador+1
+        resultado+="<br/><ul>"
+        puntos_contenido=PuntoDeContenido.objects.filter(
+            contenido=c).order_by("num_orden")
+        for p in puntos_contenido:
+            resultado+="<li>"
+            resultado+=p.texto
+            resultado+="</li>"
+        resultado+="</ul>"
     return resultado
 
 def get_resultados_aprendizaje_modulo(modulo_pasado):
@@ -137,6 +157,29 @@ def get_resultados_aprendizaje_modulo_tabla(modulo_pasado):
         contador+=1
     resultado+="</table>"
     return resultado
+
+
+def get_resultados_aprendizaje_con_criterios_modulo_tabla(modulo_pasado):
+    resultado="<h3>Resultados de aprendizaje para {0}(tabla)</h3>".format(modulo_pasado.nombre)
+    resultados_aprendizaje=ResultadoDeAprendizaje.objects.filter(modulo=modulo_pasado)
+    contador=1
+    resultado+="<table border='1'>"
+    for r in resultados_aprendizaje:
+        resultado+="<tr>"
+        resultado+="<td><b>"+str(contador)+":"+r.texto+"</b></td>"
+        crit_evaluacion=CriterioDeEvaluacion.objects.filter(
+            resultado_de_aprendizaje=resultados_aprendizaje
+        )
+        resultado+="</tr>"
+        for ce in crit_evaluacion:
+            resultado+="<tr>"
+            resultado+="<td>"+ce.letra+") " + ce.texto + "</td>"
+            resultado+="</tr>"
+        
+        contador+=1
+    resultado+="</ul>"
+    return resultado
+
 
 def cortar_elementos ( peticion ):
     ciclo=Ciclo.objects.all().order_by("nombre");
