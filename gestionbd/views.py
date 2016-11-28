@@ -1,7 +1,8 @@
 from django.shortcuts import render, render_to_response
 from django.template.loader import render_to_string
 from django.db.models.query_utils import Q
-from django.http import HttpResponse
+from django.core import serializers
+from django.http import HttpResponse, JsonResponse
 from .models import *
 # Create your views here.
 
@@ -180,6 +181,24 @@ def get_resultados_aprendizaje_con_criterios_modulo_tabla(modulo_pasado):
     resultado+="</ul>"
     return resultado
 
+def get_json_ciclos(peticion):
+    ciclos=Ciclo.objects.all().order_by("nombre")
+    json=serializers.serialize("json", ciclos)
+    return HttpResponse("datos_ciclos="+json, content_type="application/json")
+
+def get_json_modulo(peticion, ciclo_id):
+    ciclo_pasado=Ciclo.objects.filter(id=ciclo_id)
+    cursos=Curso.objects.filter(ciclo=ciclo_pasado)
+    modulos=Modulo.objects.filter(curso__in=cursos).order_by("nombre")
+    json=serializers.serialize("json", modulos)
+    return HttpResponse("datos_modulos="+json, content_type="application/json")
+
+def get_json_ras(peticion, modulo_id):
+    
+    modulo_pasado=Modulo.objects.get(pk=modulo_id)
+    ras=ResultadoDeAprendizaje.objects.filter(modulo=modulo_pasado)
+    json=serializers.serialize("json", ras)
+    return HttpResponse("datos_ras="+json, content_type="application/json")
 
 def cortar_elementos ( peticion ):
     ciclo=Ciclo.objects.all().order_by("nombre");
