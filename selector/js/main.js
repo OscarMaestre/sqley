@@ -9,7 +9,7 @@ OPCION_VACIA        =   -1
 
 function cargar_datos_ras(){
     html=""
-    for (pos in datos_ras){
+    for (var pos in datos_ras){
         modelo=datos_ras[pos]
         clave=modelo.pk
         if ( typeof modelo.fields.letra=== "undefined" ){
@@ -25,12 +25,11 @@ function cargar_datos_ras(){
 function modulo_cambiado(){
     id_modulo=$("#modulo").val()
     if (id_modulo == OPCION_VACIA ) return 
-    alert(id_modulo)
     var jqXHR=$.getScript(URL_LISTA_RAS+id_modulo, cargar_datos_ras)
 }
 function cargar_datos_modulos(){
     html="<option value='" + OPCION_VACIA + "'>Elija un módulo</option>"
-    for (pos in datos_modulos){
+    for (var pos in datos_modulos){
         modelo=datos_modulos[pos]
         clave=modelo.pk
         nombre=modelo.fields.nombre
@@ -46,23 +45,50 @@ function ciclo_cambiado(){
     var jqXHR=$.getScript(URL_LISTA_MODULOS+codigo_ciclo, cargar_datos_modulos)
 }
 
-function marcar_ras(){
-    $("#ras>option").attr("selected", "selected")
+function copiar_al_portapapeles(){
+    exito=document.execCommand("copy")
+    if (exito==false) {
+        alert("No se pudo hacer la copia, su navegador no soporta el automatismo, copie y pegue a mano")
+    } else {
+        alert("Texto en el portapapeles")
+    }
 }
 
+function ra_seleccionado(){
+    var txt=""
+    var ras=$("#ras>option:selected")
+    for (var pos=0; pos<ras.length; pos++){
+        var objeto=ras[pos]
+        var texto=objeto.text
+        txt=txt + texto + "\n"
+    }
+    $("#ras_seleccionados").html(txt)
+}
+function marcar_ras(){
+    $("#ras>option").attr("selected", "selected").text()
+    
+}
+function copiar_ras(){
+    $("#ras_seleccionados").focus()
+    $("#ras_seleccionados").select()
+    copiar_al_portapapeles()
+    desmarcar_ras()
+}
 function desmarcar_ras(){
     $("#ras>option").removeAttr("selected")
 }
 function instalar_controladores_eventos(){
     $("#ciclo").change(ciclo_cambiado);
     $("#modulo").change(modulo_cambiado);
+    $("#ras").change(ra_seleccionado)
     $("#marcar_todos_ras").click(marcar_ras)
     $("#desmarcar_todos_ras").click(desmarcar_ras)
+    $("#copiar_ras").click(copiar_ras)
 }
 
 function cargar_datos_iniciales(){
-    html="<option value='"+OPCION_VACIA+"'>Elija un ciclo</option>"
-    for (pos in datos_ciclos){
+    var html="<option value='"+OPCION_VACIA+"'>Elija un ciclo</option>"
+    for (var pos in datos_ciclos){
         modelo=datos_ciclos[pos]
         clave=modelo.pk
         nombre=modelo.fields.nombre
