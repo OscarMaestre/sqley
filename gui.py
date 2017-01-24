@@ -15,55 +15,64 @@ from kivy.uix.checkbox import CheckBox
 from kivy.uix.button import Button
 from kivy.uix.togglebutton import ToggleButton
 from kivy.uix.tabbedpanel import TabbedPanelHeader
+from kivy.uix.boxlayout import BoxLayout
 datos=[]
 
 
-
+TAB_OBJETIVOS=1
 tuplas_tablas=[
-    (Ciclo,"nombre"), (Curso, "nombre_curso"), (Modulo, "nombre")
+    (Ciclo,"nombre"), (Curso, "nombre_curso"), (Modulo, "nombre"),
 ]
 
-def conversor(indice, cadena):
-    diccionario={
-        "text":cadena,
-        "is_selected":False,
-        'height':25
-    }
-    return diccionario
-
-def get_adaptador(modelos, tupla_configuracion):
-    lista_textos=get_cadenas(modelos, tupla_configuracion)
-    adaptador=ListAdapter(data=lista_textos, args_converter=conversor,
-                          cls=ListItemButton, selection_mode='single',
-                          allow_empty_selection=False)
-    return adaptador
-
-def get_cadenas(modelos, tupla_configuracion):
-    lista_textos=[]
-    for m in modelos:
-        lista_textos.append(m.__dict__[tupla_configuracion[1]])
-    return lista_textos
 
     
     
 class FabricaTabs(object):
     @staticmethod
-    def get_tab_objetivos(texto_tab):
+    def get_tab_objetivos(texto_tab, ciclo_id):
         tab=TabbedPanelHeader(text=texto_tab)
         tab.content=Button(text=texto_tab)
         return tab
-    
-class GuiApp(App):
-    def algo_seleccionado(self, adaptador):
-        print("Ok")
-        print (adaptador.selection)
+    @staticmethod
+    def get_representacion_objetivo_general(objetivos):
+        
+        lista_cadenas=[]
+        for o in objetivos:
+            lista_cadenas.append(o.letra+") "+o.texto)
+        return lista_cadenas
+        
+    @staticmethod
+    def get_representacion(modelos):
+        if isinstance(modelos[0],  ObjetivoGeneral):
+            lista_cadenas=FabricaTabs.get_representacion_objetivo_general(modelos)
+        caja=BoxLayout(orientation="vertical")
+        for cadena in lista_cadenas:
+            b=ToggleButton(text=cadena)
+            caja.add_widget(b)
+        return caja
+            
         
     
-    
+class GuiApp(App):        
+    def get_cadenas(modelos, tupla_configuracion):
+        lista_textos=[]
+        for m in modelos:
+            lista_textos.append(m.__dict__[tupla_configuracion[1]])
+        return lista_textos
+
+
     def on_ciclo_seleccionado(self, boton):
         ciclo_seleccionado=self.todos_ciclos.get(nombre=boton.text)
         print(ciclo_seleccionado)
         self.crear_botones_cursos(ciclo_seleccionado)
+        self.rellenar_objetivos_generales(ciclo_seleccionado)
+    
+    def rellenar_objetivos_generales(self, ciclo_seleccionado):
+        objetivos=self.todos_objetivos_generales.filter(ciclo=ciclo_seleccionado)
+        print(objetivos)
+        caja_controles=FabricaTabs.get_representacion(objetivos)
+        self.root.ids.tab_objetivos.clear_widgets()
+        self.root.ids.tab_objetivos.content=caja_controles
         
     def on_curso_seleccionado(self, boton):
         contenedor_cursos=self.root.ids.contenedor_cursos
@@ -77,10 +86,10 @@ class GuiApp(App):
         
     def crear_botones_ciclos(self):
         contenedor_ciclos=self.root.ids.contenedor_ciclos
-        lista_ciclos=get_cadenas(self.todos_ciclos, tuplas_tablas[0])
-        for ciclo in lista_ciclos:
+        ciclos=self.todos_ciclos
+        for ciclo in ciclos:
             #btn_ciclo=Button(text=ciclo, height=45)
-            btn_ciclo=ToggleButton(text=ciclo, height=45, group="ciclos")
+            btn_ciclo=ToggleButton(text=ciclo.nombre, height=45, group="ciclos", shorten=True)
             btn_ciclo.bind(on_press=self.on_ciclo_seleccionado)
             contenedor_ciclos.add_widget(btn_ciclo)
             
@@ -102,21 +111,20 @@ class GuiApp(App):
             btn_modulo.bind(on_press=self.on_modulo_seleccionado)
             contenedor_modulos.add_widget(btn_modulo)
     
-    def crear_tabs(self):
-        contenedor_tabs=self.root.ids.tabs
-        contenedor_tabs.add_widget(FabricaTabs.get_tab_objetivos("Objetivos generales"))
+    
         
         
     def on_start(self):
-        self.todos_ciclos=Ciclo.objects.all()
-        self.todos_cursos=Curso.objects.all()
-        self.todos_modulos=Modulo.objects.all()
-        self.crear_botones_ciclos()
-        #Al principio necesitamos borrar todos los tabs
-        contenedor_modulos=self.root.ids.tabs.clear_tabs()
-        self.crear_tabs()
-        return 
+        self.todos_objetivos_generales  =   ObjetivoGeneral.objects.all()
+        self.todos_ciclos               =   Ciclo.objects.all()
+        self.todos_cursos               =   Curso.objects.all()
+        self.todos_modulos              =   Modulo.objects.all()
         
+        self.crear_botones_ciclos()
+        
+        #Cambiamos el texto del tab por defecto
+        self.root.ids.tabs.default_tab_text = 'Objetivos generales'
+        return 
         
         
 
