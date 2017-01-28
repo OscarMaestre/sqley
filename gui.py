@@ -69,7 +69,7 @@ class GuiApp(App):
     
     def rellenar_objetivos_generales(self, ciclo_seleccionado):
         objetivos=self.todos_objetivos_generales.filter(ciclo=ciclo_seleccionado)
-        print(objetivos)
+        #print(objetivos)
         caja_controles=FabricaTabs.get_representacion(objetivos)
         self.root.ids.tab_objetivos.clear_widgets()
         self.root.ids.tab_objetivos.content=caja_controles
@@ -86,10 +86,11 @@ class GuiApp(App):
         
     def crear_botones_ciclos(self):
         contenedor_ciclos=self.root.ids.contenedor_ciclos
+        print(contenedor_ciclos)
         ciclos=self.todos_ciclos
         for ciclo in ciclos:
-            #btn_ciclo=Button(text=ciclo, height=45)
-            btn_ciclo=ToggleButton(text=ciclo.nombre, height=45, group="ciclos", shorten=True)
+            btn_ciclo=Button(text=ciclo.nombre, height=45)
+            #btn_ciclo=ToggleButton(text=ciclo.nombre, height=45, group="ciclos", shorten=True)
             btn_ciclo.bind(on_press=self.on_ciclo_seleccionado)
             contenedor_ciclos.add_widget(btn_ciclo)
             

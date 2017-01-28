@@ -1,41 +1,28 @@
 BoxLayout:
     orientation:"vertical"
     id:caja
-    
-    Label:
-        id:texto
-        text:"Interfaz"
-        size_hint:(0.5,None)
-        
     BoxLayout:
+        size_hint:(1,1)
         orientation:"horizontal"
-        size_hint:(0.75,None)
         BoxLayout:
             orientation:"vertical"
-            Label:
-                text:"Selecciona un ciclo"
-            BoxLayout:
-                orientation:"vertical"
-                id:contenedor_ciclos
+            id:contenedor_ciclos
+                        
         BoxLayout:
             orientation:"vertical"
-            Label:
-                text:"Selecciona un curso"
             BoxLayout:
                 orientation:"vertical"
                 id:contenedor_cursos
         BoxLayout:
             orientation:"vertical"
-            Label:
-                text:"Selecciona un modulo"
             BoxLayout:
                 orientation:"vertical"
                 id:contenedor_modulos
     TabbedPanel:
         id:tabs
+        size_hint:(1,4)
         TabbedPanelItem:
             text:"Objetivos del modulo"
             id:tab_objetivos
-            
 
         
