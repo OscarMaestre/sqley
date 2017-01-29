@@ -69,7 +69,7 @@ class Interfaz(object):
     
     def crear_boton(self, frame_padre, texto, funcion):
         btn=Button(frame_padre, text=texto)
-        btn.pack(fill=BOTH, expand=True, padx=10, pady=10)
+        btn.pack(fill=X, padx=10, pady=2)
         btn.nombre=texto
         btn.bind("<Button-1>", funcion)
         return btn
@@ -77,7 +77,6 @@ class Interfaz(object):
     def crear_frame_ciclos(self, frame_padre):
         self.frame_ciclos=Frame(frame_padre)
         self.frame_ciclos.pack(side=LEFT, fill=Y)
-        Label(self.frame_ciclos, text="Elige un ciclo").pack()
         for c in self.todos_ciclos:
             self.crear_boton(self.frame_ciclos, c.nombre, self._on_ciclo_elegido)
         return self.frame_ciclos
@@ -104,7 +103,6 @@ class Interfaz(object):
         if self.frame_cursos==None:
             self.frame_cursos=Frame(self.cuadro_superior)
             self.frame_cursos.pack(side=LEFT, fill=Y)
-            Label(self.frame_cursos, text="Elige un curso").pack()
         else:
             self.destruir_botones(self.frame_cursos)
             self.destruir_botones(self.frame_modulos)
@@ -132,7 +130,6 @@ class Interfaz(object):
         if self.frame_modulos==None:
             self.frame_modulos=Frame(self.cuadro_superior)
             self.frame_modulos.pack(side=LEFT, fill=Y)
-            Label(self.frame_modulos, text="Elige un módulo").pack()
         else:
             self.destruir_botones(self.frame_modulos)
             
@@ -193,11 +190,12 @@ class Interfaz(object):
     def crear_tabs(self, control_padre, letrero, lista_cadenas):
         frame_controles=Frame(control_padre)
         frame_controles.pack()
+        
         btn_marcar_todo=Button(frame_controles, text="Marcar/desmarcar todo" )
         btn_marcar_todo.pack(fill=X)
         btn_marcar_todo.checkboxes=[]
         btn_marcar_todo.valor=True
-        btn=Button(frame_controles, text="Copiar al portapapeles los "+letrero+ " marcados" )
+        btn=Button(frame_controles, text="Copiar al portapapeles los elementos marcados" )
         btn.pack(fill=X)
         btn.checkboxes=[]
         btn.origen=letrero
@@ -205,8 +203,7 @@ class Interfaz(object):
         btn_marcar_todo.bind("<Button-1>", self.conmutar_todo)
         frame_checkboxes=Frame(frame_controles)
         frame_checkboxes.pack(side=LEFT)
-        frame_boton=Frame(frame_controles)
-        frame_boton.pack(side=LEFT)
+        
         for cad in lista_cadenas:
             var_asociada=BooleanVar()
             var_asociada.set(False)
