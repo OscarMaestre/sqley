@@ -14,6 +14,10 @@ from gestionbd.models import *
 class Interfaz(object):
     def __init__(self):
         self.todos_objetivos_generales  =   ObjetivoGeneral.objects.all()
+        self.todas_competencias_generales=  CompetenciaGeneral.objects.all()
+        self.todas_competencias         =   Competencia.objects.all()
+        self.todas_cualificaciones      =   CualificacionProfesional.objects.all()
+        
         self.todos_ciclos               =   Ciclo.objects.all()
         self.todos_cursos               =   Curso.objects.all()
         self.todos_modulos              =   Modulo.objects.all()
@@ -23,24 +27,39 @@ class Interfaz(object):
         return
     
     def _crear_gui(self):
+        self.crear_valores_iniciales()
         self.ventana=Tk()
-        self._crear_cuadro_superior()
-        self._crear_cuadro_inferior()
+        
+        self.cuadro_superior=Frame(self.ventana)
+        self.cuadro_superior.pack()
+        self.cuadro_inferior=Frame(self.ventana)
+        self.cuadro_inferior.pack(fill=BOTH, expand=True)
+        
+        self._crear_cuadro_superior(self.cuadro_superior)
+        self._crear_cuadro_inferior(self.cuadro_inferior)
         self.ventana.mainloop()
         
         
         
-    def _crear_cuadro_superior(self):
-        self.crear_frame_ciclos()
+    def _crear_cuadro_superior(self, frame_padre):
+        self.crear_frame_ciclos(frame_padre)
         #Se necesita tenerlo creado al empezar
         self.frame_cursos=None
         self.frame_modulos=None
     
-    def _crear_cuadro_inferior(self):
-        cuaderno=Notebook(self.ventana)
-        tabs=["Obj generales", "Obj especificos"]
-        for t in tabs:
+    def crear_valores_iniciales(self):
+        self.nombres_tabs=["Obj generales del ciclo", "Competencias generales", "Competencias", "Cualificaciones"]
+        self.OBJETIVOS_GENERALES        =0
+        self.COMPETENCIAS_GENERALES     =1
+        self.COMPETENCIAS               =2
+        self.CUALIFICACION              =3
+        
+    def _crear_cuadro_inferior(self, frame_padre):
+        cuaderno=Notebook(frame_padre)
+        self.tabs=[]
+        for t in self.nombres_tabs:
             frame_tab=Frame(cuaderno)
+            self.tabs.append(frame_tab)
             frame_tab.pack()
             cuaderno.add(frame_tab, text=t)
             
@@ -48,14 +67,19 @@ class Interfaz(object):
             
         
     
-    def crear_frame_ciclos(self):
-        self.frame_ciclos=Frame(self.ventana)
+    def crear_boton(self, frame_padre, texto, funcion):
+        btn=Button(frame_padre, text=texto)
+        btn.pack(fill=BOTH, expand=True, padx=10, pady=10)
+        btn.nombre=texto
+        btn.bind("<Button-1>", funcion)
+        return btn
+        
+    def crear_frame_ciclos(self, frame_padre):
+        self.frame_ciclos=Frame(frame_padre)
         self.frame_ciclos.pack(side=LEFT, fill=Y)
+        Label(self.frame_ciclos, text="Elige un ciclo").pack()
         for c in self.todos_ciclos:
-            btn_ciclo=Button(self.frame_ciclos, text=c.nombre)
-            btn_ciclo.pack(fill=X)
-            btn_ciclo.nombre=c.nombre
-            btn_ciclo.bind("<Button-1>", self._on_ciclo_elegido)
+            self.crear_boton(self.frame_ciclos, c.nombre, self._on_ciclo_elegido)
         return self.frame_ciclos
     
     def get_cadenas(modelos, tupla_configuracion):
@@ -78,30 +102,37 @@ class Interfaz(object):
         ciclo_elegido=self.todos_ciclos.filter(nombre=texto_boton_pulsado)
         #print(ciclo_elegido)
         if self.frame_cursos==None:
-            self.frame_cursos=Frame(self.ventana)
+            self.frame_cursos=Frame(self.cuadro_superior)
             self.frame_cursos.pack(side=LEFT, fill=Y)
+            Label(self.frame_cursos, text="Elige un curso").pack()
         else:
             self.destruir_botones(self.frame_cursos)
             self.destruir_botones(self.frame_modulos)
             
         self._mostrar_cursos_asociados_a_ciclo(ciclo_elegido)
+        
+        self.rellenar_notebook_segun_ciclo(ciclo_elegido)
+        
+    def rellenar_notebook_segun_ciclo(self, ciclo_elegido):
+        self.rellenar_objetivos_generales       (   ciclo_elegido   )
+        self.rellenar_competencias_generales    (   ciclo_elegido   )
+        self.rellenar_competencias              (   ciclo_elegido   )
+        self.rellenar_cualificaciones           (   ciclo_elegido   )
             
     def _mostrar_cursos_asociados_a_ciclo(self, modelo_ciclo):
         cursos_asociados=self.todos_cursos.filter(ciclo=modelo_ciclo)
         #print(cursos_asociados)
         for c in cursos_asociados:
-            btn_curso=Button(self.frame_cursos, text=c.nombre_curso)
-            btn_curso.pack(fill=X)
-            btn_curso.nombre=c.nombre_curso
-            btn_curso.bind("<Button-1>", self._on_curso_elegido)
+            self.crear_boton(self.frame_cursos, c.nombre_curso, self._on_curso_elegido)
         return self.frame_cursos
         
     def _on_curso_elegido(self, evento):
         texto_boton_pulsado=evento.widget.nombre
         curso_elegido=self.todos_cursos.filter(nombre_curso=texto_boton_pulsado)
         if self.frame_modulos==None:
-            self.frame_modulos=Frame(self.ventana)
+            self.frame_modulos=Frame(self.cuadro_superior)
             self.frame_modulos.pack(side=LEFT, fill=Y)
+            Label(self.frame_modulos, text="Elige un módulo").pack()
         else:
             self.destruir_botones(self.frame_modulos)
             
@@ -111,10 +142,7 @@ class Interfaz(object):
         modulos_asociados=self.todos_modulos.filter(curso=modelo_curso)
         #print(cursos_asociados)
         for m in modulos_asociados:
-            btn_modulo=Button(self.frame_modulos, text=m.nombre)
-            btn_modulo.pack(fill=X)
-            btn_modulo.nombre=m.nombre
-            btn_modulo.bind("<Button-1>", self._on_modulo_elegido)
+            self.crear_boton(self.frame_modulos, m.nombre, self._on_modulo_elegido)
         return self.frame_modulos
         
     def _on_modulo_elegido(self, evento):
@@ -122,8 +150,92 @@ class Interfaz(object):
         #Ojo, al filtrar puede haber muchos con el mismo nombre, por eso
         #nos quedamos solo con el primero
         modulo_elegido=self.todos_modulos.filter(nombre=texto_boton_pulsado)[0]
-        print(modulo_elegido)
-
+        #print(modulo_elegido)
+        
+    def rellenar_objetivos_generales(self, ciclo_elegido):
+        
+        objetivos_ciclos=self.todos_objetivos_generales.filter(ciclo=ciclo_elegido)
+        cadenas=[]
+        for o in objetivos_ciclos:
+            cadenas.append(o.letra+") "+o.texto)
+        
+        self.destruir_botones(self.tabs[self.OBJETIVOS_GENERALES])
+        self.crear_tabs(self.tabs[self.OBJETIVOS_GENERALES], "objetivos generales", cadenas)
+        
+    def rellenar_competencias_generales(self, ciclo_elegido):
+        competencias_generales=self.todas_competencias_generales.filter(ciclo=ciclo_elegido)
+        cadenas=[]
+        for c in competencias_generales:
+            cadenas.append(c.texto)
+            
+        self.destruir_botones(self.tabs[self.COMPETENCIAS_GENERALES])
+        self.crear_tabs(self.tabs[self.COMPETENCIAS_GENERALES], "competencias generales", cadenas)
+        
+    def rellenar_competencias(self, ciclo_elegido):
+        competencias=self.todas_competencias.filter(ciclo=ciclo_elegido)
+        cadenas=[]
+        for c in competencias:
+            cadenas.append(c.texto)
+            
+        self.destruir_botones(self.tabs[self.COMPETENCIAS])
+        self.crear_tabs(self.tabs[self.COMPETENCIAS], "competencias", cadenas)
+        
+    def rellenar_cualificaciones(self, ciclo_elegido):
+        cualificaciones=self.todas_cualificaciones.filter(ciclo=ciclo_elegido)
+        cadenas=[]
+        for c in cualificaciones:
+            cadenas.append(c.texto)
+            
+        self.destruir_botones(self.tabs[self.CUALIFICACION])
+        self.crear_tabs(self.tabs[self.CUALIFICACION], "cualificaciones profesionales", cadenas)
+        
+    
+    def crear_tabs(self, control_padre, letrero, lista_cadenas):
+        frame_controles=Frame(control_padre)
+        frame_controles.pack()
+        btn_marcar_todo=Button(frame_controles, text="Marcar/desmarcar todo" )
+        btn_marcar_todo.pack(fill=X)
+        btn_marcar_todo.checkboxes=[]
+        btn_marcar_todo.valor=True
+        btn=Button(frame_controles, text="Copiar al portapapeles los "+letrero+ " marcados" )
+        btn.pack(fill=X)
+        btn.checkboxes=[]
+        btn.origen=letrero
+        btn.bind("<Button-1>", self.extraer_los_checkboxes_marcados)
+        btn_marcar_todo.bind("<Button-1>", self.conmutar_todo)
+        frame_checkboxes=Frame(frame_controles)
+        frame_checkboxes.pack(side=LEFT)
+        frame_boton=Frame(frame_controles)
+        frame_boton.pack(side=LEFT)
+        for cad in lista_cadenas:
+            var_asociada=BooleanVar()
+            var_asociada.set(False)
+            checkbox=Checkbutton(frame_checkboxes, text=cad, variable=var_asociada)
+            checkbox.var_asociada=var_asociada
+            checkbox.pack(fill=X)
+            
+            checkbox.texto=cad
+            btn.checkboxes.append(checkbox)
+            btn_marcar_todo.checkboxes.append(checkbox)
+            
+    def extraer_los_checkboxes_marcados(self, evento):
+        textos=[]
+        for control in evento.widget.checkboxes:
+            if control.var_asociada.get()==True:
+                textos.append(control.texto)
+                #print (control.texto)
+        self.ventana.clipboard_clear()
+        self.ventana.clipboard_append("\n".join(textos))
+        
+    def conmutar_todo(self, evento):
+        for control in evento.widget.checkboxes:
+            control.var_asociada.set(evento.widget.valor)
+        evento.widget.valor= not evento.widget.valor
+            
+    def desmarcar_todo(self, evento):
+        for control in evento.widget.checkboxes:
+            control.var_asociada.set(False)
+        
 if __name__ == '__main__':
     app=Interfaz()
     
