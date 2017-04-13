@@ -3,7 +3,6 @@ from .models import *
 
 # Register your models here.
 
-admin.site.register ( Reparto )
-admin.site.register ( Profesor )
-admin.site.register ( ModuloPorAsignar )
-admin.site.register ( ModuloAsignado )
+admin.site.register (   Reparto       )
+admin.site.register (   Profesor      )
+admin.site.register (   Asignacion    )
