@@ -6,7 +6,7 @@ from gestionbd.models import Profesor, Modulo
 
 
 class Reparto ( models.Model ):
-    nombre=models.CharField(max_length=30)
+    nombre=models.CharField(max_length=30, primary_key=True)
     
 class RepartoForm ( ModelForm ):
     class Meta:
