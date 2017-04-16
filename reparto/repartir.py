@@ -1,14 +1,19 @@
 #!/usr/bin/env python3
 #coding=utf-8
 from tkinter import *
+from tkinter.messagebox import *
 from utilidades.basedatos.Configurador import Configurador
 
 configurador=Configurador("..")
 configurador.activar_configuracion("ciclos.settings")
 
 from gestionbd.models import *
+from reparto.models import *
+from reparto.GeneradorInformesReparto import GeneradorInformesReparto
+
 from random import randint
 
+from django.db import transaction
 
 class VistaProfesor(object):
     def __init__(self, profesor, frame_padre):
@@ -23,7 +28,8 @@ class VistaProfesor(object):
         
         
     def cambiar_etiqueta(self):
-        self.etiqueta_horas["text"]=self.texto_horas.format(self.horas_asignadas)
+        #self.etiqueta_horas["text"]=self.texto_horas.format(self.horas_asignadas)
+        self.boton_profesor["text"]=self.modelo_profesor.nombre + "  ("+self.texto_horas.format(self.horas_asignadas)+")"
     def crear_panel_profesor(self):    
         self.frame_profesor=Frame(self.frame_padre)
         
@@ -31,8 +37,8 @@ class VistaProfesor(object):
         self.boton_profesor.padre=self.frame_profesor
         self.boton_profesor.profesor=self.modelo_profesor
         self.boton_profesor.pack(side=TOP, expand=True, fill=X)
-        self.etiqueta_horas=Label(self.frame_profesor)
-        self.etiqueta_horas.pack(side=TOP, expand=True, fill=X)
+        #self.etiqueta_horas=Label(self.frame_profesor)
+        #self.etiqueta_horas.pack(side=TOP, expand=True, fill=X)
         self.cambiar_etiqueta()
         return self.frame_profesor
     
@@ -73,17 +79,23 @@ class VistaProfesor(object):
                 nuevo_boton_modulo=Button(padre_anterior, text=texto)
                 nuevo_boton_modulo.grid(row=boton.fila, column=boton.columna, sticky=E+W+N+S)
                 self.cambiar_etiqueta()
+                self.botones_modulos.remove(boton)
                 boton.destroy()
 
             #End del if
         #End del for
         return nuevo_boton_modulo
     
-    def guardar_asignacion(self):
-        print("Guardando para "+str(self.modelo_profesor.nombre))
+    def guardar_asignacion(self, objeto_reparto):
+        
         for b in self.botones_modulos:
-            modulo=b.modulo
-            print("\t"+modulo.nombre)
+            objeto_modulo=b.modulo
+            objeto_asignacion=Asignacion(
+                reparto=objeto_reparto,
+                profesor=self.modelo_profesor,
+                modulo=objeto_modulo)
+            objeto_asignacion.save()
+        
     
     
 
@@ -119,10 +131,10 @@ class RepartirApp(object):
         
         
         self.vistas_profesores  =   []
-        
+        self.panel_modulo       =   self.crear_controles(padre)
         self.panel_profesores   =   self.crear_panel_profesores(padre)
         self.panel_modulo       =   self.crear_panel_modulos(padre)
-        self.panel_modulo       =   self.crear_controles(padre)
+        
         
         self.boton_profesor         =   None
         self.color_botones          =   None
@@ -132,22 +144,67 @@ class RepartirApp(object):
         
         
     def crear_controles(self, padre):
-        self.frame_controles=Frame(padre, bg="blue")
+        #Creamos los menus
+        self.barra_menus=Menu(padre)
+        padre.config(menu=self.barra_menus)
+        self.menu_archivo=Menu(self.barra_menus, tearoff=0)
+        self.barra_menus.add_cascade(label="Archivo", menu=self.menu_archivo)
+        self.menu_archivo.add_command(label="Abrir", command=self.abrir_reparto)
+        
+        
+        self.frame_controles=Frame(padre)
         self.frame_controles.grid_rowconfigure(0, weight=1)
         self.frame_controles.grid_columnconfigure(0, weight=1)
-        self.frame_controles.grid(row=0, column=0,  sticky=N+S+E+W)
+        self.frame_controles.grid(row=0, column=0,  sticky=E+W)
         self.etiqueta_reparto=Label(self.frame_controles, text="Nombre del reparto")
-        self.etiqueta_reparto.grid(row=0, column=0, sticky=N+S+E+W)
+        self.etiqueta_reparto.grid(row=0, column=0, sticky=E+W)
         
-        self.txt_reparto=Entry(self.frame_controles, text="Hola")
-        self.txt_reparto.grid(row=0, column=1, sticky=N+S+E+W)
+        self.txt_reparto=Entry(self.frame_controles)
+        
+        self.txt_reparto.delete(0, END)
+        self.txt_reparto.insert(0, "Reparto_1")
+        self.txt_reparto.grid(row=0, column=1, sticky=E+W)
         self.boton_guardar=Button(self.frame_controles, text="Guardar reparto")
         self.boton_guardar.grid(row=0, column=2, sticky=N+S+E+"")
-        self.boton_guardar.bind("<Button-1>", self.guardar_reparto)
+        self.boton_guardar.bind("<ButtonRelease-1>", self.guardar_reparto)
+        
+        
+        
+    def abrir_reparto(self):
+        print ("Ahora abririamos un archivo...")
         
     def guardar_reparto(self, evento):
-        for vista_profesor in self.vistas_profesores:
-            vista_profesor.guardar_asignacion()
+        nombre_reparto=self.txt_reparto.get()
+        if nombre_reparto=="":
+            showerror("Nombre de reparto", "Primero se debe introducir un nombre de reparto")
+            return
+        #Comprobamos si ya se ha guardado información de este reparto
+        reparto=Reparto.objects.all()
+        if len(reparto)>0:
+            confirmar_borrado=askyesno("Ya hay informacion",
+                    "Ya hay información guardada para ese reparto\n¿desea sobreescribirla?")
+            if confirmar_borrado==False:
+                return
+            else:
+                reparto_para_borrar=Reparto.objects.filter(nombre=nombre_reparto)
+                
+                
+                with transaction.atomic():
+                    asignaciones_para_borrar=Asignacion.objects.filter(reparto=reparto_para_borrar)
+                    for a in asignaciones_para_borrar:
+                        a.delete()
+                    reparto_para_borrar.delete()
+                    
+            
+        #Si llegamos aquí se guardan todos los datos
+        #almacenados en una única transacción
+        with transaction.atomic():
+            objeto_reparto=Reparto(nombre=nombre_reparto)
+            objeto_reparto.save()
+            for vista_profesor in self.vistas_profesores:
+                vista_profesor.guardar_asignacion(objeto_reparto)
+        #Una vez completada la transaccion guardamos los informes
+        GeneradorInformesReparto.generar_informes()
         
     def crear_panel_profesores(self, padre):
         self.frame_profesores=Frame(padre, bg="green")

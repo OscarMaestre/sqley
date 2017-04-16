@@ -16,6 +16,6 @@ class RepartoForm ( ModelForm ):
     
     
 class Asignacion (models.Model):
-    reparto     =   models.ForeignKey(Reparto)
-    profesor    =   models.ForeignKey(Profesor)
-    modulo      =   models.ForeignKey(Modulo)
+    reparto     =   models.ForeignKey(Reparto,      on_delete=models.CASCADE)
+    profesor    =   models.ForeignKey(Profesor,     on_delete=models.CASCADE)
+    modulo      =   models.ForeignKey(Modulo,       on_delete=models.CASCADE)
