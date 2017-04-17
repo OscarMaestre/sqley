@@ -180,12 +180,14 @@ class RepartirApp(object):
         self.txt_reparto.insert(0, "Reparto_1")
         self.txt_reparto.grid(row=0, column=1, sticky=E+W)
         self.boton_guardar=Button(self.frame_controles, text="Guardar reparto")
-        self.boton_guardar.grid(row=0, column=2, sticky=N+S+E+"")
+        self.boton_guardar.grid(row=0, column=2, sticky=E+W)
         self.boton_guardar.bind("<ButtonRelease-1>", self.guardar_reparto)
         
+        self.boton_limpiar_todo=Button(self.frame_controles, text="Limpiar reparto")
+        self.boton_limpiar_todo.grid(row=0, column=3, sticky=W+E)
+        self.boton_limpiar_todo.bind("<ButtonRelease-1>", self.limpiar_reparto)
         
-        
-    def limpiar_reparto(self):
+    def limpiar_reparto(self, evento=None):
         for vista in self.vistas_profesores:
             vista.limpiar_modulos()
             
