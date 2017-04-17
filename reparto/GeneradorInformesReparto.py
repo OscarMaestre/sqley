@@ -9,16 +9,16 @@ class GeneradorInformesReparto(object):
         for reparto in repartos:
             contexto=dict()
             
-            print ("Generando para :"+reparto.nombre)
+            #print ("Generando para :"+reparto.nombre)
             cadenas_reparto=GeneradorInformesReparto.generar_informe_reparto_unico(reparto)
             contexto["reparto"]=reparto
             contexto["repartos"]=cadenas_reparto
-            print("Guardando...")
+            #print("Guardando...")
             descriptor=open(reparto.nombre+".html", "w", encoding="utf-8")
             descriptor.write(render_to_string("reparto/reparto.html", contexto))
             descriptor.flush()
             descriptor.close()
-            print("Reparto escrito:"+reparto.nombre)
+            #print("Reparto escrito:"+reparto.nombre)
             
     @staticmethod
     def generar_informe_reparto_unico(objeto_reparto):

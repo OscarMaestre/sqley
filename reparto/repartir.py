@@ -3,6 +3,7 @@
 from tkinter import *
 from tkinter.messagebox import *
 from utilidades.basedatos.Configurador import Configurador
+from DialogoSimple import DialogoSimple
 
 configurador=Configurador("..")
 configurador.activar_configuracion("ciclos.settings")
@@ -30,6 +31,10 @@ class VistaProfesor(object):
     def cambiar_etiqueta(self):
         #self.etiqueta_horas["text"]=self.texto_horas.format(self.horas_asignadas)
         self.boton_profesor["text"]=self.modelo_profesor.nombre + "  ("+self.texto_horas.format(self.horas_asignadas)+")"
+        
+    def get_nombre_profesor(self):
+        return self.modelo_profesor.nombre
+    
     def crear_panel_profesor(self):    
         self.frame_profesor=Frame(self.frame_padre)
         
@@ -65,6 +70,11 @@ class VistaProfesor(object):
         self.cambiar_etiqueta()
         return boton_modulo
     
+    def limpiar_modulos(self):
+        for boton in self.botones_modulos:
+            modulo=boton.modulo
+            self.eliminar_modulo(modulo)
+            
     def eliminar_modulo(self, modelo_modulo):
         nuevo_boton_modulo=None
         for boton in self.botones_modulos:
@@ -130,7 +140,11 @@ class RepartirApp(object):
         self.NUM_COL_PROFESORES =   0
         
         
+        
+        
         self.vistas_profesores  =   []
+        self.botones_modulos    =   []
+        
         self.panel_modulo       =   self.crear_controles(padre)
         self.panel_profesores   =   self.crear_panel_profesores(padre)
         self.panel_modulo       =   self.crear_panel_modulos(padre)
@@ -139,6 +153,7 @@ class RepartirApp(object):
         self.boton_profesor         =   None
         self.color_botones          =   None
         self.color_botones_destacado=   None
+        
         self.anadir_modulos()
         self.anadir_profesores()
         
@@ -170,9 +185,43 @@ class RepartirApp(object):
         
         
         
+    def limpiar_reparto(self):
+        for vista in self.vistas_profesores:
+            vista.limpiar_modulos()
+            
+    def encontrar_vista(self, nombre_profesor):
+        for v in self.vistas_profesores:
+            if v.get_nombre_profesor()==nombre_profesor:
+                return v
+        return None
+    
+    def encontrar_boton(self, nombre_modulo):
+        for boton_modulo in self.botones_modulos:
+            if boton_modulo.modulo.nombre==nombre_modulo:
+                return boton_modulo
+        return None
+    
     def abrir_reparto(self):
-        print ("Ahora abririamos un archivo...")
-        
+        dialogo_seleccion=DialogoSeleccion(self.frame_controles)
+        if dialogo_seleccion.resultado!=None:
+            #Cargamos el reparto
+            
+            reparto_elegido=Reparto.objects.get(nombre=dialogo_seleccion.resultado)
+            self.txt_reparto.delete(0, END)
+            self.txt_reparto.insert(0, reparto_elegido.nombre)
+                
+            asignaciones=Asignacion.objects.filter(reparto=reparto_elegido)
+            self.limpiar_reparto()
+            for a in asignaciones:
+                modelo_profesor=a.profesor
+                modelo_modulo=a.modulo
+                vista_profesor=self.encontrar_vista(modelo_profesor.nombre)
+                boton_modulo=self.encontrar_boton(modelo_modulo.nombre)
+                self.asignar_modulo_a_profesor(vista_profesor, boton_modulo)
+                print("Escribiendo:"+reparto_elegido.nombre)
+                
+                
+            
     def guardar_reparto(self, evento):
         nombre_reparto=self.txt_reparto.get()
         if nombre_reparto=="":
@@ -241,7 +290,7 @@ class RepartirApp(object):
     
     def anadir_modulo(self, modulo):
         boton=self.crear_boton_modulo(self.frame_modulos, modulo)
-        
+        self.botones_modulos.append(boton)
         self.color_botones=boton["bg"]
         self.color_botones_destacado=boton["highlightcolor"]
         boton.grid(row=self.fila_actual, column=self.columna_actual, sticky=E+W+N+S)
@@ -300,17 +349,18 @@ class RepartirApp(object):
         if self.boton_profesor==None:
             return 
         
-        modulo=evento.widget.modulo
+        boton_modulo=evento.widget
+        self.asignar_modulo_a_profesor(self.boton_profesor.vista_padre, boton_modulo)
         
-        fila_para_devolver_luego    =   evento.widget.fila
-        columna_para_devolver_luego =   evento.widget.columna
+    def asignar_modulo_a_profesor(self, vista_profesor, boton_modulo):
+        fila_para_devolver_luego    =   boton_modulo.fila
+        columna_para_devolver_luego =   boton_modulo.columna
         
-        vista_profesor=self.boton_profesor.vista_padre
-        nuevo_boton_modulo=vista_profesor.asignar_modulo(modulo, self.frame_modulos,
+        nuevo_boton_modulo=vista_profesor.asignar_modulo(boton_modulo.modulo, self.frame_modulos,
                             fila_para_devolver_luego, columna_para_devolver_luego)
         nuevo_boton_modulo.vista_padre=vista_profesor
         nuevo_boton_modulo.bind("<Button-1>", self.devolver_modulo)
-        evento.widget.destroy()
+        boton_modulo.destroy()
         return 
         
         
@@ -330,6 +380,27 @@ class RepartirApp(object):
         boton_modulo.columna=self.columna_actual
         evento.widget.destroy()
         
+        
+class DialogoSeleccion(DialogoSimple):
+    def body(self, master):
+        self.resultado=None
+        self.listbox=Listbox(master)
+        repartos=Reparto.objects.all().order_by("nombre")
+        self.vector_elementos=dict()
+        pos=0
+        for r in repartos:
+            self.listbox.insert(END,  r.nombre)
+            self.vector_elementos[pos]=r.nombre
+            pos+=1
+        self.listbox.pack(side=TOP, expand=True, fill=BOTH)
+        
+        return self.listbox # initial focus
+
+    def apply(self):
+        posicion=self.listbox.curselection()
+        posicion=posicion[0]
+        
+        self.resultado=self.vector_elementos[posicion]
         
 if __name__ == '__main__':
     raiz=Tk()
