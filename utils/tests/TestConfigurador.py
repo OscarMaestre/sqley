@@ -50,6 +50,7 @@ class TestConfigurador(object):
         for i in range(0, 100):
             sleep(self.pausa)
             self.canvas.create_line(0, i, 200, i)
+            self.canvas.update()
             
     
 if __name__ == '__main__':
