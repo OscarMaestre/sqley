@@ -285,8 +285,9 @@ class RepartirApp(object):
     def anadir_modulos(self):
         filtro_modulos_ps=Q(especialidad="PS")
         filtro_modulos_todos=Q(especialidad="TODOS")
-        filtro_todos=filtro_modulos_ps  | filtro_modulos_todos 
-        modulos=Modulo.objects.filter(filtro_todos).order_by("-horas_semanales")
+        filtro_horas=Q(horas_semanales__gt=0)
+        filtro_todos=( filtro_modulos_ps  | filtro_modulos_todos  )&  filtro_horas 
+        modulos=Modulo.objects.filter(filtro_todos).order_by("-horas_semanales", "nombre")
         #modulos=Modulo.objects.filter(especialidad="PS").order_by("-horas_semanales")
         for modulo in modulos:
             self.anadir_modulo(modulo)
