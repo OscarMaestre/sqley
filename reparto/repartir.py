@@ -2,7 +2,7 @@
 #coding=utf-8
 from tkinter import *
 from tkinter.messagebox import *
-from utilidades.basedatos.Configurador import Configurador
+from Configurador import Configurador
 from DialogoSimple import DialogoSimple
 
 configurador=Configurador("..")
@@ -258,7 +258,7 @@ class RepartirApp(object):
         GeneradorInformesReparto.generar_informes()
         
     def crear_panel_profesores(self, padre):
-        self.frame_profesores=Frame(padre, bg="green")
+        self.frame_profesores=Frame(padre)
         self.frame_profesores.grid_rowconfigure(0, weight=1)
         self.frame_profesores.grid_columnconfigure(0, weight=1)
         self.frame_profesores.grid(row=self.NUM_FILA_PROFESORES,
