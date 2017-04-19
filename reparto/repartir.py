@@ -15,6 +15,7 @@ from reparto.GeneradorInformesReparto import GeneradorInformesReparto
 from random import randint
 
 from django.db import transaction
+from django.db.models import Q
 
 class VistaProfesor(object):
     def __init__(self, profesor, frame_padre):
@@ -273,10 +274,20 @@ class RepartirApp(object):
         
         
     def recortar_nombre(self, texto, longitud=32):
-        return texto[0:longitud]+"..."
+        if len(texto) < 16:
+            return texto
+        linea_1=texto[0:16]
+        linea_2=texto[17:31]
+        linea=linea_1 + "\n"+linea_2+"..."
+        return linea
+        #return texto[0:longitud]+"..."
     
     def anadir_modulos(self):
-        modulos=Modulo.objects.filter(especialidad="PS").order_by("-horas_semanales")
+        filtro_modulos_ps=Q(especialidad="PS")
+        filtro_modulos_todos=Q(especialidad="TODOS")
+        filtro_todos=filtro_modulos_ps  | filtro_modulos_todos 
+        modulos=Modulo.objects.filter(filtro_todos).order_by("-horas_semanales")
+        #modulos=Modulo.objects.filter(especialidad="PS").order_by("-horas_semanales")
         for modulo in modulos:
             self.anadir_modulo(modulo)
         
