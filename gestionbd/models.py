@@ -70,6 +70,11 @@ class Modulo( models.Model ):
         inicializacion_java+="\n\t\t{0}[{1}]=m{2}".format(nombre_vector, indice, self.id)
         return inicializacion_java.strip()
         
+    def to_python(self, nombre_vector, indice):
+        construccion="ModuloLeido ( {0}, {1},    {2},    \"{3}\",    \"{4}\")".format(self.id, self.codigo_junta, self.horas_semanales, self.nombre,str(self.curso))
+        inicializacion_python="\n        {0}.append({1})".format(nombre_vector,construccion, indice, self.id)
+        return inicializacion_python
+    
     class Meta:
         db_table="modulos"
         verbose_name_plural = "Modulos"
