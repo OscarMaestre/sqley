@@ -1,0 +1,12 @@
+
+<h3>{{profesor.nombre}}</h3>
+Horas mínimas: {{profesor.horas_minimas}}
+<br/>
+Horas asignadas:{{horas_asignadas}}
+<ol>
+    {%for m in modulos%}
+    <li>
+        ({{m.horas_semanales}}h) {{m.nombre}}
+    </li>
+    {%endfor%}
+</ol>
