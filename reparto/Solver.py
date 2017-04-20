@@ -49,7 +49,8 @@ class GestorProfesores(object):
     def siguiente_profesor(self):
         profesor_a_devolver=self.lista_profesores[self.siguiente_profesor]
         self.siguiente_profesor=(self.siguiente_profesor+1) % self.cantidad_profesores
-        
+        return profesor_a_devolver
+    
     def asignar_modulo_a_profesor(self, profesor, modulo):
         nombre_a_buscar=profesor.nombre
         for profesor in self.lista_profesores:
