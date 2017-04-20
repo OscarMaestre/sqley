@@ -7,6 +7,7 @@ configurador.activar_configuracion("ciclos.settings")
 
 from django.db.models import Q
 from gestionbd.models import Profesor, Modulo, EspecialidadProfesor
+import itertools
 
 class ProfesorEnReparto(object):
     def __init__(self, profesor):
@@ -49,20 +50,34 @@ class Solver(object):
     def __init__(self):
         self.modulos=self.get_modulos()
         self.profesores=self.get_profesores()
+        cantidad_modulos=len(self.modulos)
+        combinaciones=itertools.combinations(self.modulos, cantidad_modulos-1)
+        combinaciones=itertools.permutations(self.modulos)
+        print(dir(combinaciones))
         
+        i=0
+        for indice, combinacion in enumerate(combinaciones):
+            i=i+1
+            if i%10000000==0:
+                print (i)
+            continue
+            print("############     " + str(indice) + "   #####################")
+            print (combinacion)
+            print("############     " + str(indice) + "   #####################")
+        print ("Total:"+str(i))
         
     def get_modulos(self):
         filtro_modulos_ps=Q(especialidad="PS")
         filtro_modulos_todos=Q(especialidad="TODOS")
         filtro_horas=Q(horas_semanales__gt=0)
         filtro_todos=( filtro_modulos_ps  | filtro_modulos_todos  )&  filtro_horas 
-        self.modulos=Modulo.objects.filter(filtro_todos).order_by("-horas_semanales", "nombre")
-        
+        modulos=Modulo.objects.filter(filtro_todos).order_by("-horas_semanales", "nombre")
+        return modulos
     
     def get_profesores(self):
         esp_ps=EspecialidadProfesor.objects.filter(especialidad="PS")
         profesores=Profesor.objects.filter(especialidad=esp_ps).order_by("num_posicion")
-        
+        return profesores
         
 if __name__ == '__main__':
     solver=Solver()
