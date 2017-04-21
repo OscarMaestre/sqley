@@ -4,7 +4,8 @@ from .models import *
 
 
 admin.site.register ( Ciclo )
-
+admin.site.register ( Grupo )
+admin.site.register ( Curso )
 admin.site.register ( Modulo )
 admin.site.register ( ResultadoDeAprendizaje )
 admin.site.register ( CriterioDeEvaluacion )

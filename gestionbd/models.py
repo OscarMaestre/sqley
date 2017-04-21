@@ -26,6 +26,8 @@ class Curso( models.Model ):
 class Grupo ( models.Model ):
     nombre_grupo    =   models.CharField(max_length=15)
     curso           =   models.ForeignKey ( Curso )
+    def __str__(self):
+        return self.nombre_grupo
     class Meta:
         db_table="grupos"
         

@@ -4,6 +4,8 @@ from tkinter import *
 from tkinter.messagebox import *
 from Configurador import Configurador
 from DialogoSimple import DialogoSimple
+import sys
+from Solver import ModuloEnReparto
 
 configurador=Configurador("..")
 configurador.activar_configuracion("ciclos.settings")
@@ -55,7 +57,7 @@ class VistaProfesor(object):
         return texto[0:longitud]+"..."
     
     def asignar_modulo(self, modelo_modulo, padre_anterior, fila, columna):
-        texto_modulo="{0}\n({1} horas-{2}{3})".format(
+        texto_modulo="{0}\n({1} h-{2}{3})".format(
                     self.recortar_nombre(modelo_modulo.nombre),
                     modelo_modulo.horas_semanales,
                     modelo_modulo.curso.ciclo.abreviatura,
@@ -283,12 +285,7 @@ class RepartirApp(object):
         #return texto[0:longitud]+"..."
     
     def anadir_modulos(self):
-        filtro_modulos_ps=Q(especialidad="PS")
-        filtro_modulos_todos=Q(especialidad="TODOS")
-        filtro_horas=Q(horas_semanales__gt=0)
-        filtro_todos=( filtro_modulos_ps  | filtro_modulos_todos  )&  filtro_horas 
-        modulos=Modulo.objects.filter(filtro_todos).order_by("-horas_semanales", "nombre")
-        #modulos=Modulo.objects.filter(especialidad="PS").order_by("-horas_semanales")
+        modulos=ModuloEnReparto.get_modulos()
         for modulo in modulos:
             self.anadir_modulo(modulo)
         
@@ -417,6 +414,7 @@ class DialogoSeleccion(DialogoSimple):
         self.resultado=self.vector_elementos[posicion]
         
 if __name__ == '__main__':
+    
     raiz=Tk()
     raiz.title("Reparto")
     repartidor=RepartirApp(raiz)

@@ -4,12 +4,57 @@
 from Configurador import Configurador
 configurador=Configurador("..")
 configurador.activar_configuracion("ciclos.settings")
-import copy
+import copy, sys
 
 from django.db.models import Q
-from gestionbd.models import Profesor, Modulo, EspecialidadProfesor
+from gestionbd.models import Profesor, Modulo, EspecialidadProfesor, Grupo
 import itertools
 
+
+
+class ModuloEnReparto(object):
+    def __init__(self, modulo, grupo):
+        self.nombre          =   modulo.nombre
+        self.codigo_junta    =   modulo.codigo_junta
+        self.horas_anuales   =   modulo.horas_anuales
+        self.horas_semanales =   modulo.horas_semanales
+        self.curso           =   modulo.curso
+        self.especialidad    =   modulo.especialidad
+        self.grupo           =   grupo
+        
+    def es_de_tarde(self):
+        if self.grupo.nombre_grupo.find("arde")!=-1:
+            return True
+        return False
+    
+    def __str__(self):
+        cad=self.nombre +" ({0}h) ".format(self.horas_semanales) + self.grupo.nombre_grupo 
+        return cad
+    
+    @staticmethod
+    def get_modulos(con_ordenacion=False):
+        
+        filtro_modulos_ps=Q(especialidad="PS")
+        filtro_modulos_todos=Q(especialidad="TODOS")
+        filtro_horas=Q(horas_semanales__gt=0)
+        filter_general=filtro_horas & (filtro_modulos_ps | filtro_modulos_todos )
+        lista_modulos=[]
+        grupos=Grupo.objects.all()
+        for g in grupos:
+            curso_asociado=g.curso
+            #print(curso_asociado)
+            if con_ordenacion:
+                modulos_asociados=Modulo.objects.filter(
+                    curso=curso_asociado).filter(
+                    filter_general).order_by("-horas_semanales", "nombre")
+            else:
+                modulos_asociados=Modulo.objects.filter(curso=curso_asociado).filter(filter_general)
+            #print(modulos_asociados)
+            for m in modulos_asociados:
+                modulo_para_repartir=ModuloEnReparto(m, g)
+                lista_modulos.append(modulo_para_repartir)
+        return lista_modulos
+            
 class ProfesorEnReparto(object):
     def __init__(self, profesor):
         self.horas_asignadas    =   0
@@ -103,6 +148,7 @@ class GestorProfesores(object):
         self.cantidad_profesores=len(self.lista_profesores)
         mi_cad=self.__str__()
         print(mi_cad)
+        
     def anadir_profesores(self, lista_modelos_profesor):
         for modelo in lista_modelos_profesor:
             prof=ProfesorEnReparto(modelo)
@@ -176,17 +222,17 @@ class Solver(object):
             self.archivo_soluciones.write(str(gestor_nuevo))
             self.archivo_soluciones.write("\n\n##############################\n")
         print ("Fin")
+        
     def get_modulos(self):
-        filtro_modulos_ps=Q(especialidad="PS")
-        filtro_modulos_todos=Q(especialidad="TODOS")
-        filtro_horas=Q(horas_semanales__gt=0)
-        filtro_todos=( filtro_modulos_ps  | filtro_modulos_todos  )&  filtro_horas 
-        modulos=Modulo.objects.filter(filtro_todos).order_by("-horas_semanales", "nombre")
-        print("Cantidad de modulos:"+str(len(modulos)))
-        lista=[]
-        for m in modulos:
-            lista.append(m)
+        lista=ModuloEnReparto.get_modulos()
         return lista
+    
+    def modulos_tarde(self, lista_modulos):
+        modulos_tarde=[]
+        for m in lista_modulos:
+            if m.es_de_tarde():
+                modulos_tarde.append(m)
+        return modulos_tarde
     
     def get_profesores(self):
         esp_ps=EspecialidadProfesor.objects.filter(especialidad="PS")
@@ -198,5 +244,6 @@ if __name__ == '__main__':
     profesores=solver.profesores
     gestor=GestorProfesores()
     gestor.anadir_profesores(profesores)
+    modulos_tarde=solver.modulos_tarde(solver.modulos)
     solver.backtracking(gestor, solver.modulos)
     
