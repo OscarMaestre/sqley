@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-
+#coding=utf-8
 
 from Configurador import Configurador
 configurador=Configurador("..")
@@ -16,9 +16,25 @@ class ProfesorEnReparto(object):
         self.horas_minimas      =   profesor.horas_minimas
         self.nombre             =   profesor.nombre
         
-        self.modulos_asignados=[]
+        self.modulos_asignados  =   []
+        self.preferencias       =   None
         
-    
+    def set_preferencias(self, preferencias):
+        self.preferencias=preferencias
+        
+    def elegir_modulo(self, lista_modulos_disponibles):
+        if self.preferencias==[]:
+            return None
+        for preferencia in self.preferencias:
+            nombre_preferido=preferencia.nombre
+            for disponible in lista_modulos_disponibles:
+                if disponible.nombre==nombre_preferido:
+                    return disponible
+            #Fin del for
+        #Fin del for
+        #Si llegamos aquí no hay ningún modulo preferido
+        return None
+        
     def constructor_copia(self, profesor_en_reparto):
         self.horas_asignadas        =   profesor_en_reparto.horas_asignadas
         self.horas_minimas          =   profesor_en_reparto.horas_minimas
