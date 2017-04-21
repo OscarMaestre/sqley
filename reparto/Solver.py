@@ -18,12 +18,25 @@ class ProfesorEnReparto(object):
         
         self.modulos_asignados=[]
         
-        
+    
+    def constructor_copia(self, profesor_en_reparto):
+        self.horas_asignadas        =   profesor_en_reparto.horas_asignadas
+        self.horas_minimas          =   profesor_en_reparto.horas_minimas
+        self.nombre                 =   profesor_en_reparto.nombre
+        self.modulos_asignados      =   []
+        for m in profesor_en_reparto.modulos_asignados:
+            self.modulos_asignados.append(m)
+            
     def asignar_modulo(self, modulo):
         if self.llena_horario():
             return False
+        print("Asignando a "+ self.nombre +" el modulo "+modulo.nombre)
         self.modulos_asignados.append ( modulo )
         self.horas_asignadas += modulo.horas_semanales
+        print("Ahora tiene (en horas):"+str(self.horas_asignadas))
+        print("Su lista de modulos es:")
+        for m in self.modulos_asignados:
+            print("\t"+m.nombre)
         return True
         
     def quitar_modulo(self, modulo):
@@ -34,12 +47,12 @@ class ProfesorEnReparto(object):
         
     def llena_horario(self):
         if self.horas_asignadas==0:
-            print(self.nombre+" aun no llena")
+            #print(self.nombre+" aun no llena")
             return False
         if self.horas_asignadas>=self.horas_minimas:
-            print(self.nombre+" ya llena")
+            #print(self.nombre+" ya llena")
             return True
-        print(self.nombre+" aun no llena")
+        #print(self.nombre+" aun no llena")
         return False
     
     def __str__(self):
@@ -48,12 +61,32 @@ class ProfesorEnReparto(object):
         )
         return cad
         
+    def get_cadena_situacion(self):
+        cad="{0} horas_asignadas:{1}, horas_minimas:{2}\n".format(
+            self.nombre, self.horas_asignadas, self.horas_minimas
+        )
+        for m in self.modulos_asignados:
+            cad+="\t {0} ({1}h)\n".format(m.nombre, m.horas_semanales)
+        return cad
+    
 class GestorProfesores(object):
     def __init__(self):
         self.lista_profesores=[]
         self.siguiente_prof=0
         
         
+    def constructor_copia(self, gestor):
+        
+        print("Haciendo copia:"+gestor.__str__())
+        self.lista_profesores=[]
+        self.siguiente_prof=gestor.siguiente_prof
+        for p in gestor.lista_profesores:
+            prof_copia=ProfesorEnReparto(p)
+            prof_copia.constructor_copia(p)
+            self.lista_profesores.append(prof_copia)
+        self.cantidad_profesores=len(self.lista_profesores)
+        mi_cad=self.__str__()
+        print(mi_cad)
     def anadir_profesores(self, lista_modelos_profesor):
         for modelo in lista_modelos_profesor:
             prof=ProfesorEnReparto(modelo)
@@ -71,7 +104,7 @@ class GestorProfesores(object):
         for profesor in self.lista_profesores:
             if profesor.nombre==nombre_a_buscar:
                 if profesor.asignar_modulo(modulo):
-                    print ("Modulo asignado:"+str(profesor.horas_asignadas))
+                    print ("Horas asignadas:"+str(profesor.horas_asignadas))
                     return True
                 return False
         print ("Error, no se encontro un profesor llamado:"+nombre_a_buscar)
@@ -79,7 +112,7 @@ class GestorProfesores(object):
     def todos_llenan_horario(self):
         for p in self.lista_profesores:
             if not p.llena_horario():
-                print("False en llena horario")
+                #print("False en llena horario")
                 return False
         print("True")
         return True
@@ -87,7 +120,7 @@ class GestorProfesores(object):
     def __str__(self):
         cad=""
         for p in self.lista_profesores:
-            cad+=str(p)+"\n"
+            cad+=p.get_cadena_situacion()+"\n"
         return cad
     
 class Solver(object):
@@ -97,26 +130,35 @@ class Solver(object):
         cantidad_modulos=len(self.modulos)
         combinaciones=itertools.combinations(self.modulos, cantidad_modulos-1)
         combinaciones=itertools.permutations(self.modulos)
-        
-        
+        self.archivo_soluciones=open("resultados.txt", "w")
+        self.num_soluciones=0
         
     def backtracking(self, lista_profesores, lista_modulos, num_sol=0):
-        gestor_nuevo=copy.deepcopy(lista_profesores)
-        print(lista_modulos)
+        if lista_modulos==[]:
+            return
+        
+        gestor_nuevo=GestorProfesores()
+        gestor_nuevo.constructor_copia(lista_profesores)
+        
+        #print(lista_modulos)
+        #print("Nivel de recursividad:"+str(num_sol))
         while not gestor_nuevo.todos_llenan_horario():
             
             profesor=gestor_nuevo.siguiente_profesor()
-            print(lista_modulos)
+            #print(lista_modulos)
             for modulo in lista_modulos:
                 print("Sigo")
-                if not gestor_nuevo.asignar_modulo_a_profesor(profesor, modulo):
-                    return 
-                msg="Asignamos {0} a {1}".format(modulo.nombre, profesor.nombre)
-                print(msg)
-                gestor_nuevo.siguiente_profesor()
-                lista_modulos.remove(modulo)
-                self.backtracking(lista_profesores, lista_modulos, num_sol+1)
-                
+                if gestor_nuevo.asignar_modulo_a_profesor(profesor, modulo):
+                    msg="Asignamos {0} a {1}".format(modulo.nombre, profesor.nombre)
+                    print(msg)
+                    #gestor_nuevo.siguiente_profesor()
+                    lista_modulos.remove(modulo)
+                    self.backtracking(gestor_nuevo, lista_modulos, num_sol+1)
+            print("Escrita una posible solucion:"+str(self.num_soluciones))
+            self.num_soluciones+=1
+            self.archivo_soluciones.write("\n\n##############################\n")
+            self.archivo_soluciones.write(str(gestor_nuevo))
+            self.archivo_soluciones.write("\n\n##############################\n")
         print ("Fin")
     def get_modulos(self):
         filtro_modulos_ps=Q(especialidad="PS")
@@ -124,6 +166,7 @@ class Solver(object):
         filtro_horas=Q(horas_semanales__gt=0)
         filtro_todos=( filtro_modulos_ps  | filtro_modulos_todos  )&  filtro_horas 
         modulos=Modulo.objects.filter(filtro_todos).order_by("-horas_semanales", "nombre")
+        print("Cantidad de modulos:"+str(len(modulos)))
         lista=[]
         for m in modulos:
             lista.append(m)
