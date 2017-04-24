@@ -93,13 +93,15 @@ class VistaProfesor(object):
                     modulo.modulo_asociado.curso.num_curso)
                 nuevo_boton_modulo=Button(padre_anterior, text=texto)
                 nuevo_boton_modulo.grid(row=boton.fila, column=boton.columna, sticky=E+W+N+S)
+                nuevo_boton_modulo.modulo=modelo_modulo
                 self.cambiar_etiqueta()
                 self.botones_modulos.remove(boton)
                 boton.destroy()
-
+                return nuevo_boton_modulo
             #End del if
         #End del for
-        return nuevo_boton_modulo
+        print("No se pudo eliminar el modulo:"+str(modelo_modulo))
+        return None
     
     def guardar_asignacion(self, objeto_reparto):
         
@@ -204,7 +206,7 @@ class RepartirApp(object):
     
     def encontrar_boton(self, nombre_modulo):
         for boton_modulo in self.botones_modulos:
-            if boton_modulo.modulo.nombre==nombre_modulo:
+            if boton_modulo.modulo.modulo_asociado.nombre==nombre_modulo:
                 return boton_modulo
         return None
     
@@ -223,9 +225,9 @@ class RepartirApp(object):
                 modelo_profesor=a.profesor
                 modelo_modulo=a.modulo
                 vista_profesor=self.encontrar_vista(modelo_profesor.nombre)
-                boton_modulo=self.encontrar_boton(modelo_modulo.nombre)
+                boton_modulo=self.encontrar_boton(modelo_modulo.modulo_asociado.nombre)
                 self.asignar_modulo_a_profesor(vista_profesor, boton_modulo)
-                print("Escribiendo:"+reparto_elegido.nombre)
+                #print("Escribiendo:"+reparto_elegido.nombre)
                 
                 
             
@@ -296,9 +298,9 @@ class RepartirApp(object):
         
     def crear_boton_modulo(self, padre, modulo):
         grupo=modulo.grupo_asociado
-        modulo=modulo.modulo_asociado
         texto="{0}\n({1} h-{2})".format(
-            self.recortar_nombre(modulo.nombre),  modulo.horas_semanales,
+            self.recortar_nombre(modulo.modulo_asociado.nombre),
+            modulo.modulo_asociado.horas_semanales,
             grupo.nombre_grupo)
         boton=Button(padre, text=texto)
         boton.modulo=modulo
@@ -382,18 +384,18 @@ class RepartirApp(object):
         
     def devolver_modulo(self, evento):
         boton_modulo_pulsado=evento.widget
-        vista_profesor_padre=boton_modulo_pulsado.vista_padre
-        vista_profesor_padre.eliminar_modulo(boton_modulo_pulsado.modulo)
         fila_a_la_que_devolver=boton_modulo_pulsado.fila
         columna_a_la_que_devolver=boton_modulo_pulsado.columna
-        boton_modulo=self.crear_boton_modulo(self.frame_modulos, evento.widget.modulo)
+        
+        vista_profesor_padre=boton_modulo_pulsado.vista_padre
+        boton_modulo=vista_profesor_padre.eliminar_modulo(boton_modulo_pulsado.modulo)
+        boton_modulo.fila=fila_a_la_que_devolver
+        boton_modulo.columna=columna_a_la_que_devolver
         boton_modulo.grid(row=fila_a_la_que_devolver,
                           column=columna_a_la_que_devolver,
                           sticky=E+W+N+S)
         
         boton_modulo.bind("<Button-1>", self.click_modulo)
-        boton_modulo.fila=self.fila_actual
-        boton_modulo.columna=self.columna_actual
         evento.widget.destroy()
         
         
