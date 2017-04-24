@@ -7,6 +7,7 @@ configurador=Configurador ("ciclos")
 configurador.activar_configuracion ("ciclos.settings")
 from programaciones.models import *
 from gestionbd.models import *
+from reparto.models import ModuloEnReparto
 from django.db import transaction
 
 from utilidades.ficheros.GestorFicheros import GestorFicheros
@@ -60,7 +61,7 @@ def cargar_metodologias():
 
 with transaction.atomic():
     clases=[PuntoMetodologico, RecursoDidactico, InstrumentoEvaluacion,
-            EspecialidadProfesor, Profesor]
+            EspecialidadProfesor, Profesor, ModuloEnReparto]
     for c in clases:
         c.objects.all().delete()
     
@@ -72,3 +73,4 @@ with transaction.atomic():
     ev2.save()
     ev3=Evaluacion(numero=3, fecha_inicio="2017-04-01", fecha_fin="2017-06-20")
     ev3.save()
+    ModuloEnReparto.generar_modulos_en_reparto()

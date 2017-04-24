@@ -8,52 +8,11 @@ import copy, sys
 
 from django.db.models import Q
 from gestionbd.models import Profesor, Modulo, EspecialidadProfesor, Grupo
+from reparto.models import ModuloEnReparto
 import itertools
 
 
 
-class ModuloEnReparto(object):
-    def __init__(self, modulo, grupo):
-        self.nombre          =   modulo.nombre
-        self.codigo_junta    =   modulo.codigo_junta
-        self.horas_anuales   =   modulo.horas_anuales
-        self.horas_semanales =   modulo.horas_semanales
-        self.curso           =   modulo.curso
-        self.especialidad    =   modulo.especialidad
-        self.grupo           =   grupo
-        
-    def es_de_tarde(self):
-        if self.grupo.nombre_grupo.find("arde")!=-1:
-            return True
-        return False
-    
-    def __str__(self):
-        cad=self.nombre +" ({0}h) ".format(self.horas_semanales) + self.grupo.nombre_grupo 
-        return cad
-    
-    @staticmethod
-    def get_modulos(con_ordenacion=False):
-        
-        filtro_modulos_ps=Q(especialidad="PS")
-        filtro_modulos_todos=Q(especialidad="TODOS")
-        filtro_horas=Q(horas_semanales__gt=0)
-        filter_general=filtro_horas & (filtro_modulos_ps | filtro_modulos_todos )
-        lista_modulos=[]
-        grupos=Grupo.objects.all()
-        for g in grupos:
-            curso_asociado=g.curso
-            #print(curso_asociado)
-            if con_ordenacion:
-                modulos_asociados=Modulo.objects.filter(
-                    curso=curso_asociado).filter(
-                    filter_general).order_by("-horas_semanales", "nombre")
-            else:
-                modulos_asociados=Modulo.objects.filter(curso=curso_asociado).filter(filter_general)
-            #print(modulos_asociados)
-            for m in modulos_asociados:
-                modulo_para_repartir=ModuloEnReparto(m, g)
-                lista_modulos.append(modulo_para_repartir)
-        return lista_modulos
             
 class ProfesorEnReparto(object):
     def __init__(self, profesor):
@@ -91,13 +50,13 @@ class ProfesorEnReparto(object):
     def asignar_modulo(self, modulo):
         if self.llena_horario():
             return False
-        print("Asignando a "+ self.nombre +" el modulo "+modulo.nombre)
+        print("Asignando a "+ self.nombre +" el modulo "+modulo.modulo_asociado.nombre)
         self.modulos_asignados.append ( modulo )
-        self.horas_asignadas += modulo.horas_semanales
+        self.horas_asignadas += modulo.modulo_asociado.horas_semanales
         print("Ahora tiene (en horas):"+str(self.horas_asignadas))
         print("Su lista de modulos es:")
         for m in self.modulos_asignados:
-            print("\t"+m.nombre)
+            print("\t"+m.modulo_asociado.nombre)
         return True
         
     def quitar_modulo(self, modulo):
@@ -127,7 +86,7 @@ class ProfesorEnReparto(object):
             self.nombre, self.horas_asignadas, self.horas_minimas
         )
         for m in self.modulos_asignados:
-            cad+="\t {0} ({1}h)\n".format(m.nombre, m.horas_semanales)
+            cad+="\t {0} ({1}h)\n".format(m.modulo_asociado.nombre, m.modulo_asociado.horas_semanales)
         return cad
     
 class GestorProfesores(object):
@@ -211,7 +170,8 @@ class Solver(object):
             for modulo in lista_modulos:
                 print("Sigo")
                 if gestor_nuevo.asignar_modulo_a_profesor(profesor, modulo):
-                    msg="Asignamos {0} a {1}".format(modulo.nombre, profesor.nombre)
+                    msg="Asignamos {0} a {1}".format(modulo.modulo_asociado.nombre,
+                                                     profesor.nombre)
                     print(msg)
                     #gestor_nuevo.siguiente_profesor()
                     lista_modulos.remove(modulo)

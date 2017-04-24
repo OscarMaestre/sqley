@@ -58,10 +58,10 @@ class VistaProfesor(object):
     
     def asignar_modulo(self, modelo_modulo, padre_anterior, fila, columna):
         texto_modulo="{0}\n({1} h-{2}{3})".format(
-                    self.recortar_nombre(modelo_modulo.nombre),
-                    modelo_modulo.horas_semanales,
-                    modelo_modulo.curso.ciclo.abreviatura,
-                    modelo_modulo.curso.num_curso)
+                    self.recortar_nombre(modelo_modulo.modulo_asociado.nombre),
+                    modelo_modulo.modulo_asociado.horas_semanales,
+                    modelo_modulo.modulo_asociado.curso.ciclo.abreviatura,
+                    modelo_modulo.modulo_asociado.curso.num_curso)
         boton_modulo=Button(self.frame_profesor, text=texto_modulo)
         boton_modulo.modulo=modelo_modulo
         boton_modulo.fila=fila
@@ -69,7 +69,7 @@ class VistaProfesor(object):
         boton_modulo.padre_anterior=padre_anterior
         boton_modulo.pack(side=LEFT)
         self.botones_modulos.append(boton_modulo)
-        self.horas_asignadas+=modelo_modulo.horas_semanales
+        self.horas_asignadas+=modelo_modulo.modulo_asociado.horas_semanales
         self.cambiar_etiqueta()
         return boton_modulo
     
@@ -83,12 +83,14 @@ class VistaProfesor(object):
         for boton in self.botones_modulos:
             modulo=boton.modulo
             if modulo==modelo_modulo:
-                self.horas_asignadas-=modelo_modulo.horas_semanales
+                self.horas_asignadas-=modelo_modulo.modulo_asociado.horas_semanales
                 padre_anterior=boton.padre_anterior
                 
                 texto="{0}\n({1} horas-{2}{3})".format(
-                    self.recortar_nombre(modulo.nombre),  modulo.horas_semanales,
-                    modulo.curso.ciclo.abreviatura, modulo.curso.num_curso)
+                    self.recortar_nombre(modulo.modulo_asociado.nombre),
+                    modulo.modulo_asociado.horas_semanales,
+                    modulo.modulo_asociado.curso.ciclo.abreviatura,
+                    modulo.modulo_asociado.curso.num_curso)
                 nuevo_boton_modulo=Button(padre_anterior, text=texto)
                 nuevo_boton_modulo.grid(row=boton.fila, column=boton.columna, sticky=E+W+N+S)
                 self.cambiar_etiqueta()
@@ -285,16 +287,19 @@ class RepartirApp(object):
         #return texto[0:longitud]+"..."
     
     def anadir_modulos(self):
-        modulos=ModuloEnReparto.get_modulos()
+        modulos=ModuloEnReparto.objects.all().order_by("-modulo_asociado__horas_semanales",
+                                                        "modulo_asociado__nombre")
         for modulo in modulos:
             self.anadir_modulo(modulo)
         
         
         
     def crear_boton_modulo(self, padre, modulo):
-        texto="{0}\n({1} horas-{2}{3})".format(
+        grupo=modulo.grupo_asociado
+        modulo=modulo.modulo_asociado
+        texto="{0}\n({1} h-{2})".format(
             self.recortar_nombre(modulo.nombre),  modulo.horas_semanales,
-            modulo.curso.ciclo.abreviatura, modulo.curso.num_curso)
+            grupo.nombre_grupo)
         boton=Button(padre, text=texto)
         boton.modulo=modulo
         return boton
