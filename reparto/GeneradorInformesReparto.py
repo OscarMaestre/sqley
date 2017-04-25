@@ -31,7 +31,8 @@ class GeneradorInformesReparto(object):
             horas_asignadas=0
             for a in asignaciones:
                 modulos_asociados.append(a.modulo)
-                horas_asignadas+=a.modulo.horas_semanales
+                #print(dir(a.modulo.modulo_asociado))
+                horas_asignadas+=a.modulo.modulo_asociado.horas_semanales
             contexto=dict()
             contexto["profesor"]=prof
             contexto["modulos"]=modulos_asociados

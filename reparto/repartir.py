@@ -237,7 +237,7 @@ class RepartirApp(object):
             showerror("Nombre de reparto", "Primero se debe introducir un nombre de reparto")
             return
         #Comprobamos si ya se ha guardado información de este reparto
-        reparto=Reparto.objects.all()
+        reparto=Reparto.objects.filter(nombre=nombre_reparto)
         if len(reparto)>0:
             confirmar_borrado=askyesno("Ya hay informacion",
                     "Ya hay información guardada para ese reparto\n¿desea sobreescribirla?")
