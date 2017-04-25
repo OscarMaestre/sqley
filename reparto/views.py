@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import RepartoForm, Reparto, Asignacion, PreferenciaProfesor, ModuloEnReparto
-from gestionbd.models import Profesor
+from gestionbd.models import Profesor, Grupo
 from django.http import HttpResponseRedirect
 from django.db import connection, transaction
 from django.forms import formset_factory, ModelForm
@@ -27,6 +27,7 @@ class AsignacionForm(ModelForm):
     class Meta:
         model = PreferenciaProfesor
         fields=["modulo", "prioridad"]
+        ordering = ["modulo__modulo_asociado__nombre"]
 
 def index(peticion):
     return render(None, "reparto/index.html")
@@ -50,13 +51,22 @@ def almacenar_preferencias(peticion, id_profesor=None):
         asignaciones_formset=formset_factory(AsignacionForm)
         formularios=asignaciones_formset(peticion.POST)
         if formularios.is_valid():
+            profesor_asociado=Profesor.objects.get(id=id_profesor)
+            with transaction.atomic():
+                for f in formularios:
+                    modelo_preferencia=f.save(commit=False)
+                    modelo_preferencia.profesor=profesor_asociado
+                    if modelo_preferencia.prioridad==None or modelo_preferencia.modulo==None:
+                        continue
+                    print(modelo_preferencia)
+                    modelo_preferencia.save()
             print("Todo perfecto")
             return render(None, "reparto/index.html")
         else:
             print("Error de validacion")
             return render(None, "reparto/index.html")
+        
     modulos_en_reparto=ModuloEnReparto.objects.all().order_by("modulo_asociado__nombre")
-    profesor=Profesor.objects.get(id=id_profesor)
     #cantidad_modulos_a_repartir=len(modulos_en_reparto)
     cantidad_modulos_a_repartir=14
     contexto=dict()
@@ -65,5 +75,18 @@ def almacenar_preferencias(peticion, id_profesor=None):
                 extra=cantidad_modulos_a_repartir)   
     contexto["nombre_profesor"]=Profesor.objects.get(id=id_profesor)
     contexto["formularios"]=asignaciones_formset
+    contexto["id_profesor"]=id_profesor
+    return render(peticion, "reparto/almacenar_preferencias.html", contexto)
+
+
+def insertar_preferencias_todo_matinal(peticion, id_profesor):
+    grupos_no_tarde=Grupo.objects.exclude(nombre_grupo__contains="arde")
+    print(grupos_no_tarde)
+
+def insertar_preferencias_todo_elearning(peticion, id_profesor):
+    grupos_no_tarde=Grupo.objects.exclude(nombre_grupo__contains="arde")
+    print(grupos_no_tarde)
+    modulos_en_reparto=ModuloEnReparto.objects.all().order_by("modulo_asociado__nombre")
+    contexto=dict()
     contexto["id_profesor"]=id_profesor
     return render(peticion, "reparto/almacenar_preferencias.html", contexto)

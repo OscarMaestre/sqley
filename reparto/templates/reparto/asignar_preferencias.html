@@ -4,7 +4,8 @@
 <h3>Asignar preferencias</h3>
 {%for p in profesores%}
 <p>
-    <a href="{% url 'reparto:almacenar_preferencias' p.id %}">Modificar preferencias de {{p.nombre}}</a>
+    <a href="{% url 'reparto:almacenar_preferencias' p.id %}">Modificar preferencias de {{p.nombre}}</a> (insertarle
+    preferencias <a href="{%url 'reparto:todoelearning' p.id%}">Todo elearning</a>)
 </p>
 {%endfor%}
 {%endblock%}

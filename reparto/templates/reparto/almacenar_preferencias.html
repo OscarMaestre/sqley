@@ -4,9 +4,13 @@
 <h3>Ajusta las preferencias para {{nombre_profesor}}</h3>
 
 <form action="{%url 'reparto:almacenar_preferencias' id_profesor %}" method="post">
+    {{formularios.management_form}}
+    
     {%csrf_token%}
+    <table>
         {{formularios.as_table}}
-        {{formularios.management_form}}
+    </table>
+        
         <input type="submit" value="Almacenar">
 </form>
 

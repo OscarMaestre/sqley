@@ -70,5 +70,10 @@ class PreferenciaProfesor (models.Model):
     profesor    =   models.ForeignKey(Profesor,             on_delete=models.CASCADE)
     modulo      =   models.ForeignKey(ModuloEnReparto,      on_delete=models.CASCADE)
     prioridad   =   models.IntegerField()
+    def __str__(self):
+        cad="{0} da prioridad {1} al modulo {2}".format(
+            str(self.profesor), str(self.prioridad), str(self.modulo)
+        )
+        return cad
     class Meta:
         ordering    =   ["modulo"]
