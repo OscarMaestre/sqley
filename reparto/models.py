@@ -17,7 +17,9 @@ class RepartoForm ( ModelForm ):
 class ModuloEnReparto(models.Model):
     modulo_asociado =   models.ForeignKey(Modulo)
     grupo_asociado  =   models.ForeignKey(Grupo)
-        
+    asignable       =   models.BooleanField()
+    class Meta:
+        ordering    =   ["modulo_asociado__nombre"]
     def es_de_tarde(self):
         if self.grupo_asociado.nombre_grupo.find("arde")!=-1:
             return True

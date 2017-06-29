@@ -176,6 +176,7 @@ class RepartirApp(object):
         
         self.frame_controles=Frame(padre)
         self.frame_controles.grid_rowconfigure(0, weight=1)
+        self.frame_controles.grid_rowconfigure(1, weight=1)
         self.frame_controles.grid_columnconfigure(0, weight=1)
         self.frame_controles.grid(row=0, column=0,  sticky=E+W)
         self.etiqueta_reparto=Label(self.frame_controles, text="Nombre del reparto")
@@ -193,6 +194,9 @@ class RepartirApp(object):
         self.boton_limpiar_todo=Button(self.frame_controles, text="Limpiar reparto")
         self.boton_limpiar_todo.grid(row=0, column=3, sticky=W+E)
         self.boton_limpiar_todo.bind("<ButtonRelease-1>", self.limpiar_reparto)
+        
+        self.lbl_estadisticas = Label(self.frame_controles, text="")
+        self.lbl_estadisticas.grid(row=0, column=4, stick=E+W)
         
     def limpiar_reparto(self, evento=None):
         for vista in self.vistas_profesores:
@@ -289,13 +293,14 @@ class RepartirApp(object):
         #return texto[0:longitud]+"..."
     
     def anadir_modulos(self):
-        modulos=ModuloEnReparto.objects.all().order_by("-modulo_asociado__horas_semanales",
+        modulos=ModuloEnReparto.objects.filter(asignable=True).order_by("-modulo_asociado__horas_semanales",
                                                         "modulo_asociado__nombre")
         for modulo in modulos:
             self.anadir_modulo(modulo)
         
         
-        
+    
+    
     def crear_boton_modulo(self, padre, modulo):
         grupo=modulo.grupo_asociado
         texto="{0}\n({1} h-{2})".format(
@@ -361,7 +366,15 @@ class RepartirApp(object):
     def colorear_control(self, widget, color="red", color_destacado="#dd0000"):
         widget["bg"]=color
         widget["highlightcolor"]=color
-        
+    
+    
+    def estadisticas_modulos_sin_asignar(self):
+        contenedor_modulos  =   self.frame_modulos
+        horas_totales_sin_asignar=0
+        for boton in contenedor_modulos.children.values():
+            horas_totales_sin_asignar += boton.modulo.modulo_asociado.horas_semanales
+            
+        self.lbl_estadisticas["text"]="Horas sin asignar:"+str(horas_totales_sin_asignar)
         
     def click_modulo(self, evento):
         if self.boton_profesor==None:
@@ -369,6 +382,7 @@ class RepartirApp(object):
         
         boton_modulo=evento.widget
         self.asignar_modulo_a_profesor(self.boton_profesor.vista_padre, boton_modulo)
+        self.estadisticas_modulos_sin_asignar()
         
     def asignar_modulo_a_profesor(self, vista_profesor, boton_modulo):
         fila_para_devolver_luego    =   boton_modulo.fila
