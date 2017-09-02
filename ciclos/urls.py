@@ -24,5 +24,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^reparto/', include('reparto.urls')),
     url(r'^programaciones/', include ('programaciones.urls')),
-    url(r'^gestionbd/', include ('gestionbd.urls'))
+    url(r'^gestionbd/', include ('gestionbd.urls')),
+    url(r'^alumnos/', include('tutoria.urls'))
 ]

@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'gestionbd',
     'reparto',
+    'tutoria',
     'programaciones',
     'django.contrib.admin',
     'django.contrib.auth',
