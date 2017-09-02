@@ -34,7 +34,8 @@ class ModuloEnReparto(models.Model):
         filtro_modulos_ps=Q(especialidad="PS")
         filtro_modulos_todos=Q(especialidad="TODOS")
         filtro_horas=Q(horas_semanales__gt=0)
-        filter_general=filtro_horas & (filtro_modulos_ps | filtro_modulos_todos )
+        filtro_fct_mif2=Q(curso__nombre_curso="SMIR_2")
+        filter_general=filtro_horas & (~filtro_fct_mif2) & (filtro_modulos_ps | filtro_modulos_todos )
         lista_modulos=[]
         grupos=Grupo.objects.all()
         for g in grupos:
