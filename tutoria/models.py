@@ -1,5 +1,5 @@
 from django.db import models
-from django.core.validators import MinValueValidator, MaxValueValidator
+from django.core.validators import MinValueValidator, MaxValueValidator, RegexValidator
 from django.forms import SelectDateWidget
 from gestionbd.models import Curso, Modulo
 
@@ -11,19 +11,27 @@ class Alumno(models.Model):
         ("EMANCIPADO", "Estoy independizado"),
         ("NO_EMANCIPADO", "No estoy independizado")
     ]
+
+    regex_validador_dni =   "([0-9]{7,8}[A-Z])|([A-Z][0-9]{7,8})"
+    mensaje_error_dni   =   "En el DNI/NIE por favor, usa solo numeros y mayúsculas. Ni guiones, ni puntos ni cualquier otro símbolo, gracias"
+    validador_dni       =   RegexValidator(regex=regex_validador_dni,
+                                           message=mensaje_error_dni)
     apellido1           =   models.CharField(max_length=60)
     apellido2           =   models.CharField(max_length=60)
     nombre              =   models.CharField(max_length=40)
     
-    dni                 =   models.CharField(max_length=10)
+    dni                 =   models.CharField(max_length=10,
+                                validators=[validador_dni],
+                                primary_key=True)
     
+    email               =   models.EmailField()
     fecha_nacimiento    =   models.DateField()
     
     tutor1              =   models.CharField(max_length=80)
     tutor2              =   models.CharField(max_length=80)
     
     independizado       =   models.CharField(choices=ESTADOS_INDENPENDENCIA, max_length=100)
-    calle_notas         =   models.CharField(max_length=80)
+    direccion_notas     =   models.CharField(max_length=80)
     cp_notas            =   models.IntegerField(default=13001)
     poblacion_notas     =   models.CharField(max_length=40, default="Ciudad Real")
     

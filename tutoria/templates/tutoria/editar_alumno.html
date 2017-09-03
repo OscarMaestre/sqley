@@ -1,0 +1,17 @@
+{%extends 'tutoria/base.html' %}
+
+{%block contenido%}
+<h1>Modificación de datos</h1>
+<center><b>{{mensaje}}</b></center>
+Estos son los datos almacenados. Si necesitas modificar algo puedes hacerlo ahora.
+Si todo está bien puedes cerrar el navegador tranquilamente. ¡Y gracias por tu colaboración!
+
+<form action="{% url 'tutoria:editar' dni %}" method='post'>
+{% csrf_token %}
+<table>
+{{form_alumno}}
+</table>
+<input type="submit" value="Guardar"/>
+</form>
+
+{%endblock%}
