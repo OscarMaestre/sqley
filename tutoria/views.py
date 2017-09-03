@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
-from django.forms import ModelForm, TextInput, SelectDateWidget, DateField
+from django.forms import ModelForm, TextInput, SelectDateWidget, DateField, modelformset_factory, inlineformset_factory
 from django.urls import reverse
 
-from .models import Alumno
+from .models import Alumno, Modulo, Matricula
 from django.db import models
 
 # Create your views here.
@@ -14,6 +14,10 @@ class AlumnoForm (ModelForm):
         model = Alumno
         exclude =['foto']
 
+class MatriculaForm(ModelForm):
+    class Meta:
+        model = Matricula
+        exclude =['modulo']
 
 def generar_formulario_datos_nuevo_alumno(peticion):
     cp_por_defecto = models.IntegerField(default=13001)
@@ -65,3 +69,30 @@ def editar(peticion, id):
         contexto["dni"]=id
         return render(peticion, "tutoria/editar_alumno.html", contexto)
     
+    
+def index_matricula(peticion):
+    modulos=Modulo.objects.all()
+    contexto=dict()
+    contexto["modulos"]=modulos
+    print (modulos[0].curso.nombre_curso)
+    return render(peticion, "tutoria/index_matriculas.html", contexto)
+
+
+def realizar_matricula(peticion, modulo):
+    if peticion.method=="POST":
+        pass
+    else:
+        
+        todos_alumnos=Alumno.objects.all()
+        lista_ids=[]
+        for a in todos_alumnos:
+            lista_ids.append({'alumno':a.dni,})
+        print(lista_ids)
+        ClaseFabricaModelosMatricula= modelformset_factory(Matricula, MatriculaForm,extra=len(lista_ids))
+        #fabrica_modelos_matricula=ClaseFabricaModelosMatricula(initial=lista_ids )
+        fabrica_modelos_matricula=ClaseFabricaModelosMatricula(initial=lista_ids)
+        contexto=dict()
+        contexto["conjunto_matriculas"]=fabrica_modelos_matricula
+        contexto["id_modulo"]=modulo
+        print(fabrica_modelos_matricula)
+        return render(peticion, "tutoria/realizar_matricula.html", contexto)

@@ -1,0 +1,10 @@
+{%extends 'tutoria/base.html' %}
+
+<h1>Seleccion de modulo para matricula</h1>
+{%block contenido%}
+{%for m in modulos%}
+<p>
+  <a href="{% url 'tutoria:realizar_matricula' modulo=m.id %}">{{m.nombre}} {{m.curso.nombre_curso}}  </a>
+</p>
+{%endfor%}
+{%endblock%}

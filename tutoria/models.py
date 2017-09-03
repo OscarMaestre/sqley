@@ -43,6 +43,9 @@ class Alumno(models.Model):
     
     curso               =   models.ForeignKey(Curso)
     
+    def __str__(self):
+        return self.apellido1 + " " + self.apellido2 + " "+self.nombre
+    
     
 class Matricula(models.Model):
     SITUACIONES=(
@@ -54,10 +57,12 @@ class Matricula(models.Model):
     alumno              =   models.ForeignKey(Alumno)
     modulo              =   models.ForeignKey(Modulo)
     situacion           =   models.CharField (max_length=10,
-                                              choices=SITUACIONES)
+                                              choices=SITUACIONES,
+                                              default="MATRICULADO")
     convocatorias_restantes=models.IntegerField(
         validators=[
             MinValueValidator(0),
             MaxValueValidator(5)
-        ]
+        ],
+        default=4
     )
