@@ -106,7 +106,7 @@ def procesar_archivo():
     nombre_ciclo= y["ciclo"]["nombre"]
     
     nombre_pasado=sys.argv[2]
-    if nombre_pasado=="DAM" or nombre_pasado=="DAW" or nombre_pasado=="ASIR" or nombre_pasado=="DAWE" :
+    if nombre_pasado=="DAM" or nombre_pasado=="DAW" or nombre_pasado=="ASIR" or nombre_pasado=="DAWE" or nombre_pasado=="SCI":
         nivel=3
     if nombre_pasado=="SMIR" or nombre_pasado=="SMIRE" or nombre_pasado=="MCOM":
         nivel=2
@@ -163,6 +163,11 @@ def procesar_archivo():
     if sys.argv[2]=="MCOM":
         grupo1_mcom=Grupo(nombre_grupo="MCOM1", curso=curso_1)
         grupo2_mcom=Grupo(nombre_grupo="MCOM2", curso=curso_2)
+        grupo1_mcom.save()
+        grupo2_mcom.save()
+    if sys.argv[2]=="SCI":
+        grupo1_mcom=Grupo(nombre_grupo="SCI1", curso=curso_1)
+        grupo2_mcom=Grupo(nombre_grupo="SCI2", curso=curso_2)
         grupo1_mcom.save()
         grupo2_mcom.save()
     
