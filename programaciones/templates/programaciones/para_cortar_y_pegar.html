@@ -14,11 +14,22 @@ fichero original, porque el resultado final creo que puede ser difícil de enten
             width:98%;
             
         }
-        .caja_completa{
+        .cajacompleta{
             width:100%;
             -webkit-box-sizing: border-box;
             -moz-box-sizing: border-box;
             box-sizing: border-box;
+            margin-top:40px;
+            margin-bottom:40px;
+            height: 200px;
+        }
+        input[type=checkbox] {
+            transform: scale(2);
+        }
+        div.criterios{
+            margin-left:10%;
+            border: solid black 1px;
+            padding:10px;
         }
     </style>
     <script language="Javascript">
@@ -59,6 +70,12 @@ null==d?void 0:d))},attrHooks:{type:{set:function(a,b){if(!o.radioValue&&"radio"
             conmutar("#id_todos_objetivos_generales_sin_letra", ".checkbox_objetivo_general_sin_letra" )
         }
         
+        function click_todos_resultados_aprendizaje_sin_letra(){
+            conmutar("#id_todos_resultados_aprendizaje_sin_letra", ".checkbox_resultado_aprendizaje_sin_letra" )
+        }
+        function click_todos_resultados_aprendizaje_con_letra(){
+            conmutar("#id_todos_resultados_aprendizaje_con_letra", ".checkbox_resultado_aprendizaje_con_letra" )
+        }
         
         function extraer_textos_varios_input_text(atributo_class){
             let elementos_texto=$(atributo_class)
@@ -94,6 +111,14 @@ null==d?void 0:d))},attrHooks:{type:{set:function(a,b){if(!o.radioValue&&"radio"
             textarea_resultado.val(texto_para_portapapeles)
             textarea_resultado.select()
             document.execCommand("copy")
+            textarea_resultado.val("Se ha copiado todo correctamente. Vete al programa que desees y usa CTRL + V o "
+                                   + "el botón derecho para pegar el texto que seleccionaste")
+            window.setTimeout(
+                function (){
+                    textarea_resultado.val("Pon una marca a lo que desees y luego usa el botón para copiar")
+                }
+                ,10000
+            )
         }
         function copiar_objetivos_generales_seleccionados(){
             copiar_textos_asociados_a_checkbox(
@@ -108,12 +133,26 @@ null==d?void 0:d))},attrHooks:{type:{set:function(a,b){if(!o.radioValue&&"radio"
                 ".checkbox_objetivo_general_sin_letra:checked",
                 "#objetivos_generales_sin_letra_seleccionados"
             )
-            
+        }
+        
+        function copiar_resultados_aprendizaje_con_letra_seleccionados(){
+            copiar_textos_asociados_a_checkbox(
+                ".checkbox_resultado_aprendizaje_con_letra:checked",
+                "#resultados_aprendizaje_con_letra_seleccionados"
+            )
+        }
+        function copiar_resultados_aprendizaje_sin_letra_seleccionados(){
+            copiar_textos_asociados_a_checkbox(
+                ".checkbox_resultado_aprendizaje_sin_letra:checked",
+                "#resultados_aprendizaje_sin_letra_seleccionados"
+            )
         }
         function inicio(){
             
             $("#id_todos_objetivos_generales").click ( click_todos_objetivos_generales )
             $("#id_todos_objetivos_generales_sin_letra").click ( click_todos_objetivos_generales_sin_letra )
+            $("#id_todos_resultados_aprendizaje_sin_letra").click ( click_todos_resultados_aprendizaje_sin_letra )
+            $("#id_todos_resultados_aprendizaje_con_letra").click ( click_todos_resultados_aprendizaje_con_letra )
         }
     </script>
     <script language="Javascript">
@@ -135,7 +174,10 @@ Para seleccionar elementos puedes hacer varias cosas:
     <li>Si quieres elegir un conjunto de elementos, usa las marcas que tienen y luego pulsa el correspondiente botón
     "Copiar elementos"</li>
 </ol>
-
+Recuerda también que en los reales decretos aparecen textos con letras o números asociados (por ejemplo
+los resultados de aprendizaje de cada módulo llevan un número junto con un paréntesis). Hay bloques de texto con y sin los números/letras
+por lo que podrás cortar y pegar los textos cómodamente en cualquiera de los dos casos
+<br/><br/>
 
 
 
@@ -162,7 +204,11 @@ Marcar/desmarcar todos los objetivos generales
 <textarea class="cajacompleta" id="objetivos_generales_seleccionados"></textarea>
 
 <!--Bloque: objetivos generales sin incluir la letra-->
+<h2>Objetivos generales del ciclo</h2>
+Aquí se incluyen todos los objetivos sin incluir sus letras asociadas, por ejemplo " Conseguir...". Si quieres trabajar con
+los objetivos con su letra asociada (es decir usar "a) Conseguir..." en lugar de "Conseguir..." sube arriba.
 <br/><br/><br/>
+
 <input type="checkbox" id="id_todos_objetivos_generales_sin_letra">
 Marcar/desmarcar todos los objetivos generales
 <br/><br/>
@@ -180,6 +226,99 @@ Marcar/desmarcar todos los objetivos generales
        onclick="copiar_objetivos_generales_sin_letra_seleccionados(); return false">
 
 <textarea class="cajacompleta" id="objetivos_generales_sin_letra_seleccionados"></textarea>
+
+<!--Bloque: Resultados de aprendizaje-->
+<h2>Resultados de aprendizaje para el modulo</h2>
+Aquí se incluyen todos los resultados de aprendizaje incluyendo sus números asociados, por ejemplo " 2) Conseguir...". Si quieres trabajar con
+los objetivos sin su numero asociado (es decir usar "Conseguir..." en lugar de "2) Conseguir..." baja más abajo.
+<br/><br/><br/>
+
+<input type="checkbox" id="id_todos_resultados_aprendizaje_con_letra">
+Marcar/desmarcar todos los resultados de aprendizaje
+<br/><br/>
+{%for resultado in resultados_aprendizaje%}
+
+<input type="checkbox" name="resultado_aprendizaje_con_letra[]" class="checkbox_resultado_aprendizaje_con_letra"
+       id="cbra_{{resultado.id}}"  data-idtextoasociado="txt_racl_{{resultado.id}}">
+<input type="text" value="{{resultado.numero}}) {{resultado.texto}}" size="160"
+       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_{{resultado.id}}">
+<br/>
+{%endfor%}
+<br/>
+
+<input type="submit" value="Copiar al portapapeles los resultados seleccionados" class="boton_copiar"
+       onclick="copiar_resultados_aprendizaje_con_letra_seleccionados(); return false">
+
+<textarea class="cajacompleta" id="resultados_aprendizaje_con_letra_seleccionados"></textarea>
+
+
+
+<!--Bloque: Resultados de aprendizaje-->
+<h2>Resultados de aprendizaje para el modulo</h2>
+Aquí se incluyen todos los resultados de aprendizaje sin incluir sus letras asociadas, por ejemplo " Conseguir...". Si quieres trabajar con
+los objetivos con su letra asociada (es decir usar "a) Conseguir..." en lugar de "Conseguir..." sube más arriba.
+<br/><br/><br/>
+
+<input type="checkbox" id="id_todos_resultados_aprendizaje_sin_letra">
+Marcar/desmarcar todos los resultados de aprendizaje
+<br/><br/>
+{%for resultado in resultados_aprendizaje%}
+
+<input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
+       id="cbrasl_{{resultado.id}}"  data-idtextoasociado="txt_rasl_{{resultado.id}}">
+<input type="text" value="{{resultado.texto}}" size="160"
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_{{resultado.id}}">
+        
+<br/>
+{%endfor%}
+<br/>
+
+<input type="submit" value="Copiar al portapapeles los resultados seleccionados" class="boton_copiar"
+       onclick="copiar_resultados_aprendizaje_sin_letra_seleccionados(); return false">
+
+<textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados"></textarea>
+
+<!--Bloque: Criterios de evaluacion-->
+<h2>Criterios de aprendizaje</h2>
+A continuación pueden verse los criterios de aprendizaje para cada uno de los resultados de aprendizaje asociados a este módulo
+
+<br/><br/><br/>
+
+<input type="checkbox" id="id_todos_resultados_aprendizaje_sin_letra">
+Marcar/desmarcar todos los resultados de aprendizaje
+<br/><br/>
+{%for resultado in resultados_aprendizaje%}
+
+<input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
+       id="cbrasl_{{resultado.id}}"  data-idtextoasociado="txt_rasl_{{resultado.id}}">
+<input type="text" value="{{resultado.texto}}" size="160"
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_{{resultado.id}}">
+        <div class="criterios">
+            Criterios:<br/>
+            <input type="checkbox" id="todos_criterios_asociados_a_resultado_{{resultado.id}}"
+                   onclick='conmutar("#todos_criterios_asociados_a_resultado_{{resultado.id}}",
+                                     ".criterio_sin_letra_asociado_a_resultado_{{resultado.id}}" )'> Marcar todos <br/>
+            {%for criterio in resultado.criteriodeevaluacion_set.all%}
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_{{resultado.id}}"
+                id="cbsl_{{criterio.id}}" data-idtextoasociado="criterio_{{criterio.id}}">
+            <input type="text" value="{{criterio.letra}}) {{criterio.texto}}" id="criterio_{{criterio.id}}" size="140">
+            <br/>
+            {%endfor%}
+            <br/>
+            
+            <input type="submit" value="Copiar al portapapeles los criterios seleccionados en este bloque" class="boton_copiar"
+                   onclick="alert('Copiando');
+                    copiar_textos_asociados_a_checkbox(
+                '.criterio_sin_letra_asociado_a_resultado_{{resultado.id}}:checked',
+                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado{{resultado.id}}');   return false">
+            
+            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado{{resultado.id}}"></textarea>
+        </div>
+        
+<br/>
+{%endfor%}
+<br/>
+
 
 
 
