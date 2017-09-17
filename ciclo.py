@@ -106,9 +106,9 @@ def procesar_archivo():
     nombre_ciclo= y["ciclo"]["nombre"]
     
     nombre_pasado=sys.argv[2]
-    if nombre_pasado=="DAM" or nombre_pasado=="DAW" or nombre_pasado=="ASIR" or nombre_pasado=="DAWE":
+    if nombre_pasado=="DAM" or nombre_pasado=="DAW" or nombre_pasado=="ASIR" or nombre_pasado=="DAWE" :
         nivel=3
-    if nombre_pasado=="SMIR" or nombre_pasado=="SMIRE":
+    if nombre_pasado=="SMIR" or nombre_pasado=="SMIRE" or nombre_pasado=="MCOM":
         nivel=2
     if nombre_pasado=="FPB":
         nivel=1
@@ -159,6 +159,12 @@ def procesar_archivo():
         grupo_daw2_elearning=Grupo(nombre_grupo="DAW2-Elearning", curso=curso_2)
         grupo_daw1_elearning.save()
         grupo_daw2_elearning.save()
+        
+    if sys.argv[2]=="MCOM":
+        grupo1_mcom=Grupo(nombre_grupo="MCOM1", curso=curso_1)
+        grupo2_mcom=Grupo(nombre_grupo="MCOM2", curso=curso_2)
+        grupo1_mcom.save()
+        grupo2_mcom.save()
     
     competencia_general = y["ciclo"]["competencia_general"]
     comp_general = CompetenciaGeneral ( texto=competencia_general, ciclo=el_ciclo)
@@ -216,6 +222,7 @@ def procesar_archivo():
         resultados_aprendizaje=m["modulo"]["resultados"]
         indice=0
         for r in resultados_aprendizaje:
+            print (r)
             texto_ra=list(r.keys())[0]
             
             (numero_resultado, texto_resultado)=extraer_ra(texto_ra)

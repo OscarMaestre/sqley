@@ -35,6 +35,7 @@ if platform.system()=="Windows":
     gf.ejecutar_comando ( "ciclo.py", "smire.yaml", "SMIRE")
     gf.ejecutar_comando ( "ciclo.py", "fpb.yaml", "FPB")
     gf.ejecutar_comando ( "ciclo.py", "asir.yaml", "ASIR")
+    gf.ejecutar_comando ( "ciclo.py", "mcom.yaml", "MCOM")
 else:
     gf.ejecutar_comando ( "./ciclo.py", "daw.yaml", "DAW")
     gf.ejecutar_comando ( "./ciclo.py", "dawe.yaml", "DAWE")
@@ -43,5 +44,6 @@ else:
     gf.ejecutar_comando ( "./ciclo.py", "smire.yaml", "SMIRE")
     gf.ejecutar_comando ( "./ciclo.py", "fpb.yaml", "FPB")
     gf.ejecutar_comando ( "./ciclo.py", "asir.yaml", "ASIR")
+    gf.ejecutar_comando ( "ciclo.py", "mcom.yaml", "MCOM")
     gf.ejecutar_comando(" echo ", "\".dump\"", "| sqlite3 ciclos.db ", "> bd.sql")
     gf.ejecutar_comando(" echo ", "\".mode csv \n.headers on"+EXTRACCION_MODULOS+"\"", "| sqlite3 ciclos.db ", "> modulos.csv")
