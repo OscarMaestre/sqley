@@ -31,6 +31,9 @@ def generar_fichero_corta_y_pega ( codigo_modulo_segun_jccm, directorio_fichero_
     criterios_de_evaluacion         =   CriterioDeEvaluacion.objects.filter(resultado_de_aprendizaje__modulo=objeto_modulo)
     
     competencias                    =   Competencia.objects.filter(ciclo=ciclo_asociado)
+    
+    cualificaciones                 =   ciclo_asociado.ciclotienecualificacion_set.all()
+    print(cualificaciones)
     #print (criterios_de_evaluacion)
     
     #print (objetivos_generales_del_ciclo)
@@ -48,6 +51,7 @@ def generar_fichero_corta_y_pega ( codigo_modulo_segun_jccm, directorio_fichero_
     diccionario["nombre_modulo"]                =       objeto_modulo.nombre
     diccionario["resultados_aprendizaje"]       =       resultados_de_aprendizaje
     diccionario["competencias"]                 =       competencias
+    diccionario["cualificaciones"]              =       cualificaciones
     contenido_fichero = render_to_string("programaciones/para_cortar_y_pegar.html", diccionario)
     with open(nombre_fichero, "w", encoding="utf-8") as fichero:
         fichero.write(contenido_fichero)
@@ -61,8 +65,9 @@ if __name__ == '__main__':
             generar_fichero_corta_y_pega ( codigo_modulo_segun_jccm, DIRECTORIO_RESULTADOS )
         
         
-    except:
+    except Exception as e:
         print ("Tienes que suministrar el codigo de la Junta y se generará un HTML con todo listo para cortar y pegar")
+        print(e)
         sys.exit(-1)
     
     
