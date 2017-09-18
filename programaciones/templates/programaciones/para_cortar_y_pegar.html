@@ -147,12 +147,22 @@ null==d?void 0:d))},attrHooks:{type:{set:function(a,b){if(!o.radioValue&&"radio"
                 "#resultados_aprendizaje_sin_letra_seleccionados"
             )
         }
+        
+        function click_en_caja_de_texto(elemento){
+            let id_elemento=elemento.target.id
+            let caja_texto_pulsada=$("#"+id_elemento)
+            caja_texto_pulsada.select()
+            document.execCommand("copy")
+        }
         function inicio(){
             
             $("#id_todos_objetivos_generales").click ( click_todos_objetivos_generales )
             $("#id_todos_objetivos_generales_sin_letra").click ( click_todos_objetivos_generales_sin_letra )
             $("#id_todos_resultados_aprendizaje_sin_letra").click ( click_todos_resultados_aprendizaje_sin_letra )
             $("#id_todos_resultados_aprendizaje_con_letra").click ( click_todos_resultados_aprendizaje_con_letra )
+            
+            //Cuando se hace click en un cuadro de texto automáticamente se corta al portapapeles
+            $("input[type=text]").click(click_en_caja_de_texto)
         }
     </script>
     <script language="Javascript">
@@ -163,20 +173,37 @@ null==d?void 0:d))},attrHooks:{type:{set:function(a,b){if(!o.radioValue&&"radio"
 
 <body>
 
+
 <h1>Datos del módulo {{nombre_modulo}}</h1>
 
 
 Esta página presenta los datos más relevantes del módulo de una forma que permita copiar y pegar fácilmente en otro sitio.
 Para seleccionar elementos puedes hacer varias cosas:
 <ol>
-    <li>Si haces click en cualquier caja de texto dicho texto
+    <li>Si haces click en cualquier caja de texto dicho texto se quedará seleccionado y
     se pegará automáticamente al portapapeles (y podrás pegarlo donde necesites)</li>
     <li>Si quieres elegir un conjunto de elementos, usa las marcas que tienen y luego pulsa el correspondiente botón
     "Copiar elementos"</li>
 </ol>
+
+Los datos más relevantes de un módulo son los siguientes:
+<ol>
+    <li>Unidades de competencia. Tenemos que indicar a qué unidades de competencia contribuye nuestro módulo (pueden ser completas
+    o incompletas).</li>
+    <li>Objetivos  (en realidad son objetivos del ciclo, pero al hacer la programación se debe indicar
+    que objetivos ayuda a desarrollar el módulo que impartimos)</li>
+    <li>Competencias (también son competencias del ciclo)</li>
+    
+    <li>Resultados de aprendizaje</li>
+    <li>Criterios de evaluación para cada resultado de aprendizaje</li>
+    <li>Bloques de Contenidos del módulo. Cada módulo tiene unos pocos "bloques".</li>
+    <li>Puntos de contenido. Cada bloque tiene unos cuantos puntos (a veces muchos)</li>
+</ol>
 Recuerda también que en los reales decretos aparecen textos con letras o números asociados (por ejemplo
 los resultados de aprendizaje de cada módulo llevan un número junto con un paréntesis). Hay bloques de texto con y sin los números/letras
-por lo que podrás cortar y pegar los textos cómodamente en cualquiera de los dos casos
+por lo que podrás cortar y pegar los textos cómodamente en cualquiera de los dos casos.
+
+
 <br/><br/>
 
 
@@ -226,6 +253,28 @@ Marcar/desmarcar todos los objetivos generales
        onclick="copiar_objetivos_generales_sin_letra_seleccionados(); return false">
 
 <textarea class="cajacompleta" id="objetivos_generales_sin_letra_seleccionados"></textarea>
+
+<br/><br/><br/>
+<!--Bloque: competencias generales-->
+<h2>Competencias generales</h2>
+
+    <input type="checkbox" id="todas_competencias_generales"
+            onclick='conmutar("#todas_competencias_generales",
+                              ".competencias" )'> Marcar todos <br/>
+     {%for competencia in competencias%}
+     <input type="checkbox" class="competencias"
+         id="competencia_{{criterio.id}}" data-idtextoasociado="texto_{{competencia.id}}">
+     <input type="text" value="{{competencia.texto}}" id="texto_{{competencia.id}}" size="160">
+     <br/>
+     {%endfor%}
+
+<input type="submit" value="Copiar al portapapeles los criterios seleccionados en este bloque" class="boton_copiar"
+                   onclick=" copiar_textos_asociados_a_checkbox(
+                '.competencias:checked',
+                '#competencias_seleccionadas');   return false">
+            
+            <textarea class="cajacompleta" id="competencias_seleccionadas"></textarea>
+
 
 <!--Bloque: Resultados de aprendizaje-->
 <h2>Resultados de aprendizaje para el modulo</h2>
@@ -307,8 +356,7 @@ Marcar/desmarcar todos los resultados de aprendizaje
             <br/>
             
             <input type="submit" value="Copiar al portapapeles los criterios seleccionados en este bloque" class="boton_copiar"
-                   onclick="alert('Copiando');
-                    copiar_textos_asociados_a_checkbox(
+                   onclick=" copiar_textos_asociados_a_checkbox(
                 '.criterio_sin_letra_asociado_a_resultado_{{resultado.id}}:checked',
                 '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado{{resultado.id}}');   return false">
             

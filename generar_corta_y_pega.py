@@ -29,6 +29,8 @@ def generar_fichero_corta_y_pega ( codigo_modulo_segun_jccm, directorio_fichero_
     resultados_de_aprendizaje       =   ResultadoDeAprendizaje.objects.filter ( modulo = objeto_modulo )
     
     criterios_de_evaluacion         =   CriterioDeEvaluacion.objects.filter(resultado_de_aprendizaje__modulo=objeto_modulo)
+    
+    competencias                    =   Competencia.objects.filter(ciclo=ciclo_asociado)
     #print (criterios_de_evaluacion)
     
     #print (objetivos_generales_del_ciclo)
@@ -45,6 +47,7 @@ def generar_fichero_corta_y_pega ( codigo_modulo_segun_jccm, directorio_fichero_
     diccionario["objetivos_generales"]          =       objetivos_generales_del_ciclo
     diccionario["nombre_modulo"]                =       objeto_modulo.nombre
     diccionario["resultados_aprendizaje"]       =       resultados_de_aprendizaje
+    diccionario["competencias"]                 =       competencias
     contenido_fichero = render_to_string("programaciones/para_cortar_y_pegar.html", diccionario)
     with open(nombre_fichero, "w", encoding="utf-8") as fichero:
         fichero.write(contenido_fichero)
@@ -52,12 +55,16 @@ def generar_fichero_corta_y_pega ( codigo_modulo_segun_jccm, directorio_fichero_
 
 if __name__ == '__main__':
     try:
-        codigo_modulo_segun_jccm    =   sys.argv[1]
+        modulos=Modulo.objects.all().distinct()
+        for m in modulos:
+            codigo_modulo_segun_jccm=m.codigo_junta
+            generar_fichero_corta_y_pega ( codigo_modulo_segun_jccm, DIRECTORIO_RESULTADOS )
+        
         
     except:
         print ("Tienes que suministrar el codigo de la Junta y se generará un HTML con todo listo para cortar y pegar")
         sys.exit(-1)
-    generar_fichero_corta_y_pega ( codigo_modulo_segun_jccm, DIRECTORIO_RESULTADOS )
+    
     
 
 

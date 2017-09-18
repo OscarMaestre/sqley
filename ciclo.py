@@ -204,10 +204,12 @@ def procesar_archivo():
         nombre_modulo = m["modulo"]["nombre"]
         ciclo_aux=ciclo
         codigo=m["modulo"]["codigo"]
+        
         horas_anio=m["modulo"]["duracion"]
         horas_semana=m["modulo"]["horas_semanales"]
         curso_de_imparticion=m["modulo"]["curso"]
-        print (nombre_modulo, curso_de_imparticion)
+        print (nombre_modulo, curso_de_imparticion, codigo)
+        #sys.exit(-1)
         if curso_de_imparticion==1:
             curso_asociado=curso_1
             print ("Asociando con 1")
@@ -215,7 +217,7 @@ def procesar_archivo():
             
         espe=m["modulo"]["especialidad"]
         modulo=Modulo ( nombre=nombre_modulo,
-                       codigo_junta=codigo,
+                       codigo_junta=str(codigo),
                        horas_anuales=horas_anio,
                        horas_semanales=horas_semana,
                        curso = curso_asociado,

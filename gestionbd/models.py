@@ -58,7 +58,7 @@ class Profesor ( models.Model ):
         
 class Modulo( models.Model ):
     nombre          =   models.CharField ( max_length=140 )
-    codigo_junta    =   models.IntegerField()
+    codigo_junta    =   models.CharField ( max_length=5   )
     horas_anuales   =   models.IntegerField()
     horas_semanales =   models.IntegerField()
     curso           =   models.ForeignKey(Curso)
