@@ -19,11 +19,13 @@ from django.contrib import admin
 from reparto import urls
 from programaciones import urls
 from gestionbd import urls
+from tutoria import views as vistas_tutoria
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^reparto/', include('reparto.urls')),
     url(r'^programaciones/', include ('programaciones.urls')),
     url(r'^gestionbd/', include ('gestionbd.urls')),
-    url(r'^alumnos/', include('tutoria.urls'))
+    url(r'^alumnos/', include('tutoria.urls')),
+    url(r'^$', vistas_tutoria.anadir)
 ]
