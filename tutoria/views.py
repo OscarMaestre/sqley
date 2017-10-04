@@ -3,6 +3,8 @@ from django.forms import ModelForm, TextInput, SelectDateWidget, DateField, mode
 from django.urls import reverse
 
 from .models import Alumno, Modulo, Matricula
+from gestionbd.models import Curso
+
 from django.db import models
 
 # Create your views here.
@@ -96,3 +98,20 @@ def realizar_matricula(peticion, modulo):
         contexto["id_modulo"]=modulo
         print(fabrica_modelos_matricula)
         return render(peticion, "tutoria/realizar_matricula.html", contexto)
+    
+def get_emails(peticion, nombre_curso):
+    print(nombre_curso)
+    curso=Curso.objects.filter(nombre_curso=nombre_curso)
+    alumnos=Alumno.objects.filter(curso=curso)
+    bloque1=alumnos[0:10]
+    bloque2=alumnos[10:20]
+    bloque3=alumnos[20:]
+    contexto=dict()
+    bloque1="; ".join( [alumno.email for alumno in bloque1] )
+    bloque2="; ".join( [alumno.email for alumno in bloque2] )
+    bloque3="; ".join( [alumno.email for alumno in bloque3] )
+    contexto["bloque1"]=bloque1
+    contexto["bloque2"]=bloque2
+    contexto["bloque3"]=bloque3
+    
+    return render(peticion, "tutoria/emails_grupos_gmail.html", contexto)

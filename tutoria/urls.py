@@ -10,4 +10,5 @@ urlpatterns = [
     url(r'^realizar_matricula/(?P<modulo>[0-9]+)$',
         views.realizar_matricula,
         name="realizar_matricula"),
+    url(r'^emails/(?P<nombre_curso>[A-Za-z_0-9]+)$', views.get_emails, name="get_emails"),
 ]
