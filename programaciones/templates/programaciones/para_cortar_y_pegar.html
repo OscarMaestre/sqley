@@ -263,7 +263,7 @@ Marcar/desmarcar todos los objetivos generales
 
 <br/><br/><br/>
 <!--Bloque: competencias generales-->
-<h2>Competencias generales</h2>
+<h2>Competencias profesionales, personales....</h2>
 
     <input type="checkbox" id="todas_competencias_generales"
             onclick='conmutar("#todas_competencias_generales",
@@ -281,6 +281,25 @@ Marcar/desmarcar todos los objetivos generales
                 '#competencias_seleccionadas');   return false">
             
             <textarea class="cajacompleta" id="competencias_seleccionadas"></textarea>
+            
+<h2>Competencias profesionales, personales.... (con numeración/letra)</h2>
+
+    <input type="checkbox" id="todas_competencias_generales_con_letra"
+            onclick='conmutar("#todas_competencias_generales_con_letra",
+                              ".competencias_con_letra" )'> Marcar todos <br/>
+     {%for competencia in competencias%}
+     <input type="checkbox" class="competencias_con_letra"
+         id="competencia_con_letra_{{criterio.id}}" data-idtextoasociado="texto_con_letra_{{competencia.id}}">
+     <input type="text" value="{{competencia.identificador}} {{competencia.texto}}" id="texto_con_letra_{{competencia.id}}" size="160">
+     <br/>
+     {%endfor%}
+
+<input type="submit" value="Copiar al portapapeles los criterios seleccionados en este bloque" class="boton_copiar"
+                   onclick=" copiar_textos_asociados_a_checkbox(
+                '.competencias_con_letra:checked',
+                '#competencias_seleccionadas_con_letra');   return false">
+            
+            <textarea class="cajacompleta" id="competencias_seleccionadas_con_letra"></textarea>
 
 
 <!--Bloque: Resultados de aprendizaje-->
