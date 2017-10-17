@@ -4,6 +4,7 @@ from django.conf.urls import url
 from . import views
 app_name = 'tutoria'
 urlpatterns = [
+    url(r'^$', views.index_tutoria, name="index"),
     url(r'^anadir$', views.anadir, name="anadir"),
     url(r'^editar/(?P<id>[A-Z0-9]+)$', views.editar, name="editar"),
     url(r'^index_matricula$', views.index_matricula, name="index_matricula"),

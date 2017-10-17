@@ -101,6 +101,7 @@ def realizar_matricula(peticion, modulo):
     
 def get_emails(peticion, nombre_curso):
     print(nombre_curso)
+    
     curso=Curso.objects.filter(nombre_curso=nombre_curso)
     alumnos=Alumno.objects.filter(curso=curso)
     bloque1=alumnos[0:10]
@@ -113,5 +114,15 @@ def get_emails(peticion, nombre_curso):
     contexto["bloque1"]=bloque1
     contexto["bloque2"]=bloque2
     contexto["bloque3"]=bloque3
-    
+    contexto["nombre_curso"]=nombre_curso
     return render(peticion, "tutoria/emails_grupos_gmail.html", contexto)
+
+
+def index_tutoria(peticion):
+    cursos_con_alumnos=Alumno.objects.values_list("curso", flat=True).distinct()
+    nombres_cursos_con_alumnos=Curso.objects.filter(pk__in=set(cursos_con_alumnos))
+    
+    contexto=dict()
+    contexto["nombres_cursos_con_alumnos"]=nombres_cursos_con_alumnos
+    
+    return render(peticion, "tutoria/index_tutoria.html", contexto)

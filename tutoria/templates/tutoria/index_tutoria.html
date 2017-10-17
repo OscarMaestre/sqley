@@ -1,0 +1,17 @@
+{%extends 'tutoria/base.html' %}
+
+
+{%block contenido%}
+<h1>Elige un enlace</h1>
+Recoger emails de alumnos
+<ul>
+{%for g in nombres_cursos_con_alumnos%}
+<li><a href="{% url 'tutoria:get_emails' g.nombre_curso %}">Emails del grupo {{g.nombre_curso}}</a></li>
+{%endfor%}
+</ul>
+
+<h1>Indice de matriculas</h1>
+<a href="{% url 'tutoria:index_matricula' %}">Indice de matrículas</a>
+<h1>Edicion de datos</h1>
+<a href="">Editar alumnos </a>
+{%endblock%}
