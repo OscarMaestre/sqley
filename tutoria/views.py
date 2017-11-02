@@ -108,9 +108,10 @@ def get_emails(peticion, nombre_curso):
     bloque2=alumnos[10:20]
     bloque3=alumnos[20:]
     contexto=dict()
-    bloque1="; ".join( [alumno.email for alumno in bloque1] )
-    bloque2="; ".join( [alumno.email for alumno in bloque2] )
-    bloque3="; ".join( [alumno.email for alumno in bloque3] )
+    separador=", "
+    bloque1=separador.join( [alumno.email for alumno in bloque1] )
+    bloque2=separador.join( [alumno.email for alumno in bloque2] )
+    bloque3=separador.join( [alumno.email for alumno in bloque3] )
     contexto["bloque1"]=bloque1
     contexto["bloque2"]=bloque2
     contexto["bloque3"]=bloque3
