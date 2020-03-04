@@ -1,4 +1,5 @@
-from django.shortcuts import render, render_to_response
+from django.shortcuts import render
+
 from django.template.loader import render_to_string
 from django.db.models.query_utils import Q
 from django.core import serializers
@@ -221,7 +222,7 @@ def index(peticion):
     ciclos_validos=ciclos_validos | Q(curso__ciclo__abreviatura="FPB") 
     modulos = Modulo.objects.filter( ciclos_validos ).order_by("nombre")
     contexto={"modulos":modulos}
-    return render_to_response("gestionbd/index.html", contexto)
+    return render(peticion, "gestionbd/index.html", contexto)
         
 def ver_modulo(peticion, id_pasado):
     modulo=Modulo.objects.get(id=id_pasado)
@@ -229,4 +230,4 @@ def ver_modulo(peticion, id_pasado):
     contexto={
         "contenido":resul
     }
-    return render_to_response("gestionbd/ver_modulo.html", contexto)
+    return render(peticion, "gestionbd/ver_modulo.html", contexto)

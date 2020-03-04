@@ -4,8 +4,8 @@ from gestionbd.models import Profesor, Grupo
 from django.http import HttpResponseRedirect
 from django.db import connection, transaction
 from django.forms import formset_factory, ModelForm
-from django.core.urlresolvers import reverse
 
+from django.urls import reverse
 EXTRACCION_MODULOS="""
 SELECT mod.id, mod.nombre, mod.horas_semanales,
         g.nombre_grupo, ciclos.nivel_profesional, mod.especialidad

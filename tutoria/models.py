@@ -56,7 +56,7 @@ class Matricula(models.Model):
     )
     alumno              =   models.ForeignKey(Alumno , on_delete=models.CASCADE)
     modulo              =   models.ForeignKey(Modulo , on_delete=models.CASCADE)
-    situacion           =   models.CharField (max_length=10,
+    situacion           =   models.CharField (max_length=20,
                                               choices=SITUACIONES,
                                               default="MATRICULADO")
     convocatorias_restantes=models.IntegerField(
