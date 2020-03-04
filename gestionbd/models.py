@@ -17,7 +17,7 @@ class Ciclo( models.Model ):
 class Curso( models.Model ):
     num_curso           = models.IntegerField()
     nombre_curso        = models.CharField ( max_length = 20 )
-    ciclo               = models.ForeignKey ( Ciclo )
+    ciclo               = models.ForeignKey ( Ciclo , on_delete=models.CASCADE)
     def __str__(self):
         return self.nombre_curso
     class Meta:
@@ -25,7 +25,7 @@ class Curso( models.Model ):
         
 class Grupo ( models.Model ):
     nombre_grupo    =   models.CharField(max_length=15)
-    curso           =   models.ForeignKey ( Curso )
+    curso           =   models.ForeignKey ( Curso , on_delete=models.CASCADE )
     def __str__(self):
         return self.nombre_grupo
     class Meta:
@@ -45,7 +45,7 @@ class Profesor ( models.Model ):
     nombre = models.CharField( max_length = 20 )
     horas_minimas = models.IntegerField()
     num_posicion=models.IntegerField()
-    especialidad = models.ForeignKey ( EspecialidadProfesor )
+    especialidad = models.ForeignKey ( EspecialidadProfesor  , on_delete=models.CASCADE)
     def to_java(self):
         inicializacion_java="""
         Profesor m{0} = new Profesor({0}, {1}, {2},\"{3}\", \"{4}\")""".format(self.id, self.nombre, self.horas_minimas)
@@ -61,7 +61,7 @@ class Modulo( models.Model ):
     codigo_junta    =   models.CharField ( max_length=5   )
     horas_anuales   =   models.IntegerField()
     horas_semanales =   models.IntegerField()
-    curso           =   models.ForeignKey(Curso)
+    curso           =   models.ForeignKey(Curso , on_delete=models.CASCADE)
     especialidad    =   models.CharField(max_length=10)
     def __str__(self ):
         return self.nombre + "("+ str(self.curso) + ")"
@@ -86,7 +86,7 @@ class Modulo( models.Model ):
 class Competencia ( models.Model):
     identificador   = models.CharField(max_length=2)
     texto           = models.CharField (max_length=240)
-    ciclo           = models.ForeignKey ( Ciclo )
+    ciclo           = models.ForeignKey ( Ciclo  , on_delete=models.CASCADE)
     def __str__(self):
         return self.ciclo.abreviatura + " " + self.texto
     class Meta:
@@ -95,7 +95,7 @@ class Competencia ( models.Model):
     
 class CompetenciaGeneral ( models.Model ):
     texto           = models.CharField (max_length=512)
-    ciclo           = models.ForeignKey ( Ciclo )
+    ciclo           = models.ForeignKey ( Ciclo  , on_delete=models.CASCADE)
     def __str__(self):
         return self.texto
     class Meta:
@@ -114,8 +114,8 @@ class CualificacionProfesional ( models.Model ):
         verbose_name_plural = "Cualificaciones profesionales"
         
 class CicloTieneCualificacion ( models.Model ):
-    ciclo = models.ForeignKey(Ciclo)
-    cualificacion_profesional = models.ForeignKey ( CualificacionProfesional )
+    ciclo = models.ForeignKey(Ciclo , on_delete=models.CASCADE)
+    cualificacion_profesional = models.ForeignKey ( CualificacionProfesional  , on_delete=models.CASCADE)
     es_completa = models.BooleanField()
     def __str__(self):
         return self.cualificacion_profesional.identificador + str(self.es_completa)
@@ -137,7 +137,7 @@ class UnidadDeCompetencia ( models.Model ):
 class ResultadoDeAprendizaje ( models.Model ):
     texto       =   models.CharField ( max_length=250 )
     numero      =   models.IntegerField()
-    modulo      =   models.ForeignKey ( Modulo )
+    modulo      =   models.ForeignKey ( Modulo  , on_delete=models.CASCADE)
     def __str__(self ):
         return self.texto + "("+str (self.modulo) + ")"
     class Meta:
@@ -147,7 +147,7 @@ class ResultadoDeAprendizaje ( models.Model ):
 class CriterioDeEvaluacion ( models.Model ):
     texto                       =   models.CharField ( max_length=250 )
     letra                       =   models.CharField ( max_length= 2)
-    resultado_de_aprendizaje    =   models.ForeignKey ( ResultadoDeAprendizaje )
+    resultado_de_aprendizaje    =   models.ForeignKey ( ResultadoDeAprendizaje  , on_delete=models.CASCADE)
     def __str__(self ):
         cod_curso=self.resultado_de_aprendizaje.modulo.curso.nombre_curso
         return cod_curso+") " + self.texto
@@ -158,7 +158,7 @@ class CriterioDeEvaluacion ( models.Model ):
 class Contenido ( models.Model ):
     texto       =   models.CharField ( max_length=250 )
     numero      =   models.IntegerField()
-    modulo      =   models.ForeignKey ( Modulo )
+    modulo      =   models.ForeignKey ( Modulo  , on_delete=models.CASCADE)
     def __str__(self ):
         return self.texto + "("+str (self.modulo) + ")"
     class Meta:
@@ -167,7 +167,7 @@ class Contenido ( models.Model ):
 class ObjetivoGeneral ( models.Model ):
     letra   =   models.CharField(max_length=2)
     texto   =   models.CharField(max_length=2048)
-    ciclo   =   models.ForeignKey ( Ciclo )
+    ciclo   =   models.ForeignKey ( Ciclo  , on_delete=models.CASCADE)
     def __str__(self):
         return self.ciclo.abreviatura + " " + self.letra + ") " + self.texto
     class Meta:
@@ -177,7 +177,7 @@ class ObjetivoGeneral ( models.Model ):
 class PuntoDeContenido ( models.Model ):
     texto       =   models.CharField ( max_length=250 )
     num_orden   =   models.IntegerField()
-    contenido   =   models.ForeignKey ( Contenido )
+    contenido   =   models.ForeignKey ( Contenido  , on_delete=models.CASCADE)
     def __str__(self ):
         return self.texto
     class Meta:

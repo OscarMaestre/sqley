@@ -37,11 +37,11 @@ class Alumno(models.Model):
     
     tlf_alumno          =   models.CharField(max_length=14)
     tlf_urgencia        =   models.CharField(max_length=14)
-    foto                =   models.FileField()
+    
     
     repetidor           =   models.BooleanField()
     
-    curso               =   models.ForeignKey(Curso)
+    curso               =   models.ForeignKey(Curso , on_delete=models.CASCADE)
     
     def __str__(self):
         return self.apellido1 + " " + self.apellido2 + " "+self.nombre
@@ -54,8 +54,8 @@ class Matricula(models.Model):
         ("PEND CONV.",  "Quiero pedir que me lo convaliden") ,
         ("MATRICULADO", "Tengo que cursarlo"),
     )
-    alumno              =   models.ForeignKey(Alumno)
-    modulo              =   models.ForeignKey(Modulo)
+    alumno              =   models.ForeignKey(Alumno , on_delete=models.CASCADE)
+    modulo              =   models.ForeignKey(Modulo , on_delete=models.CASCADE)
     situacion           =   models.CharField (max_length=10,
                                               choices=SITUACIONES,
                                               default="MATRICULADO")

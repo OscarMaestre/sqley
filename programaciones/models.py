@@ -56,7 +56,7 @@ class UnidadDeTrabajo(models.Model):
     recursos            = models.ManyToManyField(RecursoDidactico)
     instrumentos        = models.ManyToManyField(InstrumentoEvaluacion)
     criterios           = models.ManyToManyField(CriterioDeEvaluacion, through="Interviene")
-    programacion        = models.ForeignKey ( "Programacion")
+    programacion        = models.ForeignKey ( "Programacion" , on_delete=models.CASCADE)
     resultado_aprendizaje=models.ManyToManyField ( ResultadoDeAprendizaje )
     contenidos          = models.ManyToManyField ( Contenido )
     puntos_contenido    = models.ManyToManyField ( PuntoDeContenido )
@@ -90,7 +90,7 @@ class Interviene(models.Model):
         
 class Programacion(models.Model):
     nombre      =   models.CharField(max_length=240)
-    profesor    =   models.ForeignKey ( Profesor )
+    profesor    =   models.ForeignKey ( Profesor  , on_delete=models.CASCADE)
     modulo      =   models.ManyToManyField ( Modulo )
     def __str__(self):
         return self.nombre
@@ -101,7 +101,7 @@ class Programacion(models.Model):
        
        
 class ObjetivosModulo(models.Model):
-    modulo          = models.ForeignKey ( Modulo )
+    modulo          = models.ForeignKey ( Modulo  , on_delete=models.CASCADE)
     objetivos       = models.ManyToManyField ( ObjetivoGeneral )
     def __str__(self):
         return "Objetivos:" + self.modulo.curso.ciclo.abreviatura + " " +self.modulo.nombre
@@ -110,7 +110,7 @@ class ObjetivosModulo(models.Model):
         verbose_name_plural = "Objetivos de modulo"
     
 class CompetenciasModulo(models.Model):
-    modulo          = models.ForeignKey ( Modulo )
+    modulo          = models.ForeignKey ( Modulo  , on_delete=models.CASCADE)
     competencias    = models.ManyToManyField ( Competencia )
     def __str__(self):
         return "Competencias:" + self.modulo.curso.ciclo.abreviatura + " " +self.modulo.nombre

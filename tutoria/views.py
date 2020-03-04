@@ -127,3 +127,23 @@ def index_tutoria(peticion):
     contexto["nombres_cursos_con_alumnos"]=nombres_cursos_con_alumnos
     
     return render(peticion, "tutoria/index_tutoria.html", contexto)
+
+
+def get_listas_alumnos(peticion):
+    cursos=Curso.objects.all()
+    
+    contexto=dict()
+    contexto["cursos"]=cursos
+    
+    
+    return render(peticion, "tutoria/listas_alumnos_grupos.html", contexto)
+
+def get_lista_alumnos_por_grupo(peticion, grupo):
+    print(grupo)
+    grupo_pasado=Curso.objects.filter(nombre_curso=grupo)
+    print(grupo_pasado)
+    alumnos=Alumno.objects.filter(curso=grupo_pasado).order_by("apellido1", "apellido2")
+    contexto=dict()
+    contexto["nombre"]=grupo
+    contexto["alumnos"]=alumnos
+    return render(peticion, "tutoria/lista_alumnos_en_grupo.html", contexto)

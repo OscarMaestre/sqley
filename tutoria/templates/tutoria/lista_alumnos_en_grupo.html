@@ -1,0 +1,9 @@
+{%extends 'tutoria/base.html' %}
+
+
+{%block contenido%}
+<h1>Alumnos en el grupo {{nombre}}</h1>
+{%for a in alumnos%}
+{{a.apellido1}} {{a.apellido2}}, {{a.nombre}} <br/>
+{%endfor%}
+{%endblock%}

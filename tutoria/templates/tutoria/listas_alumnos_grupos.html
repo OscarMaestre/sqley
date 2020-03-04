@@ -1,0 +1,10 @@
+{%extends 'tutoria/base.html' %}
+
+<h1>Elige un grupo</h1>
+{%block contenido%}
+{%for curso in cursos%}
+<p>
+  <a href="{% url 'tutoria:lista_alumnos_por_grupo' grupo=curso.nombre_curso %}">{{curso.nombre_curso}}</a>
+</p>
+{%endfor%}
+{%endblock%}

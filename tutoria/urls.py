@@ -12,4 +12,7 @@ urlpatterns = [
         views.realizar_matricula,
         name="realizar_matricula"),
     url(r'^emails/(?P<nombre_curso>[A-Za-z_0-9]+)$', views.get_emails, name="get_emails"),
+    url(r'^listas_alumnos_grupos$', views.get_listas_alumnos, name="listas_alumnos_grupos"),
+    url(r'^lista_alumnos_por_grupo/(?P<grupo>[A-Za-z_0-9]+)$',
+        views.get_lista_alumnos_por_grupo, name="lista_alumnos_por_grupo"),
 ]

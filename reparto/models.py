@@ -15,8 +15,8 @@ class RepartoForm ( ModelForm ):
         fields=["nombre"]
 
 class ModuloEnReparto(models.Model):
-    modulo_asociado =   models.ForeignKey(Modulo)
-    grupo_asociado  =   models.ForeignKey(Grupo)
+    modulo_asociado =   models.ForeignKey(Modulo , on_delete=models.CASCADE)
+    grupo_asociado  =   models.ForeignKey(Grupo , on_delete=models.CASCADE)
     asignable       =   models.BooleanField()
     class Meta:
         ordering    =   ["modulo_asociado__nombre"]

@@ -295,6 +295,7 @@ class RepartirApp(object):
     def anadir_modulos(self):
         modulos=ModuloEnReparto.objects.filter(asignable=True).order_by("-modulo_asociado__horas_semanales",
                                                         "modulo_asociado__nombre")
+        print("Modulos:"+str(len(modulos)))
         for modulo in modulos:
             self.anadir_modulo(modulo)
         
