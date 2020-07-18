@@ -113,6 +113,8 @@ class GestorProfesores(object):
         #print(mi_cad)
         
     def anadir_profesores(self, lista_modelos_profesor):
+        print("Lista modelos")
+        print(lista_modelos_profesor)
         for modelo in lista_modelos_profesor:
             prof=ProfesorEnReparto(modelo)
             self.lista_profesores.append ( prof )
@@ -215,13 +217,16 @@ class Solver(object):
     
     def get_profesores(self):
         esp_ps=EspecialidadProfesor.objects.filter(especialidad="PS")
+        print(esp_ps)
         profesores=Profesor.objects.filter(especialidad=esp_ps).order_by("num_posicion")
+        print("Recuperados profesores:")
+        print(profesores)
         return profesores
         
 if __name__ == '__main__':
     solver=Solver()
     print (solver.modulos)
-    
+    print(solver.profesores)
     profesores=solver.profesores
     gestor=GestorProfesores()
     gestor.anadir_profesores(profesores)

@@ -328,8 +328,13 @@ class RepartirApp(object):
             self.columna_actual=0
     
     def anadir_profesores(self):
-        esp_ps=EspecialidadProfesor.objects.filter(especialidad="PS")
+        esp_ps=EspecialidadProfesor.objects.filter(especialidad="PS")[0]
+        print("Especialidades:")
+        print(esp_ps)
         profesores=Profesor.objects.filter(especialidad=esp_ps).order_by("num_posicion")
+        #profesores=Profesor.objects.all()
+        print("Profesores:")
+        print(len(profesores))
         fila_profesor=0
         for profesor in profesores:
             self.frame_profesores.grid_rowconfigure(fila_profesor, weight=1)

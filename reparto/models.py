@@ -52,9 +52,12 @@ class ModuloEnReparto(models.Model):
             #print(modulos_asociados)
             for m in modulos_asociados:
                 modulo_para_repartir=ModuloEnReparto(modulo_asociado=m,
-                                                     grupo_asociado=g)
-                
+                                                     grupo_asociado=g,
+                                                     asignable=True)
+                print(modulo_para_repartir)
                 lista_modulos.append(modulo_para_repartir)
+        print("Devolviendo lista de modulos")
+        print(lista_modulos)
         return lista_modulos
     
     @staticmethod
