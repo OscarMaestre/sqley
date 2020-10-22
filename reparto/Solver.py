@@ -181,7 +181,7 @@ class Solver(object):
                 if gestor_nuevo.asignar_modulo_a_profesor(profesor, modulo):
                     msg="Asignamos {0} a {1}".format(modulo.modulo_asociado.nombre,
                                                      profesor.nombre)
-                    print(msg)
+                    #print(msg)
                     lista_modulos.remove(modulo)
                     if len(lista_modulos)==0:
                         return 
@@ -216,7 +216,7 @@ class Solver(object):
         
     
     def get_profesores(self):
-        esp_ps=EspecialidadProfesor.objects.filter(especialidad="PS")
+        esp_ps=EspecialidadProfesor.objects.filter(especialidad="PS")[0]
         print(esp_ps)
         profesores=Profesor.objects.filter(especialidad=esp_ps).order_by("num_posicion")
         print("Recuperados profesores:")
