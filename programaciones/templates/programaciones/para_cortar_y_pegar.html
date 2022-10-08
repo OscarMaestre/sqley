@@ -76,6 +76,10 @@ null==d?void 0:d))},attrHooks:{type:{set:function(a,b){if(!o.radioValue&&"radio"
         function click_todos_resultados_aprendizaje_con_letra(){
             conmutar("#id_todos_resultados_aprendizaje_con_letra", ".checkbox_resultado_aprendizaje_con_letra" )
         }
+        function click_todas_cualificaciones_completas(){
+            conmutar("#id_todas_cualificaciones_completas", ".checkbox_cualificacion_completa")
+            console.log("Marcas las cualificaciones")
+        }
         
         function extraer_textos_varios_input_text(atributo_class){
             let elementos_texto=$(atributo_class)
@@ -102,7 +106,6 @@ null==d?void 0:d))},attrHooks:{type:{set:function(a,b){if(!o.radioValue&&"radio"
             }
             return texto_a_meter_en_el_portapapeles
         }
-        
         function copiar_textos_asociados_a_checkbox(atributo_class, id_para_inyectar_resultado ){
             let texto_para_portapapeles=extraer_textos_varios_input_text(atributo_class)
             
@@ -160,7 +163,6 @@ null==d?void 0:d))},attrHooks:{type:{set:function(a,b){if(!o.radioValue&&"radio"
             $("#id_todos_objetivos_generales_sin_letra").click ( click_todos_objetivos_generales_sin_letra )
             $("#id_todos_resultados_aprendizaje_sin_letra").click ( click_todos_resultados_aprendizaje_sin_letra )
             $("#id_todos_resultados_aprendizaje_con_letra").click ( click_todos_resultados_aprendizaje_con_letra )
-            
             //Cuando se hace click en un cuadro de texto automáticamente se corta al portapapeles
             $("input[type=text]").click(click_en_caja_de_texto)
         }
@@ -207,13 +209,37 @@ por lo que podrás cortar y pegar los textos cómodamente en cualquiera de los d
 
 
 <br/><br/>
-<h1>Unidades de competencia</h1>
+<h1>Cualificaciones COMPLETAS</h1>
 
-{%for cualificacion in cualificaciones%}
-{{cualificacion.cualificacion_profesional.texto}}
+
+{%for cualificacion in cualificaciones_completas%}
+{{cualificacion.cualificacion_profesional.identificador}} {{cualificacion.cualificacion_profesional.texto}} (R.D {{cualificacion.cualificacion_profesional.real_decreto}}) con las unidades de competencia asociadas:
+<ul>
+    
+    {%for unidadcompetencia in cualificacion.cualificacion_profesional.unidaddecompetencia_set.all%}
+        <li>
+            {{unidadcompetencia.identificador}} {{unidadcompetencia.texto}}
+        </li>
+    {%endfor%}
+
+</ul>
 <br/>
 {%endfor%}
 
+
+<h1>Cualificaciones INCOMPLETAS</h1>
+
+{%for cualificacion in cualificaciones_incompletas%}
+{{cualificacion.cualificacion_profesional.identificador}} {{cualificacion.cualificacion_profesional.texto}} (R.D {{cualificacion.cualificacion_profesional.real_decreto}}) con las siguientes unidades asociadas
+
+    <ul>
+        {%for unidadcompetencia in cualificacion.cualificacion_profesional.unidaddecompetencia_set.all%}
+        <li>
+            {{unidadcompetencia.identificador}} {{unidadcompetencia.texto}}
+        </li>
+        {%endfor%}
+    </ul>   
+{%endfor%}
 
 <h2>Objetivos generales del ciclo</h2>
 Aquí se incluyen todos los objetivos incluyendo sus letras asociadas, por ejemplo " a) Conseguir...". Si quieres trabajar con

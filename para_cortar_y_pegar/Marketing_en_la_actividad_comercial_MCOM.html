@@ -76,6 +76,10 @@ null==d?void 0:d))},attrHooks:{type:{set:function(a,b){if(!o.radioValue&&"radio"
         function click_todos_resultados_aprendizaje_con_letra(){
             conmutar("#id_todos_resultados_aprendizaje_con_letra", ".checkbox_resultado_aprendizaje_con_letra" )
         }
+        function click_todas_cualificaciones_completas(){
+            conmutar("#id_todas_cualificaciones_completas", ".checkbox_cualificacion_completa")
+            console.log("Marcas las cualificaciones")
+        }
         
         function extraer_textos_varios_input_text(atributo_class){
             let elementos_texto=$(atributo_class)
@@ -102,7 +106,6 @@ null==d?void 0:d))},attrHooks:{type:{set:function(a,b){if(!o.radioValue&&"radio"
             }
             return texto_a_meter_en_el_portapapeles
         }
-        
         function copiar_textos_asociados_a_checkbox(atributo_class, id_para_inyectar_resultado ){
             let texto_para_portapapeles=extraer_textos_varios_input_text(atributo_class)
             
@@ -160,7 +163,6 @@ null==d?void 0:d))},attrHooks:{type:{set:function(a,b){if(!o.radioValue&&"radio"
             $("#id_todos_objetivos_generales_sin_letra").click ( click_todos_objetivos_generales_sin_letra )
             $("#id_todos_resultados_aprendizaje_sin_letra").click ( click_todos_resultados_aprendizaje_sin_letra )
             $("#id_todos_resultados_aprendizaje_con_letra").click ( click_todos_resultados_aprendizaje_con_letra )
-            
             //Cuando se hace click en un cuadro de texto automáticamente se corta al portapapeles
             $("input[type=text]").click(click_en_caja_de_texto)
         }
@@ -207,21 +209,72 @@ por lo que podrás cortar y pegar los textos cómodamente en cualquiera de los d
 
 
 <br/><br/>
-<h1>Unidades de competencia</h1>
+<h1>Cualificaciones COMPLETAS</h1>
 
 
-Actividades de Venta
+
+COM085_2 Actividades de Venta (R.D Real Decreto 295/2004, de 20 de febrero) con las unidades de competencia asociadas:
+<ul>
+    
+    
+        <li>
+            UC0239_2 Realizar la venta de productos y/o servicios a través de los diferentes canales de comercialización.
+        </li>
+    
+        <li>
+            UC0240_2 Realizar las operaciones auxiliares a la venta.
+        </li>
+    
+        <li>
+            UC0241_2 Ejecutar las acciones del Servicio de Atención al Cliente/Consumidor/Usuario.
+        </li>
+    
+
+</ul>
 <br/>
 
-Actividades de gestión del pequeño comercio.
-<br/>
 
-Organización y gestión de almacenes
-<br/>
 
-Gestión comercial inmobiliaria
-<br/>
+<h1>Cualificaciones INCOMPLETAS</h1>
 
+
+COM631_2 Actividades de gestión del pequeño comercio. (R.D Real Decreto 889/2011, de 24 de junio) con las siguientes unidades asociadas
+
+    <ul>
+        
+        <li>
+            UC2104_2 Impulsar y gestionar un pequeño comercio de calidad.
+        </li>
+        
+        <li>
+            UC2105_2 Organizar y animar el punto de venta de un pequeño comercio
+        </li>
+        
+        <li>
+            UC2106_2 Garantizar la capacidad de respuesta y abastecimiento del pequeño comercio.
+        </li>
+        
+    </ul>   
+
+COM318_3 Organización y gestión de almacenes (R.D Real Decreto 109/2008, de 1 de febrero) con las siguientes unidades asociadas
+
+    <ul>
+        
+        <li>
+            UC1015_2 Gestionar y coordinar las operaciones del almacén.
+        </li>
+        
+    </ul>   
+
+COM650_3 Gestión comercial inmobiliaria (R.D Real Decreto 1550/2011, de 31 de octubre) con las siguientes unidades asociadas
+
+    <ul>
+        
+        <li>
+            UC0811_2 Realizar la venta y difusión de productos inmobiliarios a través de distintos canales de comercialización.
+        </li>
+        
+    </ul>   
 
 
 <h2>Objetivos generales del ciclo</h2>
@@ -234,184 +287,184 @@ Marcar/desmarcar todos los objetivos generales
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6213"  data-idtextoasociado="txt_og_6213">
+       id="cb_164"  data-idtextoasociado="txt_og_164">
 <input type="text" value="a) Recabar las iniciativas emprendedoras y buscar las oportunidades de creación de pequeños negocios comerciales al por menor, valorando el impacto sobre el entorno de actuación e incorporando valores éticos para realizar proyectos de viabilidad de implantación por cuenta propia de negocios comerciales al por menor." size="160"
-       class="texto_objetivo_general" id="txt_og_6213">
+       class="texto_objetivo_general" id="txt_og_164">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6214"  data-idtextoasociado="txt_og_6214">
+       id="cb_165"  data-idtextoasociado="txt_og_165">
 <input type="text" value="b) Delimitar las características y cuantía de los recursos económicos necesarios, atendiendo a las características de la tienda y de los productos ofertados para la puesta en marcha de un pequeño negocio al por menor." size="160"
-       class="texto_objetivo_general" id="txt_og_6214">
+       class="texto_objetivo_general" id="txt_og_165">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6215"  data-idtextoasociado="txt_og_6215">
+       id="cb_166"  data-idtextoasociado="txt_og_166">
 <input type="text" value="c) Analizar operaciones de compraventa y de cobro y pago, utilizando medios convencionales o electrónicos para administrar y gestionar un pequeño establecimiento comercial." size="160"
-       class="texto_objetivo_general" id="txt_og_6215">
+       class="texto_objetivo_general" id="txt_og_166">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6216"  data-idtextoasociado="txt_og_6216">
+       id="cb_167"  data-idtextoasociado="txt_og_167">
 <input type="text" value="d) Comparar y evaluar pedidos de clientes a través de los diferentes canales de comercialización, atendiendo y satisfaciendo sus necesidades de productos y/o servicios, para realizar la venta de productos y/o servicios." size="160"
-       class="texto_objetivo_general" id="txt_og_6216">
+       class="texto_objetivo_general" id="txt_og_167">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6217"  data-idtextoasociado="txt_og_6217">
+       id="cb_168"  data-idtextoasociado="txt_og_168">
 <input type="text" value="e) Identificar los procesos de seguimiento y post venta, atendiendo y resolviendo,las reclamaciones presentadas por los clientes, para realizar la venta de productos y/o servicios." size="160"
-       class="texto_objetivo_general" id="txt_og_6217">
+       class="texto_objetivo_general" id="txt_og_168">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6218"  data-idtextoasociado="txt_og_6218">
+       id="cb_169"  data-idtextoasociado="txt_og_169">
 <input type="text" value="f) Reconocer las tareas de recepción, ubicación y expedición de mercancías en el almacén, asignando medios materiales y humanos, controlando los stocks de mercancíasy aplicando la normativa vigente en materia de seguridad e higiene, para organizar las operaciones del almacenaje de las mercancías." size="160"
-       class="texto_objetivo_general" id="txt_og_6218">
+       class="texto_objetivo_general" id="txt_og_169">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6219"  data-idtextoasociado="txt_og_6219">
+       id="cb_170"  data-idtextoasociado="txt_og_170">
 <input type="text" value="g) Acopiar y procesar datos de previsiones de demanda y compras a proveedores, utilizando tecnologías de la información y comunicación para garantizar el aprovisionamiento del pequeño negocio." size="160"
-       class="texto_objetivo_general" id="txt_og_6219">
+       class="texto_objetivo_general" id="txt_og_170">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6220"  data-idtextoasociado="txt_og_6220">
+       id="cb_171"  data-idtextoasociado="txt_og_171">
 <input type="text" value="h) Identificar y elegir los mejores proveedores y/o suministradores, negociando las ofertas y condiciones de suministro para realizar las compras necesarias que mantengan el nivel de servicio establecido en función de la demanda de los clientes o consumidores." size="160"
-       class="texto_objetivo_general" id="txt_og_6220">
+       class="texto_objetivo_general" id="txt_og_171">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6221"  data-idtextoasociado="txt_og_6221">
+       id="cb_172"  data-idtextoasociado="txt_og_172">
 <input type="text" value="i) Crear imagen de tienda, combinando los elementos exteriores e interiores del establecimiento comercial con criterios comerciales, para realizar actividades de animación del punto de venta en establecimientos dedicados a la comercialización de productos y/o servicios." size="160"
-       class="texto_objetivo_general" id="txt_og_6221">
+       class="texto_objetivo_general" id="txt_og_172">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6222"  data-idtextoasociado="txt_og_6222">
+       id="cb_173"  data-idtextoasociado="txt_og_173">
 <input type="text" value="j) Analizar las políticas de venta y fidelización de clientes, organizando la exposición y promoción del surtido, para realizar actividades de animación del punto de venta en establecimientos dedicados a la comercialización de productos y/o servicios." size="160"
-       class="texto_objetivo_general" id="txt_og_6222">
+       class="texto_objetivo_general" id="txt_og_173">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6223"  data-idtextoasociado="txt_og_6223">
+       id="cb_174"  data-idtextoasociado="txt_og_174">
 <input type="text" value="k) Seleccionar datos e introducirlos en la página web de la empresa, realizando su mantenimiento y buscando un buen posicionamiento, la facilidad de uso y la máxima persuasión para realizar acciones de comercio electrónico." size="160"
-       class="texto_objetivo_general" id="txt_og_6223">
+       class="texto_objetivo_general" id="txt_og_174">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6224"  data-idtextoasociado="txt_og_6224">
+       id="cb_175"  data-idtextoasociado="txt_og_175">
 <input type="text" value="l) Fomentar las interrelaciones con otros usuarios de la red, utilizando estrategias de marketing digital en las redes sociales, para realizar acciones de comercio electrónico." size="160"
-       class="texto_objetivo_general" id="txt_og_6224">
+       class="texto_objetivo_general" id="txt_og_175">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6225"  data-idtextoasociado="txt_og_6225">
+       id="cb_176"  data-idtextoasociado="txt_og_176">
 <input type="text" value="m) Reconocer las características de los programas informáticos utilizados habitualmente en el sector comercial, confeccionando documentos y materiales informáticos para realizar la gestión comercial y administrativa del establecimiento comercial." size="160"
-       class="texto_objetivo_general" id="txt_og_6225">
+       class="texto_objetivo_general" id="txt_og_176">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6226"  data-idtextoasociado="txt_og_6226">
+       id="cb_177"  data-idtextoasociado="txt_og_177">
 <input type="text" value="n) Identificar el mercado y el entorno de la empresa comercial, obteniendo y organizando la información de los agentes que intervienen en el proceso comercial y aplicando políticas de marketing apropiadas para ejecutar las acciones de marketing definidas por la organización comercial en el plan de marketing." size="160"
-       class="texto_objetivo_general" id="txt_og_6226">
+       class="texto_objetivo_general" id="txt_og_177">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6227"  data-idtextoasociado="txt_og_6227">
+       id="cb_178"  data-idtextoasociado="txt_og_178">
 <input type="text" value="ñ) Seleccionar acciones de información al cliente, asesorándolo con diligencia y cortesía y gestionando en su caso las quejas y reclamaciones presentadas, para ejecutar los planes de atención al cliente." size="160"
-       class="texto_objetivo_general" id="txt_og_6227">
+       class="texto_objetivo_general" id="txt_og_178">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6228"  data-idtextoasociado="txt_og_6228">
+       id="cb_179"  data-idtextoasociado="txt_og_179">
 <input type="text" value="o) Determinar las características diferenciadoras de cada subsector comercial,ofertando los productos y/o servicios mediante técnicas de marketing apropiadas para realizar ventas especializadas de productos y/o servicios." size="160"
-       class="texto_objetivo_general" id="txt_og_6228">
+       class="texto_objetivo_general" id="txt_og_179">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6229"  data-idtextoasociado="txt_og_6229">
+       id="cb_180"  data-idtextoasociado="txt_og_180">
 <input type="text" value="p) Identificar expresiones y reglas de comunicación en inglés, tanto de palabra como por escrito, para gestionar en inglés las relaciones con clientes, usuarios o consumidores." size="160"
-       class="texto_objetivo_general" id="txt_og_6229">
+       class="texto_objetivo_general" id="txt_og_180">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6230"  data-idtextoasociado="txt_og_6230">
+       id="cb_181"  data-idtextoasociado="txt_og_181">
 <input type="text" value="q) Analizar y utilizar los recursos existentes para el aprendizaje a lo largo de la vida y las tecnologías de la información y la comunicación para aprender y actualizar sus conocimientos, reconociendo las posibilidades de mejora profesional y personal, para adaptarse a diferentes situaciones profesionales y laborales." size="160"
-       class="texto_objetivo_general" id="txt_og_6230">
+       class="texto_objetivo_general" id="txt_og_181">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6231"  data-idtextoasociado="txt_og_6231">
+       id="cb_182"  data-idtextoasociado="txt_og_182">
 <input type="text" value="r) Desarrollar trabajos en equipo y valorar su organización, participando con tolerancia y respeto, y tomar decisiones colectivas o individuales para actuar con responsabilidad y autonomía." size="160"
-       class="texto_objetivo_general" id="txt_og_6231">
+       class="texto_objetivo_general" id="txt_og_182">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6232"  data-idtextoasociado="txt_og_6232">
+       id="cb_183"  data-idtextoasociado="txt_og_183">
 <input type="text" value="s) Adoptar y valorar soluciones creativas ante problemas y contingencias que se presentan en el desarrollo de los procesos de trabajo, para resolver de forma responsable las incidencias de su actividad." size="160"
-       class="texto_objetivo_general" id="txt_og_6232">
+       class="texto_objetivo_general" id="txt_og_183">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6233"  data-idtextoasociado="txt_og_6233">
+       id="cb_184"  data-idtextoasociado="txt_og_184">
 <input type="text" value="t) Aplicar técnicas de comunicación, adaptándose a los contenidos que se van a transmitir, a su finalidad y a las características de los receptores, para asegurar la eficacia del proceso." size="160"
-       class="texto_objetivo_general" id="txt_og_6233">
+       class="texto_objetivo_general" id="txt_og_184">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6234"  data-idtextoasociado="txt_og_6234">
+       id="cb_185"  data-idtextoasociado="txt_og_185">
 <input type="text" value="u) Analizar los riesgos ambientales y laborales asociados a la actividad profesional, relacionándolos con las causas que los producen, a fin de fundamentar las medidas preventivas que se van adoptar, y aplicar los protocolos correspondientes para evitar daños en uno mismo, en las demás personas, en el entorno y en el medio ambiente." size="160"
-       class="texto_objetivo_general" id="txt_og_6234">
+       class="texto_objetivo_general" id="txt_og_185">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6235"  data-idtextoasociado="txt_og_6235">
+       id="cb_186"  data-idtextoasociado="txt_og_186">
 <input type="text" value="v) Analizar y aplicar las técnicas necesarias para dar respuesta a la accesibilidad universal y al &quot;diseño para todos&quot;." size="160"
-       class="texto_objetivo_general" id="txt_og_6235">
+       class="texto_objetivo_general" id="txt_og_186">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6236"  data-idtextoasociado="txt_og_6236">
+       id="cb_187"  data-idtextoasociado="txt_og_187">
 <input type="text" value="w) Aplicar y analizar las técnicas necesarias para mejorar los procedimientos de calidad del trabajo en el proceso de aprendizaje y del sector productivo de referencia." size="160"
-       class="texto_objetivo_general" id="txt_og_6236">
+       class="texto_objetivo_general" id="txt_og_187">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6237"  data-idtextoasociado="txt_og_6237">
+       id="cb_188"  data-idtextoasociado="txt_og_188">
 <input type="text" value="x) Utilizar procedimientos relacionados con la cultura emprendedora, empresarial y de iniciativa profesional, para realizar la gestión básica de una pequeña empresa o emprender un trabajo." size="160"
-       class="texto_objetivo_general" id="txt_og_6237">
+       class="texto_objetivo_general" id="txt_og_188">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6238"  data-idtextoasociado="txt_og_6238">
+       id="cb_189"  data-idtextoasociado="txt_og_189">
 <input type="text" value="y) Reconocer sus derechos y deberes como agente activo en la sociedad, teniendo en cuenta el marco legal que regula las condiciones sociales y laborales para participar como ciudadano democrático." size="160"
-       class="texto_objetivo_general" id="txt_og_6238">
+       class="texto_objetivo_general" id="txt_og_189">
 <br/>
 
 <br/>
@@ -433,184 +486,184 @@ Marcar/desmarcar todos los objetivos generales
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6213"  data-idtextoasociado="txt_ogsl_6213">
+       id="cbsl_164"  data-idtextoasociado="txt_ogsl_164">
 <input type="text" value="Recabar las iniciativas emprendedoras y buscar las oportunidades de creación de pequeños negocios comerciales al por menor, valorando el impacto sobre el entorno de actuación e incorporando valores éticos para realizar proyectos de viabilidad de implantación por cuenta propia de negocios comerciales al por menor." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6213">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_164">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6214"  data-idtextoasociado="txt_ogsl_6214">
+       id="cbsl_165"  data-idtextoasociado="txt_ogsl_165">
 <input type="text" value="Delimitar las características y cuantía de los recursos económicos necesarios, atendiendo a las características de la tienda y de los productos ofertados para la puesta en marcha de un pequeño negocio al por menor." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6214">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_165">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6215"  data-idtextoasociado="txt_ogsl_6215">
+       id="cbsl_166"  data-idtextoasociado="txt_ogsl_166">
 <input type="text" value="Analizar operaciones de compraventa y de cobro y pago, utilizando medios convencionales o electrónicos para administrar y gestionar un pequeño establecimiento comercial." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6215">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_166">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6216"  data-idtextoasociado="txt_ogsl_6216">
+       id="cbsl_167"  data-idtextoasociado="txt_ogsl_167">
 <input type="text" value="Comparar y evaluar pedidos de clientes a través de los diferentes canales de comercialización, atendiendo y satisfaciendo sus necesidades de productos y/o servicios, para realizar la venta de productos y/o servicios." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6216">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_167">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6217"  data-idtextoasociado="txt_ogsl_6217">
+       id="cbsl_168"  data-idtextoasociado="txt_ogsl_168">
 <input type="text" value="Identificar los procesos de seguimiento y post venta, atendiendo y resolviendo,las reclamaciones presentadas por los clientes, para realizar la venta de productos y/o servicios." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6217">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_168">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6218"  data-idtextoasociado="txt_ogsl_6218">
+       id="cbsl_169"  data-idtextoasociado="txt_ogsl_169">
 <input type="text" value="Reconocer las tareas de recepción, ubicación y expedición de mercancías en el almacén, asignando medios materiales y humanos, controlando los stocks de mercancíasy aplicando la normativa vigente en materia de seguridad e higiene, para organizar las operaciones del almacenaje de las mercancías." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6218">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_169">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6219"  data-idtextoasociado="txt_ogsl_6219">
+       id="cbsl_170"  data-idtextoasociado="txt_ogsl_170">
 <input type="text" value="Acopiar y procesar datos de previsiones de demanda y compras a proveedores, utilizando tecnologías de la información y comunicación para garantizar el aprovisionamiento del pequeño negocio." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6219">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_170">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6220"  data-idtextoasociado="txt_ogsl_6220">
+       id="cbsl_171"  data-idtextoasociado="txt_ogsl_171">
 <input type="text" value="Identificar y elegir los mejores proveedores y/o suministradores, negociando las ofertas y condiciones de suministro para realizar las compras necesarias que mantengan el nivel de servicio establecido en función de la demanda de los clientes o consumidores." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6220">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_171">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6221"  data-idtextoasociado="txt_ogsl_6221">
+       id="cbsl_172"  data-idtextoasociado="txt_ogsl_172">
 <input type="text" value="Crear imagen de tienda, combinando los elementos exteriores e interiores del establecimiento comercial con criterios comerciales, para realizar actividades de animación del punto de venta en establecimientos dedicados a la comercialización de productos y/o servicios." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6221">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_172">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6222"  data-idtextoasociado="txt_ogsl_6222">
+       id="cbsl_173"  data-idtextoasociado="txt_ogsl_173">
 <input type="text" value="Analizar las políticas de venta y fidelización de clientes, organizando la exposición y promoción del surtido, para realizar actividades de animación del punto de venta en establecimientos dedicados a la comercialización de productos y/o servicios." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6222">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_173">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6223"  data-idtextoasociado="txt_ogsl_6223">
+       id="cbsl_174"  data-idtextoasociado="txt_ogsl_174">
 <input type="text" value="Seleccionar datos e introducirlos en la página web de la empresa, realizando su mantenimiento y buscando un buen posicionamiento, la facilidad de uso y la máxima persuasión para realizar acciones de comercio electrónico." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6223">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_174">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6224"  data-idtextoasociado="txt_ogsl_6224">
+       id="cbsl_175"  data-idtextoasociado="txt_ogsl_175">
 <input type="text" value="Fomentar las interrelaciones con otros usuarios de la red, utilizando estrategias de marketing digital en las redes sociales, para realizar acciones de comercio electrónico." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6224">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_175">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6225"  data-idtextoasociado="txt_ogsl_6225">
+       id="cbsl_176"  data-idtextoasociado="txt_ogsl_176">
 <input type="text" value="Reconocer las características de los programas informáticos utilizados habitualmente en el sector comercial, confeccionando documentos y materiales informáticos para realizar la gestión comercial y administrativa del establecimiento comercial." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6225">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_176">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6226"  data-idtextoasociado="txt_ogsl_6226">
+       id="cbsl_177"  data-idtextoasociado="txt_ogsl_177">
 <input type="text" value="Identificar el mercado y el entorno de la empresa comercial, obteniendo y organizando la información de los agentes que intervienen en el proceso comercial y aplicando políticas de marketing apropiadas para ejecutar las acciones de marketing definidas por la organización comercial en el plan de marketing." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6226">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_177">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6227"  data-idtextoasociado="txt_ogsl_6227">
+       id="cbsl_178"  data-idtextoasociado="txt_ogsl_178">
 <input type="text" value="Seleccionar acciones de información al cliente, asesorándolo con diligencia y cortesía y gestionando en su caso las quejas y reclamaciones presentadas, para ejecutar los planes de atención al cliente." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6227">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_178">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6228"  data-idtextoasociado="txt_ogsl_6228">
+       id="cbsl_179"  data-idtextoasociado="txt_ogsl_179">
 <input type="text" value="Determinar las características diferenciadoras de cada subsector comercial,ofertando los productos y/o servicios mediante técnicas de marketing apropiadas para realizar ventas especializadas de productos y/o servicios." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6228">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_179">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6229"  data-idtextoasociado="txt_ogsl_6229">
+       id="cbsl_180"  data-idtextoasociado="txt_ogsl_180">
 <input type="text" value="Identificar expresiones y reglas de comunicación en inglés, tanto de palabra como por escrito, para gestionar en inglés las relaciones con clientes, usuarios o consumidores." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6229">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_180">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6230"  data-idtextoasociado="txt_ogsl_6230">
+       id="cbsl_181"  data-idtextoasociado="txt_ogsl_181">
 <input type="text" value="Analizar y utilizar los recursos existentes para el aprendizaje a lo largo de la vida y las tecnologías de la información y la comunicación para aprender y actualizar sus conocimientos, reconociendo las posibilidades de mejora profesional y personal, para adaptarse a diferentes situaciones profesionales y laborales." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6230">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_181">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6231"  data-idtextoasociado="txt_ogsl_6231">
+       id="cbsl_182"  data-idtextoasociado="txt_ogsl_182">
 <input type="text" value="Desarrollar trabajos en equipo y valorar su organización, participando con tolerancia y respeto, y tomar decisiones colectivas o individuales para actuar con responsabilidad y autonomía." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6231">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_182">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6232"  data-idtextoasociado="txt_ogsl_6232">
+       id="cbsl_183"  data-idtextoasociado="txt_ogsl_183">
 <input type="text" value="Adoptar y valorar soluciones creativas ante problemas y contingencias que se presentan en el desarrollo de los procesos de trabajo, para resolver de forma responsable las incidencias de su actividad." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6232">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_183">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6233"  data-idtextoasociado="txt_ogsl_6233">
+       id="cbsl_184"  data-idtextoasociado="txt_ogsl_184">
 <input type="text" value="Aplicar técnicas de comunicación, adaptándose a los contenidos que se van a transmitir, a su finalidad y a las características de los receptores, para asegurar la eficacia del proceso." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6233">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_184">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6234"  data-idtextoasociado="txt_ogsl_6234">
+       id="cbsl_185"  data-idtextoasociado="txt_ogsl_185">
 <input type="text" value="Analizar los riesgos ambientales y laborales asociados a la actividad profesional, relacionándolos con las causas que los producen, a fin de fundamentar las medidas preventivas que se van adoptar, y aplicar los protocolos correspondientes para evitar daños en uno mismo, en las demás personas, en el entorno y en el medio ambiente." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6234">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_185">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6235"  data-idtextoasociado="txt_ogsl_6235">
+       id="cbsl_186"  data-idtextoasociado="txt_ogsl_186">
 <input type="text" value="Analizar y aplicar las técnicas necesarias para dar respuesta a la accesibilidad universal y al &quot;diseño para todos&quot;." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6235">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_186">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6236"  data-idtextoasociado="txt_ogsl_6236">
+       id="cbsl_187"  data-idtextoasociado="txt_ogsl_187">
 <input type="text" value="Aplicar y analizar las técnicas necesarias para mejorar los procedimientos de calidad del trabajo en el proceso de aprendizaje y del sector productivo de referencia." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6236">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_187">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6237"  data-idtextoasociado="txt_ogsl_6237">
+       id="cbsl_188"  data-idtextoasociado="txt_ogsl_188">
 <input type="text" value="Utilizar procedimientos relacionados con la cultura emprendedora, empresarial y de iniciativa profesional, para realizar la gestión básica de una pequeña empresa o emprender un trabajo." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6237">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_188">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6238"  data-idtextoasociado="txt_ogsl_6238">
+       id="cbsl_189"  data-idtextoasociado="txt_ogsl_189">
 <input type="text" value="Reconocer sus derechos y deberes como agente activo en la sociedad, teniendo en cuenta el marco legal que regula las condiciones sociales y laborales para participar como ciudadano democrático." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6238">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_189">
 <br/>
 
 <br/>
@@ -629,103 +682,103 @@ Marcar/desmarcar todos los objetivos generales
                               ".competencias" )'> Marcar todos <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6061">
-     <input type="text" value="Realizar proyectos de viabilidad y de puesta en marcha y ejercicio por cuenta propia de la actividad de un pequeño negocio de comercio al por menor, adquiriendo los recursos necesarios y cumpliendo con las obligaciones legales y administrativas, conforme a la normativa vigente." id="texto_6061" size="160">
+         id="competencia_" data-idtextoasociado="texto_166">
+     <input type="text" value="Realizar proyectos de viabilidad y de puesta en marcha y ejercicio por cuenta propia de la actividad de un pequeño negocio de comercio al por menor, adquiriendo los recursos necesarios y cumpliendo con las obligaciones legales y administrativas, conforme a la normativa vigente." id="texto_166" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6062">
-     <input type="text" value="Administrar y gestionar un pequeño establecimiento comercial, realizando las actividades necesarias con eficacia y rentabilidad, y respetando la normativa vigente." id="texto_6062" size="160">
+         id="competencia_" data-idtextoasociado="texto_167">
+     <input type="text" value="Administrar y gestionar un pequeño establecimiento comercial, realizando las actividades necesarias con eficacia y rentabilidad, y respetando la normativa vigente." id="texto_167" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6063">
-     <input type="text" value="Realizar la venta de productos y/o servicios a través de los distintos canales de comercialización, utilizando las técnicas de venta adecuadas a la tipología del cliente y a los criterios establecidos por la empresa." id="texto_6063" size="160">
+         id="competencia_" data-idtextoasociado="texto_168">
+     <input type="text" value="Realizar la venta de productos y/o servicios a través de los distintos canales de comercialización, utilizando las técnicas de venta adecuadas a la tipología del cliente y a los criterios establecidos por la empresa." id="texto_168" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6064">
-     <input type="text" value="Organizar las operaciones del almacenaje de las mercancías en las condiciones que garanticen su conservación, mediante la optimización de medios humanos, materiales y de espacio, de acuerdo con procedimientos establecidos." id="texto_6064" size="160">
+         id="competencia_" data-idtextoasociado="texto_169">
+     <input type="text" value="Organizar las operaciones del almacenaje de las mercancías en las condiciones que garanticen su conservación, mediante la optimización de medios humanos, materiales y de espacio, de acuerdo con procedimientos establecidos." id="texto_169" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6065">
-     <input type="text" value="Garantizar el aprovisionamiento del pequeño negocio, previendo las necesidades de compra para mantener el nivel de servicio que requiere la atención a la demanda de los clientes o consumidores." id="texto_6065" size="160">
+         id="competencia_" data-idtextoasociado="texto_170">
+     <input type="text" value="Garantizar el aprovisionamiento del pequeño negocio, previendo las necesidades de compra para mantener el nivel de servicio que requiere la atención a la demanda de los clientes o consumidores." id="texto_170" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6066">
-     <input type="text" value="Realizar actividades de animación del punto de venta en establecimientos dedicados a la comercialización de productos y/o servicios, aplicando técnicas de merchandising, de acuerdo con los objetivos establecidos en el plan de comercialización de la empresa." id="texto_6066" size="160">
+         id="competencia_" data-idtextoasociado="texto_171">
+     <input type="text" value="Realizar actividades de animación del punto de venta en establecimientos dedicados a la comercialización de productos y/o servicios, aplicando técnicas de merchandising, de acuerdo con los objetivos establecidos en el plan de comercialización de la empresa." id="texto_171" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6067">
-     <input type="text" value="Realizar acciones de comercio electrónico, manteniendo la página web de la empresa y los sistemas sociales de comunicación a través de Internet, para cumplir con los objetivos de comercio electrónico de la empresa definidos en el plan de marketing digital." id="texto_6067" size="160">
+         id="competencia_" data-idtextoasociado="texto_172">
+     <input type="text" value="Realizar acciones de comercio electrónico, manteniendo la página web de la empresa y los sistemas sociales de comunicación a través de Internet, para cumplir con los objetivos de comercio electrónico de la empresa definidos en el plan de marketing digital." id="texto_172" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6068">
-     <input type="text" value="Realizar la gestión comercial y administrativa del establecimiento comercial, utilizando el hardware y software apropiado para automatizar las tareas y trabajos." id="texto_6068" size="160">
+         id="competencia_" data-idtextoasociado="texto_173">
+     <input type="text" value="Realizar la gestión comercial y administrativa del establecimiento comercial, utilizando el hardware y software apropiado para automatizar las tareas y trabajos." id="texto_173" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6069">
-     <input type="text" value="Ejecutar las acciones de marketing definidas por la organización comercial en elplan de marketing, identificando las necesidades de productos y/o servicios de los clientes, los factores que intervienen en la fijación de precios, los canales de distribución y las técnicas de comunicación para cumplir con los objetivos fijados por la dirección comercial." id="texto_6069" size="160">
+         id="competencia_" data-idtextoasociado="texto_174">
+     <input type="text" value="Ejecutar las acciones de marketing definidas por la organización comercial en elplan de marketing, identificando las necesidades de productos y/o servicios de los clientes, los factores que intervienen en la fijación de precios, los canales de distribución y las técnicas de comunicación para cumplir con los objetivos fijados por la dirección comercial." id="texto_174" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6070">
-     <input type="text" value="Ejecutar los planes de atención al cliente, gestionando un sistema de información para mantener el servicio de calidad que garantice el nivel de satisfacción de los clientes, consumidores o usuarios." id="texto_6070" size="160">
+         id="competencia_" data-idtextoasociado="texto_175">
+     <input type="text" value="Ejecutar los planes de atención al cliente, gestionando un sistema de información para mantener el servicio de calidad que garantice el nivel de satisfacción de los clientes, consumidores o usuarios." id="texto_175" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6071">
-     <input type="text" value="Realizar ventas especializadas de productos y/o servicios, adaptando el argumentario de ventas a las características peculiares de cada caso para cumplir con los objetivos comerciales definidos por la dirección comercial." id="texto_6071" size="160">
+         id="competencia_" data-idtextoasociado="texto_176">
+     <input type="text" value="Realizar ventas especializadas de productos y/o servicios, adaptando el argumentario de ventas a las características peculiares de cada caso para cumplir con los objetivos comerciales definidos por la dirección comercial." id="texto_176" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6072">
-     <input type="text" value="Gestionar en inglés las relaciones con clientes, usuarios o consumidores, realizando el seguimiento de las operaciones, para asegurar el nivel de servicio prestado." id="texto_6072" size="160">
+         id="competencia_" data-idtextoasociado="texto_177">
+     <input type="text" value="Gestionar en inglés las relaciones con clientes, usuarios o consumidores, realizando el seguimiento de las operaciones, para asegurar el nivel de servicio prestado." id="texto_177" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6073">
-     <input type="text" value="Adaptarse a las nuevas situaciones laborales originadas por cambios tecnológicos y organizativos en los procesos productivos, actualizando sus conocimientos, utilizando los recursos existentes para el aprendizaje a lo largo de la vida y las tecnologías de la información y la comunicación." id="texto_6073" size="160">
+         id="competencia_" data-idtextoasociado="texto_178">
+     <input type="text" value="Adaptarse a las nuevas situaciones laborales originadas por cambios tecnológicos y organizativos en los procesos productivos, actualizando sus conocimientos, utilizando los recursos existentes para el aprendizaje a lo largo de la vida y las tecnologías de la información y la comunicación." id="texto_178" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6074">
-     <input type="text" value="Actuar con responsabilidad y autonomía en el ámbito de su competencia, organizando y desarrollando el trabajo asignado, cooperando o trabajando en equipo con otros profesionales en el entorno de trabajo." id="texto_6074" size="160">
+         id="competencia_" data-idtextoasociado="texto_179">
+     <input type="text" value="Actuar con responsabilidad y autonomía en el ámbito de su competencia, organizando y desarrollando el trabajo asignado, cooperando o trabajando en equipo con otros profesionales en el entorno de trabajo." id="texto_179" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6075">
-     <input type="text" value="Resolver de forma responsable las incidencias relativas a su actividad, identificando las causas que las provocan, dentro del ámbito de su competencia y autonomía." id="texto_6075" size="160">
+         id="competencia_" data-idtextoasociado="texto_180">
+     <input type="text" value="Resolver de forma responsable las incidencias relativas a su actividad, identificando las causas que las provocan, dentro del ámbito de su competencia y autonomía." id="texto_180" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6076">
-     <input type="text" value="Comunicarse eficazmente, respetando la autonomía y competencia de las distintas personas que intervienen en el ámbito de su trabajo." id="texto_6076" size="160">
+         id="competencia_" data-idtextoasociado="texto_181">
+     <input type="text" value="Comunicarse eficazmente, respetando la autonomía y competencia de las distintas personas que intervienen en el ámbito de su trabajo." id="texto_181" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6077">
-     <input type="text" value="Aplicar los protocolos y las medidas preventivas de riesgos laborales y protección ambiental durante el proceso productivo, para evitar daños en las personas y en el entorno laboral y ambiental." id="texto_6077" size="160">
+         id="competencia_" data-idtextoasociado="texto_182">
+     <input type="text" value="Aplicar los protocolos y las medidas preventivas de riesgos laborales y protección ambiental durante el proceso productivo, para evitar daños en las personas y en el entorno laboral y ambiental." id="texto_182" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6078">
-     <input type="text" value="Aplicar procedimientos de calidad, de accesibilidad universal y de &quot;diseño para todos&quot; en las actividades profesionales incluidas en los procesos de producción o prestación de servicios." id="texto_6078" size="160">
+         id="competencia_" data-idtextoasociado="texto_183">
+     <input type="text" value="Aplicar procedimientos de calidad, de accesibilidad universal y de &quot;diseño para todos&quot; en las actividades profesionales incluidas en los procesos de producción o prestación de servicios." id="texto_183" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6079">
-     <input type="text" value="Realizar la gestión básica para la creación y funcionamiento de una pequeña empresa y tener iniciativa en su actividad profesional." id="texto_6079" size="160">
+         id="competencia_" data-idtextoasociado="texto_184">
+     <input type="text" value="Realizar la gestión básica para la creación y funcionamiento de una pequeña empresa y tener iniciativa en su actividad profesional." id="texto_184" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6080">
-     <input type="text" value="Ejercer sus derechos y cumplir con las obligaciones derivadas de su actividadprofesional, de acuerdo con lo establecido en la legislación vigente, participando activamente en la vida económica, social y cultural." id="texto_6080" size="160">
+         id="competencia_" data-idtextoasociado="texto_185">
+     <input type="text" value="Ejercer sus derechos y cumplir con las obligaciones derivadas de su actividadprofesional, de acuerdo con lo establecido en la legislación vigente, participando activamente en la vida económica, social y cultural." id="texto_185" size="160">
      <br/>
      
 
@@ -743,103 +796,103 @@ Marcar/desmarcar todos los objetivos generales
                               ".competencias_con_letra" )'> Marcar todos <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6061">
-     <input type="text" value="a) Realizar proyectos de viabilidad y de puesta en marcha y ejercicio por cuenta propia de la actividad de un pequeño negocio de comercio al por menor, adquiriendo los recursos necesarios y cumpliendo con las obligaciones legales y administrativas, conforme a la normativa vigente." id="texto_con_letra_6061" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_166">
+     <input type="text" value="a) Realizar proyectos de viabilidad y de puesta en marcha y ejercicio por cuenta propia de la actividad de un pequeño negocio de comercio al por menor, adquiriendo los recursos necesarios y cumpliendo con las obligaciones legales y administrativas, conforme a la normativa vigente." id="texto_con_letra_166" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6062">
-     <input type="text" value="b) Administrar y gestionar un pequeño establecimiento comercial, realizando las actividades necesarias con eficacia y rentabilidad, y respetando la normativa vigente." id="texto_con_letra_6062" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_167">
+     <input type="text" value="b) Administrar y gestionar un pequeño establecimiento comercial, realizando las actividades necesarias con eficacia y rentabilidad, y respetando la normativa vigente." id="texto_con_letra_167" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6063">
-     <input type="text" value="c) Realizar la venta de productos y/o servicios a través de los distintos canales de comercialización, utilizando las técnicas de venta adecuadas a la tipología del cliente y a los criterios establecidos por la empresa." id="texto_con_letra_6063" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_168">
+     <input type="text" value="c) Realizar la venta de productos y/o servicios a través de los distintos canales de comercialización, utilizando las técnicas de venta adecuadas a la tipología del cliente y a los criterios establecidos por la empresa." id="texto_con_letra_168" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6064">
-     <input type="text" value="d) Organizar las operaciones del almacenaje de las mercancías en las condiciones que garanticen su conservación, mediante la optimización de medios humanos, materiales y de espacio, de acuerdo con procedimientos establecidos." id="texto_con_letra_6064" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_169">
+     <input type="text" value="d) Organizar las operaciones del almacenaje de las mercancías en las condiciones que garanticen su conservación, mediante la optimización de medios humanos, materiales y de espacio, de acuerdo con procedimientos establecidos." id="texto_con_letra_169" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6065">
-     <input type="text" value="e) Garantizar el aprovisionamiento del pequeño negocio, previendo las necesidades de compra para mantener el nivel de servicio que requiere la atención a la demanda de los clientes o consumidores." id="texto_con_letra_6065" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_170">
+     <input type="text" value="e) Garantizar el aprovisionamiento del pequeño negocio, previendo las necesidades de compra para mantener el nivel de servicio que requiere la atención a la demanda de los clientes o consumidores." id="texto_con_letra_170" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6066">
-     <input type="text" value="f) Realizar actividades de animación del punto de venta en establecimientos dedicados a la comercialización de productos y/o servicios, aplicando técnicas de merchandising, de acuerdo con los objetivos establecidos en el plan de comercialización de la empresa." id="texto_con_letra_6066" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_171">
+     <input type="text" value="f) Realizar actividades de animación del punto de venta en establecimientos dedicados a la comercialización de productos y/o servicios, aplicando técnicas de merchandising, de acuerdo con los objetivos establecidos en el plan de comercialización de la empresa." id="texto_con_letra_171" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6067">
-     <input type="text" value="g) Realizar acciones de comercio electrónico, manteniendo la página web de la empresa y los sistemas sociales de comunicación a través de Internet, para cumplir con los objetivos de comercio electrónico de la empresa definidos en el plan de marketing digital." id="texto_con_letra_6067" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_172">
+     <input type="text" value="g) Realizar acciones de comercio electrónico, manteniendo la página web de la empresa y los sistemas sociales de comunicación a través de Internet, para cumplir con los objetivos de comercio electrónico de la empresa definidos en el plan de marketing digital." id="texto_con_letra_172" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6068">
-     <input type="text" value="h) Realizar la gestión comercial y administrativa del establecimiento comercial, utilizando el hardware y software apropiado para automatizar las tareas y trabajos." id="texto_con_letra_6068" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_173">
+     <input type="text" value="h) Realizar la gestión comercial y administrativa del establecimiento comercial, utilizando el hardware y software apropiado para automatizar las tareas y trabajos." id="texto_con_letra_173" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6069">
-     <input type="text" value="i) Ejecutar las acciones de marketing definidas por la organización comercial en elplan de marketing, identificando las necesidades de productos y/o servicios de los clientes, los factores que intervienen en la fijación de precios, los canales de distribución y las técnicas de comunicación para cumplir con los objetivos fijados por la dirección comercial." id="texto_con_letra_6069" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_174">
+     <input type="text" value="i) Ejecutar las acciones de marketing definidas por la organización comercial en elplan de marketing, identificando las necesidades de productos y/o servicios de los clientes, los factores que intervienen en la fijación de precios, los canales de distribución y las técnicas de comunicación para cumplir con los objetivos fijados por la dirección comercial." id="texto_con_letra_174" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6070">
-     <input type="text" value="j) Ejecutar los planes de atención al cliente, gestionando un sistema de información para mantener el servicio de calidad que garantice el nivel de satisfacción de los clientes, consumidores o usuarios." id="texto_con_letra_6070" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_175">
+     <input type="text" value="j) Ejecutar los planes de atención al cliente, gestionando un sistema de información para mantener el servicio de calidad que garantice el nivel de satisfacción de los clientes, consumidores o usuarios." id="texto_con_letra_175" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6071">
-     <input type="text" value="k) Realizar ventas especializadas de productos y/o servicios, adaptando el argumentario de ventas a las características peculiares de cada caso para cumplir con los objetivos comerciales definidos por la dirección comercial." id="texto_con_letra_6071" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_176">
+     <input type="text" value="k) Realizar ventas especializadas de productos y/o servicios, adaptando el argumentario de ventas a las características peculiares de cada caso para cumplir con los objetivos comerciales definidos por la dirección comercial." id="texto_con_letra_176" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6072">
-     <input type="text" value="l) Gestionar en inglés las relaciones con clientes, usuarios o consumidores, realizando el seguimiento de las operaciones, para asegurar el nivel de servicio prestado." id="texto_con_letra_6072" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_177">
+     <input type="text" value="l) Gestionar en inglés las relaciones con clientes, usuarios o consumidores, realizando el seguimiento de las operaciones, para asegurar el nivel de servicio prestado." id="texto_con_letra_177" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6073">
-     <input type="text" value="m) Adaptarse a las nuevas situaciones laborales originadas por cambios tecnológicos y organizativos en los procesos productivos, actualizando sus conocimientos, utilizando los recursos existentes para el aprendizaje a lo largo de la vida y las tecnologías de la información y la comunicación." id="texto_con_letra_6073" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_178">
+     <input type="text" value="m) Adaptarse a las nuevas situaciones laborales originadas por cambios tecnológicos y organizativos en los procesos productivos, actualizando sus conocimientos, utilizando los recursos existentes para el aprendizaje a lo largo de la vida y las tecnologías de la información y la comunicación." id="texto_con_letra_178" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6074">
-     <input type="text" value="n) Actuar con responsabilidad y autonomía en el ámbito de su competencia, organizando y desarrollando el trabajo asignado, cooperando o trabajando en equipo con otros profesionales en el entorno de trabajo." id="texto_con_letra_6074" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_179">
+     <input type="text" value="n) Actuar con responsabilidad y autonomía en el ámbito de su competencia, organizando y desarrollando el trabajo asignado, cooperando o trabajando en equipo con otros profesionales en el entorno de trabajo." id="texto_con_letra_179" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6075">
-     <input type="text" value="ñ) Resolver de forma responsable las incidencias relativas a su actividad, identificando las causas que las provocan, dentro del ámbito de su competencia y autonomía." id="texto_con_letra_6075" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_180">
+     <input type="text" value="ñ) Resolver de forma responsable las incidencias relativas a su actividad, identificando las causas que las provocan, dentro del ámbito de su competencia y autonomía." id="texto_con_letra_180" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6076">
-     <input type="text" value="o) Comunicarse eficazmente, respetando la autonomía y competencia de las distintas personas que intervienen en el ámbito de su trabajo." id="texto_con_letra_6076" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_181">
+     <input type="text" value="o) Comunicarse eficazmente, respetando la autonomía y competencia de las distintas personas que intervienen en el ámbito de su trabajo." id="texto_con_letra_181" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6077">
-     <input type="text" value="p) Aplicar los protocolos y las medidas preventivas de riesgos laborales y protección ambiental durante el proceso productivo, para evitar daños en las personas y en el entorno laboral y ambiental." id="texto_con_letra_6077" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_182">
+     <input type="text" value="p) Aplicar los protocolos y las medidas preventivas de riesgos laborales y protección ambiental durante el proceso productivo, para evitar daños en las personas y en el entorno laboral y ambiental." id="texto_con_letra_182" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6078">
-     <input type="text" value="q) Aplicar procedimientos de calidad, de accesibilidad universal y de &quot;diseño para todos&quot; en las actividades profesionales incluidas en los procesos de producción o prestación de servicios." id="texto_con_letra_6078" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_183">
+     <input type="text" value="q) Aplicar procedimientos de calidad, de accesibilidad universal y de &quot;diseño para todos&quot; en las actividades profesionales incluidas en los procesos de producción o prestación de servicios." id="texto_con_letra_183" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6079">
-     <input type="text" value="r) Realizar la gestión básica para la creación y funcionamiento de una pequeña empresa y tener iniciativa en su actividad profesional." id="texto_con_letra_6079" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_184">
+     <input type="text" value="r) Realizar la gestión básica para la creación y funcionamiento de una pequeña empresa y tener iniciativa en su actividad profesional." id="texto_con_letra_184" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6080">
-     <input type="text" value="s) Ejercer sus derechos y cumplir con las obligaciones derivadas de su actividadprofesional, de acuerdo con lo establecido en la legislación vigente, participando activamente en la vida económica, social y cultural." id="texto_con_letra_6080" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_185">
+     <input type="text" value="s) Ejercer sus derechos y cumplir con las obligaciones derivadas de su actividadprofesional, de acuerdo con lo establecido en la legislación vigente, participando activamente en la vida económica, social y cultural." id="texto_con_letra_185" size="160">
      <br/>
      
 
@@ -863,58 +916,58 @@ Marcar/desmarcar todos los resultados de aprendizaje
 
 
 <input type="checkbox" name="resultado_aprendizaje_con_letra[]" class="checkbox_resultado_aprendizaje_con_letra"
-       id="cbra_14723"  data-idtextoasociado="txt_racl_14723">
+       id="cbra_454"  data-idtextoasociado="txt_racl_454">
 <input type="text" value="1) Identifica el concepto de marketing y su utilidad en la actividad comercial, analizando sus principales funciones en las empresas y organizaciones." size="160"
-       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_14723">
+       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_454">
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_con_letra[]" class="checkbox_resultado_aprendizaje_con_letra"
-       id="cbra_14724"  data-idtextoasociado="txt_racl_14724">
+       id="cbra_455"  data-idtextoasociado="txt_racl_455">
 <input type="text" value="2) Caracteriza el mercado y el entorno de la empresa, analizando los principales factores que los conforman y su influencia en la aplicación de las acciones de marketing." size="160"
-       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_14724">
+       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_455">
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_con_letra[]" class="checkbox_resultado_aprendizaje_con_letra"
-       id="cbra_14725"  data-idtextoasociado="txt_racl_14725">
+       id="cbra_456"  data-idtextoasociado="txt_racl_456">
 <input type="text" value="3) Determina el proceso de investigación comercial y el sistema de información de marketing, analizando las técnicas y los procedimientos aplicables para su desarrollo." size="160"
-       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_14725">
+       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_456">
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_con_letra[]" class="checkbox_resultado_aprendizaje_con_letra"
-       id="cbra_14726"  data-idtextoasociado="txt_racl_14726">
+       id="cbra_457"  data-idtextoasociado="txt_racl_457">
 <input type="text" value="4) Define las políticas aplicables al producto o servicio, adecuándolo a las necesidades y perfil de los clientes y a las tendencias del mercado." size="160"
-       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_14726">
+       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_457">
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_con_letra[]" class="checkbox_resultado_aprendizaje_con_letra"
-       id="cbra_14727"  data-idtextoasociado="txt_racl_14727">
+       id="cbra_458"  data-idtextoasociado="txt_racl_458">
 <input type="text" value="5) Determina el método de fijación del precio de venta del producto/servicio, teniendo en cuenta los costes, el margen comercial, los precios de la competencia, la percepción de valor del cliente y otros factores que influyen en el precio." size="160"
-       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_14727">
+       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_458">
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_con_letra[]" class="checkbox_resultado_aprendizaje_con_letra"
-       id="cbra_14728"  data-idtextoasociado="txt_racl_14728">
+       id="cbra_459"  data-idtextoasociado="txt_racl_459">
 <input type="text" value="6) Selecciona la forma y el canal de distribución del producto o línea de productos, considerando los tipos de intermediarios que intervienen y las funciones que desarrollan." size="160"
-       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_14728">
+       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_459">
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_con_letra[]" class="checkbox_resultado_aprendizaje_con_letra"
-       id="cbra_14729"  data-idtextoasociado="txt_racl_14729">
+       id="cbra_460"  data-idtextoasociado="txt_racl_460">
 <input type="text" value="7) Identifica las acciones y técnicas que integran la política de comunicación de la empresa u organización, analizando las funciones de cada una de ellas." size="160"
-       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_14729">
+       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_460">
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_con_letra[]" class="checkbox_resultado_aprendizaje_con_letra"
-       id="cbra_14730"  data-idtextoasociado="txt_racl_14730">
+       id="cbra_461"  data-idtextoasociado="txt_racl_461">
 <input type="text" value="8) Secuencia el proceso de planificación comercial, identificando las fases o etapas del plan de marketing." size="160"
-       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_14730">
+       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_461">
 <br/>
 
 <br/>
@@ -938,65 +991,65 @@ Marcar/desmarcar todos los resultados de aprendizaje
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14723"  data-idtextoasociado="txt_rasl_14723">
+       id="cbrasl_454"  data-idtextoasociado="txt_rasl_454">
 <input type="text" value="Identifica el concepto de marketing y su utilidad en la actividad comercial, analizando sus principales funciones en las empresas y organizaciones." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14723">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_454">
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14724"  data-idtextoasociado="txt_rasl_14724">
+       id="cbrasl_455"  data-idtextoasociado="txt_rasl_455">
 <input type="text" value="Caracteriza el mercado y el entorno de la empresa, analizando los principales factores que los conforman y su influencia en la aplicación de las acciones de marketing." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14724">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_455">
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14725"  data-idtextoasociado="txt_rasl_14725">
+       id="cbrasl_456"  data-idtextoasociado="txt_rasl_456">
 <input type="text" value="Determina el proceso de investigación comercial y el sistema de información de marketing, analizando las técnicas y los procedimientos aplicables para su desarrollo." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14725">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_456">
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14726"  data-idtextoasociado="txt_rasl_14726">
+       id="cbrasl_457"  data-idtextoasociado="txt_rasl_457">
 <input type="text" value="Define las políticas aplicables al producto o servicio, adecuándolo a las necesidades y perfil de los clientes y a las tendencias del mercado." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14726">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_457">
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14727"  data-idtextoasociado="txt_rasl_14727">
+       id="cbrasl_458"  data-idtextoasociado="txt_rasl_458">
 <input type="text" value="Determina el método de fijación del precio de venta del producto/servicio, teniendo en cuenta los costes, el margen comercial, los precios de la competencia, la percepción de valor del cliente y otros factores que influyen en el precio." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14727">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_458">
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14728"  data-idtextoasociado="txt_rasl_14728">
+       id="cbrasl_459"  data-idtextoasociado="txt_rasl_459">
 <input type="text" value="Selecciona la forma y el canal de distribución del producto o línea de productos, considerando los tipos de intermediarios que intervienen y las funciones que desarrollan." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14728">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_459">
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14729"  data-idtextoasociado="txt_rasl_14729">
+       id="cbrasl_460"  data-idtextoasociado="txt_rasl_460">
 <input type="text" value="Identifica las acciones y técnicas que integran la política de comunicación de la empresa u organización, analizando las funciones de cada una de ellas." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14729">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_460">
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14730"  data-idtextoasociado="txt_rasl_14730">
+       id="cbrasl_461"  data-idtextoasociado="txt_rasl_461">
 <input type="text" value="Secuencia el proceso de planificación comercial, identificando las fases o etapas del plan de marketing." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14730">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_461">
         
 <br/>
 
@@ -1019,504 +1072,504 @@ Marcar/desmarcar todos los resultados de aprendizaje
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14723"  data-idtextoasociado="txt_rasl_14723">
+       id="cbrasl_454"  data-idtextoasociado="txt_rasl_454">
 <input type="text" value="Identifica el concepto de marketing y su utilidad en la actividad comercial, analizando sus principales funciones en las empresas y organizaciones." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14723">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_454">
         <div class="criterios">
             Criterios:<br/>
-            <input type="checkbox" id="todos_criterios_asociados_a_resultado_14723"
-                   onclick='conmutar("#todos_criterios_asociados_a_resultado_14723",
-                                     ".criterio_sin_letra_asociado_a_resultado_14723" )'> Marcar todos <br/>
+            <input type="checkbox" id="todos_criterios_asociados_a_resultado_454"
+                   onclick='conmutar("#todos_criterios_asociados_a_resultado_454",
+                                     ".criterio_sin_letra_asociado_a_resultado_454" )'> Marcar todos <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14723"
-                id="cbsl_122110" data-idtextoasociado="criterio_122110">
-            <input type="text" value="a) Se han comparado las distintas acepciones del término marketing." id="criterio_122110" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_454"
+                id="cbsl_3790" data-idtextoasociado="criterio_3790">
+            <input type="text" value="a) Se han comparado las distintas acepciones del término marketing." id="criterio_3790" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14723"
-                id="cbsl_122111" data-idtextoasociado="criterio_122111">
-            <input type="text" value="b) Se han determinado las funciones del marketing en las empresas, organizaciones e instituciones sin ánimo de  lucro." id="criterio_122111" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_454"
+                id="cbsl_3791" data-idtextoasociado="criterio_3791">
+            <input type="text" value="b) Se han determinado las funciones del marketing en las empresas, organizaciones e instituciones sin ánimo de  lucro." id="criterio_3791" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14723"
-                id="cbsl_122112" data-idtextoasociado="criterio_122112">
-            <input type="text" value="c) Se han detallado los distintos tipos de marketing, analizando sus características diferenciadoras." id="criterio_122112" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_454"
+                id="cbsl_3792" data-idtextoasociado="criterio_3792">
+            <input type="text" value="c) Se han detallado los distintos tipos de marketing, analizando sus características diferenciadoras." id="criterio_3792" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14723"
-                id="cbsl_122113" data-idtextoasociado="criterio_122113">
-            <input type="text" value="d) Se han caracterizado los instrumentos de marketing-mix, analizando los principales elementos que los integran." id="criterio_122113" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_454"
+                id="cbsl_3793" data-idtextoasociado="criterio_3793">
+            <input type="text" value="d) Se han caracterizado los instrumentos de marketing-mix, analizando los principales elementos que los integran." id="criterio_3793" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14723"
-                id="cbsl_122114" data-idtextoasociado="criterio_122114">
-            <input type="text" value="e) Se han diferenciado los distintos enfoques que las empresas pueden dar a su actividad comercial, analizando sus ventajas e inconvenientes." id="criterio_122114" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_454"
+                id="cbsl_3794" data-idtextoasociado="criterio_3794">
+            <input type="text" value="e) Se han diferenciado los distintos enfoques que las empresas pueden dar a su actividad comercial, analizando sus ventajas e inconvenientes." id="criterio_3794" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14723"
-                id="cbsl_122115" data-idtextoasociado="criterio_122115">
-            <input type="text" value="f) Se han considerado diferentes formas de organización del departamento de marketing, según tamaño de la em- presa, tipo de actividad y mercado donde opera, entre otros." id="criterio_122115" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_454"
+                id="cbsl_3795" data-idtextoasociado="criterio_3795">
+            <input type="text" value="f) Se han considerado diferentes formas de organización del departamento de marketing, según tamaño de la em- presa, tipo de actividad y mercado donde opera, entre otros." id="criterio_3795" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14723"
-                id="cbsl_122116" data-idtextoasociado="criterio_122116">
-            <input type="text" value="g) Se han analizado las nuevas tendencias del marketing gracias a la aplicación de las nuevas tecnologías de la información y la comunicación" id="criterio_122116" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_454"
+                id="cbsl_3796" data-idtextoasociado="criterio_3796">
+            <input type="text" value="g) Se han analizado las nuevas tendencias del marketing gracias a la aplicación de las nuevas tecnologías de la información y la comunicación" id="criterio_3796" size="140">
             <br/>
             
             <br/>
             
             <input type="submit" value="Copiar al portapapeles los criterios seleccionados en este bloque" class="boton_copiar"
                    onclick=" copiar_textos_asociados_a_checkbox(
-                '.criterio_sin_letra_asociado_a_resultado_14723:checked',
-                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14723');   return false">
+                '.criterio_sin_letra_asociado_a_resultado_454:checked',
+                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado454');   return false">
             
-            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14723"></textarea>
+            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado454"></textarea>
         </div>
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14724"  data-idtextoasociado="txt_rasl_14724">
+       id="cbrasl_455"  data-idtextoasociado="txt_rasl_455">
 <input type="text" value="Caracteriza el mercado y el entorno de la empresa, analizando los principales factores que los conforman y su influencia en la aplicación de las acciones de marketing." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14724">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_455">
         <div class="criterios">
             Criterios:<br/>
-            <input type="checkbox" id="todos_criterios_asociados_a_resultado_14724"
-                   onclick='conmutar("#todos_criterios_asociados_a_resultado_14724",
-                                     ".criterio_sin_letra_asociado_a_resultado_14724" )'> Marcar todos <br/>
+            <input type="checkbox" id="todos_criterios_asociados_a_resultado_455"
+                   onclick='conmutar("#todos_criterios_asociados_a_resultado_455",
+                                     ".criterio_sin_letra_asociado_a_resultado_455" )'> Marcar todos <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14724"
-                id="cbsl_122117" data-idtextoasociado="criterio_122117">
-            <input type="text" value="a) Se ha identificado el concepto de mercado, los elementos que lo integran, su estructura y su funcionamiento." id="criterio_122117" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_455"
+                id="cbsl_3797" data-idtextoasociado="criterio_3797">
+            <input type="text" value="a) Se ha identificado el concepto de mercado, los elementos que lo integran, su estructura y su funcionamiento." id="criterio_3797" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14724"
-                id="cbsl_122118" data-idtextoasociado="criterio_122118">
-            <input type="text" value="b) Se han comparado los mercados atendiendo a diferentes criterios." id="criterio_122118" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_455"
+                id="cbsl_3798" data-idtextoasociado="criterio_3798">
+            <input type="text" value="b) Se han comparado los mercados atendiendo a diferentes criterios." id="criterio_3798" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14724"
-                id="cbsl_122119" data-idtextoasociado="criterio_122119">
-            <input type="text" value="c) Se han identificado los límites del mercado de carácter territorial, los debidos a las características de los consumidores y los derivados del uso del producto." id="criterio_122119" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_455"
+                id="cbsl_3799" data-idtextoasociado="criterio_3799">
+            <input type="text" value="c) Se han identificado los límites del mercado de carácter territorial, los debidos a las características de los consumidores y los derivados del uso del producto." id="criterio_3799" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14724"
-                id="cbsl_122120" data-idtextoasociado="criterio_122120">
-            <input type="text" value="d) Se ha identificado el entorno de la empresa, analizando los factores del microentorno y el macroentorno y su influencia en la aplicación de las políticas de marketing." id="criterio_122120" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_455"
+                id="cbsl_3800" data-idtextoasociado="criterio_3800">
+            <input type="text" value="d) Se ha identificado el entorno de la empresa, analizando los factores del microentorno y el macroentorno y su influencia en la aplicación de las políticas de marketing." id="criterio_3800" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14724"
-                id="cbsl_122121" data-idtextoasociado="criterio_122121">
-            <input type="text" value="e) Se han aplicado técnicas de segmentación de mercados para dividir el mercado en grupos de consumidores homogéneos, analizando sus objetivos, sus utilidades y los distintos criterios de segmentación aplicables." id="criterio_122121" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_455"
+                id="cbsl_3801" data-idtextoasociado="criterio_3801">
+            <input type="text" value="e) Se han aplicado técnicas de segmentación de mercados para dividir el mercado en grupos de consumidores homogéneos, analizando sus objetivos, sus utilidades y los distintos criterios de segmentación aplicables." id="criterio_3801" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14724"
-                id="cbsl_122122" data-idtextoasociado="criterio_122122">
-            <input type="text" value="f) Se han diferenciado las distintas estrategias de segmentación que puede adoptar una empresa al aplicar sus políticas de marketing." id="criterio_122122" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_455"
+                id="cbsl_3802" data-idtextoasociado="criterio_3802">
+            <input type="text" value="f) Se han diferenciado las distintas estrategias de segmentación que puede adoptar una empresa al aplicar sus políticas de marketing." id="criterio_3802" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14724"
-                id="cbsl_122123" data-idtextoasociado="criterio_122123">
-            <input type="text" value="g) Se ha interpretado el proceso de decisión de compra del consumidor, analizando las distintas fases y las variables que influyen en el mismo." id="criterio_122123" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_455"
+                id="cbsl_3803" data-idtextoasociado="criterio_3803">
+            <input type="text" value="g) Se ha interpretado el proceso de decisión de compra del consumidor, analizando las distintas fases y las variables que influyen en el mismo." id="criterio_3803" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14724"
-                id="cbsl_122124" data-idtextoasociado="criterio_122124">
-            <input type="text" value="h) Se han diferenciado los determinantes internos y externos que inciden en el comportamiento de compra del con sumidor." id="criterio_122124" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_455"
+                id="cbsl_3804" data-idtextoasociado="criterio_3804">
+            <input type="text" value="h) Se han diferenciado los determinantes internos y externos que inciden en el comportamiento de compra del con sumidor." id="criterio_3804" size="140">
             <br/>
             
             <br/>
             
             <input type="submit" value="Copiar al portapapeles los criterios seleccionados en este bloque" class="boton_copiar"
                    onclick=" copiar_textos_asociados_a_checkbox(
-                '.criterio_sin_letra_asociado_a_resultado_14724:checked',
-                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14724');   return false">
+                '.criterio_sin_letra_asociado_a_resultado_455:checked',
+                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado455');   return false">
             
-            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14724"></textarea>
+            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado455"></textarea>
         </div>
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14725"  data-idtextoasociado="txt_rasl_14725">
+       id="cbrasl_456"  data-idtextoasociado="txt_rasl_456">
 <input type="text" value="Determina el proceso de investigación comercial y el sistema de información de marketing, analizando las técnicas y los procedimientos aplicables para su desarrollo." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14725">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_456">
         <div class="criterios">
             Criterios:<br/>
-            <input type="checkbox" id="todos_criterios_asociados_a_resultado_14725"
-                   onclick='conmutar("#todos_criterios_asociados_a_resultado_14725",
-                                     ".criterio_sin_letra_asociado_a_resultado_14725" )'> Marcar todos <br/>
+            <input type="checkbox" id="todos_criterios_asociados_a_resultado_456"
+                   onclick='conmutar("#todos_criterios_asociados_a_resultado_456",
+                                     ".criterio_sin_letra_asociado_a_resultado_456" )'> Marcar todos <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14725"
-                id="cbsl_122125" data-idtextoasociado="criterio_122125">
-            <input type="text" value="a) Se ha comprobado la necesidad de información que tienen las empresas para la toma de decisiones, el diseño y la aplicación de sus políticas comerciales." id="criterio_122125" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_456"
+                id="cbsl_3805" data-idtextoasociado="criterio_3805">
+            <input type="text" value="a) Se ha comprobado la necesidad de información que tienen las empresas para la toma de decisiones, el diseño y la aplicación de sus políticas comerciales." id="criterio_3805" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14725"
-                id="cbsl_122126" data-idtextoasociado="criterio_122126">
-            <input type="text" value="b) Se ha clasificado la información, atendiendo a criterios tales como la naturaleza de los datos, el origen y la disponibilidad de los mismos." id="criterio_122126" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_456"
+                id="cbsl_3806" data-idtextoasociado="criterio_3806">
+            <input type="text" value="b) Se ha clasificado la información, atendiendo a criterios tales como la naturaleza de los datos, el origen y la disponibilidad de los mismos." id="criterio_3806" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14725"
-                id="cbsl_122127" data-idtextoasociado="criterio_122127">
-            <input type="text" value="c) Se ha descrito el sistema de información de marketing (SIM), diferenciando los subsistemas que lo integran y las funciones que desarrollan cada uno de ellos." id="criterio_122127" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_456"
+                id="cbsl_3807" data-idtextoasociado="criterio_3807">
+            <input type="text" value="c) Se ha descrito el sistema de información de marketing (SIM), diferenciando los subsistemas que lo integran y las funciones que desarrollan cada uno de ellos." id="criterio_3807" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14725"
-                id="cbsl_122128" data-idtextoasociado="criterio_122128">
-            <input type="text" value="d) Se ha descrito el proceso de investigación comercial, identificando las distintas fases o etapas del mismo." id="criterio_122128" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_456"
+                id="cbsl_3808" data-idtextoasociado="criterio_3808">
+            <input type="text" value="d) Se ha descrito el proceso de investigación comercial, identificando las distintas fases o etapas del mismo." id="criterio_3808" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14725"
-                id="cbsl_122129" data-idtextoasociado="criterio_122129">
-            <input type="text" value="e) Se han diferenciado las fuentes de información internas y externas, primarias y secundarias, de las que se pueden obtener los datos." id="criterio_122129" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_456"
+                id="cbsl_3809" data-idtextoasociado="criterio_3809">
+            <input type="text" value="e) Se han diferenciado las fuentes de información internas y externas, primarias y secundarias, de las que se pueden obtener los datos." id="criterio_3809" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14725"
-                id="cbsl_122130" data-idtextoasociado="criterio_122130">
-            <input type="text" value="f) Se han identificado las fuentes de información secundarias, analizando los procedimientos para la obtención y tratamiento de los datos." id="criterio_122130" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_456"
+                id="cbsl_3810" data-idtextoasociado="criterio_3810">
+            <input type="text" value="f) Se han identificado las fuentes de información secundarias, analizando los procedimientos para la obtención y tratamiento de los datos." id="criterio_3810" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14725"
-                id="cbsl_122131" data-idtextoasociado="criterio_122131">
-            <input type="text" value="g) Se han identificado las fuentes de información primarias, analizando las técnicas de investigación cualitativa y cuantitativa aplicables para la obtención de los datos." id="criterio_122131" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_456"
+                id="cbsl_3811" data-idtextoasociado="criterio_3811">
+            <input type="text" value="g) Se han identificado las fuentes de información primarias, analizando las técnicas de investigación cualitativa y cuantitativa aplicables para la obtención de los datos." id="criterio_3811" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14725"
-                id="cbsl_122132" data-idtextoasociado="criterio_122132">
-            <input type="text" value="h) Se han utilizado aplicaciones informáticas para la obtención, tratamiento, análisis y archivo de información relevante para la empresa." id="criterio_122132" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_456"
+                id="cbsl_3812" data-idtextoasociado="criterio_3812">
+            <input type="text" value="h) Se han utilizado aplicaciones informáticas para la obtención, tratamiento, análisis y archivo de información relevante para la empresa." id="criterio_3812" size="140">
             <br/>
             
             <br/>
             
             <input type="submit" value="Copiar al portapapeles los criterios seleccionados en este bloque" class="boton_copiar"
                    onclick=" copiar_textos_asociados_a_checkbox(
-                '.criterio_sin_letra_asociado_a_resultado_14725:checked',
-                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14725');   return false">
+                '.criterio_sin_letra_asociado_a_resultado_456:checked',
+                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado456');   return false">
             
-            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14725"></textarea>
+            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado456"></textarea>
         </div>
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14726"  data-idtextoasociado="txt_rasl_14726">
+       id="cbrasl_457"  data-idtextoasociado="txt_rasl_457">
 <input type="text" value="Define las políticas aplicables al producto o servicio, adecuándolo a las necesidades y perfil de los clientes y a las tendencias del mercado." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14726">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_457">
         <div class="criterios">
             Criterios:<br/>
-            <input type="checkbox" id="todos_criterios_asociados_a_resultado_14726"
-                   onclick='conmutar("#todos_criterios_asociados_a_resultado_14726",
-                                     ".criterio_sin_letra_asociado_a_resultado_14726" )'> Marcar todos <br/>
+            <input type="checkbox" id="todos_criterios_asociados_a_resultado_457"
+                   onclick='conmutar("#todos_criterios_asociados_a_resultado_457",
+                                     ".criterio_sin_letra_asociado_a_resultado_457" )'> Marcar todos <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14726"
-                id="cbsl_122133" data-idtextoasociado="criterio_122133">
-            <input type="text" value="a) Se han identificado los atributos del producto o servicio, según su naturaleza, su utilidad y las necesidades que puede satisfacer, los motivos de compra y la percepción de valor del consumidor." id="criterio_122133" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_457"
+                id="cbsl_3813" data-idtextoasociado="criterio_3813">
+            <input type="text" value="a) Se han identificado los atributos del producto o servicio, según su naturaleza, su utilidad y las necesidades que puede satisfacer, los motivos de compra y la percepción de valor del consumidor." id="criterio_3813" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14726"
-                id="cbsl_122134" data-idtextoasociado="criterio_122134">
-            <input type="text" value="b) Se ha elaborado una base de datos de los productos, líneas, familias y referencias de los productos/servicios que comercializa la empresa, incorporando a la misma la información relevante de cada producto." id="criterio_122134" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_457"
+                id="cbsl_3814" data-idtextoasociado="criterio_3814">
+            <input type="text" value="b) Se ha elaborado una base de datos de los productos, líneas, familias y referencias de los productos/servicios que comercializa la empresa, incorporando a la misma la información relevante de cada producto." id="criterio_3814" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14726"
-                id="cbsl_122135" data-idtextoasociado="criterio_122135">
-            <input type="text" value="c) Se ha realizado un análisis comparativo del producto o servicio con otros de la competencia, comparando características técnicas, utilidades, presentación, marca y envase, entre otros." id="criterio_122135" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_457"
+                id="cbsl_3815" data-idtextoasociado="criterio_3815">
+            <input type="text" value="c) Se ha realizado un análisis comparativo del producto o servicio con otros de la competencia, comparando características técnicas, utilidades, presentación, marca y envase, entre otros." id="criterio_3815" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14726"
-                id="cbsl_122136" data-idtextoasociado="criterio_122136">
-            <input type="text" value="d) Se ha secuenciado el ciclo de vida de un producto, analizando las distintas etapas por las que atraviesa y las acciones de marketing aplicables en cada fase." id="criterio_122136" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_457"
+                id="cbsl_3816" data-idtextoasociado="criterio_3816">
+            <input type="text" value="d) Se ha secuenciado el ciclo de vida de un producto, analizando las distintas etapas por las que atraviesa y las acciones de marketing aplicables en cada fase." id="criterio_3816" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14726"
-                id="cbsl_122137" data-idtextoasociado="criterio_122137">
-            <input type="text" value="e) Se ha actualizado la base de datos de los productos o servicios, recogiendo la información de los vendedores, los distribuidores y las tiendas o grupos de clientes." id="criterio_122137" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_457"
+                id="cbsl_3817" data-idtextoasociado="criterio_3817">
+            <input type="text" value="e) Se ha actualizado la base de datos de los productos o servicios, recogiendo la información de los vendedores, los distribuidores y las tiendas o grupos de clientes." id="criterio_3817" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14726"
-                id="cbsl_122138" data-idtextoasociado="criterio_122138">
-            <input type="text" value="f) Se han definido estrategias comerciales en política de producto, teniendo en cuenta las características del producto, el ciclo de vida y el perfil de los clientes a los que va dirigido." id="criterio_122138" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_457"
+                id="cbsl_3818" data-idtextoasociado="criterio_3818">
+            <input type="text" value="f) Se han definido estrategias comerciales en política de producto, teniendo en cuenta las características del producto, el ciclo de vida y el perfil de los clientes a los que va dirigido." id="criterio_3818" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14726"
-                id="cbsl_122139" data-idtextoasociado="criterio_122139">
-            <input type="text" value="g) Se han elaborado informes sobre productos, servicios o líneas de productos, utilizando la aplicación informática adecuada." id="criterio_122139" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_457"
+                id="cbsl_3819" data-idtextoasociado="criterio_3819">
+            <input type="text" value="g) Se han elaborado informes sobre productos, servicios o líneas de productos, utilizando la aplicación informática adecuada." id="criterio_3819" size="140">
             <br/>
             
             <br/>
             
             <input type="submit" value="Copiar al portapapeles los criterios seleccionados en este bloque" class="boton_copiar"
                    onclick=" copiar_textos_asociados_a_checkbox(
-                '.criterio_sin_letra_asociado_a_resultado_14726:checked',
-                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14726');   return false">
+                '.criterio_sin_letra_asociado_a_resultado_457:checked',
+                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado457');   return false">
             
-            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14726"></textarea>
+            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado457"></textarea>
         </div>
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14727"  data-idtextoasociado="txt_rasl_14727">
+       id="cbrasl_458"  data-idtextoasociado="txt_rasl_458">
 <input type="text" value="Determina el método de fijación del precio de venta del producto/servicio, teniendo en cuenta los costes, el margen comercial, los precios de la competencia, la percepción de valor del cliente y otros factores que influyen en el precio." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14727">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_458">
         <div class="criterios">
             Criterios:<br/>
-            <input type="checkbox" id="todos_criterios_asociados_a_resultado_14727"
-                   onclick='conmutar("#todos_criterios_asociados_a_resultado_14727",
-                                     ".criterio_sin_letra_asociado_a_resultado_14727" )'> Marcar todos <br/>
+            <input type="checkbox" id="todos_criterios_asociados_a_resultado_458"
+                   onclick='conmutar("#todos_criterios_asociados_a_resultado_458",
+                                     ".criterio_sin_letra_asociado_a_resultado_458" )'> Marcar todos <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14727"
-                id="cbsl_122140" data-idtextoasociado="criterio_122140">
-            <input type="text" value="a) Se han identificado los factores que influyen en el precio de venta de un producto, considerando costes de fabricación y distribución, comisiones, márgenes, ciclo de vida, precios de la competencia y tipo de clientes, entre otros." id="criterio_122140" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_458"
+                id="cbsl_3820" data-idtextoasociado="criterio_3820">
+            <input type="text" value="a) Se han identificado los factores que influyen en el precio de venta de un producto, considerando costes de fabricación y distribución, comisiones, márgenes, ciclo de vida, precios de la competencia y tipo de clientes, entre otros." id="criterio_3820" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14727"
-                id="cbsl_122141" data-idtextoasociado="criterio_122141">
-            <input type="text" value="b) Se ha identificado la normativa legal vigente relativa a precios de los productos y servicios, para su aplicación en la política de precios de la empresa." id="criterio_122141" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_458"
+                id="cbsl_3821" data-idtextoasociado="criterio_3821">
+            <input type="text" value="b) Se ha identificado la normativa legal vigente relativa a precios de los productos y servicios, para su aplicación en la política de precios de la empresa." id="criterio_3821" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14727"
-                id="cbsl_122142" data-idtextoasociado="criterio_122142">
-            <input type="text" value="c) Se ha calculado el precio de venta del producto a partir de los costes de fabricación y distribución, aplicando un determinado margen comercial." id="criterio_122142" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_458"
+                id="cbsl_3822" data-idtextoasociado="criterio_3822">
+            <input type="text" value="c) Se ha calculado el precio de venta del producto a partir de los costes de fabricación y distribución, aplicando un determinado margen comercial." id="criterio_3822" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14727"
-                id="cbsl_122143" data-idtextoasociado="criterio_122143">
-            <input type="text" value="d) Se ha analizado el efecto de una variación en los costes de fabricación y distribución sobre el precio de venta final del producto." id="criterio_122143" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_458"
+                id="cbsl_3823" data-idtextoasociado="criterio_3823">
+            <input type="text" value="d) Se ha analizado el efecto de una variación en los costes de fabricación y distribución sobre el precio de venta final del producto." id="criterio_3823" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14727"
-                id="cbsl_122144" data-idtextoasociado="criterio_122144">
-            <input type="text" value="e) Se ha calculado el margen comercial bruto del producto, a partir del análisis de los componentes del coste total, el punto muerto y la tendencia del mercado." id="criterio_122144" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_458"
+                id="cbsl_3824" data-idtextoasociado="criterio_3824">
+            <input type="text" value="e) Se ha calculado el margen comercial bruto del producto, a partir del análisis de los componentes del coste total, el punto muerto y la tendencia del mercado." id="criterio_3824" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14727"
-                id="cbsl_122145" data-idtextoasociado="criterio_122145">
-            <input type="text" value="f) Se ha determinado el efecto que producen las variaciones en el precio de venta del producto sobre las ventas, analizando la elasticidad de la demanda del producto." id="criterio_122145" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_458"
+                id="cbsl_3825" data-idtextoasociado="criterio_3825">
+            <input type="text" value="f) Se ha determinado el efecto que producen las variaciones en el precio de venta del producto sobre las ventas, analizando la elasticidad de la demanda del producto." id="criterio_3825" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14727"
-                id="cbsl_122146" data-idtextoasociado="criterio_122146">
-            <input type="text" value="g) Se ha comparado el precio del producto o servicio que se comercializa con los de la competencia, analizando las causas de las diferencias." id="criterio_122146" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_458"
+                id="cbsl_3826" data-idtextoasociado="criterio_3826">
+            <input type="text" value="g) Se ha comparado el precio del producto o servicio que se comercializa con los de la competencia, analizando las causas de las diferencias." id="criterio_3826" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14727"
-                id="cbsl_122147" data-idtextoasociado="criterio_122147">
-            <input type="text" value="h) Se han definido estrategias en política de precios teniendo en cuenta los costes, el ciclo de vida del producto, los precios de la competencia, los motivos de compra y la percepción de valor de los clientes." id="criterio_122147" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_458"
+                id="cbsl_3827" data-idtextoasociado="criterio_3827">
+            <input type="text" value="h) Se han definido estrategias en política de precios teniendo en cuenta los costes, el ciclo de vida del producto, los precios de la competencia, los motivos de compra y la percepción de valor de los clientes." id="criterio_3827" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14727"
-                id="cbsl_122148" data-idtextoasociado="criterio_122148">
-            <input type="text" value="i) Se han elaborado informes sobre precios de productos, servicios o líneas de productos, utilizando la aplicación informática adecuada." id="criterio_122148" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_458"
+                id="cbsl_3828" data-idtextoasociado="criterio_3828">
+            <input type="text" value="i) Se han elaborado informes sobre precios de productos, servicios o líneas de productos, utilizando la aplicación informática adecuada." id="criterio_3828" size="140">
             <br/>
             
             <br/>
             
             <input type="submit" value="Copiar al portapapeles los criterios seleccionados en este bloque" class="boton_copiar"
                    onclick=" copiar_textos_asociados_a_checkbox(
-                '.criterio_sin_letra_asociado_a_resultado_14727:checked',
-                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14727');   return false">
+                '.criterio_sin_letra_asociado_a_resultado_458:checked',
+                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado458');   return false">
             
-            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14727"></textarea>
+            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado458"></textarea>
         </div>
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14728"  data-idtextoasociado="txt_rasl_14728">
+       id="cbrasl_459"  data-idtextoasociado="txt_rasl_459">
 <input type="text" value="Selecciona la forma y el canal de distribución del producto o línea de productos, considerando los tipos de intermediarios que intervienen y las funciones que desarrollan." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14728">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_459">
         <div class="criterios">
             Criterios:<br/>
-            <input type="checkbox" id="todos_criterios_asociados_a_resultado_14728"
-                   onclick='conmutar("#todos_criterios_asociados_a_resultado_14728",
-                                     ".criterio_sin_letra_asociado_a_resultado_14728" )'> Marcar todos <br/>
+            <input type="checkbox" id="todos_criterios_asociados_a_resultado_459"
+                   onclick='conmutar("#todos_criterios_asociados_a_resultado_459",
+                                     ".criterio_sin_letra_asociado_a_resultado_459" )'> Marcar todos <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14728"
-                id="cbsl_122149" data-idtextoasociado="criterio_122149">
-            <input type="text" value="a) Se han identificado las funciones de la distribución comercial, valorando su importancia dentro del marketing para acercar el producto al consumidor." id="criterio_122149" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_459"
+                id="cbsl_3829" data-idtextoasociado="criterio_3829">
+            <input type="text" value="a) Se han identificado las funciones de la distribución comercial, valorando su importancia dentro del marketing para acercar el producto al consumidor." id="criterio_3829" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14728"
-                id="cbsl_122150" data-idtextoasociado="criterio_122150">
-            <input type="text" value="b) Se han identificado distintas formas de venta, en función del sector, tipo de producto y tipo de cliente, diferenciando la venta tradicional, el autoservicio y la venta sin tienda." id="criterio_122150" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_459"
+                id="cbsl_3830" data-idtextoasociado="criterio_3830">
+            <input type="text" value="b) Se han identificado distintas formas de venta, en función del sector, tipo de producto y tipo de cliente, diferenciando la venta tradicional, el autoservicio y la venta sin tienda." id="criterio_3830" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14728"
-                id="cbsl_122151" data-idtextoasociado="criterio_122151">
-            <input type="text" value="c) Se han reconocido los canales de distribución comercial en función del número y tipo de intermediarios que inter- vienen y las funciones que desempeñan." id="criterio_122151" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_459"
+                id="cbsl_3831" data-idtextoasociado="criterio_3831">
+            <input type="text" value="c) Se han reconocido los canales de distribución comercial en función del número y tipo de intermediarios que inter- vienen y las funciones que desempeñan." id="criterio_3831" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14728"
-                id="cbsl_122152" data-idtextoasociado="criterio_122152">
-            <input type="text" value="d) Se han comparado distintas estructuras y formas de distribución comercial, considerando los niveles del canal, el número y el tipo de intermediarios." id="criterio_122152" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_459"
+                id="cbsl_3832" data-idtextoasociado="criterio_3832">
+            <input type="text" value="d) Se han comparado distintas estructuras y formas de distribución comercial, considerando los niveles del canal, el número y el tipo de intermediarios." id="criterio_3832" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14728"
-                id="cbsl_122153" data-idtextoasociado="criterio_122153">
-            <input type="text" value="e) Se ha calculado el coste de distribución del producto, teniendo en cuenta los costes de transporte, seguro, almacenamiento, comisiones, márgenes y financieros." id="criterio_122153" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_459"
+                id="cbsl_3833" data-idtextoasociado="criterio_3833">
+            <input type="text" value="e) Se ha calculado el coste de distribución del producto, teniendo en cuenta los costes de transporte, seguro, almacenamiento, comisiones, márgenes y financieros." id="criterio_3833" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14728"
-                id="cbsl_122154" data-idtextoasociado="criterio_122154">
-            <input type="text" value="f) Se han comparado posibles estrategias de distribución para distintos productos, con vistas a seleccionar el canal más adecuado, valorando la posibilidad de distribución online." id="criterio_122154" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_459"
+                id="cbsl_3834" data-idtextoasociado="criterio_3834">
+            <input type="text" value="f) Se han comparado posibles estrategias de distribución para distintos productos, con vistas a seleccionar el canal más adecuado, valorando la posibilidad de distribución online." id="criterio_3834" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14728"
-                id="cbsl_122155" data-idtextoasociado="criterio_122155">
-            <input type="text" value="g) Se han diferenciado distintos tipos de contratos de intermediación comercial para formalizar la relación entre el fabricante y los distribuidores del producto." id="criterio_122155" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_459"
+                id="cbsl_3835" data-idtextoasociado="criterio_3835">
+            <input type="text" value="g) Se han diferenciado distintos tipos de contratos de intermediación comercial para formalizar la relación entre el fabricante y los distribuidores del producto." id="criterio_3835" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14728"
-                id="cbsl_122156" data-idtextoasociado="criterio_122156">
-            <input type="text" value="h) Se han elaborado informes sobre distribución comercial, a partir del análisis de los costes, tiempos, intermediarios disponibles y estrategias viables, utilizando la aplicación informática adecuada." id="criterio_122156" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_459"
+                id="cbsl_3836" data-idtextoasociado="criterio_3836">
+            <input type="text" value="h) Se han elaborado informes sobre distribución comercial, a partir del análisis de los costes, tiempos, intermediarios disponibles y estrategias viables, utilizando la aplicación informática adecuada." id="criterio_3836" size="140">
             <br/>
             
             <br/>
             
             <input type="submit" value="Copiar al portapapeles los criterios seleccionados en este bloque" class="boton_copiar"
                    onclick=" copiar_textos_asociados_a_checkbox(
-                '.criterio_sin_letra_asociado_a_resultado_14728:checked',
-                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14728');   return false">
+                '.criterio_sin_letra_asociado_a_resultado_459:checked',
+                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado459');   return false">
             
-            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14728"></textarea>
+            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado459"></textarea>
         </div>
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14729"  data-idtextoasociado="txt_rasl_14729">
+       id="cbrasl_460"  data-idtextoasociado="txt_rasl_460">
 <input type="text" value="Identifica las acciones y técnicas que integran la política de comunicación de la empresa u organización, analizando las funciones de cada una de ellas." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14729">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_460">
         <div class="criterios">
             Criterios:<br/>
-            <input type="checkbox" id="todos_criterios_asociados_a_resultado_14729"
-                   onclick='conmutar("#todos_criterios_asociados_a_resultado_14729",
-                                     ".criterio_sin_letra_asociado_a_resultado_14729" )'> Marcar todos <br/>
+            <input type="checkbox" id="todos_criterios_asociados_a_resultado_460"
+                   onclick='conmutar("#todos_criterios_asociados_a_resultado_460",
+                                     ".criterio_sin_letra_asociado_a_resultado_460" )'> Marcar todos <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14729"
-                id="cbsl_122157" data-idtextoasociado="criterio_122157">
-            <input type="text" value="a) Se han diferenciado los distintos tipos de acciones que integran el mix de comunicación de una empresa, analizando su finalidad." id="criterio_122157" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_460"
+                id="cbsl_3837" data-idtextoasociado="criterio_3837">
+            <input type="text" value="a) Se han diferenciado los distintos tipos de acciones que integran el mix de comunicación de una empresa, analizando su finalidad." id="criterio_3837" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14729"
-                id="cbsl_122158" data-idtextoasociado="criterio_122158">
-            <input type="text" value="b) Se han establecido los objetivos de la política de comunicación según el público objetivo y las estrategias empresariales." id="criterio_122158" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_460"
+                id="cbsl_3838" data-idtextoasociado="criterio_3838">
+            <input type="text" value="b) Se han establecido los objetivos de la política de comunicación según el público objetivo y las estrategias empresariales." id="criterio_3838" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14729"
-                id="cbsl_122159" data-idtextoasociado="criterio_122159">
-            <input type="text" value="c) Se han caracterizado las funciones de la publicidad y los medios y soportes más habituales." id="criterio_122159" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_460"
+                id="cbsl_3839" data-idtextoasociado="criterio_3839">
+            <input type="text" value="c) Se han caracterizado las funciones de la publicidad y los medios y soportes más habituales." id="criterio_3839" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14729"
-                id="cbsl_122160" data-idtextoasociado="criterio_122160">
-            <input type="text" value="d) Se han caracterizado las distintas acciones aplicables dentro de la política de relaciones públicas de una empresa u organización." id="criterio_122160" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_460"
+                id="cbsl_3840" data-idtextoasociado="criterio_3840">
+            <input type="text" value="d) Se han caracterizado las distintas acciones aplicables dentro de la política de relaciones públicas de una empresa u organización." id="criterio_3840" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14729"
-                id="cbsl_122161" data-idtextoasociado="criterio_122161">
-            <input type="text" value="e) Se han identificado las técnicas de promoción de ventas más utilizadas por las empresas de distribución." id="criterio_122161" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_460"
+                id="cbsl_3841" data-idtextoasociado="criterio_3841">
+            <input type="text" value="e) Se han identificado las técnicas de promoción de ventas más utilizadas por las empresas de distribución." id="criterio_3841" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14729"
-                id="cbsl_122162" data-idtextoasociado="criterio_122162">
-            <input type="text" value="f) Se han determinado las funciones del merchandising, identificando los distintos tipos de técnicas aplicables." id="criterio_122162" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_460"
+                id="cbsl_3842" data-idtextoasociado="criterio_3842">
+            <input type="text" value="f) Se han determinado las funciones del merchandising, identificando los distintos tipos de técnicas aplicables." id="criterio_3842" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14729"
-                id="cbsl_122163" data-idtextoasociado="criterio_122163">
-            <input type="text" value="g) Se ha caracterizado la venta personal, sus objetivos y características diferenciadoras como instrumento de comunicación comercial de respuesta inmediata." id="criterio_122163" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_460"
+                id="cbsl_3843" data-idtextoasociado="criterio_3843">
+            <input type="text" value="g) Se ha caracterizado la venta personal, sus objetivos y características diferenciadoras como instrumento de comunicación comercial de respuesta inmediata." id="criterio_3843" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14729"
-                id="cbsl_122164" data-idtextoasociado="criterio_122164">
-            <input type="text" value="h) Se han identificado las técnicas de marketing directo más utilizadas." id="criterio_122164" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_460"
+                id="cbsl_3844" data-idtextoasociado="criterio_3844">
+            <input type="text" value="h) Se han identificado las técnicas de marketing directo más utilizadas." id="criterio_3844" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14729"
-                id="cbsl_122165" data-idtextoasociado="criterio_122165">
-            <input type="text" value="i) Se han seleccionado las acciones de comunicación y promoción más adecuadas para lanzar un producto al mercado o prolongar su permanencia en el mismo." id="criterio_122165" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_460"
+                id="cbsl_3845" data-idtextoasociado="criterio_3845">
+            <input type="text" value="i) Se han seleccionado las acciones de comunicación y promoción más adecuadas para lanzar un producto al mercado o prolongar su permanencia en el mismo." id="criterio_3845" size="140">
             <br/>
             
             <br/>
             
             <input type="submit" value="Copiar al portapapeles los criterios seleccionados en este bloque" class="boton_copiar"
                    onclick=" copiar_textos_asociados_a_checkbox(
-                '.criterio_sin_letra_asociado_a_resultado_14729:checked',
-                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14729');   return false">
+                '.criterio_sin_letra_asociado_a_resultado_460:checked',
+                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado460');   return false">
             
-            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14729"></textarea>
+            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado460"></textarea>
         </div>
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14730"  data-idtextoasociado="txt_rasl_14730">
+       id="cbrasl_461"  data-idtextoasociado="txt_rasl_461">
 <input type="text" value="Secuencia el proceso de planificación comercial, identificando las fases o etapas del plan de marketing." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14730">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_461">
         <div class="criterios">
             Criterios:<br/>
-            <input type="checkbox" id="todos_criterios_asociados_a_resultado_14730"
-                   onclick='conmutar("#todos_criterios_asociados_a_resultado_14730",
-                                     ".criterio_sin_letra_asociado_a_resultado_14730" )'> Marcar todos <br/>
+            <input type="checkbox" id="todos_criterios_asociados_a_resultado_461"
+                   onclick='conmutar("#todos_criterios_asociados_a_resultado_461",
+                                     ".criterio_sin_letra_asociado_a_resultado_461" )'> Marcar todos <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14730"
-                id="cbsl_122166" data-idtextoasociado="criterio_122166">
-            <input type="text" value="a) Se han identificado las funciones de la planificación comercial en la empresa y la utilidad y el contenido del plan de marketing." id="criterio_122166" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_461"
+                id="cbsl_3846" data-idtextoasociado="criterio_3846">
+            <input type="text" value="a) Se han identificado las funciones de la planificación comercial en la empresa y la utilidad y el contenido del plan de marketing." id="criterio_3846" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14730"
-                id="cbsl_122167" data-idtextoasociado="criterio_122167">
-            <input type="text" value="b) Se han establecido las etapas o fases del proceso de elaboración del plan de marketing." id="criterio_122167" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_461"
+                id="cbsl_3847" data-idtextoasociado="criterio_3847">
+            <input type="text" value="b) Se han establecido las etapas o fases del proceso de elaboración del plan de marketing." id="criterio_3847" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14730"
-                id="cbsl_122168" data-idtextoasociado="criterio_122168">
-            <input type="text" value="c) Se han establecido los datos o la información de base que será objeto de análisis para elaborar el plan de marketing." id="criterio_122168" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_461"
+                id="cbsl_3848" data-idtextoasociado="criterio_3848">
+            <input type="text" value="c) Se han establecido los datos o la información de base que será objeto de análisis para elaborar el plan de marketing." id="criterio_3848" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14730"
-                id="cbsl_122169" data-idtextoasociado="criterio_122169">
-            <input type="text" value="d) Se han fijado unos determinados objetivos, analizando las estrategias de marketing más adecuadas para alcanzarlos." id="criterio_122169" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_461"
+                id="cbsl_3849" data-idtextoasociado="criterio_3849">
+            <input type="text" value="d) Se han fijado unos determinados objetivos, analizando las estrategias de marketing más adecuadas para alcanzarlos." id="criterio_3849" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14730"
-                id="cbsl_122170" data-idtextoasociado="criterio_122170">
-            <input type="text" value="e) Se han definido acciones relativas a las políticas de producto, precio, distribución y comunicación y las relaciones entre las mismas." id="criterio_122170" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_461"
+                id="cbsl_3850" data-idtextoasociado="criterio_3850">
+            <input type="text" value="e) Se han definido acciones relativas a las políticas de producto, precio, distribución y comunicación y las relaciones entre las mismas." id="criterio_3850" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14730"
-                id="cbsl_122171" data-idtextoasociado="criterio_122171">
-            <input type="text" value="f) Se han previsto procedimientos para realizar el seguimiento y control de las políticas del plan de marketing, obteniendo la información necesaria de los departamentos de la empresa, de los vendedores y de los distribuidores, entre otros." id="criterio_122171" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_461"
+                id="cbsl_3851" data-idtextoasociado="criterio_3851">
+            <input type="text" value="f) Se han previsto procedimientos para realizar el seguimiento y control de las políticas del plan de marketing, obteniendo la información necesaria de los departamentos de la empresa, de los vendedores y de los distribuidores, entre otros." id="criterio_3851" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14730"
-                id="cbsl_122172" data-idtextoasociado="criterio_122172">
-            <input type="text" value="g) Se han comparado los resultados obtenidos con los objetivos previstos." id="criterio_122172" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_461"
+                id="cbsl_3852" data-idtextoasociado="criterio_3852">
+            <input type="text" value="g) Se han comparado los resultados obtenidos con los objetivos previstos." id="criterio_3852" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14730"
-                id="cbsl_122173" data-idtextoasociado="criterio_122173">
-            <input type="text" value="h) Se han elaborado informes de control y evaluación del plan de marketing." id="criterio_122173" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_461"
+                id="cbsl_3853" data-idtextoasociado="criterio_3853">
+            <input type="text" value="h) Se han elaborado informes de control y evaluación del plan de marketing." id="criterio_3853" size="140">
             <br/>
             
             <br/>
             
             <input type="submit" value="Copiar al portapapeles los criterios seleccionados en este bloque" class="boton_copiar"
                    onclick=" copiar_textos_asociados_a_checkbox(
-                '.criterio_sin_letra_asociado_a_resultado_14730:checked',
-                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14730');   return false">
+                '.criterio_sin_letra_asociado_a_resultado_461:checked',
+                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado461');   return false">
             
-            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14730"></textarea>
+            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado461"></textarea>
         </div>
         
 <br/>

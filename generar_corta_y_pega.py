@@ -37,7 +37,11 @@ def generar_fichero_corta_y_pega ( codigo_modulo_segun_jccm, directorio_fichero_
         
         competencias                    =   Competencia.objects.filter(ciclo=ciclo_asociado)
         
-        cualificaciones                 =   ciclo_asociado.ciclotienecualificacion_set.all()
+        # cualificaciones                 =   ciclo_asociado.ciclotienecualificacion_set.all()
+        #Mostramos las completas
+        cualificaciones_completas         =   ciclo_asociado.ciclotienecualificacion_set.filter(es_completa=True)
+        #Y aquí las incompletas
+        cualificaciones_incompletas       =   ciclo_asociado.ciclotienecualificacion_set.filter(es_completa=False)
         #print(cualificaciones)
         #print (criterios_de_evaluacion)
         
@@ -60,7 +64,8 @@ def generar_fichero_corta_y_pega ( codigo_modulo_segun_jccm, directorio_fichero_
         diccionario["nombre_modulo"]                =       objeto_modulo.nombre
         diccionario["resultados_aprendizaje"]       =       resultados_de_aprendizaje
         diccionario["competencias"]                 =       competencias
-        diccionario["cualificaciones"]              =       cualificaciones
+        diccionario["cualificaciones_completas"]    =       cualificaciones_completas
+        diccionario["cualificaciones_incompletas"]  =       cualificaciones_incompletas
         contenido_fichero = render_to_string("programaciones/para_cortar_y_pegar.html", diccionario)
         with open(nombre_fichero, "w", encoding="utf-8") as fichero:
             fichero.write(contenido_fichero)

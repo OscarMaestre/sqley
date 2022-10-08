@@ -76,6 +76,10 @@ null==d?void 0:d))},attrHooks:{type:{set:function(a,b){if(!o.radioValue&&"radio"
         function click_todos_resultados_aprendizaje_con_letra(){
             conmutar("#id_todos_resultados_aprendizaje_con_letra", ".checkbox_resultado_aprendizaje_con_letra" )
         }
+        function click_todas_cualificaciones_completas(){
+            conmutar("#id_todas_cualificaciones_completas", ".checkbox_cualificacion_completa")
+            console.log("Marcas las cualificaciones")
+        }
         
         function extraer_textos_varios_input_text(atributo_class){
             let elementos_texto=$(atributo_class)
@@ -102,7 +106,6 @@ null==d?void 0:d))},attrHooks:{type:{set:function(a,b){if(!o.radioValue&&"radio"
             }
             return texto_a_meter_en_el_portapapeles
         }
-        
         function copiar_textos_asociados_a_checkbox(atributo_class, id_para_inyectar_resultado ){
             let texto_para_portapapeles=extraer_textos_varios_input_text(atributo_class)
             
@@ -160,7 +163,6 @@ null==d?void 0:d))},attrHooks:{type:{set:function(a,b){if(!o.radioValue&&"radio"
             $("#id_todos_objetivos_generales_sin_letra").click ( click_todos_objetivos_generales_sin_letra )
             $("#id_todos_resultados_aprendizaje_sin_letra").click ( click_todos_resultados_aprendizaje_sin_letra )
             $("#id_todos_resultados_aprendizaje_con_letra").click ( click_todos_resultados_aprendizaje_con_letra )
-            
             //Cuando se hace click en un cuadro de texto automáticamente se corta al portapapeles
             $("input[type=text]").click(click_en_caja_de_texto)
         }
@@ -207,21 +209,88 @@ por lo que podrás cortar y pegar los textos cómodamente en cualquiera de los d
 
 
 <br/><br/>
-<h1>Unidades de competencia</h1>
+<h1>Cualificaciones COMPLETAS</h1>
 
 
-Gestión de sistemas informáticos
+
+IFC152_3 Gestión de sistemas informáticos (R.D 1087/2005, de 16 de septiembre) con las unidades de competencia asociadas:
+<ul>
+    
+    
+        <li>
+            UC0484_3 Administrar los dispositivos hardware del sistema.
+        </li>
+    
+        <li>
+            UC0485_3 Instalar, configurar y administrar el software de base y de aplicación del sistema.
+        </li>
+    
+        <li>
+            UC0486_3 Asegurar equipos informáticos.
+        </li>
+    
+
+</ul>
 <br/>
 
-Administración de servicios de Internet
+IFC156_3 Administración de servicios de Internet (R.D 1087/2005, de 16 de septiembre) con las unidades de competencia asociadas:
+<ul>
+    
+    
+        <li>
+            UC0495_3 Instalar, configurar y administrar el software para gestionar un entorno web.
+        </li>
+    
+        <li>
+            UC0496_3 Instalar, configurar y administrar servicios de mensajería electrónica.
+        </li>
+    
+        <li>
+            UC0497_3 Instalar, configurar y administrar servicios de transferencia de archivos y multimedia.
+        </li>
+    
+        <li>
+            UC0490_3 Gestionar servicios en el sistema informático.
+        </li>
+    
+
+</ul>
 <br/>
 
-Administración de bases de datos
+IFC079_3 Administración de bases de datos (R.D 295/2004, de 20 de febrero) con las unidades de competencia asociadas:
+<ul>
+    
+    
+        <li>
+            UC0223_3 Configurar y explotar sistemas informáticos.
+        </li>
+    
+        <li>
+            UC0224_3 Configurar y gestionar un sistema gestor de bases de datos.
+        </li>
+    
+        <li>
+            UC0225_3 Configurar y gestionar la base de datos.
+        </li>
+    
+
+</ul>
 <br/>
 
-Desarrollo de aplicaciones con tecnologías web
-<br/>
 
+
+<h1>Cualificaciones INCOMPLETAS</h1>
+
+
+IFC154_3 Desarrollo de aplicaciones con tecnologías web (R.D 1087/2005, de 16 de septiembre) con las siguientes unidades asociadas
+
+    <ul>
+        
+        <li>
+            UC0493_3 Implementar, verificar y documentar aplicaciones web en entornos internet, intranet y extranet.
+        </li>
+        
+    </ul>   
 
 
 <h2>Objetivos generales del ciclo</h2>
@@ -234,149 +303,149 @@ Marcar/desmarcar todos los objetivos generales
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6192"  data-idtextoasociado="txt_og_6192">
+       id="cb_143"  data-idtextoasociado="txt_og_143">
 <input type="text" value="1) Analizar la estructura del software de base, comparando las características y prestaciones de sistemas libres y propietarios, para administrar sistemas operativos de servidor." size="160"
-       class="texto_objetivo_general" id="txt_og_6192">
+       class="texto_objetivo_general" id="txt_og_143">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6193"  data-idtextoasociado="txt_og_6193">
+       id="cb_144"  data-idtextoasociado="txt_og_144">
 <input type="text" value="2) Instalar y configurar el software de base, siguiendo documentación técnica y especificaciones dadas, para administrar sistemas operativos de servidor." size="160"
-       class="texto_objetivo_general" id="txt_og_6193">
+       class="texto_objetivo_general" id="txt_og_144">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6194"  data-idtextoasociado="txt_og_6194">
+       id="cb_145"  data-idtextoasociado="txt_og_145">
 <input type="text" value="3) Instalar y configurar software de mensajería y transferencia de ficheros, entre otros, relacionándolos con su aplicación y siguiendo documentación y especificaciones dadas, para administrar servicios de red." size="160"
-       class="texto_objetivo_general" id="txt_og_6194">
+       class="texto_objetivo_general" id="txt_og_145">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6195"  data-idtextoasociado="txt_og_6195">
+       id="cb_146"  data-idtextoasociado="txt_og_146">
 <input type="text" value="4) Instalar y configurar software de gestión, siguiendo especificaciones y analizando entornos de aplicación, para administrar aplicaciones." size="160"
-       class="texto_objetivo_general" id="txt_og_6195">
+       class="texto_objetivo_general" id="txt_og_146">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6196"  data-idtextoasociado="txt_og_6196">
+       id="cb_147"  data-idtextoasociado="txt_og_147">
 <input type="text" value="5) Instalar y administrar software de gestión, relacionándolo con su explotación, para implantar y gestionar bases de datos." size="160"
-       class="texto_objetivo_general" id="txt_og_6196">
+       class="texto_objetivo_general" id="txt_og_147">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6197"  data-idtextoasociado="txt_og_6197">
+       id="cb_148"  data-idtextoasociado="txt_og_148">
 <input type="text" value="6) Configurar dispositivos hardware, analizando sus características funcionales, para optimizar el rendimiento del sistema." size="160"
-       class="texto_objetivo_general" id="txt_og_6197">
+       class="texto_objetivo_general" id="txt_og_148">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6198"  data-idtextoasociado="txt_og_6198">
+       id="cb_149"  data-idtextoasociado="txt_og_149">
 <input type="text" value="7) Configurar hardware de red, analizando sus características funcionales y relacionándolo con su campo de aplicación, para integrar equipos de comunicaciones." size="160"
-       class="texto_objetivo_general" id="txt_og_6198">
+       class="texto_objetivo_general" id="txt_og_149">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6199"  data-idtextoasociado="txt_og_6199">
+       id="cb_150"  data-idtextoasociado="txt_og_150">
 <input type="text" value="8) Analizar tecnologías de interconexión, describiendo sus características y posibilidades de aplicación, para configurar la estructura de la red telemática y evaluar su rendimiento." size="160"
-       class="texto_objetivo_general" id="txt_og_6199">
+       class="texto_objetivo_general" id="txt_og_150">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6200"  data-idtextoasociado="txt_og_6200">
+       id="cb_151"  data-idtextoasociado="txt_og_151">
 <input type="text" value="9) Elaborar esquemas de redes telemáticas utilizando software especifico para configurar la estructura de la red telemática." size="160"
-       class="texto_objetivo_general" id="txt_og_6200">
+       class="texto_objetivo_general" id="txt_og_151">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6201"  data-idtextoasociado="txt_og_6201">
+       id="cb_152"  data-idtextoasociado="txt_og_152">
 <input type="text" value="10) Seleccionar sistemas de protección y recuperación, analizando sus características funcionales, para poner en marcha soluciones de alta disponibilidad." size="160"
-       class="texto_objetivo_general" id="txt_og_6201">
+       class="texto_objetivo_general" id="txt_og_152">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6202"  data-idtextoasociado="txt_og_6202">
+       id="cb_153"  data-idtextoasociado="txt_og_153">
 <input type="text" value="11) Identificar condiciones de equipos e instalaciones, interpretando planes de seguridad y especificaciones de fabricante, para supervisar la seguridad física." size="160"
-       class="texto_objetivo_general" id="txt_og_6202">
+       class="texto_objetivo_general" id="txt_og_153">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6203"  data-idtextoasociado="txt_og_6203">
+       id="cb_154"  data-idtextoasociado="txt_og_154">
 <input type="text" value="12) Aplicar técnicas de protección contra amenazas externas, tipificándolas y evaluándolas para asegurar el sistema." size="160"
-       class="texto_objetivo_general" id="txt_og_6203">
+       class="texto_objetivo_general" id="txt_og_154">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6204"  data-idtextoasociado="txt_og_6204">
+       id="cb_155"  data-idtextoasociado="txt_og_155">
 <input type="text" value="13) Aplicar técnicas de protección contra pérdidas de información, analizando planes de seguridad y necesidades de uso para asegurar los datos." size="160"
-       class="texto_objetivo_general" id="txt_og_6204">
+       class="texto_objetivo_general" id="txt_og_155">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6205"  data-idtextoasociado="txt_og_6205">
+       id="cb_156"  data-idtextoasociado="txt_og_156">
 <input type="text" value="14) Asignar los accesos y recursos del sistema, aplicando las especificaciones de la explotación, para administrar usuarios" size="160"
-       class="texto_objetivo_general" id="txt_og_6205">
+       class="texto_objetivo_general" id="txt_og_156">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6206"  data-idtextoasociado="txt_og_6206">
+       id="cb_157"  data-idtextoasociado="txt_og_157">
 <input type="text" value="15) Aplicar técnicas de monitorización interpretando los resultados y relacionándolos con las medidas correctoras para diagnosticar y corregir las disfunciones." size="160"
-       class="texto_objetivo_general" id="txt_og_6206">
+       class="texto_objetivo_general" id="txt_og_157">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6207"  data-idtextoasociado="txt_og_6207">
+       id="cb_158"  data-idtextoasociado="txt_og_158">
 <input type="text" value="16) Establecer la planificación de tareas, analizando actividades y cargas de trabajo del sistema para gestionar el mantenimiento." size="160"
-       class="texto_objetivo_general" id="txt_og_6207">
+       class="texto_objetivo_general" id="txt_og_158">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6208"  data-idtextoasociado="txt_og_6208">
+       id="cb_159"  data-idtextoasociado="txt_og_159">
 <input type="text" value="17) Identificar los cambios tecnológicos, organizativos, económicos y laborales en su actividad, analizando sus implicaciones en el ámbito de trabajo, para resolver problemas y mantener una cultura de actualización e innovación." size="160"
-       class="texto_objetivo_general" id="txt_og_6208">
+       class="texto_objetivo_general" id="txt_og_159">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6209"  data-idtextoasociado="txt_og_6209">
+       id="cb_160"  data-idtextoasociado="txt_og_160">
 <input type="text" value="18) Identificar formas de intervención en situaciones colectivas, analizando el proceso de toma de decisiones y efectuando consultas para liderar las mismas." size="160"
-       class="texto_objetivo_general" id="txt_og_6209">
+       class="texto_objetivo_general" id="txt_og_160">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6210"  data-idtextoasociado="txt_og_6210">
+       id="cb_161"  data-idtextoasociado="txt_og_161">
 <input type="text" value="19) Identificar y valorar las oportunidades de aprendizaje y su relación con el mundo laboral, analizando las ofertas y demandas del mercado para gestionar su carrera profesional." size="160"
-       class="texto_objetivo_general" id="txt_og_6210">
+       class="texto_objetivo_general" id="txt_og_161">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6211"  data-idtextoasociado="txt_og_6211">
+       id="cb_162"  data-idtextoasociado="txt_og_162">
 <input type="text" value="20) Reconocer las oportunidades de negocio, identificando y analizando demandas del mercado para crear y gestionar una pequeña empresa." size="160"
-       class="texto_objetivo_general" id="txt_og_6211">
+       class="texto_objetivo_general" id="txt_og_162">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6212"  data-idtextoasociado="txt_og_6212">
+       id="cb_163"  data-idtextoasociado="txt_og_163">
 <input type="text" value="21) Reconocer sus derechos y deberes como agente activo en la sociedad, analizando el marco legal que regula las condiciones sociales y laborales para participar como ciudadano democrático." size="160"
-       class="texto_objetivo_general" id="txt_og_6212">
+       class="texto_objetivo_general" id="txt_og_163">
 <br/>
 
 <br/>
@@ -398,149 +467,149 @@ Marcar/desmarcar todos los objetivos generales
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6192"  data-idtextoasociado="txt_ogsl_6192">
+       id="cbsl_143"  data-idtextoasociado="txt_ogsl_143">
 <input type="text" value="Analizar la estructura del software de base, comparando las características y prestaciones de sistemas libres y propietarios, para administrar sistemas operativos de servidor." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6192">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_143">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6193"  data-idtextoasociado="txt_ogsl_6193">
+       id="cbsl_144"  data-idtextoasociado="txt_ogsl_144">
 <input type="text" value="Instalar y configurar el software de base, siguiendo documentación técnica y especificaciones dadas, para administrar sistemas operativos de servidor." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6193">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_144">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6194"  data-idtextoasociado="txt_ogsl_6194">
+       id="cbsl_145"  data-idtextoasociado="txt_ogsl_145">
 <input type="text" value="Instalar y configurar software de mensajería y transferencia de ficheros, entre otros, relacionándolos con su aplicación y siguiendo documentación y especificaciones dadas, para administrar servicios de red." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6194">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_145">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6195"  data-idtextoasociado="txt_ogsl_6195">
+       id="cbsl_146"  data-idtextoasociado="txt_ogsl_146">
 <input type="text" value="Instalar y configurar software de gestión, siguiendo especificaciones y analizando entornos de aplicación, para administrar aplicaciones." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6195">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_146">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6196"  data-idtextoasociado="txt_ogsl_6196">
+       id="cbsl_147"  data-idtextoasociado="txt_ogsl_147">
 <input type="text" value="Instalar y administrar software de gestión, relacionándolo con su explotación, para implantar y gestionar bases de datos." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6196">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_147">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6197"  data-idtextoasociado="txt_ogsl_6197">
+       id="cbsl_148"  data-idtextoasociado="txt_ogsl_148">
 <input type="text" value="Configurar dispositivos hardware, analizando sus características funcionales, para optimizar el rendimiento del sistema." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6197">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_148">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6198"  data-idtextoasociado="txt_ogsl_6198">
+       id="cbsl_149"  data-idtextoasociado="txt_ogsl_149">
 <input type="text" value="Configurar hardware de red, analizando sus características funcionales y relacionándolo con su campo de aplicación, para integrar equipos de comunicaciones." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6198">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_149">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6199"  data-idtextoasociado="txt_ogsl_6199">
+       id="cbsl_150"  data-idtextoasociado="txt_ogsl_150">
 <input type="text" value="Analizar tecnologías de interconexión, describiendo sus características y posibilidades de aplicación, para configurar la estructura de la red telemática y evaluar su rendimiento." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6199">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_150">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6200"  data-idtextoasociado="txt_ogsl_6200">
+       id="cbsl_151"  data-idtextoasociado="txt_ogsl_151">
 <input type="text" value="Elaborar esquemas de redes telemáticas utilizando software especifico para configurar la estructura de la red telemática." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6200">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_151">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6201"  data-idtextoasociado="txt_ogsl_6201">
+       id="cbsl_152"  data-idtextoasociado="txt_ogsl_152">
 <input type="text" value="Seleccionar sistemas de protección y recuperación, analizando sus características funcionales, para poner en marcha soluciones de alta disponibilidad." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6201">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_152">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6202"  data-idtextoasociado="txt_ogsl_6202">
+       id="cbsl_153"  data-idtextoasociado="txt_ogsl_153">
 <input type="text" value="Identificar condiciones de equipos e instalaciones, interpretando planes de seguridad y especificaciones de fabricante, para supervisar la seguridad física." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6202">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_153">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6203"  data-idtextoasociado="txt_ogsl_6203">
+       id="cbsl_154"  data-idtextoasociado="txt_ogsl_154">
 <input type="text" value="Aplicar técnicas de protección contra amenazas externas, tipificándolas y evaluándolas para asegurar el sistema." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6203">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_154">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6204"  data-idtextoasociado="txt_ogsl_6204">
+       id="cbsl_155"  data-idtextoasociado="txt_ogsl_155">
 <input type="text" value="Aplicar técnicas de protección contra pérdidas de información, analizando planes de seguridad y necesidades de uso para asegurar los datos." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6204">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_155">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6205"  data-idtextoasociado="txt_ogsl_6205">
+       id="cbsl_156"  data-idtextoasociado="txt_ogsl_156">
 <input type="text" value="Asignar los accesos y recursos del sistema, aplicando las especificaciones de la explotación, para administrar usuarios" size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6205">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_156">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6206"  data-idtextoasociado="txt_ogsl_6206">
+       id="cbsl_157"  data-idtextoasociado="txt_ogsl_157">
 <input type="text" value="Aplicar técnicas de monitorización interpretando los resultados y relacionándolos con las medidas correctoras para diagnosticar y corregir las disfunciones." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6206">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_157">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6207"  data-idtextoasociado="txt_ogsl_6207">
+       id="cbsl_158"  data-idtextoasociado="txt_ogsl_158">
 <input type="text" value="Establecer la planificación de tareas, analizando actividades y cargas de trabajo del sistema para gestionar el mantenimiento." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6207">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_158">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6208"  data-idtextoasociado="txt_ogsl_6208">
+       id="cbsl_159"  data-idtextoasociado="txt_ogsl_159">
 <input type="text" value="Identificar los cambios tecnológicos, organizativos, económicos y laborales en su actividad, analizando sus implicaciones en el ámbito de trabajo, para resolver problemas y mantener una cultura de actualización e innovación." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6208">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_159">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6209"  data-idtextoasociado="txt_ogsl_6209">
+       id="cbsl_160"  data-idtextoasociado="txt_ogsl_160">
 <input type="text" value="Identificar formas de intervención en situaciones colectivas, analizando el proceso de toma de decisiones y efectuando consultas para liderar las mismas." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6209">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_160">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6210"  data-idtextoasociado="txt_ogsl_6210">
+       id="cbsl_161"  data-idtextoasociado="txt_ogsl_161">
 <input type="text" value="Identificar y valorar las oportunidades de aprendizaje y su relación con el mundo laboral, analizando las ofertas y demandas del mercado para gestionar su carrera profesional." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6210">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_161">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6211"  data-idtextoasociado="txt_ogsl_6211">
+       id="cbsl_162"  data-idtextoasociado="txt_ogsl_162">
 <input type="text" value="Reconocer las oportunidades de negocio, identificando y analizando demandas del mercado para crear y gestionar una pequeña empresa." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6211">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_162">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6212"  data-idtextoasociado="txt_ogsl_6212">
+       id="cbsl_163"  data-idtextoasociado="txt_ogsl_163">
 <input type="text" value="Reconocer sus derechos y deberes como agente activo en la sociedad, analizando el marco legal que regula las condiciones sociales y laborales para participar como ciudadano democrático." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6212">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_163">
 <br/>
 
 <br/>
@@ -559,108 +628,108 @@ Marcar/desmarcar todos los objetivos generales
                               ".competencias" )'> Marcar todos <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6040">
-     <input type="text" value="Administrar sistemas operativos de servidor, instalando y configurando el software, en condiciones de calidad para asegurar el funcionamiento del sistema." id="texto_6040" size="160">
+         id="competencia_" data-idtextoasociado="texto_145">
+     <input type="text" value="Administrar sistemas operativos de servidor, instalando y configurando el software, en condiciones de calidad para asegurar el funcionamiento del sistema." id="texto_145" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6041">
-     <input type="text" value="Administrar servicios de red (web, mensajería electrónica y transferencia de archivos, entre otros) instalando y configurando el software, en condiciones de calidad." id="texto_6041" size="160">
+         id="competencia_" data-idtextoasociado="texto_146">
+     <input type="text" value="Administrar servicios de red (web, mensajería electrónica y transferencia de archivos, entre otros) instalando y configurando el software, en condiciones de calidad." id="texto_146" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6042">
-     <input type="text" value="Administrar aplicaciones instalando y configurando el software, en condiciones de calidad para responder a las necesidades de la organización." id="texto_6042" size="160">
+         id="competencia_" data-idtextoasociado="texto_147">
+     <input type="text" value="Administrar aplicaciones instalando y configurando el software, en condiciones de calidad para responder a las necesidades de la organización." id="texto_147" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6043">
-     <input type="text" value="Implantar y gestionar bases de datos instalando y administrando el software de gestión en condiciones de calidad, según las características de la explotación." id="texto_6043" size="160">
+         id="competencia_" data-idtextoasociado="texto_148">
+     <input type="text" value="Implantar y gestionar bases de datos instalando y administrando el software de gestión en condiciones de calidad, según las características de la explotación." id="texto_148" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6044">
-     <input type="text" value="Optimizar el rendimiento del sistema configurando los dispositivos hardware de acuerdo a los requisitos de funcionamiento." id="texto_6044" size="160">
+         id="competencia_" data-idtextoasociado="texto_149">
+     <input type="text" value="Optimizar el rendimiento del sistema configurando los dispositivos hardware de acuerdo a los requisitos de funcionamiento." id="texto_149" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6045">
-     <input type="text" value="Evaluar el rendimiento de los dispositivos hardware identificando posibilidades de mejoras según las necesidades de funcionamiento." id="texto_6045" size="160">
+         id="competencia_" data-idtextoasociado="texto_150">
+     <input type="text" value="Evaluar el rendimiento de los dispositivos hardware identificando posibilidades de mejoras según las necesidades de funcionamiento." id="texto_150" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6046">
-     <input type="text" value="Determinar la infraestructura de redes telemáticas elaborando esquemas y seleccionando equipos y elementos." id="texto_6046" size="160">
+         id="competencia_" data-idtextoasociado="texto_151">
+     <input type="text" value="Determinar la infraestructura de redes telemáticas elaborando esquemas y seleccionando equipos y elementos." id="texto_151" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6047">
-     <input type="text" value="Integrar equipos de comunicaciones en infraestructuras de redes telemáticas, determinando la configuración para asegurar su conectividad." id="texto_6047" size="160">
+         id="competencia_" data-idtextoasociado="texto_152">
+     <input type="text" value="Integrar equipos de comunicaciones en infraestructuras de redes telemáticas, determinando la configuración para asegurar su conectividad." id="texto_152" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6048">
-     <input type="text" value="Implementar soluciones de alta disponibilidad, analizando las distintas opciones del mercado, para proteger y recuperar el sistema ante situaciones imprevistas." id="texto_6048" size="160">
+         id="competencia_" data-idtextoasociado="texto_153">
+     <input type="text" value="Implementar soluciones de alta disponibilidad, analizando las distintas opciones del mercado, para proteger y recuperar el sistema ante situaciones imprevistas." id="texto_153" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6049">
-     <input type="text" value="Supervisar la seguridad física según especificaciones del fabricante y el plan de seguridad para evitar interrupciones en la prestación de servicios del sistema." id="texto_6049" size="160">
+         id="competencia_" data-idtextoasociado="texto_154">
+     <input type="text" value="Supervisar la seguridad física según especificaciones del fabricante y el plan de seguridad para evitar interrupciones en la prestación de servicios del sistema." id="texto_154" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6050">
-     <input type="text" value="Asegurar el sistema y los datos según las necesidades de uso y las condiciones de seguridad establecidas para prevenir fallos y ataques externos." id="texto_6050" size="160">
+         id="competencia_" data-idtextoasociado="texto_155">
+     <input type="text" value="Asegurar el sistema y los datos según las necesidades de uso y las condiciones de seguridad establecidas para prevenir fallos y ataques externos." id="texto_155" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6051">
-     <input type="text" value="Administrar usuarios de acuerdo a las especificaciones de explotación para garantizar los accesos y la disponibilidad de los recursos del sistema." id="texto_6051" size="160">
+         id="competencia_" data-idtextoasociado="texto_156">
+     <input type="text" value="Administrar usuarios de acuerdo a las especificaciones de explotación para garantizar los accesos y la disponibilidad de los recursos del sistema." id="texto_156" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6052">
-     <input type="text" value="Diagnosticar las disfunciones del sistema y adoptar las medidas correctivas para restablecer su funcionalidad." id="texto_6052" size="160">
+         id="competencia_" data-idtextoasociado="texto_157">
+     <input type="text" value="Diagnosticar las disfunciones del sistema y adoptar las medidas correctivas para restablecer su funcionalidad." id="texto_157" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6053">
-     <input type="text" value="Gestionar y/o realizar el mantenimiento de los recursos de su área (programando y verificando su cumplimiento), en función de las cargas de trabajo y el plan de mantenimiento." id="texto_6053" size="160">
+         id="competencia_" data-idtextoasociado="texto_158">
+     <input type="text" value="Gestionar y/o realizar el mantenimiento de los recursos de su área (programando y verificando su cumplimiento), en función de las cargas de trabajo y el plan de mantenimiento." id="texto_158" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6054">
-     <input type="text" value="Efectuar consultas, dirigiéndose a la persona adecuada y saber respetar la autonomía de los subordinados, informando cuando sea conveniente." id="texto_6054" size="160">
+         id="competencia_" data-idtextoasociado="texto_159">
+     <input type="text" value="Efectuar consultas, dirigiéndose a la persona adecuada y saber respetar la autonomía de los subordinados, informando cuando sea conveniente." id="texto_159" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6055">
-     <input type="text" value="Mantener el espíritu de innovación y actualización en el ámbito de su trabajo para adaptarse a los cambios tecnológicos y organizativos de su entorno profesional." id="texto_6055" size="160">
+         id="competencia_" data-idtextoasociado="texto_160">
+     <input type="text" value="Mantener el espíritu de innovación y actualización en el ámbito de su trabajo para adaptarse a los cambios tecnológicos y organizativos de su entorno profesional." id="texto_160" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6056">
-     <input type="text" value="Liderar situaciones colectivas que se puedan producir, mediando en conflictos personales y laborales, contribuyendo al establecimiento de un ambiente de trabajo agradable y actuando en todo momento de forma sincera, respetuosa y tolerante." id="texto_6056" size="160">
+         id="competencia_" data-idtextoasociado="texto_161">
+     <input type="text" value="Liderar situaciones colectivas que se puedan producir, mediando en conflictos personales y laborales, contribuyendo al establecimiento de un ambiente de trabajo agradable y actuando en todo momento de forma sincera, respetuosa y tolerante." id="texto_161" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6057">
-     <input type="text" value="Resolver problemas y tomar decisiones individuales, siguiendo las normas y procedimientos establecidos, definidos dentro del ámbito de su competencia." id="texto_6057" size="160">
+         id="competencia_" data-idtextoasociado="texto_162">
+     <input type="text" value="Resolver problemas y tomar decisiones individuales, siguiendo las normas y procedimientos establecidos, definidos dentro del ámbito de su competencia." id="texto_162" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6058">
-     <input type="text" value="Gestionar su carrera profesional, analizando las oportunidades de empleo, autoempleo y de aprendizaje." id="texto_6058" size="160">
+         id="competencia_" data-idtextoasociado="texto_163">
+     <input type="text" value="Gestionar su carrera profesional, analizando las oportunidades de empleo, autoempleo y de aprendizaje." id="texto_163" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6059">
-     <input type="text" value="Participar de forma activa en la vida económica, social y cultural con actitud crítica y responsable" id="texto_6059" size="160">
+         id="competencia_" data-idtextoasociado="texto_164">
+     <input type="text" value="Participar de forma activa en la vida económica, social y cultural con actitud crítica y responsable" id="texto_164" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6060">
-     <input type="text" value="Crear y gestionar una pequeña empresa, realizando un estudio de viabilidad de productos, de planificación de la producción y de comercialización." id="texto_6060" size="160">
+         id="competencia_" data-idtextoasociado="texto_165">
+     <input type="text" value="Crear y gestionar una pequeña empresa, realizando un estudio de viabilidad de productos, de planificación de la producción y de comercialización." id="texto_165" size="160">
      <br/>
      
 
@@ -678,108 +747,108 @@ Marcar/desmarcar todos los objetivos generales
                               ".competencias_con_letra" )'> Marcar todos <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6040">
-     <input type="text" value="1. Administrar sistemas operativos de servidor, instalando y configurando el software, en condiciones de calidad para asegurar el funcionamiento del sistema." id="texto_con_letra_6040" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_145">
+     <input type="text" value="1. Administrar sistemas operativos de servidor, instalando y configurando el software, en condiciones de calidad para asegurar el funcionamiento del sistema." id="texto_con_letra_145" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6041">
-     <input type="text" value="2. Administrar servicios de red (web, mensajería electrónica y transferencia de archivos, entre otros) instalando y configurando el software, en condiciones de calidad." id="texto_con_letra_6041" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_146">
+     <input type="text" value="2. Administrar servicios de red (web, mensajería electrónica y transferencia de archivos, entre otros) instalando y configurando el software, en condiciones de calidad." id="texto_con_letra_146" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6042">
-     <input type="text" value="3. Administrar aplicaciones instalando y configurando el software, en condiciones de calidad para responder a las necesidades de la organización." id="texto_con_letra_6042" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_147">
+     <input type="text" value="3. Administrar aplicaciones instalando y configurando el software, en condiciones de calidad para responder a las necesidades de la organización." id="texto_con_letra_147" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6043">
-     <input type="text" value="4. Implantar y gestionar bases de datos instalando y administrando el software de gestión en condiciones de calidad, según las características de la explotación." id="texto_con_letra_6043" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_148">
+     <input type="text" value="4. Implantar y gestionar bases de datos instalando y administrando el software de gestión en condiciones de calidad, según las características de la explotación." id="texto_con_letra_148" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6044">
-     <input type="text" value="5. Optimizar el rendimiento del sistema configurando los dispositivos hardware de acuerdo a los requisitos de funcionamiento." id="texto_con_letra_6044" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_149">
+     <input type="text" value="5. Optimizar el rendimiento del sistema configurando los dispositivos hardware de acuerdo a los requisitos de funcionamiento." id="texto_con_letra_149" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6045">
-     <input type="text" value="6. Evaluar el rendimiento de los dispositivos hardware identificando posibilidades de mejoras según las necesidades de funcionamiento." id="texto_con_letra_6045" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_150">
+     <input type="text" value="6. Evaluar el rendimiento de los dispositivos hardware identificando posibilidades de mejoras según las necesidades de funcionamiento." id="texto_con_letra_150" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6046">
-     <input type="text" value="7. Determinar la infraestructura de redes telemáticas elaborando esquemas y seleccionando equipos y elementos." id="texto_con_letra_6046" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_151">
+     <input type="text" value="7. Determinar la infraestructura de redes telemáticas elaborando esquemas y seleccionando equipos y elementos." id="texto_con_letra_151" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6047">
-     <input type="text" value="8. Integrar equipos de comunicaciones en infraestructuras de redes telemáticas, determinando la configuración para asegurar su conectividad." id="texto_con_letra_6047" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_152">
+     <input type="text" value="8. Integrar equipos de comunicaciones en infraestructuras de redes telemáticas, determinando la configuración para asegurar su conectividad." id="texto_con_letra_152" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6048">
-     <input type="text" value="9. Implementar soluciones de alta disponibilidad, analizando las distintas opciones del mercado, para proteger y recuperar el sistema ante situaciones imprevistas." id="texto_con_letra_6048" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_153">
+     <input type="text" value="9. Implementar soluciones de alta disponibilidad, analizando las distintas opciones del mercado, para proteger y recuperar el sistema ante situaciones imprevistas." id="texto_con_letra_153" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6049">
-     <input type="text" value="10. Supervisar la seguridad física según especificaciones del fabricante y el plan de seguridad para evitar interrupciones en la prestación de servicios del sistema." id="texto_con_letra_6049" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_154">
+     <input type="text" value="10. Supervisar la seguridad física según especificaciones del fabricante y el plan de seguridad para evitar interrupciones en la prestación de servicios del sistema." id="texto_con_letra_154" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6050">
-     <input type="text" value="11. Asegurar el sistema y los datos según las necesidades de uso y las condiciones de seguridad establecidas para prevenir fallos y ataques externos." id="texto_con_letra_6050" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_155">
+     <input type="text" value="11. Asegurar el sistema y los datos según las necesidades de uso y las condiciones de seguridad establecidas para prevenir fallos y ataques externos." id="texto_con_letra_155" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6051">
-     <input type="text" value="12. Administrar usuarios de acuerdo a las especificaciones de explotación para garantizar los accesos y la disponibilidad de los recursos del sistema." id="texto_con_letra_6051" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_156">
+     <input type="text" value="12. Administrar usuarios de acuerdo a las especificaciones de explotación para garantizar los accesos y la disponibilidad de los recursos del sistema." id="texto_con_letra_156" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6052">
-     <input type="text" value="13. Diagnosticar las disfunciones del sistema y adoptar las medidas correctivas para restablecer su funcionalidad." id="texto_con_letra_6052" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_157">
+     <input type="text" value="13. Diagnosticar las disfunciones del sistema y adoptar las medidas correctivas para restablecer su funcionalidad." id="texto_con_letra_157" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6053">
-     <input type="text" value="14. Gestionar y/o realizar el mantenimiento de los recursos de su área (programando y verificando su cumplimiento), en función de las cargas de trabajo y el plan de mantenimiento." id="texto_con_letra_6053" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_158">
+     <input type="text" value="14. Gestionar y/o realizar el mantenimiento de los recursos de su área (programando y verificando su cumplimiento), en función de las cargas de trabajo y el plan de mantenimiento." id="texto_con_letra_158" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6054">
-     <input type="text" value="15. Efectuar consultas, dirigiéndose a la persona adecuada y saber respetar la autonomía de los subordinados, informando cuando sea conveniente." id="texto_con_letra_6054" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_159">
+     <input type="text" value="15. Efectuar consultas, dirigiéndose a la persona adecuada y saber respetar la autonomía de los subordinados, informando cuando sea conveniente." id="texto_con_letra_159" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6055">
-     <input type="text" value="16. Mantener el espíritu de innovación y actualización en el ámbito de su trabajo para adaptarse a los cambios tecnológicos y organizativos de su entorno profesional." id="texto_con_letra_6055" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_160">
+     <input type="text" value="16. Mantener el espíritu de innovación y actualización en el ámbito de su trabajo para adaptarse a los cambios tecnológicos y organizativos de su entorno profesional." id="texto_con_letra_160" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6056">
-     <input type="text" value="17. Liderar situaciones colectivas que se puedan producir, mediando en conflictos personales y laborales, contribuyendo al establecimiento de un ambiente de trabajo agradable y actuando en todo momento de forma sincera, respetuosa y tolerante." id="texto_con_letra_6056" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_161">
+     <input type="text" value="17. Liderar situaciones colectivas que se puedan producir, mediando en conflictos personales y laborales, contribuyendo al establecimiento de un ambiente de trabajo agradable y actuando en todo momento de forma sincera, respetuosa y tolerante." id="texto_con_letra_161" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6057">
-     <input type="text" value="18. Resolver problemas y tomar decisiones individuales, siguiendo las normas y procedimientos establecidos, definidos dentro del ámbito de su competencia." id="texto_con_letra_6057" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_162">
+     <input type="text" value="18. Resolver problemas y tomar decisiones individuales, siguiendo las normas y procedimientos establecidos, definidos dentro del ámbito de su competencia." id="texto_con_letra_162" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6058">
-     <input type="text" value="19. Gestionar su carrera profesional, analizando las oportunidades de empleo, autoempleo y de aprendizaje." id="texto_con_letra_6058" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_163">
+     <input type="text" value="19. Gestionar su carrera profesional, analizando las oportunidades de empleo, autoempleo y de aprendizaje." id="texto_con_letra_163" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6059">
-     <input type="text" value="20. Participar de forma activa en la vida económica, social y cultural con actitud crítica y responsable" id="texto_con_letra_6059" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_164">
+     <input type="text" value="20. Participar de forma activa en la vida económica, social y cultural con actitud crítica y responsable" id="texto_con_letra_164" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6060">
-     <input type="text" value="21. Crear y gestionar una pequeña empresa, realizando un estudio de viabilidad de productos, de planificación de la producción y de comercialización." id="texto_con_letra_6060" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_165">
+     <input type="text" value="21. Crear y gestionar una pequeña empresa, realizando un estudio de viabilidad de productos, de planificación de la producción y de comercialización." id="texto_con_letra_165" size="160">
      <br/>
      
 
@@ -803,51 +872,51 @@ Marcar/desmarcar todos los resultados de aprendizaje
 
 
 <input type="checkbox" name="resultado_aprendizaje_con_letra[]" class="checkbox_resultado_aprendizaje_con_letra"
-       id="cbra_14653"  data-idtextoasociado="txt_racl_14653">
+       id="cbra_384"  data-idtextoasociado="txt_racl_384">
 <input type="text" value="1) Reconoce la estructura de las redes de datos identificando sus elementos y principios de funcionamiento." size="160"
-       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_14653">
+       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_384">
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_con_letra[]" class="checkbox_resultado_aprendizaje_con_letra"
-       id="cbra_14654"  data-idtextoasociado="txt_racl_14654">
+       id="cbra_385"  data-idtextoasociado="txt_racl_385">
 <input type="text" value="2) Integra ordenadores y periféricos en redes cableadas e inalámbricas, evaluando su funcionamiento y prestaciones." size="160"
-       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_14654">
+       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_385">
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_con_letra[]" class="checkbox_resultado_aprendizaje_con_letra"
-       id="cbra_14655"  data-idtextoasociado="txt_racl_14655">
+       id="cbra_386"  data-idtextoasociado="txt_racl_386">
 <input type="text" value="3) Administra conmutadores estableciendo opciones de configuración para su integración en la red." size="160"
-       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_14655">
+       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_386">
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_con_letra[]" class="checkbox_resultado_aprendizaje_con_letra"
-       id="cbra_14656"  data-idtextoasociado="txt_racl_14656">
+       id="cbra_387"  data-idtextoasociado="txt_racl_387">
 <input type="text" value="4) Administra las funciones básicas de un router estableciendo opciones de configuración para su integración en la red." size="160"
-       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_14656">
+       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_387">
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_con_letra[]" class="checkbox_resultado_aprendizaje_con_letra"
-       id="cbra_14657"  data-idtextoasociado="txt_racl_14657">
+       id="cbra_388"  data-idtextoasociado="txt_racl_388">
 <input type="text" value="5) Configura redes locales virtuales identificando su campo de aplicación." size="160"
-       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_14657">
+       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_388">
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_con_letra[]" class="checkbox_resultado_aprendizaje_con_letra"
-       id="cbra_14658"  data-idtextoasociado="txt_racl_14658">
+       id="cbra_389"  data-idtextoasociado="txt_racl_389">
 <input type="text" value="6) Realiza tareas avanzadas de administración de red analizando y utilizando protocolos dinámicos de encaminamiento." size="160"
-       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_14658">
+       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_389">
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_con_letra[]" class="checkbox_resultado_aprendizaje_con_letra"
-       id="cbra_14659"  data-idtextoasociado="txt_racl_14659">
+       id="cbra_390"  data-idtextoasociado="txt_racl_390">
 <input type="text" value="7) Conecta redes privadas a redes públicas identificando y aplicando diferentes tecnologías." size="160"
-       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_14659">
+       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_390">
 <br/>
 
 <br/>
@@ -871,57 +940,57 @@ Marcar/desmarcar todos los resultados de aprendizaje
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14653"  data-idtextoasociado="txt_rasl_14653">
+       id="cbrasl_384"  data-idtextoasociado="txt_rasl_384">
 <input type="text" value="Reconoce la estructura de las redes de datos identificando sus elementos y principios de funcionamiento." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14653">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_384">
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14654"  data-idtextoasociado="txt_rasl_14654">
+       id="cbrasl_385"  data-idtextoasociado="txt_rasl_385">
 <input type="text" value="Integra ordenadores y periféricos en redes cableadas e inalámbricas, evaluando su funcionamiento y prestaciones." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14654">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_385">
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14655"  data-idtextoasociado="txt_rasl_14655">
+       id="cbrasl_386"  data-idtextoasociado="txt_rasl_386">
 <input type="text" value="Administra conmutadores estableciendo opciones de configuración para su integración en la red." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14655">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_386">
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14656"  data-idtextoasociado="txt_rasl_14656">
+       id="cbrasl_387"  data-idtextoasociado="txt_rasl_387">
 <input type="text" value="Administra las funciones básicas de un router estableciendo opciones de configuración para su integración en la red." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14656">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_387">
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14657"  data-idtextoasociado="txt_rasl_14657">
+       id="cbrasl_388"  data-idtextoasociado="txt_rasl_388">
 <input type="text" value="Configura redes locales virtuales identificando su campo de aplicación." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14657">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_388">
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14658"  data-idtextoasociado="txt_rasl_14658">
+       id="cbrasl_389"  data-idtextoasociado="txt_rasl_389">
 <input type="text" value="Realiza tareas avanzadas de administración de red analizando y utilizando protocolos dinámicos de encaminamiento." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14658">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_389">
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14659"  data-idtextoasociado="txt_rasl_14659">
+       id="cbrasl_390"  data-idtextoasociado="txt_rasl_390">
 <input type="text" value="Conecta redes privadas a redes públicas identificando y aplicando diferentes tecnologías." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14659">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_390">
         
 <br/>
 
@@ -944,516 +1013,516 @@ Marcar/desmarcar todos los resultados de aprendizaje
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14653"  data-idtextoasociado="txt_rasl_14653">
+       id="cbrasl_384"  data-idtextoasociado="txt_rasl_384">
 <input type="text" value="Reconoce la estructura de las redes de datos identificando sus elementos y principios de funcionamiento." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14653">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_384">
         <div class="criterios">
             Criterios:<br/>
-            <input type="checkbox" id="todos_criterios_asociados_a_resultado_14653"
-                   onclick='conmutar("#todos_criterios_asociados_a_resultado_14653",
-                                     ".criterio_sin_letra_asociado_a_resultado_14653" )'> Marcar todos <br/>
+            <input type="checkbox" id="todos_criterios_asociados_a_resultado_384"
+                   onclick='conmutar("#todos_criterios_asociados_a_resultado_384",
+                                     ".criterio_sin_letra_asociado_a_resultado_384" )'> Marcar todos <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14653"
-                id="cbsl_121479" data-idtextoasociado="criterio_121479">
-            <input type="text" value="a) Se han identificado los factores que impulsan la continua expansión y evolución de las redes de datos." id="criterio_121479" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_384"
+                id="cbsl_3159" data-idtextoasociado="criterio_3159">
+            <input type="text" value="a) Se han identificado los factores que impulsan la continua expansión y evolución de las redes de datos." id="criterio_3159" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14653"
-                id="cbsl_121480" data-idtextoasociado="criterio_121480">
-            <input type="text" value="b) Se han diferenciado los distintos medios de transmisión utilizados en las redes." id="criterio_121480" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_384"
+                id="cbsl_3160" data-idtextoasociado="criterio_3160">
+            <input type="text" value="b) Se han diferenciado los distintos medios de transmisión utilizados en las redes." id="criterio_3160" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14653"
-                id="cbsl_121481" data-idtextoasociado="criterio_121481">
-            <input type="text" value="c) Se han reconocido los distintos tipos de red y sus topologías." id="criterio_121481" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_384"
+                id="cbsl_3161" data-idtextoasociado="criterio_3161">
+            <input type="text" value="c) Se han reconocido los distintos tipos de red y sus topologías." id="criterio_3161" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14653"
-                id="cbsl_121482" data-idtextoasociado="criterio_121482">
-            <input type="text" value="d) Se han descrito las arquitecturas de red y los niveles que las componen." id="criterio_121482" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_384"
+                id="cbsl_3162" data-idtextoasociado="criterio_3162">
+            <input type="text" value="d) Se han descrito las arquitecturas de red y los niveles que las componen." id="criterio_3162" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14653"
-                id="cbsl_121483" data-idtextoasociado="criterio_121483">
-            <input type="text" value="e) Se ha descrito el concepto de protocolo de comunicación." id="criterio_121483" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_384"
+                id="cbsl_3163" data-idtextoasociado="criterio_3163">
+            <input type="text" value="e) Se ha descrito el concepto de protocolo de comunicación." id="criterio_3163" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14653"
-                id="cbsl_121484" data-idtextoasociado="criterio_121484">
-            <input type="text" value="f) Se ha descrito el funcionamiento de las pilas de protocolos en las distintas arquitecturas de red." id="criterio_121484" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_384"
+                id="cbsl_3164" data-idtextoasociado="criterio_3164">
+            <input type="text" value="f) Se ha descrito el funcionamiento de las pilas de protocolos en las distintas arquitecturas de red." id="criterio_3164" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14653"
-                id="cbsl_121485" data-idtextoasociado="criterio_121485">
-            <input type="text" value="g) Se han presentado y descrito los elementos funcionales, físicos y lógicos, de las redes de datos." id="criterio_121485" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_384"
+                id="cbsl_3165" data-idtextoasociado="criterio_3165">
+            <input type="text" value="g) Se han presentado y descrito los elementos funcionales, físicos y lógicos, de las redes de datos." id="criterio_3165" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14653"
-                id="cbsl_121486" data-idtextoasociado="criterio_121486">
-            <input type="text" value="h) Se han diferenciado los dispositivos de interconexión de redes atendiendo al nivel funcional en el que se encuadran." id="criterio_121486" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_384"
+                id="cbsl_3166" data-idtextoasociado="criterio_3166">
+            <input type="text" value="h) Se han diferenciado los dispositivos de interconexión de redes atendiendo al nivel funcional en el que se encuadran." id="criterio_3166" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14653"
-                id="cbsl_121487" data-idtextoasociado="criterio_121487">
-            <input type="text" value="i) Se ha descrito la aplicación de un estándar de cableado estructurado, identificando los distintos subsistemas; troncal y horizontal." id="criterio_121487" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_384"
+                id="cbsl_3167" data-idtextoasociado="criterio_3167">
+            <input type="text" value="i) Se ha descrito la aplicación de un estándar de cableado estructurado, identificando los distintos subsistemas; troncal y horizontal." id="criterio_3167" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14653"
-                id="cbsl_121488" data-idtextoasociado="criterio_121488">
-            <input type="text" value="j) Se ha presentado y descrito el algoritmo de acceso al medio CSMA/CD." id="criterio_121488" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_384"
+                id="cbsl_3168" data-idtextoasociado="criterio_3168">
+            <input type="text" value="j) Se ha presentado y descrito el algoritmo de acceso al medio CSMA/CD." id="criterio_3168" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14653"
-                id="cbsl_121489" data-idtextoasociado="criterio_121489">
-            <input type="text" value="k) Se ha descrito el formato de una trama Ethernet, identificando sus campos y funcionalidad de cada uno de ellos." id="criterio_121489" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_384"
+                id="cbsl_3169" data-idtextoasociado="criterio_3169">
+            <input type="text" value="k) Se ha descrito el formato de una trama Ethernet, identificando sus campos y funcionalidad de cada uno de ellos." id="criterio_3169" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14653"
-                id="cbsl_121490" data-idtextoasociado="criterio_121490">
-            <input type="text" value="l) Se reconocen las ventajas de la convergencia entre distintas redes." id="criterio_121490" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_384"
+                id="cbsl_3170" data-idtextoasociado="criterio_3170">
+            <input type="text" value="l) Se reconocen las ventajas de la convergencia entre distintas redes." id="criterio_3170" size="140">
             <br/>
             
             <br/>
             
             <input type="submit" value="Copiar al portapapeles los criterios seleccionados en este bloque" class="boton_copiar"
                    onclick=" copiar_textos_asociados_a_checkbox(
-                '.criterio_sin_letra_asociado_a_resultado_14653:checked',
-                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14653');   return false">
+                '.criterio_sin_letra_asociado_a_resultado_384:checked',
+                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado384');   return false">
             
-            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14653"></textarea>
+            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado384"></textarea>
         </div>
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14654"  data-idtextoasociado="txt_rasl_14654">
+       id="cbrasl_385"  data-idtextoasociado="txt_rasl_385">
 <input type="text" value="Integra ordenadores y periféricos en redes cableadas e inalámbricas, evaluando su funcionamiento y prestaciones." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14654">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_385">
         <div class="criterios">
             Criterios:<br/>
-            <input type="checkbox" id="todos_criterios_asociados_a_resultado_14654"
-                   onclick='conmutar("#todos_criterios_asociados_a_resultado_14654",
-                                     ".criterio_sin_letra_asociado_a_resultado_14654" )'> Marcar todos <br/>
+            <input type="checkbox" id="todos_criterios_asociados_a_resultado_385"
+                   onclick='conmutar("#todos_criterios_asociados_a_resultado_385",
+                                     ".criterio_sin_letra_asociado_a_resultado_385" )'> Marcar todos <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14654"
-                id="cbsl_121491" data-idtextoasociado="criterio_121491">
-            <input type="text" value="a) Se han identificado los estándares para redes cableadas e inalámbricas." id="criterio_121491" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_385"
+                id="cbsl_3171" data-idtextoasociado="criterio_3171">
+            <input type="text" value="a) Se han identificado los estándares para redes cableadas e inalámbricas." id="criterio_3171" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14654"
-                id="cbsl_121492" data-idtextoasociado="criterio_121492">
-            <input type="text" value="b) Se han montado cables directos, cruzados y de consola." id="criterio_121492" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_385"
+                id="cbsl_3172" data-idtextoasociado="criterio_3172">
+            <input type="text" value="b) Se han montado cables directos, cruzados y de consola." id="criterio_3172" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14654"
-                id="cbsl_121493" data-idtextoasociado="criterio_121493">
-            <input type="text" value="c) Se han utilizado comprobadores para verificar la conectividad de distintos tipos de cables." id="criterio_121493" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_385"
+                id="cbsl_3173" data-idtextoasociado="criterio_3173">
+            <input type="text" value="c) Se han utilizado comprobadores para verificar la conectividad de distintos tipos de cables." id="criterio_3173" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14654"
-                id="cbsl_121494" data-idtextoasociado="criterio_121494">
-            <input type="text" value="d) Se ha utilizado el sistema de direccionamiento lógico IP para asignar direcciones de red y máscaras de subred." id="criterio_121494" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_385"
+                id="cbsl_3174" data-idtextoasociado="criterio_3174">
+            <input type="text" value="d) Se ha utilizado el sistema de direccionamiento lógico IP para asignar direcciones de red y máscaras de subred." id="criterio_3174" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14654"
-                id="cbsl_121495" data-idtextoasociado="criterio_121495">
-            <input type="text" value="e) Se han configurado adaptadores de red cableados e inalámbricos bajo distintos sistemas operativos." id="criterio_121495" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_385"
+                id="cbsl_3175" data-idtextoasociado="criterio_3175">
+            <input type="text" value="e) Se han configurado adaptadores de red cableados e inalámbricos bajo distintos sistemas operativos." id="criterio_3175" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14654"
-                id="cbsl_121496" data-idtextoasociado="criterio_121496">
-            <input type="text" value="f) Se han integrado dispositivos en redes cableadas e inalámbricas." id="criterio_121496" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_385"
+                id="cbsl_3176" data-idtextoasociado="criterio_3176">
+            <input type="text" value="f) Se han integrado dispositivos en redes cableadas e inalámbricas." id="criterio_3176" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14654"
-                id="cbsl_121497" data-idtextoasociado="criterio_121497">
-            <input type="text" value="g) Se ha comprobado la conectividad entre diversos dispositivos y adaptadores inalámbricos sobre distintas configuraciones." id="criterio_121497" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_385"
+                id="cbsl_3177" data-idtextoasociado="criterio_3177">
+            <input type="text" value="g) Se ha comprobado la conectividad entre diversos dispositivos y adaptadores inalámbricos sobre distintas configuraciones." id="criterio_3177" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14654"
-                id="cbsl_121498" data-idtextoasociado="criterio_121498">
-            <input type="text" value="h) Se han utilizado aplicaciones para representar el mapa físico y lógico de una red." id="criterio_121498" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_385"
+                id="cbsl_3178" data-idtextoasociado="criterio_3178">
+            <input type="text" value="h) Se han utilizado aplicaciones para representar el mapa físico y lógico de una red." id="criterio_3178" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14654"
-                id="cbsl_121499" data-idtextoasociado="criterio_121499">
-            <input type="text" value="i) Se ha monitorizado la red mediante aplicaciones basadas en el protocolo SNMP." id="criterio_121499" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_385"
+                id="cbsl_3179" data-idtextoasociado="criterio_3179">
+            <input type="text" value="i) Se ha monitorizado la red mediante aplicaciones basadas en el protocolo SNMP." id="criterio_3179" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14654"
-                id="cbsl_121500" data-idtextoasociado="criterio_121500">
-            <input type="text" value="j) Se ha utilizado el sistema de direccionamiento IPv6." id="criterio_121500" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_385"
+                id="cbsl_3180" data-idtextoasociado="criterio_3180">
+            <input type="text" value="j) Se ha utilizado el sistema de direccionamiento IPv6." id="criterio_3180" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14654"
-                id="cbsl_121501" data-idtextoasociado="criterio_121501">
-            <input type="text" value="k) Se ha identificado los protocolos ARP y RARP para redes locales." id="criterio_121501" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_385"
+                id="cbsl_3181" data-idtextoasociado="criterio_3181">
+            <input type="text" value="k) Se ha identificado los protocolos ARP y RARP para redes locales." id="criterio_3181" size="140">
             <br/>
             
             <br/>
             
             <input type="submit" value="Copiar al portapapeles los criterios seleccionados en este bloque" class="boton_copiar"
                    onclick=" copiar_textos_asociados_a_checkbox(
-                '.criterio_sin_letra_asociado_a_resultado_14654:checked',
-                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14654');   return false">
+                '.criterio_sin_letra_asociado_a_resultado_385:checked',
+                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado385');   return false">
             
-            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14654"></textarea>
+            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado385"></textarea>
         </div>
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14655"  data-idtextoasociado="txt_rasl_14655">
+       id="cbrasl_386"  data-idtextoasociado="txt_rasl_386">
 <input type="text" value="Administra conmutadores estableciendo opciones de configuración para su integración en la red." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14655">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_386">
         <div class="criterios">
             Criterios:<br/>
-            <input type="checkbox" id="todos_criterios_asociados_a_resultado_14655"
-                   onclick='conmutar("#todos_criterios_asociados_a_resultado_14655",
-                                     ".criterio_sin_letra_asociado_a_resultado_14655" )'> Marcar todos <br/>
+            <input type="checkbox" id="todos_criterios_asociados_a_resultado_386"
+                   onclick='conmutar("#todos_criterios_asociados_a_resultado_386",
+                                     ".criterio_sin_letra_asociado_a_resultado_386" )'> Marcar todos <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14655"
-                id="cbsl_121502" data-idtextoasociado="criterio_121502">
-            <input type="text" value="a) Se han conectado conmutadores entre sí y con las estaciones de trabajo." id="criterio_121502" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_386"
+                id="cbsl_3182" data-idtextoasociado="criterio_3182">
+            <input type="text" value="a) Se han conectado conmutadores entre sí y con las estaciones de trabajo." id="criterio_3182" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14655"
-                id="cbsl_121503" data-idtextoasociado="criterio_121503">
-            <input type="text" value="b) Se ha interpretado la información que proporcionan los leds del conmutador." id="criterio_121503" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_386"
+                id="cbsl_3183" data-idtextoasociado="criterio_3183">
+            <input type="text" value="b) Se ha interpretado la información que proporcionan los leds del conmutador." id="criterio_3183" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14655"
-                id="cbsl_121504" data-idtextoasociado="criterio_121504">
-            <input type="text" value="c) Se han utilizado distintos métodos para acceder al modo de configuración del conmutador." id="criterio_121504" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_386"
+                id="cbsl_3184" data-idtextoasociado="criterio_3184">
+            <input type="text" value="c) Se han utilizado distintos métodos para acceder al modo de configuración del conmutador." id="criterio_3184" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14655"
-                id="cbsl_121505" data-idtextoasociado="criterio_121505">
-            <input type="text" value="d) Se han identificado los archivos que guardan la configuración del conmutador." id="criterio_121505" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_386"
+                id="cbsl_3185" data-idtextoasociado="criterio_3185">
+            <input type="text" value="d) Se han identificado los archivos que guardan la configuración del conmutador." id="criterio_3185" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14655"
-                id="cbsl_121506" data-idtextoasociado="criterio_121506">
-            <input type="text" value="e) Se ha administrado la tabla de direcciones MAC del conmutador." id="criterio_121506" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_386"
+                id="cbsl_3186" data-idtextoasociado="criterio_3186">
+            <input type="text" value="e) Se ha administrado la tabla de direcciones MAC del conmutador." id="criterio_3186" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14655"
-                id="cbsl_121507" data-idtextoasociado="criterio_121507">
-            <input type="text" value="f) Se ha configurado la seguridad del puerto." id="criterio_121507" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_386"
+                id="cbsl_3187" data-idtextoasociado="criterio_3187">
+            <input type="text" value="f) Se ha configurado la seguridad del puerto." id="criterio_3187" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14655"
-                id="cbsl_121508" data-idtextoasociado="criterio_121508">
-            <input type="text" value="g) Se ha actualizado el sistema operativo del conmutador." id="criterio_121508" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_386"
+                id="cbsl_3188" data-idtextoasociado="criterio_3188">
+            <input type="text" value="g) Se ha actualizado el sistema operativo del conmutador." id="criterio_3188" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14655"
-                id="cbsl_121509" data-idtextoasociado="criterio_121509">
-            <input type="text" value="h) Se han utilizado los comandos proporcionados por el sistema operativo del conmutador que permiten hacer el seguimiento de posibles incidencias." id="criterio_121509" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_386"
+                id="cbsl_3189" data-idtextoasociado="criterio_3189">
+            <input type="text" value="h) Se han utilizado los comandos proporcionados por el sistema operativo del conmutador que permiten hacer el seguimiento de posibles incidencias." id="criterio_3189" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14655"
-                id="cbsl_121510" data-idtextoasociado="criterio_121510">
-            <input type="text" value="i) Se ha verificado el funcionamiento del Spanning Tree Protocol en un conmutador." id="criterio_121510" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_386"
+                id="cbsl_3190" data-idtextoasociado="criterio_3190">
+            <input type="text" value="i) Se ha verificado el funcionamiento del Spanning Tree Protocol en un conmutador." id="criterio_3190" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14655"
-                id="cbsl_121511" data-idtextoasociado="criterio_121511">
-            <input type="text" value="j) Se han modificado los parámetros que determinan el proceso de selección del puente raíz." id="criterio_121511" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_386"
+                id="cbsl_3191" data-idtextoasociado="criterio_3191">
+            <input type="text" value="j) Se han modificado los parámetros que determinan el proceso de selección del puente raíz." id="criterio_3191" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14655"
-                id="cbsl_121512" data-idtextoasociado="criterio_121512">
-            <input type="text" value="k) Se reconocen las diferencias fundamentales entre conmutadores administrables y no administrables." id="criterio_121512" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_386"
+                id="cbsl_3192" data-idtextoasociado="criterio_3192">
+            <input type="text" value="k) Se reconocen las diferencias fundamentales entre conmutadores administrables y no administrables." id="criterio_3192" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14655"
-                id="cbsl_121513" data-idtextoasociado="criterio_121513">
-            <input type="text" value="l) Se ha hecho una copia de seguridad de la configuración del conmutador y se ha restaurado un conmutador a partir de la copia de seguridad realizada." id="criterio_121513" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_386"
+                id="cbsl_3193" data-idtextoasociado="criterio_3193">
+            <input type="text" value="l) Se ha hecho una copia de seguridad de la configuración del conmutador y se ha restaurado un conmutador a partir de la copia de seguridad realizada." id="criterio_3193" size="140">
             <br/>
             
             <br/>
             
             <input type="submit" value="Copiar al portapapeles los criterios seleccionados en este bloque" class="boton_copiar"
                    onclick=" copiar_textos_asociados_a_checkbox(
-                '.criterio_sin_letra_asociado_a_resultado_14655:checked',
-                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14655');   return false">
+                '.criterio_sin_letra_asociado_a_resultado_386:checked',
+                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado386');   return false">
             
-            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14655"></textarea>
+            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado386"></textarea>
         </div>
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14656"  data-idtextoasociado="txt_rasl_14656">
+       id="cbrasl_387"  data-idtextoasociado="txt_rasl_387">
 <input type="text" value="Administra las funciones básicas de un router estableciendo opciones de configuración para su integración en la red." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14656">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_387">
         <div class="criterios">
             Criterios:<br/>
-            <input type="checkbox" id="todos_criterios_asociados_a_resultado_14656"
-                   onclick='conmutar("#todos_criterios_asociados_a_resultado_14656",
-                                     ".criterio_sin_letra_asociado_a_resultado_14656" )'> Marcar todos <br/>
+            <input type="checkbox" id="todos_criterios_asociados_a_resultado_387"
+                   onclick='conmutar("#todos_criterios_asociados_a_resultado_387",
+                                     ".criterio_sin_letra_asociado_a_resultado_387" )'> Marcar todos <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14656"
-                id="cbsl_121514" data-idtextoasociado="criterio_121514">
-            <input type="text" value="a) Se ha interpretado la información que proporcionan los leds del router." id="criterio_121514" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_387"
+                id="cbsl_3194" data-idtextoasociado="criterio_3194">
+            <input type="text" value="a) Se ha interpretado la información que proporcionan los leds del router." id="criterio_3194" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14656"
-                id="cbsl_121515" data-idtextoasociado="criterio_121515">
-            <input type="text" value="b) Se han utilizado distintos métodos para acceder al modo de configuración del router." id="criterio_121515" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_387"
+                id="cbsl_3195" data-idtextoasociado="criterio_3195">
+            <input type="text" value="b) Se han utilizado distintos métodos para acceder al modo de configuración del router." id="criterio_3195" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14656"
-                id="cbsl_121516" data-idtextoasociado="criterio_121516">
-            <input type="text" value="c) Se han identificado las etapas de la secuencia de arranque del router." id="criterio_121516" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_387"
+                id="cbsl_3196" data-idtextoasociado="criterio_3196">
+            <input type="text" value="c) Se han identificado las etapas de la secuencia de arranque del router." id="criterio_3196" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14656"
-                id="cbsl_121517" data-idtextoasociado="criterio_121517">
-            <input type="text" value="d) Se han utilizado los comandos para la configuración y administración básica del router." id="criterio_121517" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_387"
+                id="cbsl_3197" data-idtextoasociado="criterio_3197">
+            <input type="text" value="d) Se han utilizado los comandos para la configuración y administración básica del router." id="criterio_3197" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14656"
-                id="cbsl_121518" data-idtextoasociado="criterio_121518">
-            <input type="text" value="e) Se han identificado los archivos que guardan la configuración del router y se han gestionado mediante los comandos correspondientes." id="criterio_121518" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_387"
+                id="cbsl_3198" data-idtextoasociado="criterio_3198">
+            <input type="text" value="e) Se han identificado los archivos que guardan la configuración del router y se han gestionado mediante los comandos correspondientes." id="criterio_3198" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14656"
-                id="cbsl_121519" data-idtextoasociado="criterio_121519">
-            <input type="text" value="f) Se han configurado rutas estáticas." id="criterio_121519" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_387"
+                id="cbsl_3199" data-idtextoasociado="criterio_3199">
+            <input type="text" value="f) Se han configurado rutas estáticas." id="criterio_3199" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14656"
-                id="cbsl_121520" data-idtextoasociado="criterio_121520">
-            <input type="text" value="g) Se han utilizado los comandos proporcionados por el sistema operativo del router que permiten hacer el seguimiento de posibles incidencias." id="criterio_121520" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_387"
+                id="cbsl_3200" data-idtextoasociado="criterio_3200">
+            <input type="text" value="g) Se han utilizado los comandos proporcionados por el sistema operativo del router que permiten hacer el seguimiento de posibles incidencias." id="criterio_3200" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14656"
-                id="cbsl_121521" data-idtextoasociado="criterio_121521">
-            <input type="text" value="h) Se ha configurado el router como servidor de direcciones IP dinámicas." id="criterio_121521" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_387"
+                id="cbsl_3201" data-idtextoasociado="criterio_3201">
+            <input type="text" value="h) Se ha configurado el router como servidor de direcciones IP dinámicas." id="criterio_3201" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14656"
-                id="cbsl_121522" data-idtextoasociado="criterio_121522">
-            <input type="text" value="i) Se han descrito las capacidades de filtrado de tráfico del router." id="criterio_121522" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_387"
+                id="cbsl_3202" data-idtextoasociado="criterio_3202">
+            <input type="text" value="i) Se han descrito las capacidades de filtrado de tráfico del router." id="criterio_3202" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14656"
-                id="cbsl_121523" data-idtextoasociado="criterio_121523">
-            <input type="text" value="j) Se han utilizado comandos para gestionar listas de control de acceso." id="criterio_121523" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_387"
+                id="cbsl_3203" data-idtextoasociado="criterio_3203">
+            <input type="text" value="j) Se han utilizado comandos para gestionar listas de control de acceso." id="criterio_3203" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14656"
-                id="cbsl_121524" data-idtextoasociado="criterio_121524">
-            <input type="text" value="k) Se ha recuperado el acceso a un router cuya contraseña se desconoce." id="criterio_121524" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_387"
+                id="cbsl_3204" data-idtextoasociado="criterio_3204">
+            <input type="text" value="k) Se ha recuperado el acceso a un router cuya contraseña se desconoce." id="criterio_3204" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14656"
-                id="cbsl_121525" data-idtextoasociado="criterio_121525">
-            <input type="text" value="l) Se ha actualizado y realizado copia de seguridad del firmware del router." id="criterio_121525" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_387"
+                id="cbsl_3205" data-idtextoasociado="criterio_3205">
+            <input type="text" value="l) Se ha actualizado y realizado copia de seguridad del firmware del router." id="criterio_3205" size="140">
             <br/>
             
             <br/>
             
             <input type="submit" value="Copiar al portapapeles los criterios seleccionados en este bloque" class="boton_copiar"
                    onclick=" copiar_textos_asociados_a_checkbox(
-                '.criterio_sin_letra_asociado_a_resultado_14656:checked',
-                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14656');   return false">
+                '.criterio_sin_letra_asociado_a_resultado_387:checked',
+                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado387');   return false">
             
-            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14656"></textarea>
+            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado387"></textarea>
         </div>
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14657"  data-idtextoasociado="txt_rasl_14657">
+       id="cbrasl_388"  data-idtextoasociado="txt_rasl_388">
 <input type="text" value="Configura redes locales virtuales identificando su campo de aplicación." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14657">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_388">
         <div class="criterios">
             Criterios:<br/>
-            <input type="checkbox" id="todos_criterios_asociados_a_resultado_14657"
-                   onclick='conmutar("#todos_criterios_asociados_a_resultado_14657",
-                                     ".criterio_sin_letra_asociado_a_resultado_14657" )'> Marcar todos <br/>
+            <input type="checkbox" id="todos_criterios_asociados_a_resultado_388"
+                   onclick='conmutar("#todos_criterios_asociados_a_resultado_388",
+                                     ".criterio_sin_letra_asociado_a_resultado_388" )'> Marcar todos <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14657"
-                id="cbsl_121526" data-idtextoasociado="criterio_121526">
-            <input type="text" value="a) Se han descrito las ventajas que presenta la utilización de redes locales virtuales (VLANs)." id="criterio_121526" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_388"
+                id="cbsl_3206" data-idtextoasociado="criterio_3206">
+            <input type="text" value="a) Se han descrito las ventajas que presenta la utilización de redes locales virtuales (VLANs)." id="criterio_3206" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14657"
-                id="cbsl_121527" data-idtextoasociado="criterio_121527">
-            <input type="text" value="b) Se han implementado VLANs." id="criterio_121527" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_388"
+                id="cbsl_3207" data-idtextoasociado="criterio_3207">
+            <input type="text" value="b) Se han implementado VLANs." id="criterio_3207" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14657"
-                id="cbsl_121528" data-idtextoasociado="criterio_121528">
-            <input type="text" value="c) Se ha realizado el diagnóstico de incidencias en VLANs." id="criterio_121528" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_388"
+                id="cbsl_3208" data-idtextoasociado="criterio_3208">
+            <input type="text" value="c) Se ha realizado el diagnóstico de incidencias en VLANs." id="criterio_3208" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14657"
-                id="cbsl_121529" data-idtextoasociado="criterio_121529">
-            <input type="text" value="d) Se han configurado enlaces troncales." id="criterio_121529" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_388"
+                id="cbsl_3209" data-idtextoasociado="criterio_3209">
+            <input type="text" value="d) Se han configurado enlaces troncales." id="criterio_3209" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14657"
-                id="cbsl_121530" data-idtextoasociado="criterio_121530">
-            <input type="text" value="e) Se ha utilizado un router para interconectar diversas VLANs." id="criterio_121530" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_388"
+                id="cbsl_3210" data-idtextoasociado="criterio_3210">
+            <input type="text" value="e) Se ha utilizado un router para interconectar diversas VLANs." id="criterio_3210" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14657"
-                id="cbsl_121531" data-idtextoasociado="criterio_121531">
-            <input type="text" value="f) Se han descrito las ventajas que aporta el uso de protocolos de administración centralizada de VLANs." id="criterio_121531" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_388"
+                id="cbsl_3211" data-idtextoasociado="criterio_3211">
+            <input type="text" value="f) Se han descrito las ventajas que aporta el uso de protocolos de administración centralizada de VLANs." id="criterio_3211" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14657"
-                id="cbsl_121532" data-idtextoasociado="criterio_121532">
-            <input type="text" value="g) Se han configurado los conmutadores para trabajar de acuerdo con los protocolos de administración centralizada." id="criterio_121532" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_388"
+                id="cbsl_3212" data-idtextoasociado="criterio_3212">
+            <input type="text" value="g) Se han configurado los conmutadores para trabajar de acuerdo con los protocolos de administración centralizada." id="criterio_3212" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14657"
-                id="cbsl_121533" data-idtextoasociado="criterio_121533">
-            <input type="text" value="h) Se ha utilizado la VLAN nativa de un conmutador." id="criterio_121533" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_388"
+                id="cbsl_3213" data-idtextoasociado="criterio_3213">
+            <input type="text" value="h) Se ha utilizado la VLAN nativa de un conmutador." id="criterio_3213" size="140">
             <br/>
             
             <br/>
             
             <input type="submit" value="Copiar al portapapeles los criterios seleccionados en este bloque" class="boton_copiar"
                    onclick=" copiar_textos_asociados_a_checkbox(
-                '.criterio_sin_letra_asociado_a_resultado_14657:checked',
-                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14657');   return false">
+                '.criterio_sin_letra_asociado_a_resultado_388:checked',
+                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado388');   return false">
             
-            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14657"></textarea>
+            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado388"></textarea>
         </div>
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14658"  data-idtextoasociado="txt_rasl_14658">
+       id="cbrasl_389"  data-idtextoasociado="txt_rasl_389">
 <input type="text" value="Realiza tareas avanzadas de administración de red analizando y utilizando protocolos dinámicos de encaminamiento." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14658">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_389">
         <div class="criterios">
             Criterios:<br/>
-            <input type="checkbox" id="todos_criterios_asociados_a_resultado_14658"
-                   onclick='conmutar("#todos_criterios_asociados_a_resultado_14658",
-                                     ".criterio_sin_letra_asociado_a_resultado_14658" )'> Marcar todos <br/>
+            <input type="checkbox" id="todos_criterios_asociados_a_resultado_389"
+                   onclick='conmutar("#todos_criterios_asociados_a_resultado_389",
+                                     ".criterio_sin_letra_asociado_a_resultado_389" )'> Marcar todos <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14658"
-                id="cbsl_121534" data-idtextoasociado="criterio_121534">
-            <input type="text" value="a) Se ha configurado el protocolo de enrutamiento RIPv1." id="criterio_121534" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_389"
+                id="cbsl_3214" data-idtextoasociado="criterio_3214">
+            <input type="text" value="a) Se ha configurado el protocolo de enrutamiento RIPv1." id="criterio_3214" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14658"
-                id="cbsl_121535" data-idtextoasociado="criterio_121535">
-            <input type="text" value="b) Se han configurado redes con el protocolo RIPv2." id="criterio_121535" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_389"
+                id="cbsl_3215" data-idtextoasociado="criterio_3215">
+            <input type="text" value="b) Se han configurado redes con el protocolo RIPv2." id="criterio_3215" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14658"
-                id="cbsl_121536" data-idtextoasociado="criterio_121536">
-            <input type="text" value="c) Se ha realizado el diagnóstico de fallos en una red que utiliza RIP." id="criterio_121536" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_389"
+                id="cbsl_3216" data-idtextoasociado="criterio_3216">
+            <input type="text" value="c) Se ha realizado el diagnóstico de fallos en una red que utiliza RIP." id="criterio_3216" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14658"
-                id="cbsl_121537" data-idtextoasociado="criterio_121537">
-            <input type="text" value="d) Se ha valorado la necesidad de utilizar máscaras de longitud variable en IPv4." id="criterio_121537" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_389"
+                id="cbsl_3217" data-idtextoasociado="criterio_3217">
+            <input type="text" value="d) Se ha valorado la necesidad de utilizar máscaras de longitud variable en IPv4." id="criterio_3217" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14658"
-                id="cbsl_121538" data-idtextoasociado="criterio_121538">
-            <input type="text" value="e) Se ha dividido una red principal en subredes de distintos tamaños con VLSM." id="criterio_121538" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_389"
+                id="cbsl_3218" data-idtextoasociado="criterio_3218">
+            <input type="text" value="e) Se ha dividido una red principal en subredes de distintos tamaños con VLSM." id="criterio_3218" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14658"
-                id="cbsl_121539" data-idtextoasociado="criterio_121539">
-            <input type="text" value="f) Se han realizado agrupaciones de redes con CIDR." id="criterio_121539" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_389"
+                id="cbsl_3219" data-idtextoasociado="criterio_3219">
+            <input type="text" value="f) Se han realizado agrupaciones de redes con CIDR." id="criterio_3219" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14658"
-                id="cbsl_121540" data-idtextoasociado="criterio_121540">
-            <input type="text" value="g) Se ha habilitado y configurado OSPF en un router." id="criterio_121540" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_389"
+                id="cbsl_3220" data-idtextoasociado="criterio_3220">
+            <input type="text" value="g) Se ha habilitado y configurado OSPF en un router." id="criterio_3220" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14658"
-                id="cbsl_121541" data-idtextoasociado="criterio_121541">
-            <input type="text" value="h) Se ha establecido y propagado una ruta por defecto usando OSPF." id="criterio_121541" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_389"
+                id="cbsl_3221" data-idtextoasociado="criterio_3221">
+            <input type="text" value="h) Se ha establecido y propagado una ruta por defecto usando OSPF." id="criterio_3221" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14658"
-                id="cbsl_121542" data-idtextoasociado="criterio_121542">
-            <input type="text" value="i) Se han configurado redes con protocolos de enrutamiento propietarios." id="criterio_121542" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_389"
+                id="cbsl_3222" data-idtextoasociado="criterio_3222">
+            <input type="text" value="i) Se han configurado redes con protocolos de enrutamiento propietarios." id="criterio_3222" size="140">
             <br/>
             
             <br/>
             
             <input type="submit" value="Copiar al portapapeles los criterios seleccionados en este bloque" class="boton_copiar"
                    onclick=" copiar_textos_asociados_a_checkbox(
-                '.criterio_sin_letra_asociado_a_resultado_14658:checked',
-                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14658');   return false">
+                '.criterio_sin_letra_asociado_a_resultado_389:checked',
+                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado389');   return false">
             
-            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14658"></textarea>
+            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado389"></textarea>
         </div>
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14659"  data-idtextoasociado="txt_rasl_14659">
+       id="cbrasl_390"  data-idtextoasociado="txt_rasl_390">
 <input type="text" value="Conecta redes privadas a redes públicas identificando y aplicando diferentes tecnologías." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14659">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_390">
         <div class="criterios">
             Criterios:<br/>
-            <input type="checkbox" id="todos_criterios_asociados_a_resultado_14659"
-                   onclick='conmutar("#todos_criterios_asociados_a_resultado_14659",
-                                     ".criterio_sin_letra_asociado_a_resultado_14659" )'> Marcar todos <br/>
+            <input type="checkbox" id="todos_criterios_asociados_a_resultado_390"
+                   onclick='conmutar("#todos_criterios_asociados_a_resultado_390",
+                                     ".criterio_sin_letra_asociado_a_resultado_390" )'> Marcar todos <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14659"
-                id="cbsl_121543" data-idtextoasociado="criterio_121543">
-            <input type="text" value="a) Se han descrito las ventajas e inconvenientes del uso de la traducción de direcciones de red (NAT)." id="criterio_121543" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_390"
+                id="cbsl_3223" data-idtextoasociado="criterio_3223">
+            <input type="text" value="a) Se han descrito las ventajas e inconvenientes del uso de la traducción de direcciones de red (NAT)." id="criterio_3223" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14659"
-                id="cbsl_121544" data-idtextoasociado="criterio_121544">
-            <input type="text" value="b) Se ha utilizado NAT para realizar la traducción estática de direcciones de red." id="criterio_121544" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_390"
+                id="cbsl_3224" data-idtextoasociado="criterio_3224">
+            <input type="text" value="b) Se ha utilizado NAT para realizar la traducción estática de direcciones de red." id="criterio_3224" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14659"
-                id="cbsl_121545" data-idtextoasociado="criterio_121545">
-            <input type="text" value="c) Se ha utilizado NAT para realizar la traducción dinámica de direcciones de red." id="criterio_121545" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_390"
+                id="cbsl_3225" data-idtextoasociado="criterio_3225">
+            <input type="text" value="c) Se ha utilizado NAT para realizar la traducción dinámica de direcciones de red." id="criterio_3225" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14659"
-                id="cbsl_121546" data-idtextoasociado="criterio_121546">
-            <input type="text" value="d) Se han descrito las características de las tecnologías Frame Relay, RDSI y ADSL." id="criterio_121546" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_390"
+                id="cbsl_3226" data-idtextoasociado="criterio_3226">
+            <input type="text" value="d) Se han descrito las características de las tecnologías Frame Relay, RDSI y ADSL." id="criterio_3226" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14659"
-                id="cbsl_121547" data-idtextoasociado="criterio_121547">
-            <input type="text" value="e) Se han descrito las analogías y diferencias entre las tecnologías Wifi y Wimax." id="criterio_121547" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_390"
+                id="cbsl_3227" data-idtextoasociado="criterio_3227">
+            <input type="text" value="e) Se han descrito las analogías y diferencias entre las tecnologías Wifi y Wimax." id="criterio_3227" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14659"
-                id="cbsl_121548" data-idtextoasociado="criterio_121548">
-            <input type="text" value="f) Se han descrito las características de las tecnologías UMTS y HSDPA." id="criterio_121548" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_390"
+                id="cbsl_3228" data-idtextoasociado="criterio_3228">
+            <input type="text" value="f) Se han descrito las características de las tecnologías UMTS y HSDPA." id="criterio_3228" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14659"
-                id="cbsl_121549" data-idtextoasociado="criterio_121549">
-            <input type="text" value="g) Se han descrito las características de tecnologías emergentes tanto basadas en cable como inalámbricas." id="criterio_121549" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_390"
+                id="cbsl_3229" data-idtextoasociado="criterio_3229">
+            <input type="text" value="g) Se han descrito las características de tecnologías emergentes tanto basadas en cable como inalámbricas." id="criterio_3229" size="140">
             <br/>
             
             <br/>
             
             <input type="submit" value="Copiar al portapapeles los criterios seleccionados en este bloque" class="boton_copiar"
                    onclick=" copiar_textos_asociados_a_checkbox(
-                '.criterio_sin_letra_asociado_a_resultado_14659:checked',
-                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14659');   return false">
+                '.criterio_sin_letra_asociado_a_resultado_390:checked',
+                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado390');   return false">
             
-            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14659"></textarea>
+            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado390"></textarea>
         </div>
         
 <br/>

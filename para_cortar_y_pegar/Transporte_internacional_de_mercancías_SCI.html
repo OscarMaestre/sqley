@@ -76,6 +76,10 @@ null==d?void 0:d))},attrHooks:{type:{set:function(a,b){if(!o.radioValue&&"radio"
         function click_todos_resultados_aprendizaje_con_letra(){
             conmutar("#id_todos_resultados_aprendizaje_con_letra", ".checkbox_resultado_aprendizaje_con_letra" )
         }
+        function click_todas_cualificaciones_completas(){
+            conmutar("#id_todas_cualificaciones_completas", ".checkbox_cualificacion_completa")
+            console.log("Marcas las cualificaciones")
+        }
         
         function extraer_textos_varios_input_text(atributo_class){
             let elementos_texto=$(atributo_class)
@@ -102,7 +106,6 @@ null==d?void 0:d))},attrHooks:{type:{set:function(a,b){if(!o.radioValue&&"radio"
             }
             return texto_a_meter_en_el_portapapeles
         }
-        
         function copiar_textos_asociados_a_checkbox(atributo_class, id_para_inyectar_resultado ){
             let texto_para_portapapeles=extraer_textos_varios_input_text(atributo_class)
             
@@ -160,7 +163,6 @@ null==d?void 0:d))},attrHooks:{type:{set:function(a,b){if(!o.radioValue&&"radio"
             $("#id_todos_objetivos_generales_sin_letra").click ( click_todos_objetivos_generales_sin_letra )
             $("#id_todos_resultados_aprendizaje_sin_letra").click ( click_todos_resultados_aprendizaje_sin_letra )
             $("#id_todos_resultados_aprendizaje_con_letra").click ( click_todos_resultados_aprendizaje_con_letra )
-            
             //Cuando se hace click en un cuadro de texto automáticamente se corta al portapapeles
             $("input[type=text]").click(click_en_caja_de_texto)
         }
@@ -207,24 +209,90 @@ por lo que podrás cortar y pegar los textos cómodamente en cualquiera de los d
 
 
 <br/><br/>
-<h1>Unidades de competencia</h1>
+<h1>Cualificaciones COMPLETAS</h1>
 
 
-Gestión administrativa y financiera del comercio internacional
+
+COM086_3 Gestión administrativa y financiera del comercio internacional (R.D 295/2004, de 20 de febrero, modificado en el Real Decreto 109/2008) con las unidades de competencia asociadas:
+<ul>
+    
+    
+        <li>
+            UC0242_3 Realizar y controlar la gestión administrativa en las operaciones de importación/exportación y/o introducción/expedición de mercancías.
+        </li>
+    
+        <li>
+            UC0243_3 Gestionar las operaciones de financiación para transacciones internacionales de mercancías y servicios.
+        </li>
+    
+        <li>
+            UC0244_3 Gestionar las operaciones de cobro y pago en las transacciones internacionales
+        </li>
+    
+        <li>
+            UC1010_3 Comunicarse en inglés, con un nivel de usuario competente, en las relaciones y actividades de comercio internacional.
+        </li>
+    
+
+</ul>
 <br/>
 
-Marketing y compraventa internacional
-<br/>
 
-Organización del transporte y la distribución
-<br/>
 
-Organización y gestión de almacenes
-<br/>
+<h1>Cualificaciones INCOMPLETAS</h1>
 
-Gestión comercial y financiera del transporte por carretera
-<br/>
 
+COM316_3 Marketing y compraventa internacional (R.D Real Decreto 109/2008, de 1 de febrero) con las siguientes unidades asociadas
+
+    <ul>
+        
+        <li>
+            UC1007_3 Obtener y elaborar información para el sistema de información de mercados.
+        </li>
+        
+        <li>
+            UC1008_3 Realizar estudios y propuestas para las acciones del plan de marketing internacional.
+        </li>
+        
+        <li>
+            UC1009_3 Asistir en los procesos de negociación y ejecución de las operaciones de compra-venta internacionales de productos y servicios.
+        </li>
+        
+    </ul>   
+
+COM317_3 Organización del transporte y la distribución (R.D Real Decreto 109/2008, de 1 de febrero) con las siguientes unidades asociadas
+
+    <ul>
+        
+        <li>
+            UC1013_3 Organizar, gestionar y controlar las operaciones de transporte de larga distancia.
+        </li>
+        
+    </ul>   
+
+COM318_3 Organización y gestión de almacenes (R.D Real Decreto 109/2008, de 1 de febrero) con las siguientes unidades asociadas
+
+    <ul>
+        
+        <li>
+            UC1014_3 Organizar el almacén de acuerdo a los criterios y niveles de actividad previstos.
+        </li>
+        
+        <li>
+            UC1015_2 Gestionar y coordinar las operaciones del almacén
+        </li>
+        
+    </ul>   
+
+COM442_3 Gestión comercial y financiera del transporte por carretera (R.D Real Decreto 1550/2011, de 31 de octubre) con las siguientes unidades asociadas
+
+    <ul>
+        
+        <li>
+            UC1423_3 Gestionar la actividad económico-financiera del transporte por carretera.
+        </li>
+        
+    </ul>   
 
 
 <h2>Objetivos generales del ciclo</h2>
@@ -237,170 +305,170 @@ Marcar/desmarcar todos los objetivos generales
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6239"  data-idtextoasociado="txt_og_6239">
+       id="cb_190"  data-idtextoasociado="txt_og_190">
 <input type="text" value="a) Conocer y valorar las fuentes y productos financieros disponibles, tales como créditos, préstamos y otros instrumentos financieros, así como las posibles subvenciones y seleccionar los más convenientes para la empresa, analizando la información contable y evaluando los costes, riesgos, requisitos y garantías exigidas por las entidades financieras para obtener los recursos financieros necesarios que se requieren en el desarrollo de la actividad." size="160"
-       class="texto_objetivo_general" id="txt_og_6239">
+       class="texto_objetivo_general" id="txt_og_190">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6240"  data-idtextoasociado="txt_og_6240">
+       id="cb_191"  data-idtextoasociado="txt_og_191">
 <input type="text" value="b) Elaborar informes comerciales, aplicando técnicas estadísticas a la información disponible en un SIM, configurando dicho sistema de información de mercados y obteniendo y analizando la información necesaria para la toma de decisiones en la actividad comercial de la empresa en el exterior." size="160"
-       class="texto_objetivo_general" id="txt_og_6240">
+       class="texto_objetivo_general" id="txt_og_191">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6241"  data-idtextoasociado="txt_og_6241">
+       id="cb_192"  data-idtextoasociado="txt_og_192">
 <input type="text" value="c) Elaborar y analizar las políticas de producto, precio, comunicación y distribución, seleccionando las más adecuadas para la toma de decisiones sobre la entrada de los productos de una empresa de mercados exteriores." size="160"
-       class="texto_objetivo_general" id="txt_og_6241">
+       class="texto_objetivo_general" id="txt_og_192">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6242"  data-idtextoasociado="txt_og_6242">
+       id="cb_193"  data-idtextoasociado="txt_og_193">
 <input type="text" value="d) Seleccionar la información de base o briefing de productos, analizando las relaciones entre las distintas variables que intervienen en el marketing mix internacional, para la elaboración de un plan de marketing." size="160"
-       class="texto_objetivo_general" id="txt_og_6242">
+       class="texto_objetivo_general" id="txt_og_193">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6243"  data-idtextoasociado="txt_og_6243">
+       id="cb_194"  data-idtextoasociado="txt_og_194">
 <input type="text" value="e) Consultar bases de datos y publicaciones y utilizar medios y sistemas de comunicación, valorando los diferentes factores de riesgo, para identificar y contactar con clientes y proveedores." size="160"
-       class="texto_objetivo_general" id="txt_og_6243">
+       class="texto_objetivo_general" id="txt_og_194">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6244"  data-idtextoasociado="txt_og_6244">
+       id="cb_195"  data-idtextoasociado="txt_og_195">
 <input type="text" value="f) Participar en las diferentes fases que definen un acuerdo contractual de carácter internacional, realizando ofertas, identificando la normativa de contratación internacional y formalizando los documentos necesarios, para gestionar los contratos mercantiles internacionales." size="160"
-       class="texto_objetivo_general" id="txt_og_6244">
+       class="texto_objetivo_general" id="txt_og_195">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6245"  data-idtextoasociado="txt_og_6245">
+       id="cb_196"  data-idtextoasociado="txt_og_196">
 <input type="text" value="g) Identificar la normativa aplicable, los organismos e instituciones competentes y los trámites y gestiones que se requieren para el tránsito internacional de mercancías, elaborando la documentación necesaria para realizar la gestión administrativa de operaciones de importación y exportación, e introducción y expedición de mercancías." size="160"
-       class="texto_objetivo_general" id="txt_og_6245">
+       class="texto_objetivo_general" id="txt_og_196">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6246"  data-idtextoasociado="txt_og_6246">
+       id="cb_197"  data-idtextoasociado="txt_og_197">
 <input type="text" value="h) Obtener información, gestionar los trámites y cumplimentar la documentación necesaria para la obtención de créditos vinculados a las operaciones de importación/ exportación y proyectos internacionales, determinando y gestionando los riesgos y costes financieros asociados, para realizar la gestión financiera de las operaciones de compraventa internacional, de acuerdo con los procedimientos establecidos." size="160"
-       class="texto_objetivo_general" id="txt_og_6246">
+       class="texto_objetivo_general" id="txt_og_197">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6247"  data-idtextoasociado="txt_og_6247">
+       id="cb_198"  data-idtextoasociado="txt_og_198">
 <input type="text" value="i) Interpretar la normativa, identificar los trámites y preparar la documentación necesaria para la financiación de proyectos y para la participación en concursos y licitaciones internacionales." size="160"
-       class="texto_objetivo_general" id="txt_og_6247">
+       class="texto_objetivo_general" id="txt_og_198">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6248"  data-idtextoasociado="txt_og_6248">
+       id="cb_199"  data-idtextoasociado="txt_og_199">
 <input type="text" value="j) Analizar los procesos de almacenaje y los métodos de gestión de stocks aplicables en la organización de un almacén, valorando la distribución interna y el sistema de manipulación de las mercancías, aplicando la normativa vigente en materia de seguridad e higiene, garantizando su integridad y optimizando los recursos disponibles, para organizar el almacenaje de las mercancías." size="160"
-       class="texto_objetivo_general" id="txt_og_6248">
+       class="texto_objetivo_general" id="txt_og_199">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6249"  data-idtextoasociado="txt_og_6249">
+       id="cb_200"  data-idtextoasociado="txt_og_200">
 <input type="text" value="k) Analizar y comparar los distintos modos de transporte, los costes, la protección física de la mercancía y la documentación de tránsito internacional, proponiendo alternativas y respetando la normativa que rige el envío de mercancías y el tránsito de viajeros, para realizar la planificación de rutas de larga distancia." size="160"
-       class="texto_objetivo_general" id="txt_og_6249">
+       class="texto_objetivo_general" id="txt_og_200">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6250"  data-idtextoasociado="txt_og_6250">
+       id="cb_201"  data-idtextoasociado="txt_og_201">
 <input type="text" value="l) Identificar y determinar los documentos y los trámites necesarios, interpretando la legislación vigente, para gestionar los medios de cobro y pago y las garantías y avales internacionales." size="160"
-       class="texto_objetivo_general" id="txt_og_6250">
+       class="texto_objetivo_general" id="txt_og_201">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6251"  data-idtextoasociado="txt_og_6251">
+       id="cb_202"  data-idtextoasociado="txt_og_202">
 <input type="text" value="m) Gestionar en inglés las relaciones derivadas del comercio internacional tanto con clientes como con proveedores, organismos públicos, banca nacional e internacional y con todos los operadores que intervienen en operaciones internacionales." size="160"
-       class="texto_objetivo_general" id="txt_og_6251">
+       class="texto_objetivo_general" id="txt_og_202">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6252"  data-idtextoasociado="txt_og_6252">
+       id="cb_203"  data-idtextoasociado="txt_og_203">
 <input type="text" value="n) Emplear las herramientas más características de Internet y de otros sistemas digitales para dar a conocer la empresa internacionalmente, vender a través de tienda virtual y gestionar la facturación electrónica de las ventas internacionales realizadas." size="160"
-       class="texto_objetivo_general" id="txt_og_6252">
+       class="texto_objetivo_general" id="txt_og_203">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6253"  data-idtextoasociado="txt_og_6253">
+       id="cb_204"  data-idtextoasociado="txt_og_204">
 <input type="text" value="ñ) Analizar y utilizar los recursos y oportunidades de aprendizaje relacionados con la evolución científica, tecnológica y organizativa del sector y las tecnologías de la información y la comunicación, para mantener el espíritu de actualización y adaptarse a nuevas situaciones laborales y personales." size="160"
-       class="texto_objetivo_general" id="txt_og_6253">
+       class="texto_objetivo_general" id="txt_og_204">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6254"  data-idtextoasociado="txt_og_6254">
+       id="cb_205"  data-idtextoasociado="txt_og_205">
 <input type="text" value="o) Desarrollar la creatividad y el espíritu de innovación para responder a los retos que se presentan en los procesos y en la organización del trabajo y de la vida personal." size="160"
-       class="texto_objetivo_general" id="txt_og_6254">
+       class="texto_objetivo_general" id="txt_og_205">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6255"  data-idtextoasociado="txt_og_6255">
+       id="cb_206"  data-idtextoasociado="txt_og_206">
 <input type="text" value="p) Tomar decisiones de forma fundamentada, analizando las variables implicadas, integrando saberes de distinto ámbito y aceptando los riesgos y la posibilidad de equivocación en las mismas, para afrontar y resolver distintas situaciones, problemas o contingencias." size="160"
-       class="texto_objetivo_general" id="txt_og_6255">
+       class="texto_objetivo_general" id="txt_og_206">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6256"  data-idtextoasociado="txt_og_6256">
+       id="cb_207"  data-idtextoasociado="txt_og_207">
 <input type="text" value="q) Desarrollar técnicas de liderazgo, motivación, supervisión y comunicación en contextos de trabajo en grupo, para facilitar la organización y coordinación de equipos de trabajo." size="160"
-       class="texto_objetivo_general" id="txt_og_6256">
+       class="texto_objetivo_general" id="txt_og_207">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6257"  data-idtextoasociado="txt_og_6257">
+       id="cb_208"  data-idtextoasociado="txt_og_208">
 <input type="text" value="r) Aplicar estrategias y técnicas de comunicación, adaptándose a los contenidos que se van a transmitir, a la finalidad y a las características de los receptores, para asegurar la eficacia en los procesos de comunicación." size="160"
-       class="texto_objetivo_general" id="txt_og_6257">
+       class="texto_objetivo_general" id="txt_og_208">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6258"  data-idtextoasociado="txt_og_6258">
+       id="cb_209"  data-idtextoasociado="txt_og_209">
 <input type="text" value="s) Evaluar situaciones de prevención de riesgos laborales y de protección ambiental, proponiendo y aplicando medidas de prevención personales y colectivas, de acuerdo con la normativa aplicable en los procesos de trabajo, para garantizar entornos seguros." size="160"
-       class="texto_objetivo_general" id="txt_og_6258">
+       class="texto_objetivo_general" id="txt_og_209">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6259"  data-idtextoasociado="txt_og_6259">
+       id="cb_210"  data-idtextoasociado="txt_og_210">
 <input type="text" value="t) Identificar y proponer las acciones profesionales necesarias, para dar respuesta a la accesibilidad universal y al “diseño para todos”." size="160"
-       class="texto_objetivo_general" id="txt_og_6259">
+       class="texto_objetivo_general" id="txt_og_210">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6260"  data-idtextoasociado="txt_og_6260">
+       id="cb_211"  data-idtextoasociado="txt_og_211">
 <input type="text" value="u) Identificar y aplicar parámetros de calidad en los trabajos y actividades realizados en el proceso de aprendizaje, para valorar la cultura de la evaluación y de la calidad y ser capaces de supervisar y mejorar procedimientos de gestión de calidad." size="160"
-       class="texto_objetivo_general" id="txt_og_6260">
+       class="texto_objetivo_general" id="txt_og_211">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6261"  data-idtextoasociado="txt_og_6261">
+       id="cb_212"  data-idtextoasociado="txt_og_212">
 <input type="text" value="v) Utilizar procedimientos relacionados con la cultura emprendedora, empresarial y de iniciativa profesional, para realizar la gestión básica de una pequeña empresa o emprender un trabajo." size="160"
-       class="texto_objetivo_general" id="txt_og_6261">
+       class="texto_objetivo_general" id="txt_og_212">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6262"  data-idtextoasociado="txt_og_6262">
+       id="cb_213"  data-idtextoasociado="txt_og_213">
 <input type="text" value="w) Reconocer sus derechos y deberes como agente activo en la sociedad, teniendo en cuenta el marco legal que regula las condiciones sociales y laborales, para participar como ciudadano democrático." size="160"
-       class="texto_objetivo_general" id="txt_og_6262">
+       class="texto_objetivo_general" id="txt_og_213">
 <br/>
 
 <br/>
@@ -422,170 +490,170 @@ Marcar/desmarcar todos los objetivos generales
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6239"  data-idtextoasociado="txt_ogsl_6239">
+       id="cbsl_190"  data-idtextoasociado="txt_ogsl_190">
 <input type="text" value="Conocer y valorar las fuentes y productos financieros disponibles, tales como créditos, préstamos y otros instrumentos financieros, así como las posibles subvenciones y seleccionar los más convenientes para la empresa, analizando la información contable y evaluando los costes, riesgos, requisitos y garantías exigidas por las entidades financieras para obtener los recursos financieros necesarios que se requieren en el desarrollo de la actividad." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6239">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_190">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6240"  data-idtextoasociado="txt_ogsl_6240">
+       id="cbsl_191"  data-idtextoasociado="txt_ogsl_191">
 <input type="text" value="Elaborar informes comerciales, aplicando técnicas estadísticas a la información disponible en un SIM, configurando dicho sistema de información de mercados y obteniendo y analizando la información necesaria para la toma de decisiones en la actividad comercial de la empresa en el exterior." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6240">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_191">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6241"  data-idtextoasociado="txt_ogsl_6241">
+       id="cbsl_192"  data-idtextoasociado="txt_ogsl_192">
 <input type="text" value="Elaborar y analizar las políticas de producto, precio, comunicación y distribución, seleccionando las más adecuadas para la toma de decisiones sobre la entrada de los productos de una empresa de mercados exteriores." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6241">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_192">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6242"  data-idtextoasociado="txt_ogsl_6242">
+       id="cbsl_193"  data-idtextoasociado="txt_ogsl_193">
 <input type="text" value="Seleccionar la información de base o briefing de productos, analizando las relaciones entre las distintas variables que intervienen en el marketing mix internacional, para la elaboración de un plan de marketing." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6242">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_193">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6243"  data-idtextoasociado="txt_ogsl_6243">
+       id="cbsl_194"  data-idtextoasociado="txt_ogsl_194">
 <input type="text" value="Consultar bases de datos y publicaciones y utilizar medios y sistemas de comunicación, valorando los diferentes factores de riesgo, para identificar y contactar con clientes y proveedores." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6243">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_194">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6244"  data-idtextoasociado="txt_ogsl_6244">
+       id="cbsl_195"  data-idtextoasociado="txt_ogsl_195">
 <input type="text" value="Participar en las diferentes fases que definen un acuerdo contractual de carácter internacional, realizando ofertas, identificando la normativa de contratación internacional y formalizando los documentos necesarios, para gestionar los contratos mercantiles internacionales." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6244">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_195">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6245"  data-idtextoasociado="txt_ogsl_6245">
+       id="cbsl_196"  data-idtextoasociado="txt_ogsl_196">
 <input type="text" value="Identificar la normativa aplicable, los organismos e instituciones competentes y los trámites y gestiones que se requieren para el tránsito internacional de mercancías, elaborando la documentación necesaria para realizar la gestión administrativa de operaciones de importación y exportación, e introducción y expedición de mercancías." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6245">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_196">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6246"  data-idtextoasociado="txt_ogsl_6246">
+       id="cbsl_197"  data-idtextoasociado="txt_ogsl_197">
 <input type="text" value="Obtener información, gestionar los trámites y cumplimentar la documentación necesaria para la obtención de créditos vinculados a las operaciones de importación/ exportación y proyectos internacionales, determinando y gestionando los riesgos y costes financieros asociados, para realizar la gestión financiera de las operaciones de compraventa internacional, de acuerdo con los procedimientos establecidos." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6246">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_197">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6247"  data-idtextoasociado="txt_ogsl_6247">
+       id="cbsl_198"  data-idtextoasociado="txt_ogsl_198">
 <input type="text" value="Interpretar la normativa, identificar los trámites y preparar la documentación necesaria para la financiación de proyectos y para la participación en concursos y licitaciones internacionales." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6247">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_198">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6248"  data-idtextoasociado="txt_ogsl_6248">
+       id="cbsl_199"  data-idtextoasociado="txt_ogsl_199">
 <input type="text" value="Analizar los procesos de almacenaje y los métodos de gestión de stocks aplicables en la organización de un almacén, valorando la distribución interna y el sistema de manipulación de las mercancías, aplicando la normativa vigente en materia de seguridad e higiene, garantizando su integridad y optimizando los recursos disponibles, para organizar el almacenaje de las mercancías." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6248">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_199">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6249"  data-idtextoasociado="txt_ogsl_6249">
+       id="cbsl_200"  data-idtextoasociado="txt_ogsl_200">
 <input type="text" value="Analizar y comparar los distintos modos de transporte, los costes, la protección física de la mercancía y la documentación de tránsito internacional, proponiendo alternativas y respetando la normativa que rige el envío de mercancías y el tránsito de viajeros, para realizar la planificación de rutas de larga distancia." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6249">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_200">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6250"  data-idtextoasociado="txt_ogsl_6250">
+       id="cbsl_201"  data-idtextoasociado="txt_ogsl_201">
 <input type="text" value="Identificar y determinar los documentos y los trámites necesarios, interpretando la legislación vigente, para gestionar los medios de cobro y pago y las garantías y avales internacionales." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6250">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_201">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6251"  data-idtextoasociado="txt_ogsl_6251">
+       id="cbsl_202"  data-idtextoasociado="txt_ogsl_202">
 <input type="text" value="Gestionar en inglés las relaciones derivadas del comercio internacional tanto con clientes como con proveedores, organismos públicos, banca nacional e internacional y con todos los operadores que intervienen en operaciones internacionales." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6251">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_202">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6252"  data-idtextoasociado="txt_ogsl_6252">
+       id="cbsl_203"  data-idtextoasociado="txt_ogsl_203">
 <input type="text" value="Emplear las herramientas más características de Internet y de otros sistemas digitales para dar a conocer la empresa internacionalmente, vender a través de tienda virtual y gestionar la facturación electrónica de las ventas internacionales realizadas." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6252">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_203">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6253"  data-idtextoasociado="txt_ogsl_6253">
+       id="cbsl_204"  data-idtextoasociado="txt_ogsl_204">
 <input type="text" value="Analizar y utilizar los recursos y oportunidades de aprendizaje relacionados con la evolución científica, tecnológica y organizativa del sector y las tecnologías de la información y la comunicación, para mantener el espíritu de actualización y adaptarse a nuevas situaciones laborales y personales." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6253">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_204">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6254"  data-idtextoasociado="txt_ogsl_6254">
+       id="cbsl_205"  data-idtextoasociado="txt_ogsl_205">
 <input type="text" value="Desarrollar la creatividad y el espíritu de innovación para responder a los retos que se presentan en los procesos y en la organización del trabajo y de la vida personal." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6254">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_205">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6255"  data-idtextoasociado="txt_ogsl_6255">
+       id="cbsl_206"  data-idtextoasociado="txt_ogsl_206">
 <input type="text" value="Tomar decisiones de forma fundamentada, analizando las variables implicadas, integrando saberes de distinto ámbito y aceptando los riesgos y la posibilidad de equivocación en las mismas, para afrontar y resolver distintas situaciones, problemas o contingencias." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6255">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_206">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6256"  data-idtextoasociado="txt_ogsl_6256">
+       id="cbsl_207"  data-idtextoasociado="txt_ogsl_207">
 <input type="text" value="Desarrollar técnicas de liderazgo, motivación, supervisión y comunicación en contextos de trabajo en grupo, para facilitar la organización y coordinación de equipos de trabajo." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6256">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_207">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6257"  data-idtextoasociado="txt_ogsl_6257">
+       id="cbsl_208"  data-idtextoasociado="txt_ogsl_208">
 <input type="text" value="Aplicar estrategias y técnicas de comunicación, adaptándose a los contenidos que se van a transmitir, a la finalidad y a las características de los receptores, para asegurar la eficacia en los procesos de comunicación." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6257">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_208">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6258"  data-idtextoasociado="txt_ogsl_6258">
+       id="cbsl_209"  data-idtextoasociado="txt_ogsl_209">
 <input type="text" value="Evaluar situaciones de prevención de riesgos laborales y de protección ambiental, proponiendo y aplicando medidas de prevención personales y colectivas, de acuerdo con la normativa aplicable en los procesos de trabajo, para garantizar entornos seguros." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6258">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_209">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6259"  data-idtextoasociado="txt_ogsl_6259">
+       id="cbsl_210"  data-idtextoasociado="txt_ogsl_210">
 <input type="text" value="Identificar y proponer las acciones profesionales necesarias, para dar respuesta a la accesibilidad universal y al “diseño para todos”." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6259">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_210">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6260"  data-idtextoasociado="txt_ogsl_6260">
+       id="cbsl_211"  data-idtextoasociado="txt_ogsl_211">
 <input type="text" value="Identificar y aplicar parámetros de calidad en los trabajos y actividades realizados en el proceso de aprendizaje, para valorar la cultura de la evaluación y de la calidad y ser capaces de supervisar y mejorar procedimientos de gestión de calidad." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6260">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_211">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6261"  data-idtextoasociado="txt_ogsl_6261">
+       id="cbsl_212"  data-idtextoasociado="txt_ogsl_212">
 <input type="text" value="Utilizar procedimientos relacionados con la cultura emprendedora, empresarial y de iniciativa profesional, para realizar la gestión básica de una pequeña empresa o emprender un trabajo." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6261">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_212">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6262"  data-idtextoasociado="txt_ogsl_6262">
+       id="cbsl_213"  data-idtextoasociado="txt_ogsl_213">
 <input type="text" value="Reconocer sus derechos y deberes como agente activo en la sociedad, teniendo en cuenta el marco legal que regula las condiciones sociales y laborales, para participar como ciudadano democrático." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6262">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_213">
 <br/>
 
 <br/>
@@ -604,103 +672,103 @@ Marcar/desmarcar todos los objetivos generales
                               ".competencias" )'> Marcar todos <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6081">
-     <input type="text" value="Realizar las gestiones necesarias para la constitución y puesta en marcha de una empresa comercial, planificando y gestionando la obtención de los recursos financieros necesarios que procuren la rentabilidad económica y financiera de la empresa." id="texto_6081" size="160">
+         id="competencia_" data-idtextoasociado="texto_186">
+     <input type="text" value="Realizar las gestiones necesarias para la constitución y puesta en marcha de una empresa comercial, planificando y gestionando la obtención de los recursos financieros necesarios que procuren la rentabilidad económica y financiera de la empresa." id="texto_186" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6082">
-     <input type="text" value="Obtener, analizar y organizar información fiable de los mercados internacionales, aplicando las técnicas adecuadas, y establecer un sistema de información eficaz (SIM), que sirva de apoyo en las operaciones de compraventa internacional." id="texto_6082" size="160">
+         id="competencia_" data-idtextoasociado="texto_187">
+     <input type="text" value="Obtener, analizar y organizar información fiable de los mercados internacionales, aplicando las técnicas adecuadas, y establecer un sistema de información eficaz (SIM), que sirva de apoyo en las operaciones de compraventa internacional." id="texto_187" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6083">
-     <input type="text" value="Tomar decisiones sobre la entrada de los productos de una empresa en el mercado exterior, seleccionando las políticas de producto, precio, comunicación y distribución más adecuadas para la entrada en dichos mercados." id="texto_6083" size="160">
+         id="competencia_" data-idtextoasociado="texto_188">
+     <input type="text" value="Tomar decisiones sobre la entrada de los productos de una empresa en el mercado exterior, seleccionando las políticas de producto, precio, comunicación y distribución más adecuadas para la entrada en dichos mercados." id="texto_188" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6084">
-     <input type="text" value="Elaborar un plan de marketing, seleccionando la información de base o briefing de productos, analizando las relaciones entre las distintas variables que intervienen en el marketing mix internacional para la entrada en mercados exteriores." id="texto_6084" size="160">
+         id="competencia_" data-idtextoasociado="texto_189">
+     <input type="text" value="Elaborar un plan de marketing, seleccionando la información de base o briefing de productos, analizando las relaciones entre las distintas variables que intervienen en el marketing mix internacional para la entrada en mercados exteriores." id="texto_189" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6085">
-     <input type="text" value="Identificar y contactar con clientes y proveedores, gestionando los contratos mercantiles internacionales y controlando y supervisando el desarrollo y evolución de las ventas, para asegurarse del cumplimiento de las condiciones contractuales pactadas." id="texto_6085" size="160">
+         id="competencia_" data-idtextoasociado="texto_190">
+     <input type="text" value="Identificar y contactar con clientes y proveedores, gestionando los contratos mercantiles internacionales y controlando y supervisando el desarrollo y evolución de las ventas, para asegurarse del cumplimiento de las condiciones contractuales pactadas." id="texto_190" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6086">
-     <input type="text" value="Realizar la gestión administrativa de operaciones de importación y exportación e introducción y expedición de mercancías." id="texto_6086" size="160">
+         id="competencia_" data-idtextoasociado="texto_191">
+     <input type="text" value="Realizar la gestión administrativa de operaciones de importación y exportación e introducción y expedición de mercancías." id="texto_191" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6087">
-     <input type="text" value="Realizar la gestión financiera de las operaciones de comercio internacional, determinando los costes y gestionando la cobertura adecuada de los riesgos que se generan, para garantizar su viabilidad económica, desarrollar el proceso de forma segura para la empresa y elaborar la documentación necesaria para la obtención de créditos vinculados a las operaciones de compraventa y a proyectos y licitaciones internacionales, aplicando la normativa vigente." id="texto_6087" size="160">
+         id="competencia_" data-idtextoasociado="texto_192">
+     <input type="text" value="Realizar la gestión financiera de las operaciones de comercio internacional, determinando los costes y gestionando la cobertura adecuada de los riesgos que se generan, para garantizar su viabilidad económica, desarrollar el proceso de forma segura para la empresa y elaborar la documentación necesaria para la obtención de créditos vinculados a las operaciones de compraventa y a proyectos y licitaciones internacionales, aplicando la normativa vigente." id="texto_192" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6088">
-     <input type="text" value="Organizar el almacenaje de las mercancías en las condiciones que garanticen su integridad y el aprovechamiento óptimo de los medios y espacios disponibles, de acuerdo con procedimientos establecidos." id="texto_6088" size="160">
+         id="competencia_" data-idtextoasociado="texto_193">
+     <input type="text" value="Organizar el almacenaje de las mercancías en las condiciones que garanticen su integridad y el aprovechamiento óptimo de los medios y espacios disponibles, de acuerdo con procedimientos establecidos." id="texto_193" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6089">
-     <input type="text" value="Realizar las gestiones administrativas que garanticen el tránsito o transporte internacional de las mercancías y/o de viajeros entre distintos países y modos de transporte, y controlar los documentos que se exigen en cada caso, comprobando que se ajustan a la normativa vigente aplicable y las especificaciones recibidas." id="texto_6089" size="160">
+         id="competencia_" data-idtextoasociado="texto_194">
+     <input type="text" value="Realizar las gestiones administrativas que garanticen el tránsito o transporte internacional de las mercancías y/o de viajeros entre distintos países y modos de transporte, y controlar los documentos que se exigen en cada caso, comprobando que se ajustan a la normativa vigente aplicable y las especificaciones recibidas." id="texto_194" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6090">
-     <input type="text" value="Gestionar los medios de cobro y pago y las garantías y avales internacionales cumplimentando y analizando la documentación necesaria de acuerdo con las condiciones establecidas en los contratos mercantiles internacionales basados en la normativa internacional vigente." id="texto_6090" size="160">
+         id="competencia_" data-idtextoasociado="texto_195">
+     <input type="text" value="Gestionar los medios de cobro y pago y las garantías y avales internacionales cumplimentando y analizando la documentación necesaria de acuerdo con las condiciones establecidas en los contratos mercantiles internacionales basados en la normativa internacional vigente." id="texto_195" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6091">
-     <input type="text" value="Comunicarse en inglés con fluidez, tanto de palabra como por escrito, con todos los operadores y organismos que intervienen en operaciones de comercio internacional." id="texto_6091" size="160">
+         id="competencia_" data-idtextoasociado="texto_196">
+     <input type="text" value="Comunicarse en inglés con fluidez, tanto de palabra como por escrito, con todos los operadores y organismos que intervienen en operaciones de comercio internacional." id="texto_196" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6092">
-     <input type="text" value="Utilizar Internet y cualquier otro sistema digital, como plataforma publicitaria y escaparate abierto al mundo que facilita la realización de ventas a cualquier cliente nacional o internacional." id="texto_6092" size="160">
+         id="competencia_" data-idtextoasociado="texto_197">
+     <input type="text" value="Utilizar Internet y cualquier otro sistema digital, como plataforma publicitaria y escaparate abierto al mundo que facilita la realización de ventas a cualquier cliente nacional o internacional." id="texto_197" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6093">
-     <input type="text" value="Adaptarse a las nuevas situaciones laborales, manteniendo actualizados los conocimientos científicos, técnicos y tecnológicos relativos a su entorno profesional,gestionando su formación y los recursos existentes en el aprendizaje a lo largo de la vida y utilizando las tecnologías de la información y la comunicación." id="texto_6093" size="160">
+         id="competencia_" data-idtextoasociado="texto_198">
+     <input type="text" value="Adaptarse a las nuevas situaciones laborales, manteniendo actualizados los conocimientos científicos, técnicos y tecnológicos relativos a su entorno profesional,gestionando su formación y los recursos existentes en el aprendizaje a lo largo de la vida y utilizando las tecnologías de la información y la comunicación." id="texto_198" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6094">
-     <input type="text" value="Resolver situaciones, problemas o contingencias con iniciativa y autonomía en el ámbito de su competencia, con creatividad, innovación y espíritu de mejora en el trabajo personal y en el de los miembros del equipo." id="texto_6094" size="160">
+         id="competencia_" data-idtextoasociado="texto_199">
+     <input type="text" value="Resolver situaciones, problemas o contingencias con iniciativa y autonomía en el ámbito de su competencia, con creatividad, innovación y espíritu de mejora en el trabajo personal y en el de los miembros del equipo." id="texto_199" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6095">
-     <input type="text" value="Organizar y coordinar equipos de trabajo con responsabilidad, supervisando el desarrollo del mismo, manteniendo relaciones fluidas y asumiendo el liderazgo, así como aportando soluciones a los conflictos grupales que se presenten." id="texto_6095" size="160">
+         id="competencia_" data-idtextoasociado="texto_200">
+     <input type="text" value="Organizar y coordinar equipos de trabajo con responsabilidad, supervisando el desarrollo del mismo, manteniendo relaciones fluidas y asumiendo el liderazgo, así como aportando soluciones a los conflictos grupales que se presenten." id="texto_200" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6096">
-     <input type="text" value="Comunicarse con sus iguales, superiores, clientes y personas bajo su responsabilidad, utilizando vías eficaces de comunicación, transmitiendo la información o conocimientos adecuados y respetando la autonomía y competencia de las personas que intervienen en el ámbito de su trabajo." id="texto_6096" size="160">
+         id="competencia_" data-idtextoasociado="texto_201">
+     <input type="text" value="Comunicarse con sus iguales, superiores, clientes y personas bajo su responsabilidad, utilizando vías eficaces de comunicación, transmitiendo la información o conocimientos adecuados y respetando la autonomía y competencia de las personas que intervienen en el ámbito de su trabajo." id="texto_201" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6097">
-     <input type="text" value="Generar entornos seguros en el desarrollo de su trabajo y el de su equipo, supervisando y aplicando los procedimientos de prevención de riesgos laborales y ambientales, de acuerdo con lo establecido por la normativa y los objetivos de la empresa." id="texto_6097" size="160">
+         id="competencia_" data-idtextoasociado="texto_202">
+     <input type="text" value="Generar entornos seguros en el desarrollo de su trabajo y el de su equipo, supervisando y aplicando los procedimientos de prevención de riesgos laborales y ambientales, de acuerdo con lo establecido por la normativa y los objetivos de la empresa." id="texto_202" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6098">
-     <input type="text" value="Supervisar y aplicar procedimientos de gestión de calidad, de accesibilidaduniversal y de “diseño para todos”, en las actividades profesionales incluidas en los procesos de producción o prestación de servicios." id="texto_6098" size="160">
+         id="competencia_" data-idtextoasociado="texto_203">
+     <input type="text" value="Supervisar y aplicar procedimientos de gestión de calidad, de accesibilidaduniversal y de “diseño para todos”, en las actividades profesionales incluidas en los procesos de producción o prestación de servicios." id="texto_203" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6099">
-     <input type="text" value="Realizar la gestión básica para la creación y funcionamiento de una pequeñaempresa y tener iniciativa en su actividad profesional con sentido de la responsabilidad social." id="texto_6099" size="160">
+         id="competencia_" data-idtextoasociado="texto_204">
+     <input type="text" value="Realizar la gestión básica para la creación y funcionamiento de una pequeñaempresa y tener iniciativa en su actividad profesional con sentido de la responsabilidad social." id="texto_204" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6100">
-     <input type="text" value="Ejercer sus derechos y cumplir con las obligaciones derivadas de su actividad profesional, de acuerdo con lo establecido en la legislación vigente, participando activamente en la vida económica, social y cultural." id="texto_6100" size="160">
+         id="competencia_" data-idtextoasociado="texto_205">
+     <input type="text" value="Ejercer sus derechos y cumplir con las obligaciones derivadas de su actividad profesional, de acuerdo con lo establecido en la legislación vigente, participando activamente en la vida económica, social y cultural." id="texto_205" size="160">
      <br/>
      
 
@@ -718,103 +786,103 @@ Marcar/desmarcar todos los objetivos generales
                               ".competencias_con_letra" )'> Marcar todos <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6081">
-     <input type="text" value="a) Realizar las gestiones necesarias para la constitución y puesta en marcha de una empresa comercial, planificando y gestionando la obtención de los recursos financieros necesarios que procuren la rentabilidad económica y financiera de la empresa." id="texto_con_letra_6081" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_186">
+     <input type="text" value="a) Realizar las gestiones necesarias para la constitución y puesta en marcha de una empresa comercial, planificando y gestionando la obtención de los recursos financieros necesarios que procuren la rentabilidad económica y financiera de la empresa." id="texto_con_letra_186" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6082">
-     <input type="text" value="b) Obtener, analizar y organizar información fiable de los mercados internacionales, aplicando las técnicas adecuadas, y establecer un sistema de información eficaz (SIM), que sirva de apoyo en las operaciones de compraventa internacional." id="texto_con_letra_6082" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_187">
+     <input type="text" value="b) Obtener, analizar y organizar información fiable de los mercados internacionales, aplicando las técnicas adecuadas, y establecer un sistema de información eficaz (SIM), que sirva de apoyo en las operaciones de compraventa internacional." id="texto_con_letra_187" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6083">
-     <input type="text" value="c) Tomar decisiones sobre la entrada de los productos de una empresa en el mercado exterior, seleccionando las políticas de producto, precio, comunicación y distribución más adecuadas para la entrada en dichos mercados." id="texto_con_letra_6083" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_188">
+     <input type="text" value="c) Tomar decisiones sobre la entrada de los productos de una empresa en el mercado exterior, seleccionando las políticas de producto, precio, comunicación y distribución más adecuadas para la entrada en dichos mercados." id="texto_con_letra_188" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6084">
-     <input type="text" value="d) Elaborar un plan de marketing, seleccionando la información de base o briefing de productos, analizando las relaciones entre las distintas variables que intervienen en el marketing mix internacional para la entrada en mercados exteriores." id="texto_con_letra_6084" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_189">
+     <input type="text" value="d) Elaborar un plan de marketing, seleccionando la información de base o briefing de productos, analizando las relaciones entre las distintas variables que intervienen en el marketing mix internacional para la entrada en mercados exteriores." id="texto_con_letra_189" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6085">
-     <input type="text" value="e) Identificar y contactar con clientes y proveedores, gestionando los contratos mercantiles internacionales y controlando y supervisando el desarrollo y evolución de las ventas, para asegurarse del cumplimiento de las condiciones contractuales pactadas." id="texto_con_letra_6085" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_190">
+     <input type="text" value="e) Identificar y contactar con clientes y proveedores, gestionando los contratos mercantiles internacionales y controlando y supervisando el desarrollo y evolución de las ventas, para asegurarse del cumplimiento de las condiciones contractuales pactadas." id="texto_con_letra_190" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6086">
-     <input type="text" value="f) Realizar la gestión administrativa de operaciones de importación y exportación e introducción y expedición de mercancías." id="texto_con_letra_6086" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_191">
+     <input type="text" value="f) Realizar la gestión administrativa de operaciones de importación y exportación e introducción y expedición de mercancías." id="texto_con_letra_191" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6087">
-     <input type="text" value="g) Realizar la gestión financiera de las operaciones de comercio internacional, determinando los costes y gestionando la cobertura adecuada de los riesgos que se generan, para garantizar su viabilidad económica, desarrollar el proceso de forma segura para la empresa y elaborar la documentación necesaria para la obtención de créditos vinculados a las operaciones de compraventa y a proyectos y licitaciones internacionales, aplicando la normativa vigente." id="texto_con_letra_6087" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_192">
+     <input type="text" value="g) Realizar la gestión financiera de las operaciones de comercio internacional, determinando los costes y gestionando la cobertura adecuada de los riesgos que se generan, para garantizar su viabilidad económica, desarrollar el proceso de forma segura para la empresa y elaborar la documentación necesaria para la obtención de créditos vinculados a las operaciones de compraventa y a proyectos y licitaciones internacionales, aplicando la normativa vigente." id="texto_con_letra_192" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6088">
-     <input type="text" value="h) Organizar el almacenaje de las mercancías en las condiciones que garanticen su integridad y el aprovechamiento óptimo de los medios y espacios disponibles, de acuerdo con procedimientos establecidos." id="texto_con_letra_6088" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_193">
+     <input type="text" value="h) Organizar el almacenaje de las mercancías en las condiciones que garanticen su integridad y el aprovechamiento óptimo de los medios y espacios disponibles, de acuerdo con procedimientos establecidos." id="texto_con_letra_193" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6089">
-     <input type="text" value="i) Realizar las gestiones administrativas que garanticen el tránsito o transporte internacional de las mercancías y/o de viajeros entre distintos países y modos de transporte, y controlar los documentos que se exigen en cada caso, comprobando que se ajustan a la normativa vigente aplicable y las especificaciones recibidas." id="texto_con_letra_6089" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_194">
+     <input type="text" value="i) Realizar las gestiones administrativas que garanticen el tránsito o transporte internacional de las mercancías y/o de viajeros entre distintos países y modos de transporte, y controlar los documentos que se exigen en cada caso, comprobando que se ajustan a la normativa vigente aplicable y las especificaciones recibidas." id="texto_con_letra_194" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6090">
-     <input type="text" value="j) Gestionar los medios de cobro y pago y las garantías y avales internacionales cumplimentando y analizando la documentación necesaria de acuerdo con las condiciones establecidas en los contratos mercantiles internacionales basados en la normativa internacional vigente." id="texto_con_letra_6090" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_195">
+     <input type="text" value="j) Gestionar los medios de cobro y pago y las garantías y avales internacionales cumplimentando y analizando la documentación necesaria de acuerdo con las condiciones establecidas en los contratos mercantiles internacionales basados en la normativa internacional vigente." id="texto_con_letra_195" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6091">
-     <input type="text" value="k) Comunicarse en inglés con fluidez, tanto de palabra como por escrito, con todos los operadores y organismos que intervienen en operaciones de comercio internacional." id="texto_con_letra_6091" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_196">
+     <input type="text" value="k) Comunicarse en inglés con fluidez, tanto de palabra como por escrito, con todos los operadores y organismos que intervienen en operaciones de comercio internacional." id="texto_con_letra_196" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6092">
-     <input type="text" value="l) Utilizar Internet y cualquier otro sistema digital, como plataforma publicitaria y escaparate abierto al mundo que facilita la realización de ventas a cualquier cliente nacional o internacional." id="texto_con_letra_6092" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_197">
+     <input type="text" value="l) Utilizar Internet y cualquier otro sistema digital, como plataforma publicitaria y escaparate abierto al mundo que facilita la realización de ventas a cualquier cliente nacional o internacional." id="texto_con_letra_197" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6093">
-     <input type="text" value="m) Adaptarse a las nuevas situaciones laborales, manteniendo actualizados los conocimientos científicos, técnicos y tecnológicos relativos a su entorno profesional,gestionando su formación y los recursos existentes en el aprendizaje a lo largo de la vida y utilizando las tecnologías de la información y la comunicación." id="texto_con_letra_6093" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_198">
+     <input type="text" value="m) Adaptarse a las nuevas situaciones laborales, manteniendo actualizados los conocimientos científicos, técnicos y tecnológicos relativos a su entorno profesional,gestionando su formación y los recursos existentes en el aprendizaje a lo largo de la vida y utilizando las tecnologías de la información y la comunicación." id="texto_con_letra_198" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6094">
-     <input type="text" value="n) Resolver situaciones, problemas o contingencias con iniciativa y autonomía en el ámbito de su competencia, con creatividad, innovación y espíritu de mejora en el trabajo personal y en el de los miembros del equipo." id="texto_con_letra_6094" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_199">
+     <input type="text" value="n) Resolver situaciones, problemas o contingencias con iniciativa y autonomía en el ámbito de su competencia, con creatividad, innovación y espíritu de mejora en el trabajo personal y en el de los miembros del equipo." id="texto_con_letra_199" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6095">
-     <input type="text" value="ñ) Organizar y coordinar equipos de trabajo con responsabilidad, supervisando el desarrollo del mismo, manteniendo relaciones fluidas y asumiendo el liderazgo, así como aportando soluciones a los conflictos grupales que se presenten." id="texto_con_letra_6095" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_200">
+     <input type="text" value="ñ) Organizar y coordinar equipos de trabajo con responsabilidad, supervisando el desarrollo del mismo, manteniendo relaciones fluidas y asumiendo el liderazgo, así como aportando soluciones a los conflictos grupales que se presenten." id="texto_con_letra_200" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6096">
-     <input type="text" value="o) Comunicarse con sus iguales, superiores, clientes y personas bajo su responsabilidad, utilizando vías eficaces de comunicación, transmitiendo la información o conocimientos adecuados y respetando la autonomía y competencia de las personas que intervienen en el ámbito de su trabajo." id="texto_con_letra_6096" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_201">
+     <input type="text" value="o) Comunicarse con sus iguales, superiores, clientes y personas bajo su responsabilidad, utilizando vías eficaces de comunicación, transmitiendo la información o conocimientos adecuados y respetando la autonomía y competencia de las personas que intervienen en el ámbito de su trabajo." id="texto_con_letra_201" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6097">
-     <input type="text" value="p) Generar entornos seguros en el desarrollo de su trabajo y el de su equipo, supervisando y aplicando los procedimientos de prevención de riesgos laborales y ambientales, de acuerdo con lo establecido por la normativa y los objetivos de la empresa." id="texto_con_letra_6097" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_202">
+     <input type="text" value="p) Generar entornos seguros en el desarrollo de su trabajo y el de su equipo, supervisando y aplicando los procedimientos de prevención de riesgos laborales y ambientales, de acuerdo con lo establecido por la normativa y los objetivos de la empresa." id="texto_con_letra_202" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6098">
-     <input type="text" value="q) Supervisar y aplicar procedimientos de gestión de calidad, de accesibilidaduniversal y de “diseño para todos”, en las actividades profesionales incluidas en los procesos de producción o prestación de servicios." id="texto_con_letra_6098" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_203">
+     <input type="text" value="q) Supervisar y aplicar procedimientos de gestión de calidad, de accesibilidaduniversal y de “diseño para todos”, en las actividades profesionales incluidas en los procesos de producción o prestación de servicios." id="texto_con_letra_203" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6099">
-     <input type="text" value="r) Realizar la gestión básica para la creación y funcionamiento de una pequeñaempresa y tener iniciativa en su actividad profesional con sentido de la responsabilidad social." id="texto_con_letra_6099" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_204">
+     <input type="text" value="r) Realizar la gestión básica para la creación y funcionamiento de una pequeñaempresa y tener iniciativa en su actividad profesional con sentido de la responsabilidad social." id="texto_con_letra_204" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6100">
-     <input type="text" value="s) Ejercer sus derechos y cumplir con las obligaciones derivadas de su actividad profesional, de acuerdo con lo establecido en la legislación vigente, participando activamente en la vida económica, social y cultural." id="texto_con_letra_6100" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_205">
+     <input type="text" value="s) Ejercer sus derechos y cumplir con las obligaciones derivadas de su actividad profesional, de acuerdo con lo establecido en la legislación vigente, participando activamente en la vida económica, social y cultural." id="texto_con_letra_205" size="160">
      <br/>
      
 
@@ -838,51 +906,51 @@ Marcar/desmarcar todos los resultados de aprendizaje
 
 
 <input type="checkbox" name="resultado_aprendizaje_con_letra[]" class="checkbox_resultado_aprendizaje_con_letra"
-       id="cbra_14755"  data-idtextoasociado="txt_racl_14755">
+       id="cbra_486"  data-idtextoasociado="txt_racl_486">
 <input type="text" value="1) Determina la conveniencia de los distintos modos y medios de transporte evaluando las distintas alternativas." size="160"
-       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_14755">
+       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_486">
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_con_letra[]" class="checkbox_resultado_aprendizaje_con_letra"
-       id="cbra_14756"  data-idtextoasociado="txt_racl_14756">
+       id="cbra_487"  data-idtextoasociado="txt_racl_487">
 <input type="text" value="2) Selecciona los distintos modos y medios de transporte y las rutas óptimas, analizando las distintas alternativas." size="160"
-       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_14756">
+       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_487">
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_con_letra[]" class="checkbox_resultado_aprendizaje_con_letra"
-       id="cbra_14757"  data-idtextoasociado="txt_racl_14757">
+       id="cbra_488"  data-idtextoasociado="txt_racl_488">
 <input type="text" value="3) Elabora y cumplimenta contratos de transporte, calculando los costes correspondientes." size="160"
-       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_14757">
+       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_488">
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_con_letra[]" class="checkbox_resultado_aprendizaje_con_letra"
-       id="cbra_14758"  data-idtextoasociado="txt_racl_14758">
+       id="cbra_489"  data-idtextoasociado="txt_racl_489">
 <input type="text" value="4) Determina los elementos que garantizan la integridad y el tránsito de las mercancías, identificando las situaciones de riesgo habituales." size="160"
-       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_14758">
+       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_489">
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_con_letra[]" class="checkbox_resultado_aprendizaje_con_letra"
-       id="cbra_14759"  data-idtextoasociado="txt_racl_14759">
+       id="cbra_490"  data-idtextoasociado="txt_racl_490">
 <input type="text" value="5) Formaliza y gestiona la documentación de las operaciones de transporte internacional, analizando los requisitos exigidos en cada medio de transporte utilizado en función de la mercancía enviada." size="160"
-       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_14759">
+       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_490">
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_con_letra[]" class="checkbox_resultado_aprendizaje_con_letra"
-       id="cbra_14760"  data-idtextoasociado="txt_racl_14760">
+       id="cbra_491"  data-idtextoasociado="txt_racl_491">
 <input type="text" value="6) Secuencia las fases habituales del transporte y las posibles incidencias, utilizando los sistemas de comunicación,gestión y supervisión adecuados en cada operación." size="160"
-       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_14760">
+       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_491">
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_con_letra[]" class="checkbox_resultado_aprendizaje_con_letra"
-       id="cbra_14761"  data-idtextoasociado="txt_racl_14761">
+       id="cbra_492"  data-idtextoasociado="txt_racl_492">
 <input type="text" value="7) Tramita el seguro de las mercancías durante el transporte, ajustándose a la normativa vigente y a las condiciones establecidas en el contrato de compraventa internacional." size="160"
-       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_14761">
+       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_492">
 <br/>
 
 <br/>
@@ -906,57 +974,57 @@ Marcar/desmarcar todos los resultados de aprendizaje
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14755"  data-idtextoasociado="txt_rasl_14755">
+       id="cbrasl_486"  data-idtextoasociado="txt_rasl_486">
 <input type="text" value="Determina la conveniencia de los distintos modos y medios de transporte evaluando las distintas alternativas." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14755">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_486">
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14756"  data-idtextoasociado="txt_rasl_14756">
+       id="cbrasl_487"  data-idtextoasociado="txt_rasl_487">
 <input type="text" value="Selecciona los distintos modos y medios de transporte y las rutas óptimas, analizando las distintas alternativas." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14756">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_487">
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14757"  data-idtextoasociado="txt_rasl_14757">
+       id="cbrasl_488"  data-idtextoasociado="txt_rasl_488">
 <input type="text" value="Elabora y cumplimenta contratos de transporte, calculando los costes correspondientes." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14757">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_488">
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14758"  data-idtextoasociado="txt_rasl_14758">
+       id="cbrasl_489"  data-idtextoasociado="txt_rasl_489">
 <input type="text" value="Determina los elementos que garantizan la integridad y el tránsito de las mercancías, identificando las situaciones de riesgo habituales." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14758">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_489">
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14759"  data-idtextoasociado="txt_rasl_14759">
+       id="cbrasl_490"  data-idtextoasociado="txt_rasl_490">
 <input type="text" value="Formaliza y gestiona la documentación de las operaciones de transporte internacional, analizando los requisitos exigidos en cada medio de transporte utilizado en función de la mercancía enviada." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14759">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_490">
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14760"  data-idtextoasociado="txt_rasl_14760">
+       id="cbrasl_491"  data-idtextoasociado="txt_rasl_491">
 <input type="text" value="Secuencia las fases habituales del transporte y las posibles incidencias, utilizando los sistemas de comunicación,gestión y supervisión adecuados en cada operación." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14760">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_491">
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14761"  data-idtextoasociado="txt_rasl_14761">
+       id="cbrasl_492"  data-idtextoasociado="txt_rasl_492">
 <input type="text" value="Tramita el seguro de las mercancías durante el transporte, ajustándose a la normativa vigente y a las condiciones establecidas en el contrato de compraventa internacional." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14761">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_492">
         
 <br/>
 
@@ -979,421 +1047,421 @@ Marcar/desmarcar todos los resultados de aprendizaje
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14755"  data-idtextoasociado="txt_rasl_14755">
+       id="cbrasl_486"  data-idtextoasociado="txt_rasl_486">
 <input type="text" value="Determina la conveniencia de los distintos modos y medios de transporte evaluando las distintas alternativas." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14755">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_486">
         <div class="criterios">
             Criterios:<br/>
-            <input type="checkbox" id="todos_criterios_asociados_a_resultado_14755"
-                   onclick='conmutar("#todos_criterios_asociados_a_resultado_14755",
-                                     ".criterio_sin_letra_asociado_a_resultado_14755" )'> Marcar todos <br/>
+            <input type="checkbox" id="todos_criterios_asociados_a_resultado_486"
+                   onclick='conmutar("#todos_criterios_asociados_a_resultado_486",
+                                     ".criterio_sin_letra_asociado_a_resultado_486" )'> Marcar todos <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14755"
-                id="cbsl_122346" data-idtextoasociado="criterio_122346">
-            <input type="text" value="a) Se han descrito los distintos modos de transporte." id="criterio_122346" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_486"
+                id="cbsl_4026" data-idtextoasociado="criterio_4026">
+            <input type="text" value="a) Se han descrito los distintos modos de transporte." id="criterio_4026" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14755"
-                id="cbsl_122347" data-idtextoasociado="criterio_122347">
-            <input type="text" value="b) Se han interpretado las normas básicas que regulan las modalidades de transporte y se han clasificado sus variables, analizando ventajas e inconvenientes." id="criterio_122347" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_486"
+                id="cbsl_4027" data-idtextoasociado="criterio_4027">
+            <input type="text" value="b) Se han interpretado las normas básicas que regulan las modalidades de transporte y se han clasificado sus variables, analizando ventajas e inconvenientes." id="criterio_4027" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14755"
-                id="cbsl_122348" data-idtextoasociado="criterio_122348">
-            <input type="text" value="c) Se han determinado las distintas alternativas según la mercancía y los puntos de origen y destino." id="criterio_122348" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_486"
+                id="cbsl_4028" data-idtextoasociado="criterio_4028">
+            <input type="text" value="c) Se han determinado las distintas alternativas según la mercancía y los puntos de origen y destino." id="criterio_4028" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14755"
-                id="cbsl_122349" data-idtextoasociado="criterio_122349">
-            <input type="text" value="d) Se han reconocido las infraestructuras logísticas disponibles." id="criterio_122349" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_486"
+                id="cbsl_4029" data-idtextoasociado="criterio_4029">
+            <input type="text" value="d) Se han reconocido las infraestructuras logísticas disponibles." id="criterio_4029" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14755"
-                id="cbsl_122350" data-idtextoasociado="criterio_122350">
-            <input type="text" value="e) Se han valorado los requerimientos y la legislación específica aplicable a las mercancías peligrosas." id="criterio_122350" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_486"
+                id="cbsl_4030" data-idtextoasociado="criterio_4030">
+            <input type="text" value="e) Se han valorado los requerimientos y la legislación específica aplicable a las mercancías peligrosas." id="criterio_4030" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14755"
-                id="cbsl_122351" data-idtextoasociado="criterio_122351">
-            <input type="text" value="f) Se han reconocido las funciones de los distintos profesionales que pueden intervenir en las expediciones internacionales." id="criterio_122351" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_486"
+                id="cbsl_4031" data-idtextoasociado="criterio_4031">
+            <input type="text" value="f) Se han reconocido las funciones de los distintos profesionales que pueden intervenir en las expediciones internacionales." id="criterio_4031" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14755"
-                id="cbsl_122352" data-idtextoasociado="criterio_122352">
-            <input type="text" value="g) Se ha analizado la normativa legal aplicable según el modo de transporte y la operación." id="criterio_122352" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_486"
+                id="cbsl_4032" data-idtextoasociado="criterio_4032">
+            <input type="text" value="g) Se ha analizado la normativa legal aplicable según el modo de transporte y la operación." id="criterio_4032" size="140">
             <br/>
             
             <br/>
             
             <input type="submit" value="Copiar al portapapeles los criterios seleccionados en este bloque" class="boton_copiar"
                    onclick=" copiar_textos_asociados_a_checkbox(
-                '.criterio_sin_letra_asociado_a_resultado_14755:checked',
-                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14755');   return false">
+                '.criterio_sin_letra_asociado_a_resultado_486:checked',
+                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado486');   return false">
             
-            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14755"></textarea>
+            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado486"></textarea>
         </div>
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14756"  data-idtextoasociado="txt_rasl_14756">
+       id="cbrasl_487"  data-idtextoasociado="txt_rasl_487">
 <input type="text" value="Selecciona los distintos modos y medios de transporte y las rutas óptimas, analizando las distintas alternativas." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14756">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_487">
         <div class="criterios">
             Criterios:<br/>
-            <input type="checkbox" id="todos_criterios_asociados_a_resultado_14756"
-                   onclick='conmutar("#todos_criterios_asociados_a_resultado_14756",
-                                     ".criterio_sin_letra_asociado_a_resultado_14756" )'> Marcar todos <br/>
+            <input type="checkbox" id="todos_criterios_asociados_a_resultado_487"
+                   onclick='conmutar("#todos_criterios_asociados_a_resultado_487",
+                                     ".criterio_sin_letra_asociado_a_resultado_487" )'> Marcar todos <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14756"
-                id="cbsl_122353" data-idtextoasociado="criterio_122353">
-            <input type="text" value="a) Se han reconocido los elementos básicos de la geografía viaria, ferroviaria, marítima y aérea de los estados miembros de la Unión Europea." id="criterio_122353" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_487"
+                id="cbsl_4033" data-idtextoasociado="criterio_4033">
+            <input type="text" value="a) Se han reconocido los elementos básicos de la geografía viaria, ferroviaria, marítima y aérea de los estados miembros de la Unión Europea." id="criterio_4033" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14756"
-                id="cbsl_122354" data-idtextoasociado="criterio_122354">
-            <input type="text" value="b) Se ha obtenido información sobre posibles proveedores y los servicios que prestan, en función de las características de la operación y de los medios de transporte." id="criterio_122354" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_487"
+                id="cbsl_4034" data-idtextoasociado="criterio_4034">
+            <input type="text" value="b) Se ha obtenido información sobre posibles proveedores y los servicios que prestan, en función de las características de la operación y de los medios de transporte." id="criterio_4034" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14756"
-                id="cbsl_122355" data-idtextoasociado="criterio_122355">
-            <input type="text" value="c) Se han reconocido las áreas de cobertura de la ruta y los puntos operativos estratégicos." id="criterio_122355" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_487"
+                id="cbsl_4035" data-idtextoasociado="criterio_4035">
+            <input type="text" value="c) Se han reconocido las áreas de cobertura de la ruta y los puntos operativos estratégicos." id="criterio_4035" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14756"
-                id="cbsl_122356" data-idtextoasociado="criterio_122356">
-            <input type="text" value="d) Se han valorado las rutas disponibles, los puntos de intercambio óptimos, las características del producto, el destino y las condiciones de contrato, para seleccionar la ruta adecuada." id="criterio_122356" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_487"
+                id="cbsl_4036" data-idtextoasociado="criterio_4036">
+            <input type="text" value="d) Se han valorado las rutas disponibles, los puntos de intercambio óptimos, las características del producto, el destino y las condiciones de contrato, para seleccionar la ruta adecuada." id="criterio_4036" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14756"
-                id="cbsl_122357" data-idtextoasociado="criterio_122357">
-            <input type="text" value="e) Se han analizado todos los componentes de costes, plazos de recogida, entrega de la mercancía y riesgos, para la selección de la ruta óptima." id="criterio_122357" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_487"
+                id="cbsl_4037" data-idtextoasociado="criterio_4037">
+            <input type="text" value="e) Se han analizado todos los componentes de costes, plazos de recogida, entrega de la mercancía y riesgos, para la selección de la ruta óptima." id="criterio_4037" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14756"
-                id="cbsl_122358" data-idtextoasociado="criterio_122358">
-            <input type="text" value="f) Se han considerado las posibilidades de consolidación y/o transbordo de la mercancía, así como la fragilidad y/o peligrosidad de la mercancía." id="criterio_122358" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_487"
+                id="cbsl_4038" data-idtextoasociado="criterio_4038">
+            <input type="text" value="f) Se han considerado las posibilidades de consolidación y/o transbordo de la mercancía, así como la fragilidad y/o peligrosidad de la mercancía." id="criterio_4038" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14756"
-                id="cbsl_122359" data-idtextoasociado="criterio_122359">
-            <input type="text" value="g) Se han analizado las ventajas e inconvenientes de externalizar algunas o todas las fases del transporte." id="criterio_122359" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_487"
+                id="cbsl_4039" data-idtextoasociado="criterio_4039">
+            <input type="text" value="g) Se han analizado las ventajas e inconvenientes de externalizar algunas o todas las fases del transporte." id="criterio_4039" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14756"
-                id="cbsl_122360" data-idtextoasociado="criterio_122360">
-            <input type="text" value="h) Se han definido indicadores de calidad que permitan valorar las decisiones tomadas y aplicar mejoras en futuras operaciones." id="criterio_122360" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_487"
+                id="cbsl_4040" data-idtextoasociado="criterio_4040">
+            <input type="text" value="h) Se han definido indicadores de calidad que permitan valorar las decisiones tomadas y aplicar mejoras en futuras operaciones." id="criterio_4040" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14756"
-                id="cbsl_122361" data-idtextoasociado="criterio_122361">
-            <input type="text" value="i) Se ha valorado la apuesta por medios que contribuyan a políticas de conservación medioambientales." id="criterio_122361" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_487"
+                id="cbsl_4041" data-idtextoasociado="criterio_4041">
+            <input type="text" value="i) Se ha valorado la apuesta por medios que contribuyan a políticas de conservación medioambientales." id="criterio_4041" size="140">
             <br/>
             
             <br/>
             
             <input type="submit" value="Copiar al portapapeles los criterios seleccionados en este bloque" class="boton_copiar"
                    onclick=" copiar_textos_asociados_a_checkbox(
-                '.criterio_sin_letra_asociado_a_resultado_14756:checked',
-                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14756');   return false">
+                '.criterio_sin_letra_asociado_a_resultado_487:checked',
+                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado487');   return false">
             
-            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14756"></textarea>
+            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado487"></textarea>
         </div>
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14757"  data-idtextoasociado="txt_rasl_14757">
+       id="cbrasl_488"  data-idtextoasociado="txt_rasl_488">
 <input type="text" value="Elabora y cumplimenta contratos de transporte, calculando los costes correspondientes." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14757">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_488">
         <div class="criterios">
             Criterios:<br/>
-            <input type="checkbox" id="todos_criterios_asociados_a_resultado_14757"
-                   onclick='conmutar("#todos_criterios_asociados_a_resultado_14757",
-                                     ".criterio_sin_letra_asociado_a_resultado_14757" )'> Marcar todos <br/>
+            <input type="checkbox" id="todos_criterios_asociados_a_resultado_488"
+                   onclick='conmutar("#todos_criterios_asociados_a_resultado_488",
+                                     ".criterio_sin_letra_asociado_a_resultado_488" )'> Marcar todos <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14757"
-                id="cbsl_122362" data-idtextoasociado="criterio_122362">
-            <input type="text" value="a) Se han descrito los contratos de transporte, teniendo en cuenta los incoterms y las obligaciones de cada una de las partes contratantes." id="criterio_122362" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_488"
+                id="cbsl_4042" data-idtextoasociado="criterio_4042">
+            <input type="text" value="a) Se han descrito los contratos de transporte, teniendo en cuenta los incoterms y las obligaciones de cada una de las partes contratantes." id="criterio_4042" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14757"
-                id="cbsl_122363" data-idtextoasociado="criterio_122363">
-            <input type="text" value="b) Se ha seleccionado y formalizado el modelo de contrato del servicio de transporte." id="criterio_122363" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_488"
+                id="cbsl_4043" data-idtextoasociado="criterio_4043">
+            <input type="text" value="b) Se ha seleccionado y formalizado el modelo de contrato del servicio de transporte." id="criterio_4043" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14757"
-                id="cbsl_122364" data-idtextoasociado="criterio_122364">
-            <input type="text" value="c) Se ha identificado la normativa, las técnicas y el sistema de tarifas aplicable a cada medio de transporte." id="criterio_122364" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_488"
+                id="cbsl_4044" data-idtextoasociado="criterio_4044">
+            <input type="text" value="c) Se ha identificado la normativa, las técnicas y el sistema de tarifas aplicable a cada medio de transporte." id="criterio_4044" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14757"
-                id="cbsl_122365" data-idtextoasociado="criterio_122365">
-            <input type="text" value="d) Se han interpretado las cláusulas habituales y los componentes del coste del servicio de transporte terrestre, marítimo, aéreo y multimodal." id="criterio_122365" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_488"
+                id="cbsl_4045" data-idtextoasociado="criterio_4045">
+            <input type="text" value="d) Se han interpretado las cláusulas habituales y los componentes del coste del servicio de transporte terrestre, marítimo, aéreo y multimodal." id="criterio_4045" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14757"
-                id="cbsl_122366" data-idtextoasociado="criterio_122366">
-            <input type="text" value="e) Se ha calculado el coste de operaciones de transportes terrestres, ferroviarios, marítimos, aéreos y multimodales, con los medios informáticos adecuados." id="criterio_122366" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_488"
+                id="cbsl_4046" data-idtextoasociado="criterio_4046">
+            <input type="text" value="e) Se ha calculado el coste de operaciones de transportes terrestres, ferroviarios, marítimos, aéreos y multimodales, con los medios informáticos adecuados." id="criterio_4046" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14757"
-                id="cbsl_122367" data-idtextoasociado="criterio_122367">
-            <input type="text" value="f) Se ha calculado el valor de la mercancía en un punto determinado de la ruta." id="criterio_122367" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_488"
+                id="cbsl_4047" data-idtextoasociado="criterio_4047">
+            <input type="text" value="f) Se ha calculado el valor de la mercancía en un punto determinado de la ruta." id="criterio_4047" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14757"
-                id="cbsl_122368" data-idtextoasociado="criterio_122368">
-            <input type="text" value="g) Se han valorado los costes adicionales y los riesgos que se pueden originar en función de la mercancía, el medio de transporte y la ruta." id="criterio_122368" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_488"
+                id="cbsl_4048" data-idtextoasociado="criterio_4048">
+            <input type="text" value="g) Se han valorado los costes adicionales y los riesgos que se pueden originar en función de la mercancía, el medio de transporte y la ruta." id="criterio_4048" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14757"
-                id="cbsl_122369" data-idtextoasociado="criterio_122369">
-            <input type="text" value="h) Se han relacionado las incidencias producidas en las operaciones con las actuaciones posteriores para su subsanación." id="criterio_122369" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_488"
+                id="cbsl_4049" data-idtextoasociado="criterio_4049">
+            <input type="text" value="h) Se han relacionado las incidencias producidas en las operaciones con las actuaciones posteriores para su subsanación." id="criterio_4049" size="140">
             <br/>
             
             <br/>
             
             <input type="submit" value="Copiar al portapapeles los criterios seleccionados en este bloque" class="boton_copiar"
                    onclick=" copiar_textos_asociados_a_checkbox(
-                '.criterio_sin_letra_asociado_a_resultado_14757:checked',
-                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14757');   return false">
+                '.criterio_sin_letra_asociado_a_resultado_488:checked',
+                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado488');   return false">
             
-            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14757"></textarea>
+            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado488"></textarea>
         </div>
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14758"  data-idtextoasociado="txt_rasl_14758">
+       id="cbrasl_489"  data-idtextoasociado="txt_rasl_489">
 <input type="text" value="Determina los elementos que garantizan la integridad y el tránsito de las mercancías, identificando las situaciones de riesgo habituales." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14758">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_489">
         <div class="criterios">
             Criterios:<br/>
-            <input type="checkbox" id="todos_criterios_asociados_a_resultado_14758"
-                   onclick='conmutar("#todos_criterios_asociados_a_resultado_14758",
-                                     ".criterio_sin_letra_asociado_a_resultado_14758" )'> Marcar todos <br/>
+            <input type="checkbox" id="todos_criterios_asociados_a_resultado_489"
+                   onclick='conmutar("#todos_criterios_asociados_a_resultado_489",
+                                     ".criterio_sin_letra_asociado_a_resultado_489" )'> Marcar todos <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14758"
-                id="cbsl_122370" data-idtextoasociado="criterio_122370">
-            <input type="text" value="a) Se ha identificado la legislación específica vigente según el tipo de producto; mercancía peligrosa, perecedera, animales vivos o gran volumen." id="criterio_122370" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_489"
+                id="cbsl_4050" data-idtextoasociado="criterio_4050">
+            <input type="text" value="a) Se ha identificado la legislación específica vigente según el tipo de producto; mercancía peligrosa, perecedera, animales vivos o gran volumen." id="criterio_4050" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14758"
-                id="cbsl_122371" data-idtextoasociado="criterio_122371">
-            <input type="text" value="b) Se han seleccionado los medios de protección física, embalajes y/o coberturas exteriores adecuadas a la mercancía, así como el medio de transporte y las posibles manipulaciones en los centros de carga." id="criterio_122371" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_489"
+                id="cbsl_4051" data-idtextoasociado="criterio_4051">
+            <input type="text" value="b) Se han seleccionado los medios de protección física, embalajes y/o coberturas exteriores adecuadas a la mercancía, así como el medio de transporte y las posibles manipulaciones en los centros de carga." id="criterio_4051" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14758"
-                id="cbsl_122372" data-idtextoasociado="criterio_122372">
-            <input type="text" value="c) Se han descrito las condiciones de señalización, rotulación y etiquetado necesarias." id="criterio_122372" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_489"
+                id="cbsl_4052" data-idtextoasociado="criterio_4052">
+            <input type="text" value="c) Se han descrito las condiciones de señalización, rotulación y etiquetado necesarias." id="criterio_4052" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14758"
-                id="cbsl_122373" data-idtextoasociado="criterio_122373">
-            <input type="text" value="d) Se han fijado las necesidades específicas para la estiba y colocación de mercancías, según su naturaleza y la cadena de transporte utilizada." id="criterio_122373" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_489"
+                id="cbsl_4053" data-idtextoasociado="criterio_4053">
+            <input type="text" value="d) Se han fijado las necesidades específicas para la estiba y colocación de mercancías, según su naturaleza y la cadena de transporte utilizada." id="criterio_4053" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14758"
-                id="cbsl_122374" data-idtextoasociado="criterio_122374">
-            <input type="text" value="e) Se ha valorado la importancia de dar instrucciones concretas y se han delimitado las competencias de los distintos agentes externos que intervienen en las operaciones de transporte." id="criterio_122374" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_489"
+                id="cbsl_4054" data-idtextoasociado="criterio_4054">
+            <input type="text" value="e) Se ha valorado la importancia de dar instrucciones concretas y se han delimitado las competencias de los distintos agentes externos que intervienen en las operaciones de transporte." id="criterio_4054" size="140">
             <br/>
             
             <br/>
             
             <input type="submit" value="Copiar al portapapeles los criterios seleccionados en este bloque" class="boton_copiar"
                    onclick=" copiar_textos_asociados_a_checkbox(
-                '.criterio_sin_letra_asociado_a_resultado_14758:checked',
-                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14758');   return false">
+                '.criterio_sin_letra_asociado_a_resultado_489:checked',
+                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado489');   return false">
             
-            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14758"></textarea>
+            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado489"></textarea>
         </div>
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14759"  data-idtextoasociado="txt_rasl_14759">
+       id="cbrasl_490"  data-idtextoasociado="txt_rasl_490">
 <input type="text" value="Formaliza y gestiona la documentación de las operaciones de transporte internacional, analizando los requisitos exigidos en cada medio de transporte utilizado en función de la mercancía enviada." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14759">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_490">
         <div class="criterios">
             Criterios:<br/>
-            <input type="checkbox" id="todos_criterios_asociados_a_resultado_14759"
-                   onclick='conmutar("#todos_criterios_asociados_a_resultado_14759",
-                                     ".criterio_sin_letra_asociado_a_resultado_14759" )'> Marcar todos <br/>
+            <input type="checkbox" id="todos_criterios_asociados_a_resultado_490"
+                   onclick='conmutar("#todos_criterios_asociados_a_resultado_490",
+                                     ".criterio_sin_letra_asociado_a_resultado_490" )'> Marcar todos <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14759"
-                id="cbsl_122375" data-idtextoasociado="criterio_122375">
-            <input type="text" value="a) Se han seleccionado los documentos de porte y tránsito necesarios según productos, ruta y medios de transporte." id="criterio_122375" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_490"
+                id="cbsl_4055" data-idtextoasociado="criterio_4055">
+            <input type="text" value="a) Se han seleccionado los documentos de porte y tránsito necesarios según productos, ruta y medios de transporte." id="criterio_4055" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14759"
-                id="cbsl_122376" data-idtextoasociado="criterio_122376">
-            <input type="text" value="b) Se ha determinado la tipología de permisos de circulación o navegación requeridos en las distintas modalidades de transporte y los trámites para la expedición y renovación de los mismos." id="criterio_122376" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_490"
+                id="cbsl_4056" data-idtextoasociado="criterio_4056">
+            <input type="text" value="b) Se ha determinado la tipología de permisos de circulación o navegación requeridos en las distintas modalidades de transporte y los trámites para la expedición y renovación de los mismos." id="criterio_4056" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14759"
-                id="cbsl_122377" data-idtextoasociado="criterio_122377">
-            <input type="text" value="c) Se han gestionado los permisos y autorizaciones previas necesarias." id="criterio_122377" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_490"
+                id="cbsl_4057" data-idtextoasociado="criterio_4057">
+            <input type="text" value="c) Se han gestionado los permisos y autorizaciones previas necesarias." id="criterio_4057" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14759"
-                id="cbsl_122378" data-idtextoasociado="criterio_122378">
-            <input type="text" value="d) Se han verificado los importes, fechas y plazos de toda la documentación." id="criterio_122378" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_490"
+                id="cbsl_4058" data-idtextoasociado="criterio_4058">
+            <input type="text" value="d) Se han verificado los importes, fechas y plazos de toda la documentación." id="criterio_4058" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14759"
-                id="cbsl_122379" data-idtextoasociado="criterio_122379">
-            <input type="text" value="e) Se han descrito los procesos de inspección de las operaciones de exportación, importación, expediciones intra- comunitarias, adquisiciones intracomunitarias y de compra o venta domésticas." id="criterio_122379" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_490"
+                id="cbsl_4059" data-idtextoasociado="criterio_4059">
+            <input type="text" value="e) Se han descrito los procesos de inspección de las operaciones de exportación, importación, expediciones intra- comunitarias, adquisiciones intracomunitarias y de compra o venta domésticas." id="criterio_4059" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14759"
-                id="cbsl_122380" data-idtextoasociado="criterio_122380">
-            <input type="text" value="f) Se han asegurado las condiciones de seguimiento y trazabilidad de la mercancía." id="criterio_122380" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_490"
+                id="cbsl_4060" data-idtextoasociado="criterio_4060">
+            <input type="text" value="f) Se han asegurado las condiciones de seguimiento y trazabilidad de la mercancía." id="criterio_4060" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14759"
-                id="cbsl_122381" data-idtextoasociado="criterio_122381">
-            <input type="text" value="g) Se han seleccionado los soportes de registro y archivo, y el sistema de clasificación y mantenimiento más adecuado para la operativa de transporte internacional." id="criterio_122381" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_490"
+                id="cbsl_4061" data-idtextoasociado="criterio_4061">
+            <input type="text" value="g) Se han seleccionado los soportes de registro y archivo, y el sistema de clasificación y mantenimiento más adecuado para la operativa de transporte internacional." id="criterio_4061" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14759"
-                id="cbsl_122382" data-idtextoasociado="criterio_122382">
-            <input type="text" value="h) Se han respetado los niveles de protección, seguridad y acceso a la información, así como la normativa vigente." id="criterio_122382" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_490"
+                id="cbsl_4062" data-idtextoasociado="criterio_4062">
+            <input type="text" value="h) Se han respetado los niveles de protección, seguridad y acceso a la información, así como la normativa vigente." id="criterio_4062" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14759"
-                id="cbsl_122383" data-idtextoasociado="criterio_122383">
-            <input type="text" value="i) Se han aplicado, en la formalización y archivo de la documentación, las técnicas 3R (reducir, reutilizar y reciclar)." id="criterio_122383" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_490"
+                id="cbsl_4063" data-idtextoasociado="criterio_4063">
+            <input type="text" value="i) Se han aplicado, en la formalización y archivo de la documentación, las técnicas 3R (reducir, reutilizar y reciclar)." id="criterio_4063" size="140">
             <br/>
             
             <br/>
             
             <input type="submit" value="Copiar al portapapeles los criterios seleccionados en este bloque" class="boton_copiar"
                    onclick=" copiar_textos_asociados_a_checkbox(
-                '.criterio_sin_letra_asociado_a_resultado_14759:checked',
-                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14759');   return false">
+                '.criterio_sin_letra_asociado_a_resultado_490:checked',
+                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado490');   return false">
             
-            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14759"></textarea>
+            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado490"></textarea>
         </div>
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14760"  data-idtextoasociado="txt_rasl_14760">
+       id="cbrasl_491"  data-idtextoasociado="txt_rasl_491">
 <input type="text" value="Secuencia las fases habituales del transporte y las posibles incidencias, utilizando los sistemas de comunicación,gestión y supervisión adecuados en cada operación." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14760">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_491">
         <div class="criterios">
             Criterios:<br/>
-            <input type="checkbox" id="todos_criterios_asociados_a_resultado_14760"
-                   onclick='conmutar("#todos_criterios_asociados_a_resultado_14760",
-                                     ".criterio_sin_letra_asociado_a_resultado_14760" )'> Marcar todos <br/>
+            <input type="checkbox" id="todos_criterios_asociados_a_resultado_491"
+                   onclick='conmutar("#todos_criterios_asociados_a_resultado_491",
+                                     ".criterio_sin_letra_asociado_a_resultado_491" )'> Marcar todos <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14760"
-                id="cbsl_122384" data-idtextoasociado="criterio_122384">
-            <input type="text" value="a) Se ha analizado la importancia de la localización de la mercancía a lo largo del recorrido." id="criterio_122384" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_491"
+                id="cbsl_4064" data-idtextoasociado="criterio_4064">
+            <input type="text" value="a) Se ha analizado la importancia de la localización de la mercancía a lo largo del recorrido." id="criterio_4064" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14760"
-                id="cbsl_122385" data-idtextoasociado="criterio_122385">
-            <input type="text" value="b) Se han señalado los medios de seguimiento y supervisión de cada operación." id="criterio_122385" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_491"
+                id="cbsl_4065" data-idtextoasociado="criterio_4065">
+            <input type="text" value="b) Se han señalado los medios de seguimiento y supervisión de cada operación." id="criterio_4065" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14760"
-                id="cbsl_122386" data-idtextoasociado="criterio_122386">
-            <input type="text" value="c) Se han determinado los medios o aplicaciones de comunicación e información óptimos para cada operación, modo de transporte, ruta y destino." id="criterio_122386" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_491"
+                id="cbsl_4066" data-idtextoasociado="criterio_4066">
+            <input type="text" value="c) Se han determinado los medios o aplicaciones de comunicación e información óptimos para cada operación, modo de transporte, ruta y destino." id="criterio_4066" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14760"
-                id="cbsl_122387" data-idtextoasociado="criterio_122387">
-            <input type="text" value="d) Se ha comprobado que las instrucciones dadas a los profesionales intervinientes se ajustan al procedimiento establecido para cada operación y modo de transporte." id="criterio_122387" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_491"
+                id="cbsl_4067" data-idtextoasociado="criterio_4067">
+            <input type="text" value="d) Se ha comprobado que las instrucciones dadas a los profesionales intervinientes se ajustan al procedimiento establecido para cada operación y modo de transporte." id="criterio_4067" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14760"
-                id="cbsl_122388" data-idtextoasociado="criterio_122388">
-            <input type="text" value="e) Se han definido las actuaciones que se deben realizar en caso de siniestro o incidencia." id="criterio_122388" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_491"
+                id="cbsl_4068" data-idtextoasociado="criterio_4068">
+            <input type="text" value="e) Se han definido las actuaciones que se deben realizar en caso de siniestro o incidencia." id="criterio_4068" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14760"
-                id="cbsl_122389" data-idtextoasociado="criterio_122389">
-            <input type="text" value="f) Se han especificado los indicadores de calidad del servicio de transporte y las actuaciones en caso de desviaciones endógenas repetitivas." id="criterio_122389" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_491"
+                id="cbsl_4069" data-idtextoasociado="criterio_4069">
+            <input type="text" value="f) Se han especificado los indicadores de calidad del servicio de transporte y las actuaciones en caso de desviaciones endógenas repetitivas." id="criterio_4069" size="140">
             <br/>
             
             <br/>
             
             <input type="submit" value="Copiar al portapapeles los criterios seleccionados en este bloque" class="boton_copiar"
                    onclick=" copiar_textos_asociados_a_checkbox(
-                '.criterio_sin_letra_asociado_a_resultado_14760:checked',
-                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14760');   return false">
+                '.criterio_sin_letra_asociado_a_resultado_491:checked',
+                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado491');   return false">
             
-            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14760"></textarea>
+            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado491"></textarea>
         </div>
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14761"  data-idtextoasociado="txt_rasl_14761">
+       id="cbrasl_492"  data-idtextoasociado="txt_rasl_492">
 <input type="text" value="Tramita el seguro de las mercancías durante el transporte, ajustándose a la normativa vigente y a las condiciones establecidas en el contrato de compraventa internacional." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14761">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_492">
         <div class="criterios">
             Criterios:<br/>
-            <input type="checkbox" id="todos_criterios_asociados_a_resultado_14761"
-                   onclick='conmutar("#todos_criterios_asociados_a_resultado_14761",
-                                     ".criterio_sin_letra_asociado_a_resultado_14761" )'> Marcar todos <br/>
+            <input type="checkbox" id="todos_criterios_asociados_a_resultado_492"
+                   onclick='conmutar("#todos_criterios_asociados_a_resultado_492",
+                                     ".criterio_sin_letra_asociado_a_resultado_492" )'> Marcar todos <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14761"
-                id="cbsl_122390" data-idtextoasociado="criterio_122390">
-            <input type="text" value="a) Se han descrito las características básicas de un contrato de seguro en el transporte internacional de mercancías y los elementos que lo constituyen." id="criterio_122390" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_492"
+                id="cbsl_4070" data-idtextoasociado="criterio_4070">
+            <input type="text" value="a) Se han descrito las características básicas de un contrato de seguro en el transporte internacional de mercancías y los elementos que lo constituyen." id="criterio_4070" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14761"
-                id="cbsl_122391" data-idtextoasociado="criterio_122391">
-            <input type="text" value="b) Se han identificado los riesgos más habituales en una operación de compraventa internacional de mercancías y las necesidades de cobertura, para garantizar la llegada de las mercancías a su destino en las debidas condiciones." id="criterio_122391" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_492"
+                id="cbsl_4071" data-idtextoasociado="criterio_4071">
+            <input type="text" value="b) Se han identificado los riesgos más habituales en una operación de compraventa internacional de mercancías y las necesidades de cobertura, para garantizar la llegada de las mercancías a su destino en las debidas condiciones." id="criterio_4071" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14761"
-                id="cbsl_122392" data-idtextoasociado="criterio_122392">
-            <input type="text" value="c) Se han determinado los sistemas de protección jurídica de las mercancías y los tipos de pólizas de seguro más utilizadas en el comercio internacional, según la modalidad de transporte utilizado." id="criterio_122392" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_492"
+                id="cbsl_4072" data-idtextoasociado="criterio_4072">
+            <input type="text" value="c) Se han determinado los sistemas de protección jurídica de las mercancías y los tipos de pólizas de seguro más utilizadas en el comercio internacional, según la modalidad de transporte utilizado." id="criterio_4072" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14761"
-                id="cbsl_122393" data-idtextoasociado="criterio_122393">
-            <input type="text" value="d) Se han utilizado las cláusulas que habitualmente se incluyen en las pólizas de seguro." id="criterio_122393" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_492"
+                id="cbsl_4073" data-idtextoasociado="criterio_4073">
+            <input type="text" value="d) Se han utilizado las cláusulas que habitualmente se incluyen en las pólizas de seguro." id="criterio_4073" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14761"
-                id="cbsl_122394" data-idtextoasociado="criterio_122394">
-            <input type="text" value="e) Se han establecido los procedimientos de contratación del seguro en las operaciones de comercio internacional." id="criterio_122394" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_492"
+                id="cbsl_4074" data-idtextoasociado="criterio_4074">
+            <input type="text" value="e) Se han establecido los procedimientos de contratación del seguro en las operaciones de comercio internacional." id="criterio_4074" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14761"
-                id="cbsl_122395" data-idtextoasociado="criterio_122395">
-            <input type="text" value="f) Se ha seleccionado la póliza de seguro más adecuada para cada operación de comercio internacional, según sus condicionantes." id="criterio_122395" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_492"
+                id="cbsl_4075" data-idtextoasociado="criterio_4075">
+            <input type="text" value="f) Se ha seleccionado la póliza de seguro más adecuada para cada operación de comercio internacional, según sus condicionantes." id="criterio_4075" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14761"
-                id="cbsl_122396" data-idtextoasociado="criterio_122396">
-            <input type="text" value="g) Se ha establecido el procedimiento que se debe seguir en caso de siniestro o incidencias surgidas en las operaciones de comercio internacional cubiertas con una póliza de seguro." id="criterio_122396" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_492"
+                id="cbsl_4076" data-idtextoasociado="criterio_4076">
+            <input type="text" value="g) Se ha establecido el procedimiento que se debe seguir en caso de siniestro o incidencias surgidas en las operaciones de comercio internacional cubiertas con una póliza de seguro." id="criterio_4076" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14761"
-                id="cbsl_122397" data-idtextoasociado="criterio_122397">
-            <input type="text" value="h) Se ha obtenido información sobre las principales compañías de seguros que operan en el mercado, tramitando los riesgos a través de las herramientas informáticas de sus páginas web." id="criterio_122397" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_492"
+                id="cbsl_4077" data-idtextoasociado="criterio_4077">
+            <input type="text" value="h) Se ha obtenido información sobre las principales compañías de seguros que operan en el mercado, tramitando los riesgos a través de las herramientas informáticas de sus páginas web." id="criterio_4077" size="140">
             <br/>
             
             <br/>
             
             <input type="submit" value="Copiar al portapapeles los criterios seleccionados en este bloque" class="boton_copiar"
                    onclick=" copiar_textos_asociados_a_checkbox(
-                '.criterio_sin_letra_asociado_a_resultado_14761:checked',
-                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14761');   return false">
+                '.criterio_sin_letra_asociado_a_resultado_492:checked',
+                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado492');   return false">
             
-            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14761"></textarea>
+            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado492"></textarea>
         </div>
         
 <br/>

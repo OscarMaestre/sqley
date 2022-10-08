@@ -76,6 +76,10 @@ null==d?void 0:d))},attrHooks:{type:{set:function(a,b){if(!o.radioValue&&"radio"
         function click_todos_resultados_aprendizaje_con_letra(){
             conmutar("#id_todos_resultados_aprendizaje_con_letra", ".checkbox_resultado_aprendizaje_con_letra" )
         }
+        function click_todas_cualificaciones_completas(){
+            conmutar("#id_todas_cualificaciones_completas", ".checkbox_cualificacion_completa")
+            console.log("Marcas las cualificaciones")
+        }
         
         function extraer_textos_varios_input_text(atributo_class){
             let elementos_texto=$(atributo_class)
@@ -102,7 +106,6 @@ null==d?void 0:d))},attrHooks:{type:{set:function(a,b){if(!o.radioValue&&"radio"
             }
             return texto_a_meter_en_el_portapapeles
         }
-        
         function copiar_textos_asociados_a_checkbox(atributo_class, id_para_inyectar_resultado ){
             let texto_para_portapapeles=extraer_textos_varios_input_text(atributo_class)
             
@@ -160,7 +163,6 @@ null==d?void 0:d))},attrHooks:{type:{set:function(a,b){if(!o.radioValue&&"radio"
             $("#id_todos_objetivos_generales_sin_letra").click ( click_todos_objetivos_generales_sin_letra )
             $("#id_todos_resultados_aprendizaje_sin_letra").click ( click_todos_resultados_aprendizaje_sin_letra )
             $("#id_todos_resultados_aprendizaje_con_letra").click ( click_todos_resultados_aprendizaje_con_letra )
-            
             //Cuando se hace click en un cuadro de texto automáticamente se corta al portapapeles
             $("input[type=text]").click(click_en_caja_de_texto)
         }
@@ -207,14 +209,53 @@ por lo que podrás cortar y pegar los textos cómodamente en cualquiera de los d
 
 
 <br/><br/>
-<h1>Unidades de competencia</h1>
+<h1>Cualificaciones COMPLETAS</h1>
 
 
-Operaciones auxiliares de montaje y mantenimiento de sistemas microinformáticos
+
+IFC361_1 Operaciones auxiliares de montaje y mantenimiento de sistemas microinformáticos (R.D 1701/2007, de 14 de diciembre) con las unidades de competencia asociadas:
+<ul>
+    
+    
+        <li>
+            UC1207_1 Realizar operaciones auxiliares de montaje de equipos microinformáticos.
+        </li>
+    
+        <li>
+            UC1208_1 Realizar operaciones auxiliares de mantenimiento de sistemas microinformáticos.
+        </li>
+    
+        <li>
+            UC1209_1 Realizar operaciones auxiliares con tecnologías de la información y la comunicación.
+        </li>
+    
+
+</ul>
 <br/>
 
-Operaciones auxiliares de montaje y mantenimiento de equipos eléctricos y electrónicos
+ELE481_1 Operaciones auxiliares de montaje y mantenimiento de equipos eléctricos y electrónicos (R.D 144/2011, de 4 de febrero) con las unidades de competencia asociadas:
+<ul>
+    
+    
+        <li>
+            UC1559_1 Realizar operaciones de ensamblado en el montaje de equipos eléctricos y electrónicos.
+        </li>
+    
+        <li>
+            UC1560_1 Realizar operaciones de conexionado en el montaje de equipos eléctricos y electrónicos.
+        </li>
+    
+        <li>
+            UC1561_1 Realizar operaciones auxiliares en el mantenimiento de equipos eléctricos y electrónicos.
+        </li>
+    
+
+</ul>
 <br/>
+
+
+
+<h1>Cualificaciones INCOMPLETAS</h1>
 
 
 
@@ -228,184 +269,184 @@ Marcar/desmarcar todos los objetivos generales
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6166"  data-idtextoasociado="txt_og_6166">
+       id="cb_117"  data-idtextoasociado="txt_og_117">
 <input type="text" value="a) Identificar y organizar los componentes físicos y lógicos que conforman un sistema microinformático y/o red de transmisión de datos clasificándolos de acuerdo a su función para acopiarlos según su finalidad." size="160"
-       class="texto_objetivo_general" id="txt_og_6166">
+       class="texto_objetivo_general" id="txt_og_117">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6167"  data-idtextoasociado="txt_og_6167">
+       id="cb_118"  data-idtextoasociado="txt_og_118">
 <input type="text" value="b) Ensamblar y conectar componentes y periféricos utilizando las herramientas adecuadas, aplicando procedimientos y normas, para montar sistemas microinformáticos y redes." size="160"
-       class="texto_objetivo_general" id="txt_og_6167">
+       class="texto_objetivo_general" id="txt_og_118">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6168"  data-idtextoasociado="txt_og_6168">
+       id="cb_119"  data-idtextoasociado="txt_og_119">
 <input type="text" value="c) Aplicar técnicas de localización de averías sencillas en los sistemas y equipos informáticos siguiendo pautas establecidas para mantener sistemas microinformáticos y redes locales." size="160"
-       class="texto_objetivo_general" id="txt_og_6168">
+       class="texto_objetivo_general" id="txt_og_119">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6169"  data-idtextoasociado="txt_og_6169">
+       id="cb_120"  data-idtextoasociado="txt_og_120">
 <input type="text" value="d) Sustituir y ajustar componentes físicos y lógicos para mantener sistemas microinformáticos y redes locales." size="160"
-       class="texto_objetivo_general" id="txt_og_6169">
+       class="texto_objetivo_general" id="txt_og_120">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6170"  data-idtextoasociado="txt_og_6170">
+       id="cb_121"  data-idtextoasociado="txt_og_121">
 <input type="text" value="e) Interpretar y aplicar las instrucciones de catálogos de fabricantes de equipos y sistemas para transportar y almacenar elementos y equipos de los sistemas informáticos y redes." size="160"
-       class="texto_objetivo_general" id="txt_og_6170">
+       class="texto_objetivo_general" id="txt_og_121">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6171"  data-idtextoasociado="txt_og_6171">
+       id="cb_122"  data-idtextoasociado="txt_og_122">
 <input type="text" value="f) Identificar y aplicar técnicas de verificación en el montaje y el mantenimiento siguiendo pautas establecidas para realizar comprobaciones rutinarias." size="160"
-       class="texto_objetivo_general" id="txt_og_6171">
+       class="texto_objetivo_general" id="txt_og_122">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6172"  data-idtextoasociado="txt_og_6172">
+       id="cb_123"  data-idtextoasociado="txt_og_123">
 <input type="text" value="g) Ubicar y fijar canalizaciones y demás elementos de una red local cableada, inalámbrica o mixta, aplicando procedimientos de montaje y protocolos de calidad y seguridad, para instalar y configurar redes locales." size="160"
-       class="texto_objetivo_general" id="txt_og_6172">
+       class="texto_objetivo_general" id="txt_og_123">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6173"  data-idtextoasociado="txt_og_6173">
+       id="cb_124"  data-idtextoasociado="txt_og_124">
 <input type="text" value="h) Aplicar técnicas de preparado, conformado y guiado de cables, preparando los espacios y manejando equipos y herramientas para tender el cableado en redes de datos." size="160"
-       class="texto_objetivo_general" id="txt_og_6173">
+       class="texto_objetivo_general" id="txt_og_124">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6174"  data-idtextoasociado="txt_og_6174">
+       id="cb_125"  data-idtextoasociado="txt_og_125">
 <input type="text" value="i) Reconocer las herramientas del sistema operativo y periféricos manejándolas para realizar configuraciones y resolver problemas de acuerdo a las instrucciones del fabricante." size="160"
-       class="texto_objetivo_general" id="txt_og_6174">
+       class="texto_objetivo_general" id="txt_og_125">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6175"  data-idtextoasociado="txt_og_6175">
+       id="cb_126"  data-idtextoasociado="txt_og_126">
 <input type="text" value="j) Elaborar y modificar informes sencillos y fichas de trabajo para manejar aplicaciones ofimáticas de procesadores de texto." size="160"
-       class="texto_objetivo_general" id="txt_og_6175">
+       class="texto_objetivo_general" id="txt_og_126">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6176"  data-idtextoasociado="txt_og_6176">
+       id="cb_127"  data-idtextoasociado="txt_og_127">
 <input type="text" value="k) Comprender los fenómenos que acontecen en el entorno natural mediante el conocimiento científico como un saber integrado, así como conocer y aplicar los métodos para identificar y resolver problemas básicos en los diversos campos del conocimiento y de la experiencia." size="160"
-       class="texto_objetivo_general" id="txt_og_6176">
+       class="texto_objetivo_general" id="txt_og_127">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6177"  data-idtextoasociado="txt_og_6177">
+       id="cb_128"  data-idtextoasociado="txt_og_128">
 <input type="text" value="l) Desarrollar habilidades para formular, plantear, interpretar y resolver problemas aplicar el razonamiento de cálculo matemático para desenvolverse en la sociedad, en el entorno laboral y gestionar sus recursos económicos." size="160"
-       class="texto_objetivo_general" id="txt_og_6177">
+       class="texto_objetivo_general" id="txt_og_128">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6178"  data-idtextoasociado="txt_og_6178">
+       id="cb_129"  data-idtextoasociado="txt_og_129">
 <input type="text" value="m) Identificar y comprender los aspectos básicos de funcionamiento del cuerpo humano y ponerlos en relación con la salud individual y colectiva y valorar la higiene y la salud para permitir el desarrollo y afianzamiento de hábitos saludables de vida en función del entorno en el que se encuentra." size="160"
-       class="texto_objetivo_general" id="txt_og_6178">
+       class="texto_objetivo_general" id="txt_og_129">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6179"  data-idtextoasociado="txt_og_6179">
+       id="cb_130"  data-idtextoasociado="txt_og_130">
 <input type="text" value="n) Desarrollar hábitos y valores acordes con la conservación y sostenibilidad del patrimonio natural, comprendiendo la interacción entre los seres vivos y el medio natural para valorar las consecuencias que se derivan de la acción humana sobre el equilibrio medioambiental." size="160"
-       class="texto_objetivo_general" id="txt_og_6179">
+       class="texto_objetivo_general" id="txt_og_130">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6180"  data-idtextoasociado="txt_og_6180">
+       id="cb_131"  data-idtextoasociado="txt_og_131">
 <input type="text" value="ñ) Desarrollar las destrezas básicas de las fuentes de información utilizando con sentido crítico las tecnologías de la información y de la comunicación para obtener y comunicar información en el entorno personal, social o profesional. o) Reconocer características básicas de producciones culturales y artísticas, aplicando técnicas de análisis básico de sus elementos para actuar con respeto y sensibilidad hacia la diversidad cultural, el patrimonio histórico- artístico y las manifestaciones culturales y artísticas." size="160"
-       class="texto_objetivo_general" id="txt_og_6180">
+       class="texto_objetivo_general" id="txt_og_131">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6181"  data-idtextoasociado="txt_og_6181">
+       id="cb_132"  data-idtextoasociado="txt_og_132">
 <input type="text" value="p) Desarrollar y afianzar habilidades y destrezas lingüísticas y alcanzar el nivel de precisión, claridad y fluidez requeridas, utilizando los conocimientos sobre la lengua castellana y, en su caso, la lengua cooficial para comunicarse en su entorno social, en su vida cotidiana y en la actividad laboral." size="160"
-       class="texto_objetivo_general" id="txt_og_6181">
+       class="texto_objetivo_general" id="txt_og_132">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6182"  data-idtextoasociado="txt_og_6182">
+       id="cb_133"  data-idtextoasociado="txt_og_133">
 <input type="text" value="q) Desarrollar habilidades lingüísticas básicas en lengua extranjera para comunicarse de forma oral y escrita en situaciones habituales y predecibles de la vida cotidiana y profesional." size="160"
-       class="texto_objetivo_general" id="txt_og_6182">
+       class="texto_objetivo_general" id="txt_og_133">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6183"  data-idtextoasociado="txt_og_6183">
+       id="cb_134"  data-idtextoasociado="txt_og_134">
 <input type="text" value="r) Reconocer causas y rasgos propios de fenómenos y acontecimientos contemporáneos, evolución histórica, distribución geográfica para explicar las características propias de las sociedades contemporáneas." size="160"
-       class="texto_objetivo_general" id="txt_og_6183">
+       class="texto_objetivo_general" id="txt_og_134">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6184"  data-idtextoasociado="txt_og_6184">
+       id="cb_135"  data-idtextoasociado="txt_og_135">
 <input type="text" value="s) Desarrollar valores y hábitos de comportamiento basados en principios democráticos, aplicándolos en sus relaciones sociales habituales y en la resolución pacífica de los conflictos." size="160"
-       class="texto_objetivo_general" id="txt_og_6184">
+       class="texto_objetivo_general" id="txt_og_135">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6185"  data-idtextoasociado="txt_og_6185">
+       id="cb_136"  data-idtextoasociado="txt_og_136">
 <input type="text" value="t) Comparar y seleccionar recursos y ofertas formativas existentes para el aprendizaje a lo largo de la vida para adaptarse a las nuevas situaciones laborales y personales." size="160"
-       class="texto_objetivo_general" id="txt_og_6185">
+       class="texto_objetivo_general" id="txt_og_136">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6186"  data-idtextoasociado="txt_og_6186">
+       id="cb_137"  data-idtextoasociado="txt_og_137">
 <input type="text" value="u) Desarrollar la iniciativa, la creatividad y el espíritu emprendedor, así como la confianza en sí mismo, la participación y el espíritu crítico para resolver situaciones e incidencias tanto de la actividad profesional como de la personal." size="160"
-       class="texto_objetivo_general" id="txt_og_6186">
+       class="texto_objetivo_general" id="txt_og_137">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6187"  data-idtextoasociado="txt_og_6187">
+       id="cb_138"  data-idtextoasociado="txt_og_138">
 <input type="text" value="v) Desarrollar trabajos en equipo, asumiendo sus deberes, respetando a los demás y cooperando con ellos, actuando con tolerancia y respeto a los demás para la realización eficaz de las tareas y como medio de desarrollo personal." size="160"
-       class="texto_objetivo_general" id="txt_og_6187">
+       class="texto_objetivo_general" id="txt_og_138">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6188"  data-idtextoasociado="txt_og_6188">
+       id="cb_139"  data-idtextoasociado="txt_og_139">
 <input type="text" value="w) Utilizar las tecnologías de la información y de la comunicación para informarse, comunicarse, aprender y facilitarse las tareas laborales." size="160"
-       class="texto_objetivo_general" id="txt_og_6188">
+       class="texto_objetivo_general" id="txt_og_139">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6189"  data-idtextoasociado="txt_og_6189">
+       id="cb_140"  data-idtextoasociado="txt_og_140">
 <input type="text" value="x) Relacionar los riesgos laborales y ambientales con la actividad laboral con el propósito de utilizar las medidas preventivas correspondientes para la protección personal, evitando daños a las demás personas y en el medio ambiente." size="160"
-       class="texto_objetivo_general" id="txt_og_6189">
+       class="texto_objetivo_general" id="txt_og_140">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6190"  data-idtextoasociado="txt_og_6190">
+       id="cb_141"  data-idtextoasociado="txt_og_141">
 <input type="text" value="y) Desarrollar las técnicas de su actividad profesional asegurando la eficacia y la calidad en su trabajo, proponiendo, si procede, mejoras en las actividades de trabajo." size="160"
-       class="texto_objetivo_general" id="txt_og_6190">
+       class="texto_objetivo_general" id="txt_og_141">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales" class="checkbox_objetivo_general"
-       id="cb_6191"  data-idtextoasociado="txt_og_6191">
+       id="cb_142"  data-idtextoasociado="txt_og_142">
 <input type="text" value="z) Reconocer sus derechos y deberes como agente activo en la sociedad, teniendo en cuenta el marco legal que regula las condiciones sociales y laborales para participar como ciudadano democrático." size="160"
-       class="texto_objetivo_general" id="txt_og_6191">
+       class="texto_objetivo_general" id="txt_og_142">
 <br/>
 
 <br/>
@@ -427,184 +468,184 @@ Marcar/desmarcar todos los objetivos generales
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6166"  data-idtextoasociado="txt_ogsl_6166">
+       id="cbsl_117"  data-idtextoasociado="txt_ogsl_117">
 <input type="text" value="Identificar y organizar los componentes físicos y lógicos que conforman un sistema microinformático y/o red de transmisión de datos clasificándolos de acuerdo a su función para acopiarlos según su finalidad." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6166">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_117">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6167"  data-idtextoasociado="txt_ogsl_6167">
+       id="cbsl_118"  data-idtextoasociado="txt_ogsl_118">
 <input type="text" value="Ensamblar y conectar componentes y periféricos utilizando las herramientas adecuadas, aplicando procedimientos y normas, para montar sistemas microinformáticos y redes." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6167">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_118">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6168"  data-idtextoasociado="txt_ogsl_6168">
+       id="cbsl_119"  data-idtextoasociado="txt_ogsl_119">
 <input type="text" value="Aplicar técnicas de localización de averías sencillas en los sistemas y equipos informáticos siguiendo pautas establecidas para mantener sistemas microinformáticos y redes locales." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6168">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_119">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6169"  data-idtextoasociado="txt_ogsl_6169">
+       id="cbsl_120"  data-idtextoasociado="txt_ogsl_120">
 <input type="text" value="Sustituir y ajustar componentes físicos y lógicos para mantener sistemas microinformáticos y redes locales." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6169">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_120">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6170"  data-idtextoasociado="txt_ogsl_6170">
+       id="cbsl_121"  data-idtextoasociado="txt_ogsl_121">
 <input type="text" value="Interpretar y aplicar las instrucciones de catálogos de fabricantes de equipos y sistemas para transportar y almacenar elementos y equipos de los sistemas informáticos y redes." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6170">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_121">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6171"  data-idtextoasociado="txt_ogsl_6171">
+       id="cbsl_122"  data-idtextoasociado="txt_ogsl_122">
 <input type="text" value="Identificar y aplicar técnicas de verificación en el montaje y el mantenimiento siguiendo pautas establecidas para realizar comprobaciones rutinarias." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6171">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_122">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6172"  data-idtextoasociado="txt_ogsl_6172">
+       id="cbsl_123"  data-idtextoasociado="txt_ogsl_123">
 <input type="text" value="Ubicar y fijar canalizaciones y demás elementos de una red local cableada, inalámbrica o mixta, aplicando procedimientos de montaje y protocolos de calidad y seguridad, para instalar y configurar redes locales." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6172">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_123">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6173"  data-idtextoasociado="txt_ogsl_6173">
+       id="cbsl_124"  data-idtextoasociado="txt_ogsl_124">
 <input type="text" value="Aplicar técnicas de preparado, conformado y guiado de cables, preparando los espacios y manejando equipos y herramientas para tender el cableado en redes de datos." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6173">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_124">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6174"  data-idtextoasociado="txt_ogsl_6174">
+       id="cbsl_125"  data-idtextoasociado="txt_ogsl_125">
 <input type="text" value="Reconocer las herramientas del sistema operativo y periféricos manejándolas para realizar configuraciones y resolver problemas de acuerdo a las instrucciones del fabricante." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6174">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_125">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6175"  data-idtextoasociado="txt_ogsl_6175">
+       id="cbsl_126"  data-idtextoasociado="txt_ogsl_126">
 <input type="text" value="Elaborar y modificar informes sencillos y fichas de trabajo para manejar aplicaciones ofimáticas de procesadores de texto." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6175">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_126">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6176"  data-idtextoasociado="txt_ogsl_6176">
+       id="cbsl_127"  data-idtextoasociado="txt_ogsl_127">
 <input type="text" value="Comprender los fenómenos que acontecen en el entorno natural mediante el conocimiento científico como un saber integrado, así como conocer y aplicar los métodos para identificar y resolver problemas básicos en los diversos campos del conocimiento y de la experiencia." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6176">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_127">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6177"  data-idtextoasociado="txt_ogsl_6177">
+       id="cbsl_128"  data-idtextoasociado="txt_ogsl_128">
 <input type="text" value="Desarrollar habilidades para formular, plantear, interpretar y resolver problemas aplicar el razonamiento de cálculo matemático para desenvolverse en la sociedad, en el entorno laboral y gestionar sus recursos económicos." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6177">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_128">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6178"  data-idtextoasociado="txt_ogsl_6178">
+       id="cbsl_129"  data-idtextoasociado="txt_ogsl_129">
 <input type="text" value="Identificar y comprender los aspectos básicos de funcionamiento del cuerpo humano y ponerlos en relación con la salud individual y colectiva y valorar la higiene y la salud para permitir el desarrollo y afianzamiento de hábitos saludables de vida en función del entorno en el que se encuentra." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6178">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_129">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6179"  data-idtextoasociado="txt_ogsl_6179">
+       id="cbsl_130"  data-idtextoasociado="txt_ogsl_130">
 <input type="text" value="Desarrollar hábitos y valores acordes con la conservación y sostenibilidad del patrimonio natural, comprendiendo la interacción entre los seres vivos y el medio natural para valorar las consecuencias que se derivan de la acción humana sobre el equilibrio medioambiental." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6179">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_130">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6180"  data-idtextoasociado="txt_ogsl_6180">
+       id="cbsl_131"  data-idtextoasociado="txt_ogsl_131">
 <input type="text" value="Desarrollar las destrezas básicas de las fuentes de información utilizando con sentido crítico las tecnologías de la información y de la comunicación para obtener y comunicar información en el entorno personal, social o profesional. o) Reconocer características básicas de producciones culturales y artísticas, aplicando técnicas de análisis básico de sus elementos para actuar con respeto y sensibilidad hacia la diversidad cultural, el patrimonio histórico- artístico y las manifestaciones culturales y artísticas." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6180">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_131">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6181"  data-idtextoasociado="txt_ogsl_6181">
+       id="cbsl_132"  data-idtextoasociado="txt_ogsl_132">
 <input type="text" value="Desarrollar y afianzar habilidades y destrezas lingüísticas y alcanzar el nivel de precisión, claridad y fluidez requeridas, utilizando los conocimientos sobre la lengua castellana y, en su caso, la lengua cooficial para comunicarse en su entorno social, en su vida cotidiana y en la actividad laboral." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6181">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_132">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6182"  data-idtextoasociado="txt_ogsl_6182">
+       id="cbsl_133"  data-idtextoasociado="txt_ogsl_133">
 <input type="text" value="Desarrollar habilidades lingüísticas básicas en lengua extranjera para comunicarse de forma oral y escrita en situaciones habituales y predecibles de la vida cotidiana y profesional." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6182">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_133">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6183"  data-idtextoasociado="txt_ogsl_6183">
+       id="cbsl_134"  data-idtextoasociado="txt_ogsl_134">
 <input type="text" value="Reconocer causas y rasgos propios de fenómenos y acontecimientos contemporáneos, evolución histórica, distribución geográfica para explicar las características propias de las sociedades contemporáneas." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6183">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_134">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6184"  data-idtextoasociado="txt_ogsl_6184">
+       id="cbsl_135"  data-idtextoasociado="txt_ogsl_135">
 <input type="text" value="Desarrollar valores y hábitos de comportamiento basados en principios democráticos, aplicándolos en sus relaciones sociales habituales y en la resolución pacífica de los conflictos." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6184">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_135">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6185"  data-idtextoasociado="txt_ogsl_6185">
+       id="cbsl_136"  data-idtextoasociado="txt_ogsl_136">
 <input type="text" value="Comparar y seleccionar recursos y ofertas formativas existentes para el aprendizaje a lo largo de la vida para adaptarse a las nuevas situaciones laborales y personales." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6185">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_136">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6186"  data-idtextoasociado="txt_ogsl_6186">
+       id="cbsl_137"  data-idtextoasociado="txt_ogsl_137">
 <input type="text" value="Desarrollar la iniciativa, la creatividad y el espíritu emprendedor, así como la confianza en sí mismo, la participación y el espíritu crítico para resolver situaciones e incidencias tanto de la actividad profesional como de la personal." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6186">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_137">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6187"  data-idtextoasociado="txt_ogsl_6187">
+       id="cbsl_138"  data-idtextoasociado="txt_ogsl_138">
 <input type="text" value="Desarrollar trabajos en equipo, asumiendo sus deberes, respetando a los demás y cooperando con ellos, actuando con tolerancia y respeto a los demás para la realización eficaz de las tareas y como medio de desarrollo personal." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6187">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_138">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6188"  data-idtextoasociado="txt_ogsl_6188">
+       id="cbsl_139"  data-idtextoasociado="txt_ogsl_139">
 <input type="text" value="Utilizar las tecnologías de la información y de la comunicación para informarse, comunicarse, aprender y facilitarse las tareas laborales." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6188">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_139">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6189"  data-idtextoasociado="txt_ogsl_6189">
+       id="cbsl_140"  data-idtextoasociado="txt_ogsl_140">
 <input type="text" value="Relacionar los riesgos laborales y ambientales con la actividad laboral con el propósito de utilizar las medidas preventivas correspondientes para la protección personal, evitando daños a las demás personas y en el medio ambiente." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6189">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_140">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6190"  data-idtextoasociado="txt_ogsl_6190">
+       id="cbsl_141"  data-idtextoasociado="txt_ogsl_141">
 <input type="text" value="Desarrollar las técnicas de su actividad profesional asegurando la eficacia y la calidad en su trabajo, proponiendo, si procede, mejoras en las actividades de trabajo." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6190">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_141">
 <br/>
 
 
 <input type="checkbox" name="objetivos_generales_sin_letra[]" class="checkbox_objetivo_general_sin_letra"
-       id="cbsl_6191"  data-idtextoasociado="txt_ogsl_6191">
+       id="cbsl_142"  data-idtextoasociado="txt_ogsl_142">
 <input type="text" value="Reconocer sus derechos y deberes como agente activo en la sociedad, teniendo en cuenta el marco legal que regula las condiciones sociales y laborales para participar como ciudadano democrático." size="160"
-       class="texto_objetivo_general_sin_letra" id="txt_ogsl_6191">
+       class="texto_objetivo_general_sin_letra" id="txt_ogsl_142">
 <br/>
 
 <br/>
@@ -623,123 +664,123 @@ Marcar/desmarcar todos los objetivos generales
                               ".competencias" )'> Marcar todos <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6016">
-     <input type="text" value="Acopiar los materiales para acometer el montaje y/o mantenimiento en sistemas microinformáticos y redes de transmisión de datos." id="texto_6016" size="160">
+         id="competencia_" data-idtextoasociado="texto_121">
+     <input type="text" value="Acopiar los materiales para acometer el montaje y/o mantenimiento en sistemas microinformáticos y redes de transmisión de datos." id="texto_121" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6017">
-     <input type="text" value="Realizar operaciones auxiliares de montaje de sistemas microinformáticos y dispositivos auxiliares en condiciones de calidad." id="texto_6017" size="160">
+         id="competencia_" data-idtextoasociado="texto_122">
+     <input type="text" value="Realizar operaciones auxiliares de montaje de sistemas microinformáticos y dispositivos auxiliares en condiciones de calidad." id="texto_122" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6018">
-     <input type="text" value="Realizar operaciones auxiliares de mantenimiento y reparación de sistemas microinformáticos garantizando su funcionamiento." id="texto_6018" size="160">
+         id="competencia_" data-idtextoasociado="texto_123">
+     <input type="text" value="Realizar operaciones auxiliares de mantenimiento y reparación de sistemas microinformáticos garantizando su funcionamiento." id="texto_123" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6019">
-     <input type="text" value="Realizar las operaciones para el almacenamiento y transporte de sistemas, periféricos y consumibles, siguiendo criterios de seguridad y catalogación." id="texto_6019" size="160">
+         id="competencia_" data-idtextoasociado="texto_124">
+     <input type="text" value="Realizar las operaciones para el almacenamiento y transporte de sistemas, periféricos y consumibles, siguiendo criterios de seguridad y catalogación." id="texto_124" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6020">
-     <input type="text" value="Realizar comprobaciones rutinarias de verificación en el montaje y mantenimiento de sistemas y/o instalaciones." id="texto_6020" size="160">
+         id="competencia_" data-idtextoasociado="texto_125">
+     <input type="text" value="Realizar comprobaciones rutinarias de verificación en el montaje y mantenimiento de sistemas y/o instalaciones." id="texto_125" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6021">
-     <input type="text" value="Montar canalizaciones para cableado de datos en condiciones de calidad y seguridad." id="texto_6021" size="160">
+         id="competencia_" data-idtextoasociado="texto_126">
+     <input type="text" value="Montar canalizaciones para cableado de datos en condiciones de calidad y seguridad." id="texto_126" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6022">
-     <input type="text" value="Tender el cableado de redes de datos aplicando las técnicas y procedimientos normalizados." id="texto_6022" size="160">
+         id="competencia_" data-idtextoasociado="texto_127">
+     <input type="text" value="Tender el cableado de redes de datos aplicando las técnicas y procedimientos normalizados." id="texto_127" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6023">
-     <input type="text" value="Manejar las herramientas del entorno usuario proporcionadas por el sistema operativo y los dispositivos de almacenamiento de información." id="texto_6023" size="160">
+         id="competencia_" data-idtextoasociado="texto_128">
+     <input type="text" value="Manejar las herramientas del entorno usuario proporcionadas por el sistema operativo y los dispositivos de almacenamiento de información." id="texto_128" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6024">
-     <input type="text" value="Manejar aplicaciones ofimáticas de procesador de textos para realizar documentos sencillos." id="texto_6024" size="160">
+         id="competencia_" data-idtextoasociado="texto_129">
+     <input type="text" value="Manejar aplicaciones ofimáticas de procesador de textos para realizar documentos sencillos." id="texto_129" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6025">
-     <input type="text" value="Resolver problemas predecibles relacionados con su entorno físico, social, personal y productivo, utilizando el razonamiento científico y los elementos proporcionados por las ciencias aplicadas y sociales." id="texto_6025" size="160">
+         id="competencia_" data-idtextoasociado="texto_130">
+     <input type="text" value="Resolver problemas predecibles relacionados con su entorno físico, social, personal y productivo, utilizando el razonamiento científico y los elementos proporcionados por las ciencias aplicadas y sociales." id="texto_130" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6026">
-     <input type="text" value="Actuar de forma saludable en distintos contextos cotidianos que favorezcan el desarrollo personal y social, analizando hábitos e influencias positivas para la salud humana." id="texto_6026" size="160">
+         id="competencia_" data-idtextoasociado="texto_131">
+     <input type="text" value="Actuar de forma saludable en distintos contextos cotidianos que favorezcan el desarrollo personal y social, analizando hábitos e influencias positivas para la salud humana." id="texto_131" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6027">
-     <input type="text" value="Valorar actuaciones encaminadas a la conservación del medio ambiente diferenciando las consecuencias de las actividades cotidianas que pueda afectar al equilibrio del mismo." id="texto_6027" size="160">
+         id="competencia_" data-idtextoasociado="texto_132">
+     <input type="text" value="Valorar actuaciones encaminadas a la conservación del medio ambiente diferenciando las consecuencias de las actividades cotidianas que pueda afectar al equilibrio del mismo." id="texto_132" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6028">
-     <input type="text" value="Obtener y comunicar información destinada al autoaprendizaje y a su uso en distintos contextos de su entorno personal, social o profesional mediante recursos a su alcance y los propios de las tecnologías de la información y de la comunicación." id="texto_6028" size="160">
+         id="competencia_" data-idtextoasociado="texto_133">
+     <input type="text" value="Obtener y comunicar información destinada al autoaprendizaje y a su uso en distintos contextos de su entorno personal, social o profesional mediante recursos a su alcance y los propios de las tecnologías de la información y de la comunicación." id="texto_133" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6029">
-     <input type="text" value="Actuar con respeto y sensibilidad hacia la diversidad cultural, el patrimonio histórico-artístico y las manifestaciones culturales y artísticas, apreciando su uso y disfrute como fuente de enriquecimiento personal y social." id="texto_6029" size="160">
+         id="competencia_" data-idtextoasociado="texto_134">
+     <input type="text" value="Actuar con respeto y sensibilidad hacia la diversidad cultural, el patrimonio histórico-artístico y las manifestaciones culturales y artísticas, apreciando su uso y disfrute como fuente de enriquecimiento personal y social." id="texto_134" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6030">
-     <input type="text" value="Comunicarse con claridad, precisión y fluidez en distintos contextos sociales o profesionales y por distintos medios, canales y soportes a su alcance, utilizando y adecuando recursos lingüísticos orales y escritos propios de la lengua castellana y, en su caso, de la lengua cooficial." id="texto_6030" size="160">
+         id="competencia_" data-idtextoasociado="texto_135">
+     <input type="text" value="Comunicarse con claridad, precisión y fluidez en distintos contextos sociales o profesionales y por distintos medios, canales y soportes a su alcance, utilizando y adecuando recursos lingüísticos orales y escritos propios de la lengua castellana y, en su caso, de la lengua cooficial." id="texto_135" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6031">
-     <input type="text" value="Comunicarse en situaciones habituales tanto laborales como personales y sociales utilizando recursos lingüísticos básicos en lengua extranjera." id="texto_6031" size="160">
+         id="competencia_" data-idtextoasociado="texto_136">
+     <input type="text" value="Comunicarse en situaciones habituales tanto laborales como personales y sociales utilizando recursos lingüísticos básicos en lengua extranjera." id="texto_136" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6032">
-     <input type="text" value="Realizar explicaciones sencillas sobre acontecimientos y fenómenos característicos de las sociedades contemporáneas a partir de información histórica y geográfica a su disposición." id="texto_6032" size="160">
+         id="competencia_" data-idtextoasociado="texto_137">
+     <input type="text" value="Realizar explicaciones sencillas sobre acontecimientos y fenómenos característicos de las sociedades contemporáneas a partir de información histórica y geográfica a su disposición." id="texto_137" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6033">
-     <input type="text" value="Adaptarse a las nuevas situaciones laborales originadas por cambios tecnológicos y organizativos en su actividad laboral, utilizando las ofertas formativas a su alcance y localizando los recursos mediante las tecnologías de la información y la comunicación." id="texto_6033" size="160">
+         id="competencia_" data-idtextoasociado="texto_138">
+     <input type="text" value="Adaptarse a las nuevas situaciones laborales originadas por cambios tecnológicos y organizativos en su actividad laboral, utilizando las ofertas formativas a su alcance y localizando los recursos mediante las tecnologías de la información y la comunicación." id="texto_138" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6034">
-     <input type="text" value="Cumplir las tareas propias de su nivel con autonomía y responsabilidad, empleando criterios de calidad y eficiencia en el trabajo asignado y efectuándolo de forma individual o como miembro de un equipo." id="texto_6034" size="160">
+         id="competencia_" data-idtextoasociado="texto_139">
+     <input type="text" value="Cumplir las tareas propias de su nivel con autonomía y responsabilidad, empleando criterios de calidad y eficiencia en el trabajo asignado y efectuándolo de forma individual o como miembro de un equipo." id="texto_139" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6035">
-     <input type="text" value="Comunicarse eficazmente, respetando la autonomía y competencia de las distintas personas que intervienen en su ámbito de trabajo, contribuyendo a la calidad del trabajo realizado." id="texto_6035" size="160">
+         id="competencia_" data-idtextoasociado="texto_140">
+     <input type="text" value="Comunicarse eficazmente, respetando la autonomía y competencia de las distintas personas que intervienen en su ámbito de trabajo, contribuyendo a la calidad del trabajo realizado." id="texto_140" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6036">
-     <input type="text" value="Asumir y cumplir las medidas de prevención de riesgos y seguridad laboral en la realización de las actividades laborales evitando daños personales, laborales y ambientales." id="texto_6036" size="160">
+         id="competencia_" data-idtextoasociado="texto_141">
+     <input type="text" value="Asumir y cumplir las medidas de prevención de riesgos y seguridad laboral en la realización de las actividades laborales evitando daños personales, laborales y ambientales." id="texto_141" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6037">
-     <input type="text" value="Cumplir las normas de calidad, de accesibilidad universal y diseño para todos que afectan a su actividad profesional." id="texto_6037" size="160">
+         id="competencia_" data-idtextoasociado="texto_142">
+     <input type="text" value="Cumplir las normas de calidad, de accesibilidad universal y diseño para todos que afectan a su actividad profesional." id="texto_142" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6038">
-     <input type="text" value="Actuar con espíritu emprendedor, iniciativa personal y responsabilidad en la elección de los procedimientos de su actividad profesional." id="texto_6038" size="160">
+         id="competencia_" data-idtextoasociado="texto_143">
+     <input type="text" value="Actuar con espíritu emprendedor, iniciativa personal y responsabilidad en la elección de los procedimientos de su actividad profesional." id="texto_143" size="160">
      <br/>
      
      <input type="checkbox" class="competencias"
-         id="competencia_" data-idtextoasociado="texto_6039">
-     <input type="text" value="Ejercer sus derechos y cumplir con las obligaciones derivadas de su actividad profesional, de acuerdo con lo establecido en la legislación vigente, participando activamente en la vida económica, social y cultural." id="texto_6039" size="160">
+         id="competencia_" data-idtextoasociado="texto_144">
+     <input type="text" value="Ejercer sus derechos y cumplir con las obligaciones derivadas de su actividad profesional, de acuerdo con lo establecido en la legislación vigente, participando activamente en la vida económica, social y cultural." id="texto_144" size="160">
      <br/>
      
 
@@ -757,123 +798,123 @@ Marcar/desmarcar todos los objetivos generales
                               ".competencias_con_letra" )'> Marcar todos <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6016">
-     <input type="text" value="a) Acopiar los materiales para acometer el montaje y/o mantenimiento en sistemas microinformáticos y redes de transmisión de datos." id="texto_con_letra_6016" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_121">
+     <input type="text" value="a) Acopiar los materiales para acometer el montaje y/o mantenimiento en sistemas microinformáticos y redes de transmisión de datos." id="texto_con_letra_121" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6017">
-     <input type="text" value="b) Realizar operaciones auxiliares de montaje de sistemas microinformáticos y dispositivos auxiliares en condiciones de calidad." id="texto_con_letra_6017" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_122">
+     <input type="text" value="b) Realizar operaciones auxiliares de montaje de sistemas microinformáticos y dispositivos auxiliares en condiciones de calidad." id="texto_con_letra_122" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6018">
-     <input type="text" value="c) Realizar operaciones auxiliares de mantenimiento y reparación de sistemas microinformáticos garantizando su funcionamiento." id="texto_con_letra_6018" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_123">
+     <input type="text" value="c) Realizar operaciones auxiliares de mantenimiento y reparación de sistemas microinformáticos garantizando su funcionamiento." id="texto_con_letra_123" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6019">
-     <input type="text" value="d) Realizar las operaciones para el almacenamiento y transporte de sistemas, periféricos y consumibles, siguiendo criterios de seguridad y catalogación." id="texto_con_letra_6019" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_124">
+     <input type="text" value="d) Realizar las operaciones para el almacenamiento y transporte de sistemas, periféricos y consumibles, siguiendo criterios de seguridad y catalogación." id="texto_con_letra_124" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6020">
-     <input type="text" value="e) Realizar comprobaciones rutinarias de verificación en el montaje y mantenimiento de sistemas y/o instalaciones." id="texto_con_letra_6020" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_125">
+     <input type="text" value="e) Realizar comprobaciones rutinarias de verificación en el montaje y mantenimiento de sistemas y/o instalaciones." id="texto_con_letra_125" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6021">
-     <input type="text" value="f) Montar canalizaciones para cableado de datos en condiciones de calidad y seguridad." id="texto_con_letra_6021" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_126">
+     <input type="text" value="f) Montar canalizaciones para cableado de datos en condiciones de calidad y seguridad." id="texto_con_letra_126" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6022">
-     <input type="text" value="g) Tender el cableado de redes de datos aplicando las técnicas y procedimientos normalizados." id="texto_con_letra_6022" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_127">
+     <input type="text" value="g) Tender el cableado de redes de datos aplicando las técnicas y procedimientos normalizados." id="texto_con_letra_127" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6023">
-     <input type="text" value="h) Manejar las herramientas del entorno usuario proporcionadas por el sistema operativo y los dispositivos de almacenamiento de información." id="texto_con_letra_6023" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_128">
+     <input type="text" value="h) Manejar las herramientas del entorno usuario proporcionadas por el sistema operativo y los dispositivos de almacenamiento de información." id="texto_con_letra_128" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6024">
-     <input type="text" value="i) Manejar aplicaciones ofimáticas de procesador de textos para realizar documentos sencillos." id="texto_con_letra_6024" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_129">
+     <input type="text" value="i) Manejar aplicaciones ofimáticas de procesador de textos para realizar documentos sencillos." id="texto_con_letra_129" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6025">
-     <input type="text" value="j) Resolver problemas predecibles relacionados con su entorno físico, social, personal y productivo, utilizando el razonamiento científico y los elementos proporcionados por las ciencias aplicadas y sociales." id="texto_con_letra_6025" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_130">
+     <input type="text" value="j) Resolver problemas predecibles relacionados con su entorno físico, social, personal y productivo, utilizando el razonamiento científico y los elementos proporcionados por las ciencias aplicadas y sociales." id="texto_con_letra_130" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6026">
-     <input type="text" value="k) Actuar de forma saludable en distintos contextos cotidianos que favorezcan el desarrollo personal y social, analizando hábitos e influencias positivas para la salud humana." id="texto_con_letra_6026" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_131">
+     <input type="text" value="k) Actuar de forma saludable en distintos contextos cotidianos que favorezcan el desarrollo personal y social, analizando hábitos e influencias positivas para la salud humana." id="texto_con_letra_131" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6027">
-     <input type="text" value="l) Valorar actuaciones encaminadas a la conservación del medio ambiente diferenciando las consecuencias de las actividades cotidianas que pueda afectar al equilibrio del mismo." id="texto_con_letra_6027" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_132">
+     <input type="text" value="l) Valorar actuaciones encaminadas a la conservación del medio ambiente diferenciando las consecuencias de las actividades cotidianas que pueda afectar al equilibrio del mismo." id="texto_con_letra_132" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6028">
-     <input type="text" value="m) Obtener y comunicar información destinada al autoaprendizaje y a su uso en distintos contextos de su entorno personal, social o profesional mediante recursos a su alcance y los propios de las tecnologías de la información y de la comunicación." id="texto_con_letra_6028" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_133">
+     <input type="text" value="m) Obtener y comunicar información destinada al autoaprendizaje y a su uso en distintos contextos de su entorno personal, social o profesional mediante recursos a su alcance y los propios de las tecnologías de la información y de la comunicación." id="texto_con_letra_133" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6029">
-     <input type="text" value="n) Actuar con respeto y sensibilidad hacia la diversidad cultural, el patrimonio histórico-artístico y las manifestaciones culturales y artísticas, apreciando su uso y disfrute como fuente de enriquecimiento personal y social." id="texto_con_letra_6029" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_134">
+     <input type="text" value="n) Actuar con respeto y sensibilidad hacia la diversidad cultural, el patrimonio histórico-artístico y las manifestaciones culturales y artísticas, apreciando su uso y disfrute como fuente de enriquecimiento personal y social." id="texto_con_letra_134" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6030">
-     <input type="text" value="ñ) Comunicarse con claridad, precisión y fluidez en distintos contextos sociales o profesionales y por distintos medios, canales y soportes a su alcance, utilizando y adecuando recursos lingüísticos orales y escritos propios de la lengua castellana y, en su caso, de la lengua cooficial." id="texto_con_letra_6030" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_135">
+     <input type="text" value="ñ) Comunicarse con claridad, precisión y fluidez en distintos contextos sociales o profesionales y por distintos medios, canales y soportes a su alcance, utilizando y adecuando recursos lingüísticos orales y escritos propios de la lengua castellana y, en su caso, de la lengua cooficial." id="texto_con_letra_135" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6031">
-     <input type="text" value="o) Comunicarse en situaciones habituales tanto laborales como personales y sociales utilizando recursos lingüísticos básicos en lengua extranjera." id="texto_con_letra_6031" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_136">
+     <input type="text" value="o) Comunicarse en situaciones habituales tanto laborales como personales y sociales utilizando recursos lingüísticos básicos en lengua extranjera." id="texto_con_letra_136" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6032">
-     <input type="text" value="p) Realizar explicaciones sencillas sobre acontecimientos y fenómenos característicos de las sociedades contemporáneas a partir de información histórica y geográfica a su disposición." id="texto_con_letra_6032" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_137">
+     <input type="text" value="p) Realizar explicaciones sencillas sobre acontecimientos y fenómenos característicos de las sociedades contemporáneas a partir de información histórica y geográfica a su disposición." id="texto_con_letra_137" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6033">
-     <input type="text" value="q) Adaptarse a las nuevas situaciones laborales originadas por cambios tecnológicos y organizativos en su actividad laboral, utilizando las ofertas formativas a su alcance y localizando los recursos mediante las tecnologías de la información y la comunicación." id="texto_con_letra_6033" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_138">
+     <input type="text" value="q) Adaptarse a las nuevas situaciones laborales originadas por cambios tecnológicos y organizativos en su actividad laboral, utilizando las ofertas formativas a su alcance y localizando los recursos mediante las tecnologías de la información y la comunicación." id="texto_con_letra_138" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6034">
-     <input type="text" value="r) Cumplir las tareas propias de su nivel con autonomía y responsabilidad, empleando criterios de calidad y eficiencia en el trabajo asignado y efectuándolo de forma individual o como miembro de un equipo." id="texto_con_letra_6034" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_139">
+     <input type="text" value="r) Cumplir las tareas propias de su nivel con autonomía y responsabilidad, empleando criterios de calidad y eficiencia en el trabajo asignado y efectuándolo de forma individual o como miembro de un equipo." id="texto_con_letra_139" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6035">
-     <input type="text" value="s) Comunicarse eficazmente, respetando la autonomía y competencia de las distintas personas que intervienen en su ámbito de trabajo, contribuyendo a la calidad del trabajo realizado." id="texto_con_letra_6035" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_140">
+     <input type="text" value="s) Comunicarse eficazmente, respetando la autonomía y competencia de las distintas personas que intervienen en su ámbito de trabajo, contribuyendo a la calidad del trabajo realizado." id="texto_con_letra_140" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6036">
-     <input type="text" value="t) Asumir y cumplir las medidas de prevención de riesgos y seguridad laboral en la realización de las actividades laborales evitando daños personales, laborales y ambientales." id="texto_con_letra_6036" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_141">
+     <input type="text" value="t) Asumir y cumplir las medidas de prevención de riesgos y seguridad laboral en la realización de las actividades laborales evitando daños personales, laborales y ambientales." id="texto_con_letra_141" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6037">
-     <input type="text" value="u) Cumplir las normas de calidad, de accesibilidad universal y diseño para todos que afectan a su actividad profesional." id="texto_con_letra_6037" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_142">
+     <input type="text" value="u) Cumplir las normas de calidad, de accesibilidad universal y diseño para todos que afectan a su actividad profesional." id="texto_con_letra_142" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6038">
-     <input type="text" value="v) Actuar con espíritu emprendedor, iniciativa personal y responsabilidad en la elección de los procedimientos de su actividad profesional." id="texto_con_letra_6038" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_143">
+     <input type="text" value="v) Actuar con espíritu emprendedor, iniciativa personal y responsabilidad en la elección de los procedimientos de su actividad profesional." id="texto_con_letra_143" size="160">
      <br/>
      
      <input type="checkbox" class="competencias_con_letra"
-         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_6039">
-     <input type="text" value="w) Ejercer sus derechos y cumplir con las obligaciones derivadas de su actividad profesional, de acuerdo con lo establecido en la legislación vigente, participando activamente en la vida económica, social y cultural." id="texto_con_letra_6039" size="160">
+         id="competencia_con_letra_" data-idtextoasociado="texto_con_letra_144">
+     <input type="text" value="w) Ejercer sus derechos y cumplir con las obligaciones derivadas de su actividad profesional, de acuerdo con lo establecido en la legislación vigente, participando activamente en la vida económica, social y cultural." id="texto_con_letra_144" size="160">
      <br/>
      
 
@@ -897,44 +938,44 @@ Marcar/desmarcar todos los resultados de aprendizaje
 
 
 <input type="checkbox" name="resultado_aprendizaje_con_letra[]" class="checkbox_resultado_aprendizaje_con_letra"
-       id="cbra_14639"  data-idtextoasociado="txt_racl_14639">
+       id="cbra_370"  data-idtextoasociado="txt_racl_370">
 <input type="text" value="1) Selecciona los elementos que configuran las redes para la transmisión de voz y datos, describiendo sus principales características y funcionalidad." size="160"
-       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_14639">
+       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_370">
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_con_letra[]" class="checkbox_resultado_aprendizaje_con_letra"
-       id="cbra_14640"  data-idtextoasociado="txt_racl_14640">
+       id="cbra_371"  data-idtextoasociado="txt_racl_371">
 <input type="text" value="2) Monta canalizaciones, soportes y armarios en redes de transmisión de voz y datos, identificando los elementos en el plano de la instalación y aplicando técnicas de montaje." size="160"
-       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_14640">
+       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_371">
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_con_letra[]" class="checkbox_resultado_aprendizaje_con_letra"
-       id="cbra_14641"  data-idtextoasociado="txt_racl_14641">
+       id="cbra_372"  data-idtextoasociado="txt_racl_372">
 <input type="text" value="3) Despliega el cableado de una red de voz y datos analizando su trazado." size="160"
-       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_14641">
+       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_372">
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_con_letra[]" class="checkbox_resultado_aprendizaje_con_letra"
-       id="cbra_14642"  data-idtextoasociado="txt_racl_14642">
+       id="cbra_373"  data-idtextoasociado="txt_racl_373">
 <input type="text" value="4) Instala elementos y sistemas de transmisión de voz y datos, reconociendo y aplicando las diferentes técnicas de montaje." size="160"
-       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_14642">
+       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_373">
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_con_letra[]" class="checkbox_resultado_aprendizaje_con_letra"
-       id="cbra_14643"  data-idtextoasociado="txt_racl_14643">
+       id="cbra_374"  data-idtextoasociado="txt_racl_374">
 <input type="text" value="5) Realiza operaciones básicas de configuración en redes locales cableadas relacionándolas con sus aplicaciones." size="160"
-       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_14643">
+       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_374">
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_con_letra[]" class="checkbox_resultado_aprendizaje_con_letra"
-       id="cbra_14644"  data-idtextoasociado="txt_racl_14644">
+       id="cbra_375"  data-idtextoasociado="txt_racl_375">
 <input type="text" value="6) Cumple las normas de prevención de riesgos laborales y de protección ambiental, identificando los riesgos asociados, las medidas y sistemas para prevenirlos." size="160"
-       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_14644">
+       class="texto_resultado_aprendizaje_con_letra" id="txt_racl_375">
 <br/>
 
 <br/>
@@ -958,49 +999,49 @@ Marcar/desmarcar todos los resultados de aprendizaje
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14639"  data-idtextoasociado="txt_rasl_14639">
+       id="cbrasl_370"  data-idtextoasociado="txt_rasl_370">
 <input type="text" value="Selecciona los elementos que configuran las redes para la transmisión de voz y datos, describiendo sus principales características y funcionalidad." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14639">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_370">
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14640"  data-idtextoasociado="txt_rasl_14640">
+       id="cbrasl_371"  data-idtextoasociado="txt_rasl_371">
 <input type="text" value="Monta canalizaciones, soportes y armarios en redes de transmisión de voz y datos, identificando los elementos en el plano de la instalación y aplicando técnicas de montaje." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14640">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_371">
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14641"  data-idtextoasociado="txt_rasl_14641">
+       id="cbrasl_372"  data-idtextoasociado="txt_rasl_372">
 <input type="text" value="Despliega el cableado de una red de voz y datos analizando su trazado." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14641">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_372">
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14642"  data-idtextoasociado="txt_rasl_14642">
+       id="cbrasl_373"  data-idtextoasociado="txt_rasl_373">
 <input type="text" value="Instala elementos y sistemas de transmisión de voz y datos, reconociendo y aplicando las diferentes técnicas de montaje." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14642">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_373">
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14643"  data-idtextoasociado="txt_rasl_14643">
+       id="cbrasl_374"  data-idtextoasociado="txt_rasl_374">
 <input type="text" value="Realiza operaciones básicas de configuración en redes locales cableadas relacionándolas con sus aplicaciones." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14643">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_374">
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14644"  data-idtextoasociado="txt_rasl_14644">
+       id="cbrasl_375"  data-idtextoasociado="txt_rasl_375">
 <input type="text" value="Cumple las normas de prevención de riesgos laborales y de protección ambiental, identificando los riesgos asociados, las medidas y sistemas para prevenirlos." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14644">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_375">
         
 <br/>
 
@@ -1023,358 +1064,358 @@ Marcar/desmarcar todos los resultados de aprendizaje
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14639"  data-idtextoasociado="txt_rasl_14639">
+       id="cbrasl_370"  data-idtextoasociado="txt_rasl_370">
 <input type="text" value="Selecciona los elementos que configuran las redes para la transmisión de voz y datos, describiendo sus principales características y funcionalidad." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14639">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_370">
         <div class="criterios">
             Criterios:<br/>
-            <input type="checkbox" id="todos_criterios_asociados_a_resultado_14639"
-                   onclick='conmutar("#todos_criterios_asociados_a_resultado_14639",
-                                     ".criterio_sin_letra_asociado_a_resultado_14639" )'> Marcar todos <br/>
+            <input type="checkbox" id="todos_criterios_asociados_a_resultado_370"
+                   onclick='conmutar("#todos_criterios_asociados_a_resultado_370",
+                                     ".criterio_sin_letra_asociado_a_resultado_370" )'> Marcar todos <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14639"
-                id="cbsl_121356" data-idtextoasociado="criterio_121356">
-            <input type="text" value="a) Se han identificado los tipos de instalaciones relacionados con las redes de transmisión de voz y datos." id="criterio_121356" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_370"
+                id="cbsl_3036" data-idtextoasociado="criterio_3036">
+            <input type="text" value="a) Se han identificado los tipos de instalaciones relacionados con las redes de transmisión de voz y datos." id="criterio_3036" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14639"
-                id="cbsl_121357" data-idtextoasociado="criterio_121357">
-            <input type="text" value="b) Se han identificado los elementos (canalizaciones, cableados, antenas, armarios, «racks» y cajas, entre otros) de una red de transmisión de datos." id="criterio_121357" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_370"
+                id="cbsl_3037" data-idtextoasociado="criterio_3037">
+            <input type="text" value="b) Se han identificado los elementos (canalizaciones, cableados, antenas, armarios, «racks» y cajas, entre otros) de una red de transmisión de datos." id="criterio_3037" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14639"
-                id="cbsl_121358" data-idtextoasociado="criterio_121358">
-            <input type="text" value="c) Se han clasificado los tipos de conductores (par de cobre, cable coaxial, fibra óptica, entre otros)." id="criterio_121358" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_370"
+                id="cbsl_3038" data-idtextoasociado="criterio_3038">
+            <input type="text" value="c) Se han clasificado los tipos de conductores (par de cobre, cable coaxial, fibra óptica, entre otros)." id="criterio_3038" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14639"
-                id="cbsl_121359" data-idtextoasociado="criterio_121359">
-            <input type="text" value="d) Se ha determinado la tipología de las diferentes cajas (registros, armarios, «racks», cajas de superficie, de empotrar, entre otros)." id="criterio_121359" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_370"
+                id="cbsl_3039" data-idtextoasociado="criterio_3039">
+            <input type="text" value="d) Se ha determinado la tipología de las diferentes cajas (registros, armarios, «racks», cajas de superficie, de empotrar, entre otros)." id="criterio_3039" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14639"
-                id="cbsl_121360" data-idtextoasociado="criterio_121360">
-            <input type="text" value="e) Se han descrito los tipos de fijaciones (tacos, bridas, tornillos, tuercas, grapas, entre otros) de canalizaciones y sistemas." id="criterio_121360" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_370"
+                id="cbsl_3040" data-idtextoasociado="criterio_3040">
+            <input type="text" value="e) Se han descrito los tipos de fijaciones (tacos, bridas, tornillos, tuercas, grapas, entre otros) de canalizaciones y sistemas." id="criterio_3040" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14639"
-                id="cbsl_121361" data-idtextoasociado="criterio_121361">
-            <input type="text" value="f) Se han relacionado las fijaciones con el elemento a sujetar." id="criterio_121361" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_370"
+                id="cbsl_3041" data-idtextoasociado="criterio_3041">
+            <input type="text" value="f) Se han relacionado las fijaciones con el elemento a sujetar." id="criterio_3041" size="140">
             <br/>
             
             <br/>
             
             <input type="submit" value="Copiar al portapapeles los criterios seleccionados en este bloque" class="boton_copiar"
                    onclick=" copiar_textos_asociados_a_checkbox(
-                '.criterio_sin_letra_asociado_a_resultado_14639:checked',
-                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14639');   return false">
+                '.criterio_sin_letra_asociado_a_resultado_370:checked',
+                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado370');   return false">
             
-            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14639"></textarea>
+            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado370"></textarea>
         </div>
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14640"  data-idtextoasociado="txt_rasl_14640">
+       id="cbrasl_371"  data-idtextoasociado="txt_rasl_371">
 <input type="text" value="Monta canalizaciones, soportes y armarios en redes de transmisión de voz y datos, identificando los elementos en el plano de la instalación y aplicando técnicas de montaje." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14640">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_371">
         <div class="criterios">
             Criterios:<br/>
-            <input type="checkbox" id="todos_criterios_asociados_a_resultado_14640"
-                   onclick='conmutar("#todos_criterios_asociados_a_resultado_14640",
-                                     ".criterio_sin_letra_asociado_a_resultado_14640" )'> Marcar todos <br/>
+            <input type="checkbox" id="todos_criterios_asociados_a_resultado_371"
+                   onclick='conmutar("#todos_criterios_asociados_a_resultado_371",
+                                     ".criterio_sin_letra_asociado_a_resultado_371" )'> Marcar todos <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14640"
-                id="cbsl_121362" data-idtextoasociado="criterio_121362">
-            <input type="text" value="a) Se han seleccionado las técnicas y herramientas empleadas para la instalación de canalizaciones y su adaptación." id="criterio_121362" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_371"
+                id="cbsl_3042" data-idtextoasociado="criterio_3042">
+            <input type="text" value="a) Se han seleccionado las técnicas y herramientas empleadas para la instalación de canalizaciones y su adaptación." id="criterio_3042" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14640"
-                id="cbsl_121363" data-idtextoasociado="criterio_121363">
-            <input type="text" value="b) Se han tenido en cuenta las fases típicas para el montaje de un «rack»." id="criterio_121363" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_371"
+                id="cbsl_3043" data-idtextoasociado="criterio_3043">
+            <input type="text" value="b) Se han tenido en cuenta las fases típicas para el montaje de un «rack»." id="criterio_3043" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14640"
-                id="cbsl_121364" data-idtextoasociado="criterio_121364">
-            <input type="text" value="c) Se han identificado en un croquis del edificio o parte del edificio los lugares de ubicación de los elementos de la instalación." id="criterio_121364" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_371"
+                id="cbsl_3044" data-idtextoasociado="criterio_3044">
+            <input type="text" value="c) Se han identificado en un croquis del edificio o parte del edificio los lugares de ubicación de los elementos de la instalación." id="criterio_3044" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14640"
-                id="cbsl_121365" data-idtextoasociado="criterio_121365">
-            <input type="text" value="d) Se ha preparado la ubicación de cajas y canalizaciones." id="criterio_121365" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_371"
+                id="cbsl_3045" data-idtextoasociado="criterio_3045">
+            <input type="text" value="d) Se ha preparado la ubicación de cajas y canalizaciones." id="criterio_3045" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14640"
-                id="cbsl_121366" data-idtextoasociado="criterio_121366">
-            <input type="text" value="e) Se han preparado y/o mecanizado las canalizaciones y cajas." id="criterio_121366" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_371"
+                id="cbsl_3046" data-idtextoasociado="criterio_3046">
+            <input type="text" value="e) Se han preparado y/o mecanizado las canalizaciones y cajas." id="criterio_3046" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14640"
-                id="cbsl_121367" data-idtextoasociado="criterio_121367">
-            <input type="text" value="f) Se han montado los armarios («racks») interpretando el plano." id="criterio_121367" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_371"
+                id="cbsl_3047" data-idtextoasociado="criterio_3047">
+            <input type="text" value="f) Se han montado los armarios («racks») interpretando el plano." id="criterio_3047" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14640"
-                id="cbsl_121368" data-idtextoasociado="criterio_121368">
-            <input type="text" value="g) Se han montado canalizaciones, cajas y tubos, entre otros, asegurando su fijación mecánica." id="criterio_121368" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_371"
+                id="cbsl_3048" data-idtextoasociado="criterio_3048">
+            <input type="text" value="g) Se han montado canalizaciones, cajas y tubos, entre otros, asegurando su fijación mecánica." id="criterio_3048" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14640"
-                id="cbsl_121369" data-idtextoasociado="criterio_121369">
-            <input type="text" value="h) Se han aplicado normas de seguridad en el uso de herramientas y sistemas." id="criterio_121369" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_371"
+                id="cbsl_3049" data-idtextoasociado="criterio_3049">
+            <input type="text" value="h) Se han aplicado normas de seguridad en el uso de herramientas y sistemas." id="criterio_3049" size="140">
             <br/>
             
             <br/>
             
             <input type="submit" value="Copiar al portapapeles los criterios seleccionados en este bloque" class="boton_copiar"
                    onclick=" copiar_textos_asociados_a_checkbox(
-                '.criterio_sin_letra_asociado_a_resultado_14640:checked',
-                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14640');   return false">
+                '.criterio_sin_letra_asociado_a_resultado_371:checked',
+                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado371');   return false">
             
-            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14640"></textarea>
+            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado371"></textarea>
         </div>
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14641"  data-idtextoasociado="txt_rasl_14641">
+       id="cbrasl_372"  data-idtextoasociado="txt_rasl_372">
 <input type="text" value="Despliega el cableado de una red de voz y datos analizando su trazado." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14641">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_372">
         <div class="criterios">
             Criterios:<br/>
-            <input type="checkbox" id="todos_criterios_asociados_a_resultado_14641"
-                   onclick='conmutar("#todos_criterios_asociados_a_resultado_14641",
-                                     ".criterio_sin_letra_asociado_a_resultado_14641" )'> Marcar todos <br/>
+            <input type="checkbox" id="todos_criterios_asociados_a_resultado_372"
+                   onclick='conmutar("#todos_criterios_asociados_a_resultado_372",
+                                     ".criterio_sin_letra_asociado_a_resultado_372" )'> Marcar todos <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14641"
-                id="cbsl_121370" data-idtextoasociado="criterio_121370">
-            <input type="text" value="a) Se han diferenciado los medios de transmisión empleados para voz y datos." id="criterio_121370" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_372"
+                id="cbsl_3050" data-idtextoasociado="criterio_3050">
+            <input type="text" value="a) Se han diferenciado los medios de transmisión empleados para voz y datos." id="criterio_3050" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14641"
-                id="cbsl_121371" data-idtextoasociado="criterio_121371">
-            <input type="text" value="b) Se han reconocido los detalles del cableado de la instalación y su despliegue (categoría del cableado, espacios por los que discurre, soporte para las canalizaciones, entre otros)." id="criterio_121371" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_372"
+                id="cbsl_3051" data-idtextoasociado="criterio_3051">
+            <input type="text" value="b) Se han reconocido los detalles del cableado de la instalación y su despliegue (categoría del cableado, espacios por los que discurre, soporte para las canalizaciones, entre otros)." id="criterio_3051" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14641"
-                id="cbsl_121372" data-idtextoasociado="criterio_121372">
-            <input type="text" value="c) Se han utilizado los tipos de guías pasacables, indicando la forma óptima de sujetar cables y guía." id="criterio_121372" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_372"
+                id="cbsl_3052" data-idtextoasociado="criterio_3052">
+            <input type="text" value="c) Se han utilizado los tipos de guías pasacables, indicando la forma óptima de sujetar cables y guía." id="criterio_3052" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14641"
-                id="cbsl_121373" data-idtextoasociado="criterio_121373">
-            <input type="text" value="d) Se ha cortado y etiquetado el cable." id="criterio_121373" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_372"
+                id="cbsl_3053" data-idtextoasociado="criterio_3053">
+            <input type="text" value="d) Se ha cortado y etiquetado el cable." id="criterio_3053" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14641"
-                id="cbsl_121374" data-idtextoasociado="criterio_121374">
-            <input type="text" value="e) Se han montado los armarios de comunicaciones y sus accesorios." id="criterio_121374" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_372"
+                id="cbsl_3054" data-idtextoasociado="criterio_3054">
+            <input type="text" value="e) Se han montado los armarios de comunicaciones y sus accesorios." id="criterio_3054" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14641"
-                id="cbsl_121375" data-idtextoasociado="criterio_121375">
-            <input type="text" value="f) Se han montado y conexionado las tomas de usuario y paneles de parcheo." id="criterio_121375" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_372"
+                id="cbsl_3055" data-idtextoasociado="criterio_3055">
+            <input type="text" value="f) Se han montado y conexionado las tomas de usuario y paneles de parcheo." id="criterio_3055" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14641"
-                id="cbsl_121376" data-idtextoasociado="criterio_121376">
-            <input type="text" value="g) Se ha trabajado con la calidad y seguridad requeridas." id="criterio_121376" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_372"
+                id="cbsl_3056" data-idtextoasociado="criterio_3056">
+            <input type="text" value="g) Se ha trabajado con la calidad y seguridad requeridas." id="criterio_3056" size="140">
             <br/>
             
             <br/>
             
             <input type="submit" value="Copiar al portapapeles los criterios seleccionados en este bloque" class="boton_copiar"
                    onclick=" copiar_textos_asociados_a_checkbox(
-                '.criterio_sin_letra_asociado_a_resultado_14641:checked',
-                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14641');   return false">
+                '.criterio_sin_letra_asociado_a_resultado_372:checked',
+                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado372');   return false">
             
-            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14641"></textarea>
+            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado372"></textarea>
         </div>
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14642"  data-idtextoasociado="txt_rasl_14642">
+       id="cbrasl_373"  data-idtextoasociado="txt_rasl_373">
 <input type="text" value="Instala elementos y sistemas de transmisión de voz y datos, reconociendo y aplicando las diferentes técnicas de montaje." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14642">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_373">
         <div class="criterios">
             Criterios:<br/>
-            <input type="checkbox" id="todos_criterios_asociados_a_resultado_14642"
-                   onclick='conmutar("#todos_criterios_asociados_a_resultado_14642",
-                                     ".criterio_sin_letra_asociado_a_resultado_14642" )'> Marcar todos <br/>
+            <input type="checkbox" id="todos_criterios_asociados_a_resultado_373"
+                   onclick='conmutar("#todos_criterios_asociados_a_resultado_373",
+                                     ".criterio_sin_letra_asociado_a_resultado_373" )'> Marcar todos <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14642"
-                id="cbsl_121377" data-idtextoasociado="criterio_121377">
-            <input type="text" value="a) Se han ensamblado los elementos que consten de varias piezas." id="criterio_121377" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_373"
+                id="cbsl_3057" data-idtextoasociado="criterio_3057">
+            <input type="text" value="a) Se han ensamblado los elementos que consten de varias piezas." id="criterio_3057" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14642"
-                id="cbsl_121378" data-idtextoasociado="criterio_121378">
-            <input type="text" value="b) Se han identificado el cableado en función de su etiquetado o colores." id="criterio_121378" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_373"
+                id="cbsl_3058" data-idtextoasociado="criterio_3058">
+            <input type="text" value="b) Se han identificado el cableado en función de su etiquetado o colores." id="criterio_3058" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14642"
-                id="cbsl_121379" data-idtextoasociado="criterio_121379">
-            <input type="text" value="c) Se han colocado los sistemas o elementos (antenas, amplificadores, entre otros) en su lugar de ubicación." id="criterio_121379" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_373"
+                id="cbsl_3059" data-idtextoasociado="criterio_3059">
+            <input type="text" value="c) Se han colocado los sistemas o elementos (antenas, amplificadores, entre otros) en su lugar de ubicación." id="criterio_3059" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14642"
-                id="cbsl_121380" data-idtextoasociado="criterio_121380">
-            <input type="text" value="d) Se han seleccionado herramientas." id="criterio_121380" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_373"
+                id="cbsl_3060" data-idtextoasociado="criterio_3060">
+            <input type="text" value="d) Se han seleccionado herramientas." id="criterio_3060" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14642"
-                id="cbsl_121381" data-idtextoasociado="criterio_121381">
-            <input type="text" value="e) Se han fijado los sistemas o elementos." id="criterio_121381" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_373"
+                id="cbsl_3061" data-idtextoasociado="criterio_3061">
+            <input type="text" value="e) Se han fijado los sistemas o elementos." id="criterio_3061" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14642"
-                id="cbsl_121382" data-idtextoasociado="criterio_121382">
-            <input type="text" value="f) Se ha conectado el cableado con los sistemas y elementos, asegurando un buen contacto." id="criterio_121382" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_373"
+                id="cbsl_3062" data-idtextoasociado="criterio_3062">
+            <input type="text" value="f) Se ha conectado el cableado con los sistemas y elementos, asegurando un buen contacto." id="criterio_3062" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14642"
-                id="cbsl_121383" data-idtextoasociado="criterio_121383">
-            <input type="text" value="g) Se han colocado los embellecedores, tapas y elementos decorativos." id="criterio_121383" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_373"
+                id="cbsl_3063" data-idtextoasociado="criterio_3063">
+            <input type="text" value="g) Se han colocado los embellecedores, tapas y elementos decorativos." id="criterio_3063" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14642"
-                id="cbsl_121384" data-idtextoasociado="criterio_121384">
-            <input type="text" value="h) Se han aplicado normas de seguridad, en el uso de herramientas y sistemas." id="criterio_121384" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_373"
+                id="cbsl_3064" data-idtextoasociado="criterio_3064">
+            <input type="text" value="h) Se han aplicado normas de seguridad, en el uso de herramientas y sistemas." id="criterio_3064" size="140">
             <br/>
             
             <br/>
             
             <input type="submit" value="Copiar al portapapeles los criterios seleccionados en este bloque" class="boton_copiar"
                    onclick=" copiar_textos_asociados_a_checkbox(
-                '.criterio_sin_letra_asociado_a_resultado_14642:checked',
-                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14642');   return false">
+                '.criterio_sin_letra_asociado_a_resultado_373:checked',
+                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado373');   return false">
             
-            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14642"></textarea>
+            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado373"></textarea>
         </div>
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14643"  data-idtextoasociado="txt_rasl_14643">
+       id="cbrasl_374"  data-idtextoasociado="txt_rasl_374">
 <input type="text" value="Realiza operaciones básicas de configuración en redes locales cableadas relacionándolas con sus aplicaciones." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14643">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_374">
         <div class="criterios">
             Criterios:<br/>
-            <input type="checkbox" id="todos_criterios_asociados_a_resultado_14643"
-                   onclick='conmutar("#todos_criterios_asociados_a_resultado_14643",
-                                     ".criterio_sin_letra_asociado_a_resultado_14643" )'> Marcar todos <br/>
+            <input type="checkbox" id="todos_criterios_asociados_a_resultado_374"
+                   onclick='conmutar("#todos_criterios_asociados_a_resultado_374",
+                                     ".criterio_sin_letra_asociado_a_resultado_374" )'> Marcar todos <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14643"
-                id="cbsl_121385" data-idtextoasociado="criterio_121385">
-            <input type="text" value="a) Se han descrito los principios de funcionamiento de las redes locales." id="criterio_121385" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_374"
+                id="cbsl_3065" data-idtextoasociado="criterio_3065">
+            <input type="text" value="a) Se han descrito los principios de funcionamiento de las redes locales." id="criterio_3065" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14643"
-                id="cbsl_121386" data-idtextoasociado="criterio_121386">
-            <input type="text" value="b) Se han identificado los distintos tipos de redes y sus estructuras alternativas." id="criterio_121386" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_374"
+                id="cbsl_3066" data-idtextoasociado="criterio_3066">
+            <input type="text" value="b) Se han identificado los distintos tipos de redes y sus estructuras alternativas." id="criterio_3066" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14643"
-                id="cbsl_121387" data-idtextoasociado="criterio_121387">
-            <input type="text" value="c) Se han reconocido los elementos de la red local identificándolos con su función." id="criterio_121387" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_374"
+                id="cbsl_3067" data-idtextoasociado="criterio_3067">
+            <input type="text" value="c) Se han reconocido los elementos de la red local identificándolos con su función." id="criterio_3067" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14643"
-                id="cbsl_121388" data-idtextoasociado="criterio_121388">
-            <input type="text" value="d) Se han descrito los medios de transmisión." id="criterio_121388" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_374"
+                id="cbsl_3068" data-idtextoasociado="criterio_3068">
+            <input type="text" value="d) Se han descrito los medios de transmisión." id="criterio_3068" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14643"
-                id="cbsl_121389" data-idtextoasociado="criterio_121389">
-            <input type="text" value="e) Se ha interpretado el mapa físico de la red local." id="criterio_121389" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_374"
+                id="cbsl_3069" data-idtextoasociado="criterio_3069">
+            <input type="text" value="e) Se ha interpretado el mapa físico de la red local." id="criterio_3069" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14643"
-                id="cbsl_121390" data-idtextoasociado="criterio_121390">
-            <input type="text" value="f) Se ha representado el mapa físico de la red local." id="criterio_121390" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_374"
+                id="cbsl_3070" data-idtextoasociado="criterio_3070">
+            <input type="text" value="f) Se ha representado el mapa físico de la red local." id="criterio_3070" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14643"
-                id="cbsl_121391" data-idtextoasociado="criterio_121391">
-            <input type="text" value="g) Se han utilizado aplicaciones informáticas para representar el mapa físico de la red local." id="criterio_121391" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_374"
+                id="cbsl_3071" data-idtextoasociado="criterio_3071">
+            <input type="text" value="g) Se han utilizado aplicaciones informáticas para representar el mapa físico de la red local." id="criterio_3071" size="140">
             <br/>
             
             <br/>
             
             <input type="submit" value="Copiar al portapapeles los criterios seleccionados en este bloque" class="boton_copiar"
                    onclick=" copiar_textos_asociados_a_checkbox(
-                '.criterio_sin_letra_asociado_a_resultado_14643:checked',
-                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14643');   return false">
+                '.criterio_sin_letra_asociado_a_resultado_374:checked',
+                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado374');   return false">
             
-            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14643"></textarea>
+            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado374"></textarea>
         </div>
         
 <br/>
 
 
 <input type="checkbox" name="resultado_aprendizaje_sin_letra[]" class="checkbox_resultado_aprendizaje_sin_letra"
-       id="cbrasl_14644"  data-idtextoasociado="txt_rasl_14644">
+       id="cbrasl_375"  data-idtextoasociado="txt_rasl_375">
 <input type="text" value="Cumple las normas de prevención de riesgos laborales y de protección ambiental, identificando los riesgos asociados, las medidas y sistemas para prevenirlos." size="160"
-       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_14644">
+       class="texto_resultado_aprendizaje_sin_letra" id="txt_rasl_375">
         <div class="criterios">
             Criterios:<br/>
-            <input type="checkbox" id="todos_criterios_asociados_a_resultado_14644"
-                   onclick='conmutar("#todos_criterios_asociados_a_resultado_14644",
-                                     ".criterio_sin_letra_asociado_a_resultado_14644" )'> Marcar todos <br/>
+            <input type="checkbox" id="todos_criterios_asociados_a_resultado_375"
+                   onclick='conmutar("#todos_criterios_asociados_a_resultado_375",
+                                     ".criterio_sin_letra_asociado_a_resultado_375" )'> Marcar todos <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14644"
-                id="cbsl_121392" data-idtextoasociado="criterio_121392">
-            <input type="text" value="a) Se han identificado los riesgos y el nivel de peligrosidad que suponen la manipulación de los materiales, herramientas, útiles, máquinas y medios de transporte." id="criterio_121392" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_375"
+                id="cbsl_3072" data-idtextoasociado="criterio_3072">
+            <input type="text" value="a) Se han identificado los riesgos y el nivel de peligrosidad que suponen la manipulación de los materiales, herramientas, útiles, máquinas y medios de transporte." id="criterio_3072" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14644"
-                id="cbsl_121393" data-idtextoasociado="criterio_121393">
-            <input type="text" value="b) Se han operado las máquinas respetando las normas de seguridad." id="criterio_121393" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_375"
+                id="cbsl_3073" data-idtextoasociado="criterio_3073">
+            <input type="text" value="b) Se han operado las máquinas respetando las normas de seguridad." id="criterio_3073" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14644"
-                id="cbsl_121394" data-idtextoasociado="criterio_121394">
-            <input type="text" value="c) Se han identificado las causas más frecuentes de accidentes en la manipulación de materiales, herramientas, máquinas de corte y conformado, entre otras." id="criterio_121394" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_375"
+                id="cbsl_3074" data-idtextoasociado="criterio_3074">
+            <input type="text" value="c) Se han identificado las causas más frecuentes de accidentes en la manipulación de materiales, herramientas, máquinas de corte y conformado, entre otras." id="criterio_3074" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14644"
-                id="cbsl_121395" data-idtextoasociado="criterio_121395">
-            <input type="text" value="d) Se han descrito los elementos de seguridad (protecciones, alarmas, pasos de emergencia, entre otros) de las máquinas y los sistemas de protección individual (calzado, protección ocular, indumentaria, entre otros) que se deben emplear en las operaciones de montaje y mantenimiento." id="criterio_121395" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_375"
+                id="cbsl_3075" data-idtextoasociado="criterio_3075">
+            <input type="text" value="d) Se han descrito los elementos de seguridad (protecciones, alarmas, pasos de emergencia, entre otros) de las máquinas y los sistemas de protección individual (calzado, protección ocular, indumentaria, entre otros) que se deben emplear en las operaciones de montaje y mantenimiento." id="criterio_3075" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14644"
-                id="cbsl_121396" data-idtextoasociado="criterio_121396">
-            <input type="text" value="e) Se ha relacionado la manipulación de materiales, herramientas y máquinas con las medidas de seguridad y protección personal requeridos." id="criterio_121396" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_375"
+                id="cbsl_3076" data-idtextoasociado="criterio_3076">
+            <input type="text" value="e) Se ha relacionado la manipulación de materiales, herramientas y máquinas con las medidas de seguridad y protección personal requeridos." id="criterio_3076" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14644"
-                id="cbsl_121397" data-idtextoasociado="criterio_121397">
-            <input type="text" value="f) Se han identificado las posibles fuentes de contaminación del entorno ambiental." id="criterio_121397" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_375"
+                id="cbsl_3077" data-idtextoasociado="criterio_3077">
+            <input type="text" value="f) Se han identificado las posibles fuentes de contaminación del entorno ambiental." id="criterio_3077" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14644"
-                id="cbsl_121398" data-idtextoasociado="criterio_121398">
-            <input type="text" value="g) Se han clasificado los residuos generados para su retirada selectiva." id="criterio_121398" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_375"
+                id="cbsl_3078" data-idtextoasociado="criterio_3078">
+            <input type="text" value="g) Se han clasificado los residuos generados para su retirada selectiva." id="criterio_3078" size="140">
             <br/>
             
-            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_14644"
-                id="cbsl_121399" data-idtextoasociado="criterio_121399">
-            <input type="text" value="h) Se ha valorado el orden y la limpieza de instalaciones y sistemas como primer factor de prevención de riesgos." id="criterio_121399" size="140">
+            <input type="checkbox" class="criterio_sin_letra_asociado_a_resultado_375"
+                id="cbsl_3079" data-idtextoasociado="criterio_3079">
+            <input type="text" value="h) Se ha valorado el orden y la limpieza de instalaciones y sistemas como primer factor de prevención de riesgos." id="criterio_3079" size="140">
             <br/>
             
             <br/>
             
             <input type="submit" value="Copiar al portapapeles los criterios seleccionados en este bloque" class="boton_copiar"
                    onclick=" copiar_textos_asociados_a_checkbox(
-                '.criterio_sin_letra_asociado_a_resultado_14644:checked',
-                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14644');   return false">
+                '.criterio_sin_letra_asociado_a_resultado_375:checked',
+                '#resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado375');   return false">
             
-            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado14644"></textarea>
+            <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados_asociados_a_resultado375"></textarea>
         </div>
         
 <br/>
