@@ -419,9 +419,21 @@ Marcar/desmarcar todos los resultados de aprendizaje
 {%endfor%}
 <br/>
 
+<h1>Resultados de aprendizaje con todos sus criterios asociados</h1>
 
+<ol>
+{%for resultado in resultados_aprendizaje%}
+<li>
+    {{resultado.texto}}
+    <ul>
+        {%for criterio in resultado.criteriodeevaluacion_set.all%}
+        <li>{{criterio.letra}}) {{criterio.texto}}</li>
+        {%endfor%}
+    </ul>
+</li>
+{%endfor%}
 
-
+</ol>
 
 
 </body>
