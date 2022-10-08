@@ -8,6 +8,11 @@ class Ciclo( models.Model ):
     nombre              =   models.CharField ( max_length=140 )
     abreviatura         =   models.CharField ( max_length=10 )
     nivel_profesional   =   models.IntegerField()
+    num_decreto_jccm    =   models.IntegerField()
+    fecha_decreto_jccm  =   models.DateField()
+    num_decreto_boe     =   models.IntegerField()
+    fecha_decreto_boe   =   models.DateField()
+    
     def __str__(self ):
         return self.abreviatura
     

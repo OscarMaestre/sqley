@@ -66,6 +66,7 @@ def generar_fichero_corta_y_pega ( codigo_modulo_segun_jccm, directorio_fichero_
         diccionario["competencias"]                 =       competencias
         diccionario["cualificaciones_completas"]    =       cualificaciones_completas
         diccionario["cualificaciones_incompletas"]  =       cualificaciones_incompletas
+        diccionario["ciclo"]                        =       ciclo_asociado
         contenido_fichero = render_to_string("programaciones/para_cortar_y_pegar.html", diccionario)
         with open(nombre_fichero, "w", encoding="utf-8") as fichero:
             fichero.write(contenido_fichero)

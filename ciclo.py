@@ -6,6 +6,7 @@ configurador=Configurador ("ciclos")
 configurador.activar_configuracion ("ciclos.settings")
 from gestionbd.models import *
 from django.db import transaction
+import datetime
 #Poner a True para no hacer el guardado en la BD
 #y así ir mas deprisa
 #DEBUG=True
@@ -103,8 +104,28 @@ def procesar_archivo():
     
     y=yaml.safe_load(archivo_ciclo)
     
+    #Extraemos la fecha del decreto de la junta
     nombre_ciclo= y["ciclo"]["nombre"]
-    
+    decreto = y["ciclo"]["decreto_junta"]
+    print(decreto)
+    num_decreto_junta=decreto[0]["numero"]
+    dia_junta=decreto[2]["dia"]
+    mes_junta=decreto[3]["mes"]
+    anio_junta=decreto[1]["anio"]
+    fecha_junta=datetime.date(year=anio_junta, month=mes_junta, day=dia_junta)
+    print(num_decreto_junta)
+
+    #Extraemos la fecha del decreto del BOE
+    decreto = y["ciclo"]["decreto_boe"]
+    print(decreto)
+    num_decreto_boe=decreto[0]["numero"]
+    dia_boe=decreto[2]["dia"]
+    mes_boe=decreto[3]["mes"]
+    anio_boe=decreto[1]["anio"]
+    fecha_boe=datetime.date(year=anio_boe, month=mes_boe, day=dia_boe)
+    print(num_decreto_boe)
+
+
     nombre_pasado=sys.argv[2]
     if nombre_pasado=="DAM" or nombre_pasado=="DAW" or nombre_pasado=="ASIR" or nombre_pasado=="DAWE" or nombre_pasado=="SCI":
         nivel=3
@@ -112,7 +133,8 @@ def procesar_archivo():
         nivel=2
     if nombre_pasado=="FPB":
         nivel=1
-    ciclo=Ciclo (nombre=nombre_ciclo, abreviatura=sys.argv[2],nivel_profesional=nivel)
+    ciclo=Ciclo (nombre=nombre_ciclo, abreviatura=sys.argv[2],nivel_profesional=nivel, num_decreto_jccm=num_decreto_junta, fecha_decreto_jccm=fecha_junta,
+    num_decreto_boe=num_decreto_boe, fecha_decreto_boe=fecha_boe)
     ciclo.save()
     el_ciclo=ciclo
     curso_1=Curso( num_curso=1, nombre_curso=sys.argv[2]+"_1", ciclo=el_ciclo)
