@@ -207,6 +207,11 @@ Recuerda también que en los reales decretos aparecen textos con letras o númer
 los resultados de aprendizaje de cada módulo llevan un número junto con un paréntesis). Hay bloques de texto con y sin los números/letras
 por lo que podrás cortar y pegar los textos cómodamente en cualquiera de los dos casos.
 
+<h1>Competencia general</h1>
+La competencia general es:
+<blockquote>
+    {{competencia_general}}
+</blockquote>
 <h1>Fecha del decreto de la Junta</h1>
 {{ciclo.num_decreto_jccm}}/{{ciclo.fecha_decreto_jccm.year}} de {{ciclo.fecha_decreto_jccm}}
 
@@ -245,6 +250,8 @@ por lo que podrás cortar y pegar los textos cómodamente en cualquiera de los d
     </ul>   
 {%endfor%}
 
+<h1>Pérdida de la evaluacion continua</h1>
+La asistencia a clase es obligatoria y presencial. Aquellos alumnos cuyo número total de faltas injustificadas  sea superior al 20% de la carga total del módulo ({{horas_modulo}} horas), es decir, {{horas_perdida_ev_continua}} horas, no tendrá derecho a la evaluación continua. Esto implicará que el alumnado tendrá que examinarse de todo, incluyendo las unidades que tuviere aprobadas.
 <h2>Objetivos generales del ciclo</h2>
 Aquí se incluyen todos los objetivos incluyendo sus letras asociadas, por ejemplo " a) Conseguir...". Si quieres trabajar con
 los objetivos sin su letra asociada (es decir usar "Conseguir..." en lugar de "a) Conseguir..." baja más abajo.
@@ -384,8 +391,8 @@ Marcar/desmarcar todos los resultados de aprendizaje
 <textarea class="cajacompleta" id="resultados_aprendizaje_sin_letra_seleccionados"></textarea>
 
 <!--Bloque: Criterios de evaluacion-->
-<h2>Criterios de aprendizaje</h2>
-A continuación pueden verse los criterios de aprendizaje para cada uno de los resultados de aprendizaje asociados a este módulo
+<h2>Criterios de evaluación</h2>
+A continuación pueden verse los criterios de evaluación para cada uno de los resultados de aprendizaje asociados a este módulo
 
 <br/><br/><br/>
 
@@ -438,6 +445,74 @@ Marcar/desmarcar todos los resultados de aprendizaje
 {%endfor%}
 
 </ol>
+
+<h1>Contenidos del módulo, sin puntos de contenido</h1>
+<ol>
+    {%for contenido in contenidos%}
+    <li>
+        {{contenido.texto}}
+    </li>
+    {%endfor%}
+</ol>
+
+<h1>Contenidos del módulo, con puntos de contenido</h1>
+<ol>
+    {%for contenido in contenidos%}
+    <li>
+        {{contenido.texto}}
+        <ol>
+            {%for punto_de_contenido in contenido.puntodecontenido_set.all%}
+            <li>
+                {{punto_de_contenido.texto}}
+            </li>
+            {%endfor%}
+        </ol>
+    </li>
+    {%endfor%}
+</ol>
+
+<h1>Unidades didácticas</h1>
+
+<table border="2">
+
+    <tbody>
+        {%for unidad in unidades_didacticas%}
+        <tr>
+            <td colspan="2">
+                <b>Unidad {{unidad.numero}}</b>: {{unidad.nombre}}
+            </td>
+            <td>Horas: {{unidad.horas}}</td>
+        </tr>
+        <tr>
+            <td colspan="3">Resultado de aprendizaje asociado: {{unidad.resultado_aprendizaje}}</td>
+        </tr>
+        <tr>
+            <td>Contenidos</td>
+            <td>Criterios de evaluación asociados</td>
+            <td>¿Es mínimo?</td>
+        </tr>
+
+        <tr>
+            <td>
+                <ul>
+                {%for contenido in unidad.puntos_contenido%}
+                    <li>{{contenido}}</li>
+                {%endfor%}
+                </ul>
+            </td>
+            <td>
+                <ul>
+                {%for criterio in unidad.criterios_evaluacion%}
+                    <li>{{criterio}}</li>
+                {%endfor%}
+                </ul>
+            </td>
+            <td>Sí</td>
+        </tr>
+        {%endfor%}
+    </tbody>
+</table>
+
 
 
 </body>
