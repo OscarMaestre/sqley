@@ -38,7 +38,8 @@ class Grupo ( models.Model ):
         
 class EspecialidadProfesor ( models.Model ):
     ESPECIALIDADES = [ ("PS", "Prof. Secundaria"),
-                        ("PT", "Prof. Tecnico") ]
+                        ("PT", "Prof. Tecnico") ,
+                        ("TODAS", "Todas las esp.")]
     especialidad = models.CharField ( max_length = 30, choices = ESPECIALIDADES )
     def __str__(self):
         return self.especialidad
