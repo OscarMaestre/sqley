@@ -149,6 +149,11 @@ class ResultadoDeAprendizaje ( models.Model ):
     class Meta:
         db_table="resultados_de_aprendizaje"
         verbose_name_plural = "Resultados de aprendizaje"
+    @property
+    def ponderacion_por_criterio(self):
+        porcentaje=100/self.criteriodeevaluacion_set.count()
+        redondeado=round(porcentaje, 2)
+        return f"{redondeado}%"
         
 class CriterioDeEvaluacion ( models.Model ):
     texto                       =   models.CharField ( max_length=250 )
@@ -170,6 +175,15 @@ class Contenido ( models.Model ):
     class Meta:
         db_table="contenidos"
         
+
+class ResultadoContenido ( models.Model ):
+    resultado   =   models.ForeignKey( ResultadoDeAprendizaje , on_delete=models.CASCADE)
+    contenido   =   models.ForeignKey( Contenido , on_delete=models.CASCADE)
+    modulo      =   models.ForeignKey(Modulo, on_delete=models.CASCADE)
+    def __str__(self):
+        texto=str(self.resultado) + "<->" + str(self.contenido)
+        return texto
+
 class ObjetivoGeneral ( models.Model ):
     letra   =   models.CharField(max_length=2)
     texto   =   models.CharField(max_length=2048)

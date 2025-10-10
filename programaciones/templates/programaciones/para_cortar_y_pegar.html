@@ -14,6 +14,9 @@ fichero original, porque el resultado final creo que puede ser difícil de enten
             width:98%;
             
         }
+        .sombreado{
+            background-color: rgb(220,220,220);
+        }
         .cajacompleta{
             width:100%;
             -webkit-box-sizing: border-box;
@@ -445,6 +448,97 @@ Marcar/desmarcar todos los resultados de aprendizaje
 {%endfor%}
 
 </ol>
+<h1>Resultados de aprendizaje con criterios asociados en forma de tabla</h1>
+
+{%for resultado in resultados_aprendizaje%}
+<table border="1">
+    <tr>
+        <td class="sombreado" colspan="3">Referencia</td>
+        <td class="sombreado" colspan="3">RESULTADO DE APRENDIZAJE</td>
+        <td class="sombreado">Ponderación</td>
+    </tr>
+    <tr>
+        <td colspan="3">RA{{forloop.counter}}</td>
+        <td colspan="3">{{resultado.texto}}</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td class="sombreado" colspan="2">U.T</td>
+        <!-- <td>Nombre</td> -->
+        <td class="sombreado">Mínimo</td>
+        <td class="sombreado">Criterios de evaluación</td>
+        <td class="sombreado">Calificador/Ponderación</td>
+        <td class="sombreado">Contenidos</td>
+        <td class="sombreado">Instrumento de evaluación</td>
+    </tr>
+    <!-- Generamos ahora una fila para cada criterio -->
+     {%for criterio in resultado.criteriodeevaluacion_set.all%}
+    <tr>
+        <td colspan="2">{{forloop.parentloop.counter}}</td>
+        <td>SÍ</td>
+        <td>{{criterio.letra}}) {{criterio.texto}}</td>
+        <td>{{resultado.ponderacion_por_criterio}}</td>
+        <td></td>
+        <td></td>
+    </tr>
+    {%endfor%}
+
+    
+
+
+</table><!--Fin de la tabla para este resultado (tabla tipo programación)-->
+<br><br>
+
+{%endfor%}
+
+<h1>Tablas con unidades, criterios y contenidos (sin ponderación)</h1>
+
+{%for asociacion in resultado_asociado_a_contenidos%}
+<table border="1">
+    <tr>
+        <th class="sombreado">Referencia</th>
+        <th class="sombreado">RESULTADO DE APRENDIZAJE</th>
+        <th class="sombreado">Ponderación</th>
+    </tr>
+    <tr>
+        <td>RA{{asociacion.resultado.numero}}</td>
+        <td>{{asociacion.resultado.texto}}</td>
+        <td>Ponderación</td>
+    </tr>
+    <tr>
+        <td class="sombreado">Unidad</td>
+        <td class="sombreado">Criterios de evaluación</td>
+        <td class="sombreado">Contenidos</td>
+    </tr>
+    <tr>
+        <td>Unidad {{asociacion.resultado.numero}}</td>
+        <td>
+            {%for criterioevaluacion in asociacion.resultado.criteriodeevaluacion_set.all%}
+            {{criterioevaluacion.letra}}) 
+            {{criterioevaluacion.texto}}
+            <br>
+            {%endfor%}
+        </td>
+        <td>
+        {%for puntocontenido in asociacion.contenido.puntodecontenido_set.all%}
+            {{puntocontenido}}
+            <br>
+        {%endfor%}
+        </td>
+    </tr>
+</table>
+{%endfor%}
+
+
+
+<li>
+    {{resultado.texto}}
+    <ul>
+        {%for criterio in resultado.criteriodeevaluacion_set.all%}
+        <li>{{criterio.letra}}) {{criterio.texto}}</li>
+        {%endfor%}
+    </ul>
+</li>
 
 <h1>Contenidos del módulo, sin puntos de contenido</h1>
 <ol>
@@ -511,7 +605,8 @@ Marcar/desmarcar todos los resultados de aprendizaje
         {%endfor%}
     </tbody>
 </table>
-
+<br>
+<br>
 
 
 </body>

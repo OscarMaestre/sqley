@@ -97,6 +97,7 @@ def generar_fichero_corta_y_pega ( codigo_modulo_segun_jccm, directorio_fichero_
         #print(cualificaciones)
         #print (criterios_de_evaluacion)
         
+        asociaciones_resultado_contenidos=objeto_modulo.resultadocontenido_set.all().order_by("resultado__numero")
 
         #Aquí se generan algunas posibles unidades didácticas
         unidades_didacticas             =   generar_lista_unidades_didacticas(objeto_modulo)
@@ -129,6 +130,7 @@ def generar_fichero_corta_y_pega ( codigo_modulo_segun_jccm, directorio_fichero_
         diccionario["horas_modulo"]                 =       horas_modulo
         diccionario["horas_perdida_ev_continua"]    =       horas_para_perder_ev_continua
         diccionario["unidades_didacticas"]          =       unidades_didacticas
+        diccionario["resultado_asociado_a_contenidos"]=asociaciones_resultado_contenidos
         contenido_fichero = render_to_string("programaciones/para_cortar_y_pegar.html", diccionario)
         with open(nombre_fichero, "w", encoding="utf-8") as fichero:
             fichero.write(contenido_fichero)
