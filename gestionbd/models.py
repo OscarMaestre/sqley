@@ -144,6 +144,8 @@ class ResultadoDeAprendizaje ( models.Model ):
     texto       =   models.CharField ( max_length=250 )
     numero      =   models.IntegerField()
     modulo      =   models.ForeignKey ( Modulo  , on_delete=models.CASCADE)
+    porcentaje_empresa          =models.FloatField(default="0")
+    porcentaje_centro           =models.FloatField(default="100")
     def __str__(self ):
         return self.texto + "("+str (self.modulo) + ")"
     class Meta:
@@ -159,6 +161,8 @@ class CriterioDeEvaluacion ( models.Model ):
     texto                       =   models.CharField ( max_length=250 )
     letra                       =   models.CharField ( max_length= 2)
     resultado_de_aprendizaje    =   models.ForeignKey ( ResultadoDeAprendizaje  , on_delete=models.CASCADE)
+
+    
     def __str__(self ):
         cod_curso=self.resultado_de_aprendizaje.modulo.curso.nombre_curso
         return cod_curso+") " + self.texto
@@ -176,13 +180,6 @@ class Contenido ( models.Model ):
         db_table="contenidos"
         
 
-class ResultadoContenido ( models.Model ):
-    resultado   =   models.ForeignKey( ResultadoDeAprendizaje , on_delete=models.CASCADE)
-    contenido   =   models.ForeignKey( Contenido , on_delete=models.CASCADE)
-    modulo      =   models.ForeignKey(Modulo, on_delete=models.CASCADE)
-    def __str__(self):
-        texto=str(self.resultado) + "<->" + str(self.contenido)
-        return texto
 
 class ObjetivoGeneral ( models.Model ):
     letra   =   models.CharField(max_length=2)
@@ -198,6 +195,8 @@ class PuntoDeContenido ( models.Model ):
     texto       =   models.CharField ( max_length=250 )
     num_orden   =   models.IntegerField()
     contenido   =   models.ForeignKey ( Contenido  , on_delete=models.CASCADE)
+    resultado   =   models.ForeignKey ( ResultadoDeAprendizaje, 
+                                       on_delete=models.SET_NULL, null=True)
     def __str__(self ):
         return self.texto
     class Meta:

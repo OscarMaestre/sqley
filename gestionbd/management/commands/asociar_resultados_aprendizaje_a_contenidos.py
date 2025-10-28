@@ -24,11 +24,11 @@ class Command(BaseCommand):
         print("\t\t"+mensaje)
         print("=====================\n")
         
-    def _asociar(self, contenido, resultado, modulo):
+    def _asociar(self, contenido, resultado, modulo, ponderacion):
         asociacion=ResultadoContenido.objects.filter(resultado=resultado, contenido=contenido)
         if len(asociacion)==0:
             
-            asociacion=ResultadoContenido(contenido=contenido, resultado=resultado, modulo=modulo)
+            asociacion=ResultadoContenido(contenido=contenido, resultado=resultado, modulo=modulo, ponderacion_resultado=ponderacion)
             asociacion.save()
             #print("Creada asociacion:"+str(contenido)+"<->"+str(resultado))
         else:
@@ -41,7 +41,10 @@ class Command(BaseCommand):
         if not se_puede_hacer_la_asociacion:
             return
         for pos, contenido in enumerate(contenidos):
-            self._asociar(contenidos[pos], resultados[pos], modulo)
+            cantidad_resultados=len(resultados)
+            porcentaje=100/cantidad_resultados
+            porcentaje=round(porcentaje,2)
+            self._asociar(contenidos[pos], resultados[pos], modulo, porcentaje)
 
     def handle(self, *args, **options):
         

@@ -491,7 +491,7 @@ Marcar/desmarcar todos los resultados de aprendizaje
 
 {%endfor%}
 
-<h1>Tablas con unidades, criterios y contenidos (sin ponderación)</h1>
+<h1>Tablas con unidades, criterios y contenidos</h1>
 
 {%for asociacion in resultado_asociado_a_contenidos%}
 <table border="1">
@@ -503,12 +503,12 @@ Marcar/desmarcar todos los resultados de aprendizaje
     <tr>
         <td>RA{{asociacion.resultado.numero}}</td>
         <td>{{asociacion.resultado.texto}}</td>
-        <td>Ponderación</td>
+        <td>{{asociacion.ponderacion_resultado}}%</td>
     </tr>
     <tr>
-        <td class="sombreado">Unidad</td>
-        <td class="sombreado">Criterios de evaluación</td>
-        <td class="sombreado">Contenidos</td>
+        <th class="sombreado">Unidad</td>
+        <th class="sombreado">Criterios de evaluación</td>
+        <th class="sombreado">Contenidos</td>
     </tr>
     <tr>
         <td>Unidad {{asociacion.resultado.numero}}</td>
@@ -527,6 +527,7 @@ Marcar/desmarcar todos los resultados de aprendizaje
         </td>
     </tr>
 </table>
+<br><br>
 {%endfor%}
 
 

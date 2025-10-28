@@ -18,3 +18,9 @@ touch tutoria/migrations/__init__.py
 
 ./dodo.py
 ./cargar_datos_iniciales.py
+
+echo "Creando el superusuario 'usuario' con clave '1234'"
+DJANGO_SUPERUSER_USERNAME=usuario \
+DJANGO_SUPERUSER_EMAIL=admin@example.com \
+DJANGO_SUPERUSER_PASSWORD=1234 \
+python manage.py createsuperuser --noinput || true

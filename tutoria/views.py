@@ -120,6 +120,7 @@ def get_emails(peticion, nombre_curso):
 
 
 def index_tutoria(peticion):
+    print("Index")
     cursos_con_alumnos=Alumno.objects.values_list("curso", flat=True).distinct()
     nombres_cursos_con_alumnos=Curso.objects.filter(pk__in=set(cursos_con_alumnos))
     

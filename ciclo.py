@@ -13,9 +13,9 @@ import datetime
 DEBUG=False
 PATRON_NO_ENCONTRADO="xXxXxXxX"
 
-re_letra_con_parentesis="[a-zñ]\)"
+re_letra_con_parentesis=r"[a-zñ]\)"
 expr_regular_letra_con_parentesis=re.compile ( re_letra_con_parentesis )
-re_num_con_punto="[0-9]{1,2}\."
+re_num_con_punto=r"[0-9]{1,2}\."
 expr_regular_num_con_punto = re.compile ( re_num_con_punto )
 
 def extraer_ra(texto_ra):

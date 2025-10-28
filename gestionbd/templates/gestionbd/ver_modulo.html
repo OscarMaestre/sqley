@@ -3,7 +3,16 @@
 {%block contenido%}
 <h1>Datos del modulo</h1>
 {%autoescape off%}
-{{contenido}}
+{{modulo.nombre}}
+<ul>
+    <li>
+        <a href='{% url "gestionbd:editar_criterios_aprendizaje" modulo.id %}'>Editar porcentajes centro/empresa</a>
+    </li>
+    <li>
+        <a href="">Elegir resultado de aprendizaje para asociar criterios a puntos de contenidos</a>
+    </li>
+</ul>
+
 {%endautoescape%}
 </ul>
 {%endblock%}

@@ -21,13 +21,13 @@ from django.contrib import admin
 from reparto import urls
 from programaciones import urls
 from gestionbd import urls
-from tutoria import views as vistas_tutoria
+from gestionbd import views as vistas_gestionbd
+
 
 urlpatterns = [
     re_path(r'^admin/', admin.site.urls),
     re_path(r'^reparto/', include('reparto.urls')),
     re_path(r'^programaciones/', include ('programaciones.urls')),
-    re_path(r'^gestionbd/', include ('gestionbd.urls')),
+    path('', include('gestionbd.urls')),
     re_path(r'^alumnos/', include('tutoria.urls')),
-    re_path(r'^$', vistas_tutoria.anadir)
 ]

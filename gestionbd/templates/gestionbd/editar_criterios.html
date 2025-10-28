@@ -1,0 +1,14 @@
+
+
+<h2>{{ modulo.nombre }}</h2>
+
+<form method="post">
+  {% csrf_token %}
+  {{ formset.management_form }}
+  <table>
+    {% for form in formset %}
+    {{form.as_table}}
+    {% endfor %}
+  </table>
+  <button type="submit">Guardar</button>
+</form>
