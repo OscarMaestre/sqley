@@ -7,8 +7,7 @@ from django.contrib import messages
 from django.http import HttpResponse, JsonResponse
 from .models import *
 # Create your views here.
-from .forms import ResultadoAprendizajeFormset
-     
+from .forms import ResultadoAprendizajeFormset, CriterioDeEvaluacionFormset     
 def index(peticion):
     ciclos_validos=Q(curso__ciclo__abreviatura="DAM")
     ciclos_validos=ciclos_validos | Q(curso__ciclo__abreviatura="ASIR")
@@ -45,3 +44,31 @@ def editar_criterios_aprendizaje(peticion, idmodulo):
         'modulo': modulo,
         'formset': formset,
     })
+
+def dualizar_criterios_individuales(peticion, idra):
+    ra = get_object_or_404(ResultadoDeAprendizaje, id=idra)
+
+
+    formset = CriterioDeEvaluacionFormset(peticion.POST or None, instance=ra)
+
+    if peticion.method == 'POST' and formset.is_valid():
+        formset.save()
+        modulo=ra.modulo
+        messages.success(peticion, "Cambios a los criterios guardados correctamente")
+        return redirect('gestionbd:mostrar_ras_dualizar', idmodulo=modulo.id)
+    else:
+        errores=[]
+        for form in formset:   
+            if form.errors:
+                print(form.errors)
+                errores.append(form.errors)
+        txt_errores="<p>".join(errores)
+        messages.error(peticion, txt_errores)
+    return render(peticion, 'gestionbd/dualizar_criterios_individuales.html', {
+        'formset': formset,
+    })
+
+
+def mostrar_ras_dualizar(peticion, idmodulo):
+    modulo = get_object_or_404(Modulo, id=idmodulo)
+    return render(peticion, 'gestionbd/mostrar_resultados_y_criterios_modulo.html', {'modulo':modulo})

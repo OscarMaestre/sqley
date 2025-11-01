@@ -8,5 +8,8 @@ urlpatterns = [
    
     path(r'ver/<int:id>', views.ver_modulo, name="ver"),
    
-    path("editar_criterios_aprendizaje/<int:idmodulo>", views.editar_criterios_aprendizaje, name="editar_criterios_aprendizaje")
+    path("editar_textos_ras/<int:idmodulo>", views.editar_criterios_aprendizaje, name="editar_criterios_aprendizaje"),
+    
+    path("mostrar_ras_dualizar/<int:idmodulo>", views.mostrar_ras_dualizar, name="mostrar_ras_dualizar"),
+    path("dualizar_criterios_individuales/<int:idra>", views.dualizar_criterios_individuales, name="dualizar_criterios_individuales")
 ]

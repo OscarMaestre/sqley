@@ -1,0 +1,35 @@
+
+{% extends "gestionbd/base.html"%}
+
+{%block contenido%}
+<h1>Resultados de aprendizaje y criterios asociados</h1>
+
+<h2>{{ modulo.nombre }}</h2>
+
+<ul>
+{% for ra in modulo.resultadodeaprendizaje_set.all %}
+
+    <li>
+        {{ra.texto}}
+    </li>
+    <ul>
+
+    <li>
+        Llevar TODO este resultado a empresa y dualizar todos los
+        criterios
+    </li>
+    <li>
+        Quitar la dualización a todos los criterios dentro de este RA
+    </li>
+    
+    <li>
+        <a href="{% url 'gestionbd:dualizar_criterios_individuales' ra.id %}">
+        Marcar criterios individuales para dualizar
+        </a>
+    </li>
+    
+    </ul>
+{%endfor%}
+</ul>
+
+{%endblock%}

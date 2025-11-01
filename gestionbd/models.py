@@ -144,8 +144,7 @@ class ResultadoDeAprendizaje ( models.Model ):
     texto       =   models.CharField ( max_length=250 )
     numero      =   models.IntegerField()
     modulo      =   models.ForeignKey ( Modulo  , on_delete=models.CASCADE)
-    porcentaje_empresa          =models.FloatField(default="0")
-    porcentaje_centro           =models.FloatField(default="100")
+    
     def __str__(self ):
         return self.texto + "("+str (self.modulo) + ")"
     class Meta:
@@ -161,7 +160,7 @@ class CriterioDeEvaluacion ( models.Model ):
     texto                       =   models.CharField ( max_length=250 )
     letra                       =   models.CharField ( max_length= 2)
     resultado_de_aprendizaje    =   models.ForeignKey ( ResultadoDeAprendizaje  , on_delete=models.CASCADE)
-
+    va_a_empresa                =   models.BooleanField(default=False)
     
     def __str__(self ):
         cod_curso=self.resultado_de_aprendizaje.modulo.curso.nombre_curso

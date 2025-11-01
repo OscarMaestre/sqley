@@ -1,0 +1,23 @@
+
+{% extends "gestionbd/base.html"%}
+
+{%block contenido%}
+<h1>Dualizar criterios</h1>
+
+<h2>Marca los que van a empresa</h2>
+
+
+<form method="post">
+  {% csrf_token %}
+  {{ formset.management_form }}
+  
+    {% for form in formset %}
+    
+    {{form.as_p}}
+    
+    {% endfor %}
+  
+  <button type="submit">Guardar</button>
+</form>
+
+{%endblock%}
