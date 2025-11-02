@@ -72,3 +72,26 @@ def dualizar_criterios_individuales(peticion, idra):
 def mostrar_ras_dualizar(peticion, idmodulo):
     modulo = get_object_or_404(Modulo, id=idmodulo)
     return render(peticion, 'gestionbd/mostrar_resultados_y_criterios_modulo.html', {'modulo':modulo})
+
+
+def enviar_criterios_a_empresa(criterios, valor_booleano, peticion, prefijo):
+    for criterio in criterios:
+        criterio.va_a_empresa=valor_booleano
+        messages.success(peticion, prefijo+criterio.texto)
+        criterio.save()
+    return
+
+def activar_dualizacion_todo_ra(peticion, idra):
+    ra = get_object_or_404(ResultadoDeAprendizaje, id=idra)
+    criterios=ra.criteriodeevaluacion_set.all()
+    modulo=ra.modulo
+    enviar_criterios_a_empresa(criterios, True, peticion, "Dualizado:")
+    return redirect('gestionbd:mostrar_ras_dualizar', idmodulo=modulo.id)
+    
+def desactivar_dualizacion_todo_ra(peticion, idra):
+    ra = get_object_or_404(ResultadoDeAprendizaje, id=idra)
+    criterios=ra.criteriodeevaluacion_set.all()
+    modulo=ra.modulo
+    enviar_criterios_a_empresa(criterios, False, peticion, "Desdualizado")
+    return redirect('gestionbd:mostrar_ras_dualizar', idmodulo=modulo.id)
+    

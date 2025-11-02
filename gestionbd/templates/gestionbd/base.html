@@ -7,6 +7,9 @@
        div.container{
         font-size: 1.5rem;
         margin:50px;
+        padding:100px;
+        background-color: rgb(240,240,230);
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
        }
        table{
         width: 100%;
@@ -16,6 +19,13 @@
        }
        form th {
         text-align: right;
+       }
+       .success{
+        background-color:limegreen;
+       }
+       .error{
+        background-color:orangered;
+        color:white;
        }
     </style>
     <title>Legislación</title>
@@ -27,7 +37,7 @@
 {% if messages %}
     <div class="container mt-3">
     {% for message in messages %}
-     {{message}}
+     <div class='{{message.tags}}'>{{message}}</div>
     {%endfor%}
 {%endif%}
 {%block contenido%}
