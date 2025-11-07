@@ -14,5 +14,9 @@ urlpatterns = [
     path("dualizar_criterios_individuales/<int:idra>", views.dualizar_criterios_individuales, name="dualizar_criterios_individuales"),
     path("activar_dualizacion_todo_ra/<int:idra>", views.activar_dualizacion_todo_ra, name="activar_dualizacion_todo_ra"),
     path("desactivar_dualizacion_todo_ra/<int:idra>", views.desactivar_dualizacion_todo_ra, name="desactivar_dualizacion_todo_ra"),
+    path("mostrar_contenidos_elegir_asociacion/<int:idmodulo>", views.mostrar_bloques_contenido, name="mostrar_contenidos_elegir_asociacion"),
+
+    path("hacer_asociaciones/<int:idcontenido>", views.hacer_asociaciones,
+    name="hacer_asociaciones")    
     
 ]

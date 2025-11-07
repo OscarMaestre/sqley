@@ -6,8 +6,9 @@ from django.core import serializers
 from django.contrib import messages
 from django.http import HttpResponse, JsonResponse
 from .models import *
+from django.forms import modelformset_factory
 # Create your views here.
-from .forms import ResultadoAprendizajeFormset, CriterioDeEvaluacionFormset     
+from .forms import ResultadoAprendizajeFormset, CriterioDeEvaluacionFormset, PuntoDeContenidoForm
 def index(peticion):
     ciclos_validos=Q(curso__ciclo__abreviatura="DAM")
     ciclos_validos=ciclos_validos | Q(curso__ciclo__abreviatura="ASIR")
@@ -95,3 +96,34 @@ def desactivar_dualizacion_todo_ra(peticion, idra):
     enviar_criterios_a_empresa(criterios, False, peticion, "Desdualizado")
     return redirect('gestionbd:mostrar_ras_dualizar', idmodulo=modulo.id)
     
+def mostrar_bloques_contenido(peticion, idmodulo):
+    modulo = get_object_or_404(Modulo, id=idmodulo)
+    diccionario=dict()
+    diccionario["modulo"]=modulo
+    return render(peticion, "gestionbd/mostrar_contenidos_para_asociar.html", diccionario)
+
+def hacer_asociaciones(peticion, idcontenido):
+    contenido = get_object_or_404(Contenido, id=idcontenido)
+    
+    resultado=contenido.modulo.resultadodeaprendizaje_set.all()[contenido.numero-1]
+    criterios=resultado.criteriodeevaluacion_set.all()
+    puntos_asociados=contenido.puntodecontenido_set.all()
+    PuntoDeContenidoFormset=modelformset_factory(PuntoDeContenido, form=PuntoDeContenidoForm,  extra=0)
+    formulario=PuntoDeContenidoFormset(peticion.POST or None, queryset=puntos_asociados)
+    for f in formulario:
+        f.__init__(criterios_qs=criterios, data=f.data if f.is_bound else None, instance=f.instance)
+
+    
+    if peticion.method == 'POST' and formulario.is_valid():
+        #Em un formulario con manytomany hay que guardar las
+        instancias=formulario.save(commit=False)
+        for instancia in instancias:
+            instancia.save()
+        formulario.save_m2m()
+
+        messages.success(peticion, "Se han guardado las asociaciones")
+        return redirect("gestionbd:mostrar_contenidos_elegir_asociacion", idmodulo=contenido.modulo.id)
+    diccionario=dict()
+    diccionario["contenido"]=contenido
+    diccionario["formset"]=formulario
+    return render(peticion, "gestionbd/hacer_asociaciones_ras_contenido.html", diccionario)

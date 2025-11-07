@@ -196,6 +196,7 @@ class PuntoDeContenido ( models.Model ):
     contenido   =   models.ForeignKey ( Contenido  , on_delete=models.CASCADE)
     resultado   =   models.ForeignKey ( ResultadoDeAprendizaje, 
                                        on_delete=models.SET_NULL, null=True)
+    criterio_de_evaluacion = models.ManyToManyField(CriterioDeEvaluacion, blank=True)
     def __str__(self ):
         return self.texto
     class Meta:

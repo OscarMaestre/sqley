@@ -1,0 +1,19 @@
+
+{% extends "gestionbd/base.html"%}
+
+{%block contenido%}
+<h1>Elige un resultado de aprendizaje</h1>
+
+<h2>{{ modulo.nombre }}</h2>
+
+<ul>
+{% for ra in modulo.contenido_set.all %}
+
+<li>
+    <a href="{% url 'gestionbd:hacer_asociaciones' ra.id%}">{{ra.numero}}.- {{ra.texto}}</a>
+</li>   
+   
+{%endfor%}
+</ul>
+
+{%endblock%}

@@ -1,0 +1,16 @@
+
+{% extends "gestionbd/base.html"%}
+
+{%block contenido%}
+<h1>Elige un resultado de aprendizaje</h1>
+<h2>Asociando criterios </h2>
+<p>Haz las asociaciones para <em>{{contenido.numero}} {{contenido.texto}}</em></p>
+<form method="post">
+  {% csrf_token %}
+  {{ formset.management_form }}
+  {% for form in formset %}
+    {{ form.as_p }}
+  {% endfor %}
+    <button type="submit">Guardar cambios</button>
+</form>
+{%endblock%}
