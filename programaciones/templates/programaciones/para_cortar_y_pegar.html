@@ -182,7 +182,7 @@ null==d?void 0:d))},attrHooks:{type:{set:function(a,b){if(!o.radioValue&&"radio"
 <h1>Datos del módulo {{nombre_modulo}}</h1>
 
 
-Esta página presenta los datos más relevantes del módulo de una forma que permita copiar y pegar fácilmente en otro sitio.
+Esta página presenta los datos más relevantes del mó7dulo de una forma que permita copiar y pegar fácilmente en otro sitio.
 Para seleccionar elementos puedes hacer varias cosas:
 <ol>
     <li>Si haces click en cualquier caja de texto dicho texto se quedará seleccionado y
@@ -254,7 +254,7 @@ La competencia general es:
 {%endfor%}
 
 <h1>Pérdida de la evaluacion continua</h1>
-La asistencia a clase es obligatoria y presencial. Aquellos alumnos cuyo número total de faltas injustificadas  sea superior al 20% de la carga total del módulo ({{horas_modulo}} horas), es decir, {{horas_perdida_ev_continua}} horas, no tendrá derecho a la evaluación continua. Esto implicará que el alumnado tendrá que examinarse de todo, incluyendo las unidades que tuviere aprobadas.
+La asistencia a clase es obligatoria y presencial. Aquellos alumnos cuyo número total de faltas injustificadas  sea superior al 25% de la carga total del módulo ({{horas_modulo}} horas), es decir, {{horas_perdida_ev_continua}} horas, no tendrá derecho a la evaluación continua. Esto implicará que el alumnado tendrá que examinarse de todo, incluyendo las unidades que tuviere aprobadas.
 <h2>Objetivos generales del ciclo</h2>
 Aquí se incluyen todos los objetivos incluyendo sus letras asociadas, por ejemplo " a) Conseguir...". Si quieres trabajar con
 los objetivos sin su letra asociada (es decir usar "Conseguir..." en lugar de "a) Conseguir..." baja más abajo.
@@ -454,13 +454,13 @@ Marcar/desmarcar todos los resultados de aprendizaje
 <table border="1">
     <tr>
         <td class="sombreado" colspan="3">Referencia</td>
-        <td class="sombreado" colspan="3">RESULTADO DE APRENDIZAJE</td>
+        <td class="sombreado" colspan="2">RESULTADO DE APRENDIZAJE</td>
         <td class="sombreado">Ponderación</td>
     </tr>
     <tr>
         <td colspan="3">RA{{forloop.counter}}</td>
-        <td colspan="3">{{resultado.texto}}</td>
-        <td></td>
+        <td colspan="2">{{resultado.texto}}</td>
+        <td>{{ponderacion_por_resultado_redondeado}}%</td>
     </tr>
     <tr>
         <td class="sombreado" colspan="2">U.T</td>
@@ -468,7 +468,7 @@ Marcar/desmarcar todos los resultados de aprendizaje
         <td class="sombreado">Mínimo</td>
         <td class="sombreado">Criterios de evaluación</td>
         <td class="sombreado">Calificador/Ponderación</td>
-        <td class="sombreado">Contenidos</td>
+        
         <td class="sombreado">Instrumento de evaluación</td>
     </tr>
     <!-- Generamos ahora una fila para cada criterio -->
@@ -478,8 +478,8 @@ Marcar/desmarcar todos los resultados de aprendizaje
         <td>SÍ</td>
         <td>{{criterio.letra}}) {{criterio.texto}}</td>
         <td>{{resultado.ponderacion_por_criterio}}</td>
-        <td></td>
-        <td></td>
+        
+        <td>Examen</td>
     </tr>
     {%endfor%}
 

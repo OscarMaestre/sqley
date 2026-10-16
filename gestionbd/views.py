@@ -127,3 +127,13 @@ def hacer_asociaciones(peticion, idcontenido):
     diccionario["contenido"]=contenido
     diccionario["formset"]=formulario
     return render(peticion, "gestionbd/hacer_asociaciones_ras_contenido.html", diccionario)
+
+def mostrar_asociaciones(peticion, idmodulo):
+    modulo = get_object_or_404(Modulo, id=idmodulo)
+    print(type(modulo))
+    puntos=PuntoDeContenido.objects.filter(contenido__modulo=modulo)
+    print(puntos)
+    diccionario=dict()
+    diccionario["modulo"]=modulo
+    diccionario["puntos"]=puntos
+    return render(peticion, "gestionbd/mostrar_asociaciones.html", diccionario)

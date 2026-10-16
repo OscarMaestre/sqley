@@ -1,0 +1,13 @@
+{% extends "gestionbd/base.html"%}
+
+{%block contenido%}
+<h1>Asociaciones realizadas</h1>
+{%autoescape off%}
+<h2>{{modulo.nombre}}</h2>
+    <ul>
+    {% for punto in puntos%}
+        <li>{{punto.texto}}--{{punto.criterio_de_evaluacion.texto}}</li>
+    {% endfor %}
+    </ul>
+{%endautoescape%}
+{%endblock%}

@@ -194,6 +194,8 @@ class PuntoDeContenido ( models.Model ):
     texto       =   models.CharField ( max_length=250 )
     num_orden   =   models.IntegerField()
     contenido   =   models.ForeignKey ( Contenido  , on_delete=models.CASCADE)
+    #No tengo muy claro si sigo necesitando esto.
+    #Quitar el comentario si llego a algo en claro
     resultado   =   models.ForeignKey ( ResultadoDeAprendizaje, 
                                        on_delete=models.SET_NULL, null=True)
     criterio_de_evaluacion = models.ManyToManyField(CriterioDeEvaluacion, blank=True)

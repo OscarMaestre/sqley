@@ -84,7 +84,7 @@ def generar_fichero_corta_y_pega ( codigo_modulo_segun_jccm, directorio_fichero_
         resultados_de_aprendizaje       =   ResultadoDeAprendizaje.objects.filter ( modulo = objeto_modulo )
         
         horas_modulo                    =   int(objeto_modulo.horas_anuales)
-        horas_para_perder_ev_continua   =   round(horas_modulo*0.2)
+        horas_para_perder_ev_continua   =   round(horas_modulo*0.25)
         criterios_de_evaluacion         =   CriterioDeEvaluacion.objects.filter(resultado_de_aprendizaje__modulo=objeto_modulo)
         
         competencias                    =   Competencia.objects.filter(ciclo=ciclo_asociado)
@@ -96,8 +96,10 @@ def generar_fichero_corta_y_pega ( codigo_modulo_segun_jccm, directorio_fichero_
         cualificaciones_incompletas       =   ciclo_asociado.ciclotienecualificacion_set.filter(es_completa=False)
         #print(cualificaciones)
         #print (criterios_de_evaluacion)
+        ponderacion_por_resultado=porcentaje=100/resultados_de_aprendizaje.count()
+        ponderacion_por_resultado_redondeado=round(porcentaje, 2)
         
-        asociaciones_resultado_contenidos=objeto_modulo.resultadocontenido_set.all().order_by("resultado__numero")
+        
 
         #Aquí se generan algunas posibles unidades didácticas
         unidades_didacticas             =   generar_lista_unidades_didacticas(objeto_modulo)
@@ -118,6 +120,7 @@ def generar_fichero_corta_y_pega ( codigo_modulo_segun_jccm, directorio_fichero_
         nombre_fichero = directorio_fichero_resultado + os.sep + nombre_fichero 
         
         diccionario=dict()
+        diccionario["ponderacion_por_resultado_redondeado"]=ponderacion_por_resultado_redondeado
         diccionario["objetivos_generales"]          =       objetivos_generales_del_ciclo
         diccionario["nombre_modulo"]                =       objeto_modulo.nombre
         diccionario["resultados_aprendizaje"]       =       resultados_de_aprendizaje
@@ -130,7 +133,7 @@ def generar_fichero_corta_y_pega ( codigo_modulo_segun_jccm, directorio_fichero_
         diccionario["horas_modulo"]                 =       horas_modulo
         diccionario["horas_perdida_ev_continua"]    =       horas_para_perder_ev_continua
         diccionario["unidades_didacticas"]          =       unidades_didacticas
-        diccionario["resultado_asociado_a_contenidos"]=asociaciones_resultado_contenidos
+        
         contenido_fichero = render_to_string("programaciones/para_cortar_y_pegar.html", diccionario)
         with open(nombre_fichero, "w", encoding="utf-8") as fichero:
             fichero.write(contenido_fichero)

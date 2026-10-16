@@ -17,6 +17,8 @@ urlpatterns = [
     path("mostrar_contenidos_elegir_asociacion/<int:idmodulo>", views.mostrar_bloques_contenido, name="mostrar_contenidos_elegir_asociacion"),
 
     path("hacer_asociaciones/<int:idcontenido>", views.hacer_asociaciones,
-    name="hacer_asociaciones")    
+    name="hacer_asociaciones"),
+    path("mostrar_asociaciones/<int:idmodulo>", views.mostrar_asociaciones,
+         name="mostrar_asociaciones")
     
 ]
